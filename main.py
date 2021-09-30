@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
 
-client = commands.Bot(command_prefix = "!")
+client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True)
 
 slash = SlashCommand(client, sync_commands = True)
 
