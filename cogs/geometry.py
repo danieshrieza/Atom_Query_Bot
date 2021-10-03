@@ -12,7 +12,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"2 * 22/7 * {radius}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -24,7 +24,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"22/7 * {diameter}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -36,7 +36,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"22/7 * {radius} ** 2"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -48,7 +48,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"{length} * {width}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -58,8 +58,9 @@ class Geometry_Calculation(commands.Cog) :
   @ cog_ext.cog_slash(description = "Calculate the area of a triangle.")
   async def area_triangle(self,ctx,base : float, height : float) :
     self.exp = f"1/2 * {base} * {height}"
+    self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -71,7 +72,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"{base} * {height}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -83,7 +84,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"1/2 * {long_diagonal} * {short_diagonal}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -92,10 +93,10 @@ class Geometry_Calculation(commands.Cog) :
 
   @ cog_ext.cog_slash(description = "Calculate the area of a trampezium.")
   async def a_trampezium(self,ctx,first_parallel : float, second_parallel : float, height : float) :
-    self.exp = f"1/2 * ({first_parallel + second_parallel}) * height"
+    self.exp = f"1/2 * ({first_parallel + second_parallel}) * {height}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -107,7 +108,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"6 * {length} ** 2"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -119,7 +120,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"2 * (({length} * {width}) + ({length} * {width}) + ({width} * {height}))"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -131,7 +132,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"({length*width}) + 2 * (1/2 * {face_height} * {(length/2)}) + 2 * (1/2 * {face_height} * {(width/2)})"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -143,7 +144,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"(2 * 22/7 * {radius} ** 2) + (2 * 22/7 * {radius} * {height})"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -155,7 +156,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"(22/7 * {radius} ** 2) + (22/7 * {radius} * {slant_height})"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -167,7 +168,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"4 * 22/7 * {radius} ** 2"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -179,7 +180,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"{length} * {width} * {height}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -191,7 +192,7 @@ class Geometry_Calculation(commands.Cog) :
     self.exp = f"1/3 * {length} * {width} * {height}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -200,10 +201,10 @@ class Geometry_Calculation(commands.Cog) :
 
   @ cog_ext.cog_slash(description = "Calculate the volume of a cylinder.")
   async def volume_cylinder(self,ctx,radius : float, height : float) :
-    self.exp = f"22/7 * ({radius} ** 2) * height "
+    self.exp = f"22/7 * ({radius} ** 2) * {height} "
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -212,10 +213,10 @@ class Geometry_Calculation(commands.Cog) :
     
   @ cog_ext.cog_slash(description = "Calculate the volume of a cone.")
   async def volume_cone(self,ctx,radius : float, height : float) :
-    self.exp = f"1/3 * 22/7 * ({radius} ** 2) * height"
+    self.exp = f"1/3 * 22/7 * ({radius} ** 2) * {height}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -224,10 +225,10 @@ class Geometry_Calculation(commands.Cog) :
     
   @ cog_ext.cog_slash(description = "Calculate the volume of a sphere.")
   async def volume_sphere(self,ctx,radius : float) :
-    self.exp = f"4/3 * 22/7 * (radius ** 3)"
+    self.exp = f"4/3 * 22/7 * ({radius} ** 3)"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)

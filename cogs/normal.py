@@ -14,7 +14,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = ("").join(query)
     self.evalu = eval(self.exp)
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -26,7 +26,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"/generator {starting_point} {ending_point} "
     self.evalu = f"{random.random(starting_point,ending_point)}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -38,7 +38,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{base} ** 2"
     self.evalu = f"{base ** 2}" 
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -50,7 +50,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{base} ** 3 "
     self.evalu = f"{base ** 3}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -62,7 +62,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{base} ** {exponent}"
     self.evalu = f"{base ** exponent}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -74,7 +74,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{radicand} ** 1/2 "
     self.evalu = f"{math.sqrt(radicand)} " 
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -86,7 +86,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{radicand} ** 1/3"
     self.evalu = f"{radicand ** 1./3.} "
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -98,7 +98,7 @@ class Basic_Calculation(commands.Cog):
     self.exp = f"{radicand} ** 1/{radical}"
     self.evalu = f"{radicand ** 1./radical}"
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -112,7 +112,7 @@ class Basic_Calculation(commands.Cog):
       if number % i == 0 :
         self.evalu.append(i)
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"Factor of `{number}`.", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -127,7 +127,7 @@ class Basic_Calculation(commands.Cog):
           if number_1 % i == number_2 % i == 0 :
             self.evalu.append(i)
         self.User = ctx.author
-        self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+        self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
         self.embed.add_field(name = "Input :",value = f"Common Factor of `{number_1}` and `{number_2}`.", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -139,7 +139,7 @@ class Basic_Calculation(commands.Cog):
           if number_1 % i == number_2 % i == number_3 % i == 0 :
             self.evalu.append(i)
         self.User = ctx.author
-        self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+        self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
         self.embed.add_field(name = "Input :",value = f"Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -151,7 +151,7 @@ class Basic_Calculation(commands.Cog):
     if number_3 == 0 :
       self.evalu = math.gcd(number_1, number_2)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}` and `{number_2}`.", inline = False)
       self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -159,7 +159,7 @@ class Basic_Calculation(commands.Cog):
     else :
       self.evalu = math.gcd(math.gcd(number_1, number_2), number_3)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
       self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -171,7 +171,7 @@ class Basic_Calculation(commands.Cog):
     for i in range(1, number_range + 1) :
       self.evalu.append(number * i)
     self.User = ctx.author
-    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
     self.embed.add_field(name = "Input :",value = f"Multiple of `{number}`.", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
@@ -186,7 +186,7 @@ class Basic_Calculation(commands.Cog):
       for i in range(1, number_range + 1) :
         self.arr.append(self.evalu * i)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :", value = f"Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.arr}`", inline = True)
@@ -194,11 +194,11 @@ class Basic_Calculation(commands.Cog):
       await ctx.send(embed = self.embed)
     else :
       self.arr = []
-      self.evalu = math.lcm(math.lcm(number_1, number_2), number_3)
+      self.evalu = math.lcm(number_1, number_2, number_3)
       for i in range(1, number_range + 1) :
         self.arr.append(self.evalu * i)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :", value = f"Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.arr}`", inline = True)
@@ -210,16 +210,16 @@ class Basic_Calculation(commands.Cog):
     if number_3 == 0 :
       self.evalu = math.lcm(number_1, number_2)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
     else :
-      self.evalu = math.lcm(math.lcm(number_1, number_2), number_3)
+      self.evalu = math.lcm(number_1, number_2, number_3)
       self.User = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.blurple())
+      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
       self.embed.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.evalu}`", inline = True)
@@ -229,9 +229,10 @@ class Basic_Calculation(commands.Cog):
   @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
   async def terminate(self, ctx, true_or_false : str) :
     self.evalu = ("").join(true_or_false)
-    if self.evalu.lower() == ("true" or "t") :
-      await ctx.message.author.send("<http://www.lasesp.com/article/16327116517156284/FORTNITE_(NEW%20UPDATE)%20SPIDERMAN%20CONFIRM!!!!!!>")
-    elif self.evalu.lower() == ("false" or "f") :
+    if (self.evalu.lower() == ("true" or "t")) or (self.evalu.upper() == ("TRUE" or "T")) :
+      await ctx.send("Go check your dm.")
+      await ctx.author.send("<https://m.youtube.com/watch?v=raTkZqz680Y>")
+    elif (self.evalu.lower() == ("false" or "f")) or (self.evalu.upper() == ("FALSE" or "F")) :
       await ctx.send("*sigh of relief*")
 
 def setup(client):
