@@ -1,10 +1,11 @@
 import discord
 import os
 from discord.ext import commands, tasks
+from discord.ext.commands.errors import ExtensionNotFound
 from discord_slash import SlashCommand
 from itertools import cycle
 
-client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True)
+client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
 slash = SlashCommand(client, sync_commands = True)
 
