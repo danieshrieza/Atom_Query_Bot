@@ -20,7 +20,11 @@ class Basic_Calculation(commands.Cog):
            lcm = greater
            break
         greater += 1
-      return lcm
+<<<<<<< HEAD
+=======
+
+>>>>>>> 602b7c4820fa9db86c5728b7e98497bb3de437b6
+        return lcm
 
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
@@ -195,7 +199,7 @@ class Basic_Calculation(commands.Cog):
   async def common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int, number_range : int) :
     if number_3 == 0 :
       self.arr = []
-      self.evalu = math.lcm(number_1, number_2)
+      self.evalu = lcm(number_1, number_2)
       for i in range(1, number_range + 1) :
         self.arr.append(self.evalu * i)
       self.User = ctx.author
@@ -207,7 +211,7 @@ class Basic_Calculation(commands.Cog):
       await ctx.send(embed = self.embed)
     else :
       self.arr = []
-      self.evalu = math.lcm(number_1, number_2, number_3)
+      self.evalu = lcm(lcm(number_1, number_2), number_3)
       for i in range(1, number_range + 1) :
         self.arr.append(self.evalu * i)
       self.User = ctx.author
@@ -221,7 +225,7 @@ class Basic_Calculation(commands.Cog):
   @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.")
   async def lowest_common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
-      self.evalu = math.lcm(number_1, number_2)
+      self.evalu = lcm(number_1, number_2)
       self.User = ctx.author
       self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
@@ -230,7 +234,7 @@ class Basic_Calculation(commands.Cog):
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
     else :
-      self.evalu = math.lcm(number_1, number_2, number_3)
+      self.evalu = lcm(lcm(number_1, number_2), number_3)
       self.User = ctx.author
       self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
