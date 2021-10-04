@@ -8,6 +8,19 @@ class Basic_Calculation(commands.Cog):
   def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
+    global lcm
+    def lcm(x, y) :
+      if x > y:
+        greater = x
+      else:
+        greater = y
+
+      while(True):
+        if ((greater % x == 0) and (greater % y == 0)):
+           lcm = greater
+           break
+        greater += 1
+      return lcm
 
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
