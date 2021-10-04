@@ -20,11 +20,8 @@ class Basic_Calculation(commands.Cog):
            lcm = greater
            break
         greater += 1
-<<<<<<< HEAD
-=======
-
->>>>>>> 602b7c4820fa9db86c5728b7e98497bb3de437b6
-        return lcm
+        
+      return lcm
 
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
