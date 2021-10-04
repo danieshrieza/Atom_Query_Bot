@@ -249,5 +249,5 @@ class Basic_Calculation(commands.Cog):
     elif (self.evalu.lower() == ("false" or "f")) or (self.evalu.upper() == ("FALSE" or "F")) :
       await ctx.send("*sigh of relief*")
 
-def setup(client):
+def setup(client): 
   client.add_cog(Basic_Calculation(client))
