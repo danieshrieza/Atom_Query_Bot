@@ -43,8 +43,8 @@ class Geometry_Calculation(commands.Cog) :
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
-  @ cog_ext.cog_slash(description = "Calculate the area of a rectangle.")
-  async def area_rectangle(self,ctx,length : float, width : float) :
+  @ cog_ext.cog_slash(description = "Calculate the area of a rectangle or a square.")
+  async def area_rectangle_square(self,ctx,length : float, width : float) :
     self.exp = f"{length} * {width}"
     self.evalu = f"{eval(self.exp)}"
     self.User = ctx.author

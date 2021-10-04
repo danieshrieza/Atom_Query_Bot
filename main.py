@@ -21,6 +21,7 @@ status = cycle([
     " Recursion in life"
 ])
 
+
 @ tasks.loop(minutes = 5)
 async def status_swap():
   await client.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
