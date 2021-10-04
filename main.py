@@ -3,6 +3,7 @@ import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
+from online import keep_alive
 
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
@@ -64,5 +65,7 @@ for filename in os.listdir("./cogs") :
     client.load_extension(f"cogs.{filename[:-3]}")
 
 token = os.environ['MATH_VAR']
+
+keep_alive()
 
 client.run(token)
