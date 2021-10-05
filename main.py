@@ -8,6 +8,7 @@ from online import keep_alive
 import sys
 import subprocess
 
+# ? <--- Automatically download package for rep.it repo
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
 'discord.py'])
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
@@ -17,11 +18,13 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install',
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
 'Flask'])
 
+# ! <--- Declaring client or bot
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
+# ! <--- Declaring slash command for bot
 slash = SlashCommand(client, sync_commands = True, sync_on_cog_reload = True)
 
-owner = ("775930138881163286")
+# 
 
 status = cycle([
     " Unanswered Question of Life", 
