@@ -3,18 +3,6 @@ import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
-import sys
-import subprocess
-
-# ? <--- Automatically download package for rep.it repo
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'discord.py'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'discord-py-slash-command'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'fraction'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'Flask'])
 
 # ! <--- Declaring client or bot
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
