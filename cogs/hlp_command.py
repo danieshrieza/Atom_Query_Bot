@@ -27,7 +27,8 @@ class Help_Command(commands.Cog) :
         inline = False)
         self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        await ctx.author.send(embed = self.embed)
+        await ctx.author.send("Check your DM ⚡")
 
 # ! <--- Add Help_Command into the bot
 def setup(client):
