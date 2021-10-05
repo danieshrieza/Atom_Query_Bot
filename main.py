@@ -3,7 +3,6 @@ import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
-from online import keep_alive
 import sys
 import subprocess
 
@@ -82,9 +81,6 @@ async def unload(ctx, extension) :
 for filename in os.listdir("./cogs") :
   if filename.endswith(".py"):
     client.load_extension(f"cogs.{filename[:-3]}")
-
-# ! <--- Function to make the bot online 24/7
-keep_alive()
 
 # ! <--- Key for bot to run
 client.run(os.environ['MATH_VAR'])
