@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from discord_slash import cog_ext
 
-
 class Help_Command(commands.Cog) :
     def __init__(self, client):
         self.client = client

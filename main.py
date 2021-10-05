@@ -1,9 +1,21 @@
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'discord.py'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'discord-py-slash-command'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'fraction'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'Flask'])
+
 import discord
 import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
 from online import keep_alive
+import sys
+import subprocess
+
 
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
