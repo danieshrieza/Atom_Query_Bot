@@ -1,11 +1,3 @@
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'discord.py'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'discord-py-slash-command'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'fraction'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'Flask'])
 
 import discord
 import os
@@ -16,6 +8,14 @@ from online import keep_alive
 import sys
 import subprocess
 
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'discord.py'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'discord-py-slash-command'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'fraction'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'Flask'])
 
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
