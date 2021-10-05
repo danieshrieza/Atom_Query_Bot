@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord_slash import cog_ext
 
 
-class Help_Command() :
+class Help_Command(commands.Cog) :
     def __init__(self, client):
         self.client = client
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
@@ -23,7 +23,7 @@ class Help_Command() :
         self.embed.add_field(name = "Unit Commands :",
         value = "`mm_cm` `cm_m` `k_km` `km_m` `m_cm` `cm_m` `g_kg` `kg_g` `ml_l` `l_ml` `decimal_frac` `frac_decimal`",
         inline = False)
-        self.embed.set_author(name = {ctx.author.name},  icon_url = ctx.author.avatar_url)
+        self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
 
