@@ -1,4 +1,3 @@
-
 import discord
 import os
 from discord.ext import commands, tasks
@@ -24,8 +23,7 @@ client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after
 # ! <--- Declaring slash command for bot
 slash = SlashCommand(client, sync_commands = True, sync_on_cog_reload = True)
 
-# 
-
+# ? <--- Status cycle for bot
 status = cycle([
     " Unanswered Question of Life", 
     " Self - Referential Paradox",
@@ -36,18 +34,20 @@ status = cycle([
     " Recursion in life"
 ])
 
-
+# ? <--- Looping through status
 @ tasks.loop(minutes = 5)
 async def status_swap():
   await client.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
 
+# ? <--- Activating bot once it's ready
 @ client.event
 async def on_ready():
   print("I have logged in as {0.user}".format(client))
   status_swap.start()
 
+# ? <--- Command to reload cogs file for owner
 @ commands.is_owner()
-@ slash.slash(description = "Reload cogs file (Owner only).")
+@ client.command()
 async def reload(ctx, extension) :
   try :
     client.reload_extension(f"cogs.{extension}")
@@ -56,8 +56,9 @@ async def reload(ctx, extension) :
   except :
     await ctx.send(f"`{extension}` not found.")
 
+# ? <--- Command to load cogs file for owner
 @ commands.is_owner()
-@ slash.slash(description = "Load cogs file (Owner only).")
+@ client.command()
 async def load(ctx, extension) :
   try :
     client.load_extension(f"cogs.{extension}")
@@ -66,8 +67,9 @@ async def load(ctx, extension) :
   except :
     await ctx.send(f"`{extension}` not found.")
 
+# ? <--- Command to unload cogs file for owner
 @ commands.is_owner()
-@ slash.slash(description = "Unload cogs file (Owner only).")
+@ client.command()
 async def unload(ctx, extension) :
   try :
     client.unload_extension(f"cogs.{extension}")
@@ -76,12 +78,13 @@ async def unload(ctx, extension) :
   except :
     await ctx.send(f"`{extension}` not found.")
 
+# ! <--- Load cogs file once bot is ready
 for filename in os.listdir("./cogs") :
   if filename.endswith(".py"):
     client.load_extension(f"cogs.{filename[:-3]}")
 
-token = os.environ['MATH_VAR']
-
+# ! <--- Function to make the bot online 24/7
 keep_alive()
 
-client.run(token)
+# ! <--- Key for bot to run
+client.run(os.environ['MATH_VAR'])

@@ -3,11 +3,15 @@ from discord.ext import commands
 import math
 from discord_slash import cog_ext
 
+# ! <--- Class for Trigonometry_Calculation
 class Trigonometry_Calculation(commands.Cog):
+
+   # ? <--- Initialize variable for class
   def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
 
+  # ? <--- Command to find sine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
   async def sin(self,ctx, number : float):
     self.exp = f"sin({number})"
@@ -20,6 +24,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find cosine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
   async def cos(self,ctx, number : float):
     self.exp = f"cos({number})"
@@ -32,6 +37,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find tangent of a triangle
   @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.")
   async def tan(self,ctx, number : float):
     self.exp = f"tan({number})"
@@ -44,6 +50,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
   @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.")
   async def pythagoras_theorem(self,ctx, height : float, base : float, hypotenuse : float):
     if hypotenuse == 0 :
@@ -99,5 +106,6 @@ class Trigonometry_Calculation(commands.Cog):
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
 
+# ! <--- Add Triginometry_Calculation into the bot
 def setup(client):
   client.add_cog(Trigonometry_Calculation(client))

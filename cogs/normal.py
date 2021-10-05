@@ -4,7 +4,10 @@ import math
 import random
 from discord_slash import cog_ext
 
+# ! <--- Class for Basic_Calculation
 class Basic_Calculation(commands.Cog):
+
+  # ? <--- Initialize variable and function for class
   def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
@@ -23,6 +26,7 @@ class Basic_Calculation(commands.Cog):
         
       return lcm
 
+  # ? <--- Command to calculate queries from user
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
     self.exp = ("").join(query)
@@ -34,7 +38,8 @@ class Basic_Calculation(commands.Cog):
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
-    
+
+  # ? <--- Command to generate random number
   @ cog_ext.cog_slash(description = "Generate randomly selected numbers from input range.")
   async def generator(self,ctx,starting_point: float, ending_point : float) :
     self.exp = f"/generator {starting_point} {ending_point} "
@@ -46,7 +51,8 @@ class Basic_Calculation(commands.Cog):
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
-    
+
+  # ? <--- Command to square a number
   @ cog_ext.cog_slash(description = "Squared number from user.")
   async def square(self,ctx,base : float) :
     self.exp = f"{base} ** 2"
@@ -59,6 +65,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to cube a number
   @ cog_ext.cog_slash(description = "Cubed number from user.")
   async def cube(self,ctx,base : float) :
     self.exp = f"{base} ** 3 "
@@ -71,6 +78,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to power a base using user's exponent
   @ cog_ext.cog_slash(description = "Power the user's base to the exponent.")
   async def varpower(self,ctx,base : float,exponent : float) :
     self.exp = f"{base} ** {exponent}"
@@ -83,6 +91,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+    # ? <--- Command to square root a number
   @ cog_ext.cog_slash(description = "Square root user's number.")
   async def sqrt(self,ctx,radicand : float) :
     self.exp = f"{radicand} ** 1/2 "
@@ -95,6 +104,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to cube root a number
   @ cog_ext.cog_slash(description = "Cube root user's number.")
   async def cbrt(self,ctx,radicand : float) :
     self.exp = f"{radicand} ** 1/3"
@@ -107,6 +117,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to root a radicand using a radical
   @ cog_ext.cog_slash(description = "Radical(root) user's radicand(number).")
   async def varroot(self,ctx,radicand : float,radical: float) :
     self.exp = f"{radicand} ** 1/{radical}"
@@ -119,6 +130,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find factor a number
   @ cog_ext.cog_slash(description = "Find the factor of a number.")
   async def factor(self,ctx, number : int) :
     self.evalu = []
@@ -133,6 +145,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find common factor of multiple number
   @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
   async def common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
@@ -160,6 +173,7 @@ class Basic_Calculation(commands.Cog):
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find highest common factor of multiple number
   @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.")
   async def highest_common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
@@ -179,6 +193,7 @@ class Basic_Calculation(commands.Cog):
       self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
       await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find multiple of a number
   @ cog_ext.cog_slash(description = "Find the multiple of a number.")
   async def multiple(self, ctx, number : int, number_range : int) :
     self.evalu = []
@@ -192,6 +207,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
+    # ? <--- Command to find common multiple of multiple number
   @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.")
   async def common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int, number_range : int) :
     if number_3 == 0 :
@@ -219,6 +235,7 @@ class Basic_Calculation(commands.Cog):
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
 
+  # ? <--- Command to find the lowest common multiple of multiple number
   @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.")
   async def lowest_common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
@@ -240,6 +257,7 @@ class Basic_Calculation(commands.Cog):
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
 
+    # ? <--- Who knows what this do ?
   @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
   async def terminate(self, ctx, true_or_false : str) :
     self.evalu = ("").join(true_or_false)
@@ -249,5 +267,6 @@ class Basic_Calculation(commands.Cog):
     elif (self.evalu.lower() == ("false" or "f")) or (self.evalu.upper() == ("FALSE" or "F")) :
       await ctx.send("*sigh of relief*")
 
+# ! <--- Add Basic_Calculation into the bot
 def setup(client): 
   client.add_cog(Basic_Calculation(client))

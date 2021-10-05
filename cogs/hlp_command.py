@@ -2,11 +2,14 @@ import discord
 from discord.ext import commands
 from discord_slash import cog_ext
 
+# ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
+    # ? <--- Initialize variable for class
     def __init__(self, client):
         self.client = client
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
 
+    # ? <--- Command to send help command for user
     @ cog_ext.cog_slash(description = "Find the list of command for Basic Calculator.")
     async def help(self, ctx) :
         self.embed = discord.Embed(title = "Help!", description = "Listing all commands on Basic Calculator.", color = discord.Color.from_rgb(175, 143, 233))
@@ -26,5 +29,6 @@ class Help_Command(commands.Cog) :
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
 
+# ! <--- Add Help_Command into the bot
 def setup(client):
   client.add_cog(Help_Command(client))
