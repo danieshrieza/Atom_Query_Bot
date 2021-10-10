@@ -17,7 +17,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 2 * 22/7 * radius
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -30,7 +30,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 22/7 * diameter
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -43,7 +43,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 22/7 * radius ** 2
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -56,7 +56,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = length * width
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -69,7 +69,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 1/2 * base * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -82,7 +82,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = base * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -95,7 +95,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 1/2 * long_diagonal * short_diagonal
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -108,7 +108,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 1/2 * (first_parallel + second_parallel) * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -121,7 +121,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 6 * (length ** 2)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -134,7 +134,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -147,7 +147,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -160,7 +160,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -173,7 +173,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -186,7 +186,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 4 * 22/7 * (radius ** 2)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -199,7 +199,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = length * width * height 
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -212,7 +212,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 1/3 * length * width * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -225,7 +225,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 22/7 * (radius ** 2) * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -238,7 +238,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 1/3 * 22/7 * (radius ** 2) * height
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -251,7 +251,7 @@ class Geometry_Calculation(commands.Cog) :
     self.eval = 4/3 * 22/7 * (radius ** 2)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)

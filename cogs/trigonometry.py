@@ -18,7 +18,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.eval = f"{math.sin(number)}"
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -31,7 +31,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.eval = f"{math.cos(number)}"
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -44,7 +44,7 @@ class Trigonometry_Calculation(commands.Cog):
     self.eval = f"{math.tan(number)}"
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -58,7 +58,7 @@ class Trigonometry_Calculation(commands.Cog):
       self.eval = f"{math.sqrt((base ** 2) + (height ** 2))}"
       self.user = ctx.author
       self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+      self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
       self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
@@ -69,7 +69,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.eval = f"{math.sqrt((hypotenuse ** 2) - (base ** 2))}"
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -79,7 +79,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.eval = f"{math.sqrt((base ** 2) - (hypotenuse ** 2))}"
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -90,7 +90,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.eval = f"{math.sqrt((hypotenuse ** 2) - (height ** 2))} "
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -100,7 +100,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.eval = f"{math.sqrt((height ** 2) - (hypotenuse ** 2))}"
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)

@@ -25,6 +25,9 @@ class Help_Command(commands.Cog) :
         self.embed.add_field(name = "Unit Commands :",
         value = "`mm_cm` `cm_m` `k_km` `km_m` `m_cm` `cm_m` `g_kg` `kg_g` `ml_l` `l_ml` `decimal_frac` `frac_decimal`",
         inline = False)
+        self.embed.add_field(name = "Physics Commands :", 
+        value = "`density` `electric_current` `electric_resistance` \n `electric_voltage` `speed` `moment_of_force` `pressure`",
+        inline = False)
         self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         self.embed.set_thumbnail(url = self.link)
         await ctx.author.send(embed = self.embed)

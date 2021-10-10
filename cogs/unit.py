@@ -14,9 +14,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert mm to cm
   @ cog_ext.cog_slash(description = "Convert milimeter to centimeter.")
   async def mm_cm(self,ctx,milimeter : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{milimeter}` mm", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{milimeter/10}` cm", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -25,9 +25,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert cm to m
   @ cog_ext.cog_slash(description = "Convert centimeter to meter.")
   async def cm_m(self,ctx,centimeter : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{centimeter}` cm", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{centimeter/100}` m", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -36,9 +36,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to m to km
   @ cog_ext.cog_slash(description = "Convert meter to kilometer.")
   async def m_km(self,ctx,meter : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{meter}` m", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{meter/1000}` km", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -47,9 +47,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to km to m
   @ cog_ext.cog_slash(description = "Convert kilometer to meter.")
   async def km_m(self,ctx,kilometer : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{kilometer}` km", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{kilometer * 1000}` m", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -58,9 +58,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert m to cm
   @ cog_ext.cog_slash(description = "Convert meter to centimeter.")
   async def m_cm(self,ctx,meter : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{meter}` m", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{meter * 100}` cm", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -69,9 +69,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert cm to mm
   @ cog_ext.cog_slash(description = "Convert centimeter to milimeter.")
   async def cm_mm(self,ctx,centimeter : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{centimeter}` cm", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{centimeter * 10}` mm", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -80,9 +80,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command convert g to kg
   @ cog_ext.cog_slash(description = "Convert gram to kilogram.")
   async def g_kg(self,ctx,gram : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{gram}` g", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{gram / 1000}` kg", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -91,9 +91,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert kg to g
   @ cog_ext.cog_slash(description = "Convert kilogram to gram.")
   async def kg_g(self,ctx,kilogram : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{kilogram}` kg", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{kilogram * 1000}` g", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -102,9 +102,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert ml to l
   @ cog_ext.cog_slash(description = "Convert mililitre to litre.")
   async def ml_l(self,ctx,mililitre : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{mililitre}` ml", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{mililitre/1000}` l", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -113,9 +113,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert l to ml
   @ cog_ext.cog_slash(description = "Convert litre to mililitre.")
   async def l_ml(self, ctx, litre : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{litre}` l", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{litre * 1000}` ml", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -124,9 +124,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert decimal to fraction
   @ cog_ext.cog_slash(description = "Convert a decimal number to fraction.")
   async def decimal_frac(self, ctx, decimal : float) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{decimal}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{Fraction(str(decimal)).limit_denominator()}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -135,9 +135,9 @@ class Unit_Converter(commands.Cog):
   # ? <--- Command to convert fraction to decimal
   @ cog_ext.cog_slash(description = "Convert a fraction value to a decimal number.")
   async def frac_decimal(self,ctx, numerator : int, denominator : int) :
-    self.User = ctx.author
+    self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = self.User.avatar_url)
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{numerator}/{denominator}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{numerator/denominator}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
