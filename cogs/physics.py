@@ -16,14 +16,14 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate speed of an object
     @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
-    async def speed(self, ctx, distance : float, time : float, distance_unit : str, time_unit : str) :
-        self.exp = f"{distance} ÷ {time} {distance_unit}/{time_unit}"
+    async def speed(self, ctx, distance : float, time : float) :
+        self.exp = f"{distance} ÷ {time}"
         self.eval = distance/time
         self.user = ctx.author
         self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.eval} {distance_unit}/{time_unit}`", inline = True)
+        self.embed.add_field(name = "Output :" , value = f"`{self.eval} m/s`", inline = True)
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
 
