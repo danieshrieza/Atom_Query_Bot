@@ -14,7 +14,6 @@ class Physics_Calculation(commands.Cog) :
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
 
     # ? <--- Command to calculate speed of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
     async def speed(self, ctx, distance : float, time : float) :
         self.exp = f"{distance} ÷ {time}"
@@ -28,7 +27,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric current of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
@@ -42,7 +40,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric voltage of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
         self.exp = f"{electric_current} A × {electric_resistance} Ω"
@@ -56,7 +53,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric resisteance of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_current} A"
@@ -70,7 +66,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate moment of force of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
     async def moment_of_force(self, ctx, force : float, perpendicular_distance : float ) :
         self.exp = f"{force} N × {perpendicular_distance} m "
@@ -84,7 +79,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate the pressure acts on an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the pressure acts on an object.")
     async def pressure(self, ctx, force : float, surface_area : float) :
         self.exp = f"{force} N ÷ {surface_area} m²"
@@ -98,7 +92,6 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
     
     # ? <--- Command to calculate the density of an object
-    @ commands.is_owner()
     @ cog_ext.cog_slash(description = "Calculate the density of an object.")
     async def density(self, ctx, mass : float, volume : float) :
         self.exp = f'{mass} g ÷ {volume} cm³'
