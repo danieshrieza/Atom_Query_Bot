@@ -33,7 +33,7 @@ class Basic_Calculation(commands.Cog):
     if ("*" or "/") in self.expliteral :
       global exppoet
       exppoet = self.expliteral.replace("*", "×").replace("/", "÷")
-    self.evalu = eval(self.exp)
+    self.evalu = eval(self.expliteral)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
