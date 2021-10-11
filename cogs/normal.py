@@ -29,15 +29,15 @@ class Basic_Calculation(commands.Cog):
   # ? <--- Command to calculate queries from user
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
-    self.exp = ("").join(query)
-    if ("*" or "/") in self.exp :
-      self.exp.replace("*", "×")
-      self.exp.replace("/", "÷")
+    self.expliteral = ("").join(query)
+    if ("*" or "/") in self.expliteral :
+      global exppoet
+      exppoet = self.expliteral.replace("*", "×").replace("/", "÷")
     self.evalu = eval(self.exp)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+    self.embed.add_field(name = "Input :",value = f"`{exppoet}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
