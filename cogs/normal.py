@@ -30,6 +30,9 @@ class Basic_Calculation(commands.Cog):
   @ cog_ext.cog_slash(description = "Calculate your math's query.")
   async def cal(self,ctx,query : str) :
     self.exp = ("").join(query)
+    if ("*" or "/") in self.exp :
+      self.exp.replace("*", "×")
+      self.exp.replace("/", "÷")
     self.evalu = eval(self.exp)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
