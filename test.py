@@ -1,9 +1,9 @@
-string = "Hello * Bye"
+string = "Hello * B/e"
 
 for i in string :
-    if ("*" and "o") in string :
+    if ("*" or "/") in string :
         global new_string
-        new_string = string.replace("*", "×").replace("o", "O")
+        new_string = string.replace("*", "×").replace("/", "÷")
 
 print(new_string)
 
