@@ -148,31 +148,19 @@ class Basic_Calculation(commands.Cog):
 
   # ? <--- Command to find common factor of multiple number
   @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
-  async def common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int) :
-    if number_3 == 0 :
-        self.evalu = []
-        for i in range(1, min(number_1, number_2) + 1) :
-          if number_1 % i == number_2 % i == 0 :
-            self.evalu.append(i)
-        self.user = ctx.author
-        self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
-        self.embed.add_field(name = "Input :",value = f"Common Factor of `{number_1}` and `{number_2}`.", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
-    else :
-      self.evalu = []
-      for i in range(1, min(number_1, number_2, number_3) + 1) :
-        if number_1 % i == number_2 % i == number_3 % i == 0 :
-          self.evalu.append(i)
-      self.user = ctx.author
-      self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
-      self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
-      self.embed.add_field(name = "Input :",value = f"Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
-      self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
-      self.embed.set_thumbnail(url = self.link)
-      await ctx.send(embed = self.embed)
+  async def common_factor(self,ctx, number_list : str) :
+    self.evalu = []
+    self.number_list = [int(i) for i in number_list.split(" ")]
+    for i in range(0, len(self.number_list)) :
+      if self.number_list[i] % i == 0 :
+        self.evalu.append(i)
+    self.user = ctx.author
+    self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
+    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.add_field(name = "Input :",value = f"Common Factor of `{self.number_list}`.", inline = False)
+    self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
+    self.embed.set_thumbnail(url = self.link)
+    await ctx.send(embed = self.embed)
 
   # ? <--- Command to find highest common factor of multiple number
   @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.")
