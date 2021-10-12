@@ -151,7 +151,7 @@ class Basic_Calculation(commands.Cog):
   @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
   async def common_factor(self,ctx, number_list : str) :
     self.evalu = []
-    self.number_list = [float(i) for i in number_list.split(" ")]
+    self.number_list = [int(i) for i in number_list.split(" ")]
     for i in range(1, min(*self.number_list) + 1) :
       if (self.number_list % i) == 0 :
         self.evalu.append(i)
