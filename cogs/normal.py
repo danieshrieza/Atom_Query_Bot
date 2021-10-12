@@ -152,7 +152,7 @@ class Basic_Calculation(commands.Cog):
   async def common_factor(self,ctx, number_list : str) :
     self.evalu = []
     self.number_list = [int(i) for i in number_list.split(" ")]
-    for i in range(1, min(*self.number_list) + 1) :
+    for i in self.number_list :
       if (self.number_list[i] % i) == 0 :
         self.evalu.append(i)
     self.user = ctx.author
