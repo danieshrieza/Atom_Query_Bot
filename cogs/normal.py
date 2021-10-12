@@ -208,7 +208,7 @@ class Basic_Calculation(commands.Cog):
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
 
-    # ? <--- Command to find common multiple of multiple number
+  # ? <--- Command to find common multiple of multiple number
   @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.")
   async def common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int, number_range : int) :
     if number_3 == 0 :
@@ -258,7 +258,7 @@ class Basic_Calculation(commands.Cog):
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
 
-    # ? <--- Who knows what this do ?
+  # ? <--- Who knows what this do ?
   @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
   async def terminate(self, ctx, true_or_false : str) :
     self.evalu = ("").join(true_or_false)
