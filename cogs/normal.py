@@ -159,7 +159,7 @@ class Basic_Calculation(commands.Cog):
     self.user = ctx.author
     self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
+    self.embed.add_field(name = "Input :",value = f"Common Factor of `{self.int_list}`.", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.evalu}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
     await ctx.send(embed = self.embed)
