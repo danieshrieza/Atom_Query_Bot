@@ -152,7 +152,7 @@ class Basic_Calculation(commands.Cog):
     if (number_3 == 0) :
       self.evalu = []
       for i in range(1, min(number_1, number_2) + 1) :
-        if ((number_1 % i) and (number_2 % i)) == 0 :
+        if ((number_1 % i) == (number_2 % i)) == 0 :
           self.evalu.append(i)
       self.user = ctx.author
       self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
@@ -165,7 +165,7 @@ class Basic_Calculation(commands.Cog):
     else :
       self.evalu = []
       for i in range(1, min(number_1, number_2, number_3) + 1) :
-        if ((number_1 % i) and (number_2 % i) and (number_3 % i)) == 0 :
+        if ((number_1 % i) == (number_2 % i) == (number_3 % i)) == 0 :
           self.evalu.append(i)
       self.user = ctx.author
       self.embed = discord.Embed(title = "Math Query", colour = discord.Color.from_rgb(172, 209, 175))
