@@ -1,6 +1,6 @@
 git add .
 
-echo 'New feature
+echo 'New feature'
 read commitMessage
 
 git commit -m "$commitMessage"
