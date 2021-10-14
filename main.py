@@ -32,40 +32,40 @@ async def on_ready():
   print("I have logged in as {0.user}".format(client))
   status_swap.start()
 
-# ? <--- Command to reload cogs file for owner
+# ? <--- Command to reload components file for owner
 @ commands.is_owner()
 @ client.command()
 async def reload(ctx, extension) :
   try :
-    client.reload_extension(f"cogs.{extension}")
+    client.reload_extension(f"components.{extension}")
     print(f"Reload : {ctx.author.name}")
     await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(client), delete_after = 3)
   except :
     await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to load cogs file for owner
+# ? <--- Command to load components file for owner
 @ commands.is_owner()
 @ client.command()
 async def load(ctx, extension) :
   try :
-    client.load_extension(f"cogs.{extension}")
+    client.load_extension(f"components.{extension}")
     print(f"Load : {ctx.author.name}")
     await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(client), delete_after = 3)
   except :
     await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to unload cogs file for owner
+# ? <--- Command to unload components file for owner
 @ commands.is_owner()
 @ client.command()
 async def unload(ctx, extension) :
   try :
-    client.unload_extension(f"cogs.{extension}")
+    client.unload_extension(f"components.{extension}")
     print(f"Unload : {ctx.author.name}")
     await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(client), delete_after = 3)
   except :
     await ctx.send(f"`{extension}` not found.")
 
-# ! <--- Load cogs file once bot is ready
+# ! <--- Load components file once bot is ready
 for filename in os.listdir("./components") :
   if filename.endswith(".py"):
     client.load_extension(f"components.{filename[:-3]}")
