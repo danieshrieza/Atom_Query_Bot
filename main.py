@@ -66,9 +66,9 @@ async def unload(ctx, extension) :
     await ctx.send(f"`{extension}` not found.")
 
 # ! <--- Load cogs file once bot is ready
-for filename in os.listdir("./cogs") :
+for filename in os.listdir("./components") :
   if filename.endswith(".py"):
-    client.load_extension(f"cogs.{filename[:-3]}")
+    client.load_extension(f"components.{filename[:-3]}")
 
 # ! <--- Key for bot to run
 client.run(os.environ['MATH_VAR'])
