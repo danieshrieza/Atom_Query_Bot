@@ -264,10 +264,10 @@ class Basic_Calculation(commands.Cog):
     self.boolt = ["true", "t", "TRUE", "T"]
     self.boolf = ["false", "f", "FALSE", "F"]
     self.eval = ("").join(true_or_false)
-    if ((self.eval in self.boolt) or (self.eval in self.boolf)) :
+    if (self.eval in self.boolt) :
       await ctx.send("Go check your dm 😈")
       await ctx.author.send("<https://m.youtube.com/watch?v=raTkZqz680Y>")
-    elif (self.eval.lower() == ("false" or "f")) or (self.eval.upper() == ("FALSE" or "F")) :
+    elif (self.eval in self.boolf) :
       await ctx.send("*sigh of relief*")
 
 # ! <--- Add Basic_Calculation into the bot
