@@ -261,9 +261,11 @@ class Basic_Calculation(commands.Cog):
   # ? <--- Who knows what this do ?
   @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
   async def terminate(self, ctx, true_or_false : str) :
+    self.boolt = ["true", "t", "TRUE", "T"]
+    self.boolf = ["false", "f", "FALSE", "F"]
     self.eval = ("").join(true_or_false)
-    if (self.eval.lower() == ("true" or "t")) or (self.eval.upper() == ("TRUE" or "T")) :
-      await ctx.send("Go check your dm.")
+    if ((self.eval in self.boolt) or (self.eval in self.boolf)) :
+      await ctx.send("Go check your dm 😈")
       await ctx.author.send("<https://m.youtube.com/watch?v=raTkZqz680Y>")
     elif (self.eval.lower() == ("false" or "f")) or (self.eval.upper() == ("FALSE" or "F")) :
       await ctx.send("*sigh of relief*")

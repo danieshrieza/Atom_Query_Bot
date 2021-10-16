@@ -14,8 +14,8 @@ class Trigonometry_Calculation(commands.Cog):
   # ? <--- Command to find sine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
   async def sin(self,ctx, number : float):
-    self.exp = f"sin({number})"
-    self.eval = f"{math.sin(number)}"
+    self.exp = f"sin {number}°"
+    self.eval = math.sin(number)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -27,8 +27,8 @@ class Trigonometry_Calculation(commands.Cog):
   # ? <--- Command to find cosine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
   async def cos(self,ctx, number : float):
-    self.exp = f"cos({number})"
-    self.eval = f"{math.cos(number)}"
+    self.exp = f"cos {number}°"
+    self.eval = math.cos(number)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -40,8 +40,8 @@ class Trigonometry_Calculation(commands.Cog):
   # ? <--- Command to find tangent of a triangle
   @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.")
   async def tan(self,ctx, number : float):
-    self.exp = f"tan({number})"
-    self.eval = f"{math.tan(number)}"
+    self.exp = f"tan {number}°"
+    self.eval = math.tan(number)
     self.user = ctx.author
     self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -55,7 +55,7 @@ class Trigonometry_Calculation(commands.Cog):
   async def pythagoras_theorem(self,ctx, height : float, base : float, hypotenuse : float):
     if hypotenuse == 0 :
       self.exp = f"√{base}² + {height}²"
-      self.eval = f"{math.sqrt((base ** 2) + (height ** 2))}"
+      self.eval = math.sqrt((base ** 2) + (height ** 2))
       self.user = ctx.author
       self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
       self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -66,7 +66,7 @@ class Trigonometry_Calculation(commands.Cog):
     elif height == 0 :
       if hypotenuse > base :
         self.exp = f"√{hypotenuse}² - {base}²"
-        self.eval = f"{math.sqrt((hypotenuse ** 2) - (base ** 2))}"
+        self.eval = math.sqrt((hypotenuse ** 2) - (base ** 2))
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -76,7 +76,7 @@ class Trigonometry_Calculation(commands.Cog):
         await ctx.send(embed = self.embed)
       else :
         self.exp = f"√{base}² - {hypotenuse}²"
-        self.eval = f"{math.sqrt((base ** 2) - (hypotenuse ** 2))}"
+        self.eval = math.sqrt((base ** 2) - (hypotenuse ** 2))
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -87,7 +87,7 @@ class Trigonometry_Calculation(commands.Cog):
     elif base == 0 :
       if hypotenuse > height :
         self.exp = f"√{hypotenuse}² - {height}²"
-        self.eval = f"{math.sqrt((hypotenuse ** 2) - (height ** 2))} "
+        self.eval = math.sqrt((hypotenuse ** 2) - (height ** 2))
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
@@ -97,7 +97,7 @@ class Trigonometry_Calculation(commands.Cog):
         await ctx.send(embed = self.embed)
       else :
         self.exp = f"√{height}² - {hypotenuse}²"
-        self.eval = f"{math.sqrt((height ** 2) - (hypotenuse ** 2))}"
+        self.eval = math.sqrt((height ** 2) - (hypotenuse ** 2))
         self.user = ctx.author
         self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
