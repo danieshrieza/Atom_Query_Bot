@@ -6,13 +6,27 @@ from discord_slash import cog_ext
 # ! <--- Class for Trigonometry_Calculation
 class Trigonometry_Calculation(commands.Cog):
 
+  """
+  Trigonometry_Calculation is a class that conatins trigonometry related commands.
+
+  Commands : 
+  ----------
+  sin : return `str` embed
+
+  cos : return `str` embed
+
+  tan : return `str` embed
+
+  pythagoras_theorem : return `str` embed
+  """
+  
    # ? <--- Initialize variable for class
   def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
 
   # ? <--- Command to find sine of a triangle
-  @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
+  @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.", name = "sine")
   async def sin(self,ctx, number : float):
     self.exp = f"sin {number}°"
     self.eval = math.sin(number)
@@ -25,7 +39,7 @@ class Trigonometry_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to find cosine of a triangle
-  @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
+  @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.", name = "cosine")
   async def cos(self,ctx, number : float):
     self.exp = f"cos {number}°"
     self.eval = math.cos(number)
@@ -38,7 +52,7 @@ class Trigonometry_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to find tangent of a triangle
-  @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.")
+  @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.", name = "tangent")
   async def tan(self,ctx, number : float):
     self.exp = f"tan {number}°"
     self.eval = math.tan(number)
@@ -51,7 +65,7 @@ class Trigonometry_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
-  @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.")
+  @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.", name = "pythagoras theorem")
   async def pythagoras_theorem(self,ctx, height : float, base : float, hypotenuse : float):
     if hypotenuse == 0 :
       self.exp = f"√{base}² + {height}²"

@@ -1,12 +1,29 @@
 import discord
-from discord import colour
 from discord.ext import commands
-import math
-import random
 from discord_slash import cog_ext
 
 # ! <--- Class for Physics_Calculation
 class Physics_Calculation(commands.Cog) :
+
+    """
+    Physics_Calculation is a class that contains physics related math command.
+
+    Commands :
+    --------
+    speed : return `str` embed  
+
+    electric_current : return `str` embed
+
+    electric_voltage : `str` embed
+
+    electric_resistance : `str` embed
+
+    moment_of_force : `str` embed
+
+    pressure : `str` embed
+
+    density : `str` embed
+    """
 
     # ? <--- Initialize variable for class
     def __init__(self, client) :
@@ -27,7 +44,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric current of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
+    @ cog_ext.cog_slash(description = "Calculate the electric current of an object.", name = "electric current")
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         self.eval = electric_voltage/electric_resistance
@@ -40,7 +57,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric voltage of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
+    @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.", name = "electric voltage")
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
         self.exp = f"{electric_current} A × {electric_resistance} Ω"
         self.eval = electric_current * electric_resistance
@@ -53,7 +70,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric resisteance of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
+    @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.", name = "electric resistance")
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_current} A"
         self.eval = electric_voltage/electric_current
@@ -66,8 +83,8 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate moment of force of an object
-    @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
-    async def moment_of_force(self, ctx, force : float, perpendicular_distance : float ) :
+    @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.", name = "moment of force")
+    async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
         self.exp = f"{force} N × {perpendicular_distance} m "
         self.eval = force * perpendicular_distance
         self.user = ctx.author

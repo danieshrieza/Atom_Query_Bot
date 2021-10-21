@@ -7,6 +7,43 @@ from discord_slash import cog_ext
 # ! <--- Class for Basic_Calculation
 class Basic_Calculation(commands.Cog):
 
+  """
+  Basic_Calculation is a class that contains basic calculation command.
+
+  Commands :
+  ----------
+  cal : return `str` embed
+
+  gene : return `str` embed
+
+  square : return `str` embed
+
+  cube : return `str` embed
+
+  varpower : return `str` embed
+
+  sqrt : return `str` embed
+
+  cbrt : return `str` embed
+
+  varroot : return `str` embed
+
+  factor : return `str` embed
+
+  common_factor : return `str` embed
+
+  highest_common_factor : return `str` embed
+
+  multiple : return `str` embed
+
+  common_multiple : return `str` embed
+
+  lowest_common_multiple : return `str` embed
+
+  terminate : return `str` embed
+
+  """
+
   # ? <--- Initialize variable and function for class
   def __init__(self, client):
     self.client = client
@@ -27,7 +64,7 @@ class Basic_Calculation(commands.Cog):
       return lcm
 
   # ? <--- Command to calculate queries from user
-  @ cog_ext.cog_slash(description = "Calculate your math's query.")
+  @ cog_ext.cog_slash(description = "Calculate your math's query.", name = "calculate")
   async def cal(self,ctx,query : str) :
     self.expliteral = ("").join(query)
     self.exppoet = self.expliteral.replace("*","×").replace("/", "÷")
@@ -41,8 +78,8 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to generate random number
-  @ cog_ext.cog_slash(description = "Generate randomly selected numbers from input range.")
-  async def generator(self,ctx,starting_point: float, ending_point : float) :
+  @ cog_ext.cog_slash(description = "Generate randomly selected numbers from input range.", name = "generator")
+  async def genera(self,ctx,starting_point: float, ending_point : float) :
     self.exp = f"/generator {starting_point} {ending_point} "
     self.eval = f"{random.random(starting_point,ending_point)}"
     self.user = ctx.author
@@ -80,7 +117,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to power a base using user's exponent
-  @ cog_ext.cog_slash(description = "Power the user's base to the exponent.")
+  @ cog_ext.cog_slash(description = "Power the user's base to the exponent.", name = "variable power")
   async def varpower(self,ctx,base : float,exponent : float) :
     self.exp = f"{base} ** {exponent}"
     self.eval = f"{base ** exponent}"
@@ -93,7 +130,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
     # ? <--- Command to square root a number
-  @ cog_ext.cog_slash(description = "Square root user's number.")
+  @ cog_ext.cog_slash(description = "Square root user's number.", name = "square root")
   async def sqrt(self,ctx,radicand : float) :
     self.exp = f"√{radicand}"
     self.eval = f"{math.sqrt(radicand)} " 
@@ -106,7 +143,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to cube root a number
-  @ cog_ext.cog_slash(description = "Cube root user's number.")
+  @ cog_ext.cog_slash(description = "Cube root user's number.", name = "cube root")
   async def cbrt(self,ctx,radicand : float) :
     self.exp = f"³√{radicand}"
     self.eval = f"{radicand ** 1./3.} "
@@ -119,7 +156,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to root a radicand using a radical
-  @ cog_ext.cog_slash(description = "Radical(root) user's radicand(number).")
+  @ cog_ext.cog_slash(description = "Radical(root) user's radicand(number).", name = "variable root")
   async def varroot(self,ctx,radicand : float,radical: float) :
     self.exp = f"{radicand} ** 1/{radical}"
     self.eval = f"{radicand ** 1./radical}"
@@ -147,7 +184,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to find common factor of multiple number
-  @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
+  @ cog_ext.cog_slash(description = "Find the common factor of multiple number.", name = "common factor")
   async def common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
         self.eval = []
@@ -175,7 +212,7 @@ class Basic_Calculation(commands.Cog):
       await ctx.send(embed = self.embed)
 
   # ? <--- Command to find highest common factor of multiple number
-  @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.")
+  @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.", name = "highest common factor")
   async def highest_common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
       self.eval = math.gcd(number_1, number_2)
@@ -209,7 +246,7 @@ class Basic_Calculation(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to find common multiple of multiple number
-  @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.")
+  @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.", name = "common multiple")
   async def common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int, number_range : int) :
     if number_3 == 0 :
       self.arr = []
@@ -237,7 +274,7 @@ class Basic_Calculation(commands.Cog):
       await ctx.send(embed = self.embed)
 
   # ? <--- Command to find the lowest common multiple of multiple number
-  @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.")
+  @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.",name = "lowest common multiple")
   async def lowest_common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int) :
     if number_3 == 0 :
       self.eval = lcm(number_1, number_2)

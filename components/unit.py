@@ -6,13 +6,41 @@ from fraction import Fraction
 # ! <--- Class for Unit_Converter
 class Unit_Converter(commands.Cog):
 
+  """
+  Unit_Converter is a class that contains unit conversion commands.
+
+  Commands :
+  ----------
+  mm_cm : return `str` embed
+
+  cm_m : return `str` embed
+
+  m_km : return `str` embed
+
+  km_m : return `str` embed
+
+  m_cm : return `str` embed
+
+  g_kg : return `str` embed
+
+  kg_g : return `str` embed
+
+  ml_l : return `str` embed
+
+  l_ml : return `str` embed
+
+  frac_decimal : return `str` embed
+
+  decimal_frac : return `str` embed
+  """
+
   # ? <---  Initialize variable for class
   def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
 
   # ? <--- Command to convert mm to cm
-  @ cog_ext.cog_slash(description = "Convert milimeter to centimeter.")
+  @ cog_ext.cog_slash(description = "Convert milimeter to centimeter.", name = "milimeter to centimeter")
   async def mm_cm(self,ctx,milimeter : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -23,7 +51,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert cm to m
-  @ cog_ext.cog_slash(description = "Convert centimeter to meter.")
+  @ cog_ext.cog_slash(description = "Convert centimeter to meter.", name = "centimeter to meter")
   async def cm_m(self,ctx,centimeter : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -34,7 +62,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
     
   # ? <--- Command to m to km
-  @ cog_ext.cog_slash(description = "Convert meter to kilometer.")
+  @ cog_ext.cog_slash(description = "Convert meter to kilometer.", name = "meter to kilometer")
   async def m_km(self,ctx,meter : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -45,7 +73,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
     
   # ? <--- Command to km to m
-  @ cog_ext.cog_slash(description = "Convert kilometer to meter.")
+  @ cog_ext.cog_slash(description = "Convert kilometer to meter.", name = "kilometer to meter")
   async def km_m(self,ctx,kilometer : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -56,7 +84,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
     
   # ? <--- Command to convert m to cm
-  @ cog_ext.cog_slash(description = "Convert meter to centimeter.")
+  @ cog_ext.cog_slash(description = "Convert meter to centimeter.", name = "meter to centimeter")
   async def m_cm(self,ctx,meter : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -67,7 +95,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
     
   # ? <--- Command to convert cm to mm
-  @ cog_ext.cog_slash(description = "Convert centimeter to milimeter.")
+  @ cog_ext.cog_slash(description = "Convert centimeter to milimeter.", name = "centimeter to milimeter")
   async def cm_mm(self,ctx,centimeter : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -78,7 +106,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command convert g to kg
-  @ cog_ext.cog_slash(description = "Convert gram to kilogram.")
+  @ cog_ext.cog_slash(description = "Convert gram to kilogram.", name = "gram to kilogram")
   async def g_kg(self,ctx,gram : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -89,7 +117,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert kg to g
-  @ cog_ext.cog_slash(description = "Convert kilogram to gram.")
+  @ cog_ext.cog_slash(description = "Convert kilogram to gram.", name = "kilogram to gram")
   async def kg_g(self,ctx,kilogram : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -100,7 +128,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert ml to l
-  @ cog_ext.cog_slash(description = "Convert mililitre to litre.")
+  @ cog_ext.cog_slash(description = "Convert mililitre to litre.", name = "mililitre to litre")
   async def ml_l(self,ctx,mililitre : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -111,7 +139,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert l to ml
-  @ cog_ext.cog_slash(description = "Convert litre to mililitre.")
+  @ cog_ext.cog_slash(description = "Convert litre to mililitre.", name = "litre to mililitre")
   async def l_ml(self, ctx, litre : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -122,7 +150,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert decimal to fraction
-  @ cog_ext.cog_slash(description = "Convert a decimal number to fraction.")
+  @ cog_ext.cog_slash(description = "Convert a decimal number to fraction.", name = "fraction to decimal")
   async def decimal_frac(self, ctx, decimal : float) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
@@ -133,7 +161,7 @@ class Unit_Converter(commands.Cog):
     await ctx.send(embed = self.embed)
 
   # ? <--- Command to convert fraction to decimal
-  @ cog_ext.cog_slash(description = "Convert a fraction value to a decimal number.")
+  @ cog_ext.cog_slash(description = "Convert a fraction value to a decimal number.", name = "decimal to fraction")
   async def frac_decimal(self,ctx, numerator : int, denominator : int) :
     self.user = ctx.author
     self.embed = discord.Embed(title = "Unit Converter", colour = discord.Color.from_rgb(238, 238, 155))
