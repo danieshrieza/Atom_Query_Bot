@@ -44,7 +44,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric current of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric current of an object.", name = "electric current")
+    @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         self.eval = electric_voltage/electric_resistance
@@ -57,7 +57,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric voltage of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.", name = "electric voltage")
+    @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
         self.exp = f"{electric_current} A × {electric_resistance} Ω"
         self.eval = electric_current * electric_resistance
@@ -70,7 +70,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate electric resisteance of an object
-    @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.", name = "electric resistance")
+    @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_current} A"
         self.eval = electric_voltage/electric_current
@@ -83,7 +83,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = self.embed)
 
     # ? <--- Command to calculate moment of force of an object
-    @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.", name = "moment of force")
+    @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
     async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
         self.exp = f"{force} N × {perpendicular_distance} m "
         self.eval = force * perpendicular_distance
