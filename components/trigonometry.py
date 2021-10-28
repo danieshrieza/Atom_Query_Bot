@@ -27,7 +27,7 @@ class Trigonometry_Calculation(commands.Cog):
 
   # ? <--- Command to find sine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
-  async def sine(self,ctx, number : float):
+  async def sin(self,ctx, number : float):
     self.exp = f"sin {number}°"
     self.eval = math.sin(number)
     self.user = ctx.author
@@ -40,7 +40,7 @@ class Trigonometry_Calculation(commands.Cog):
 
   # ? <--- Command to find cosine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
-  async def cosine(self,ctx, number : float):
+  async def cos(self,ctx, number : float):
     self.exp = f"cos {number}°"
     self.eval = math.cos(number)
     self.user = ctx.author
