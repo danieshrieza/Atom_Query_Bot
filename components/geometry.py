@@ -46,10 +46,9 @@ class Geometry_Calculation(commands.Cog) :
   """
 
   # ? <--- Initialize variable for class
-  def __init__(self, ctx, client):
+  def __init__(self, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
-    self.user = ctx.author
     self.embed = discord.Embed(title = "Geometry Query", colour = discord.Color.from_rgb(244, 113, 116))
 
   # ? <--- Command to calculate circumference of a circle using diameter or radius
@@ -58,7 +57,7 @@ class Geometry_Calculation(commands.Cog) :
     if (radius == 0) :
       self.exp = f"22/7 × {diameter}"
       self.eval = 22/7 * diameter
-      self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
       self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
@@ -66,7 +65,7 @@ class Geometry_Calculation(commands.Cog) :
     elif (diameter == 0) :
       self.exp = f"2 × 22/7 × {radius}"
       self.eval = 2 * 22/7 * radius
-      self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
       self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
@@ -79,7 +78,7 @@ class Geometry_Calculation(commands.Cog) :
   async def area_circle(self,ctx,radius : float) :
     self.exp = f"22/7 × {radius}²"
     self.eval = 22/7 * radius ** 2
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -90,7 +89,7 @@ class Geometry_Calculation(commands.Cog) :
   async def area_quadrilateral(self,ctx,length : float, width : float) :
     self.exp = f"{length} × {width}"
     self.eval = length * width
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -101,7 +100,7 @@ class Geometry_Calculation(commands.Cog) :
   async def area_triangle(self,ctx,base : float, height : float) :
     self.exp = f"1/2 × {base} × {height}"
     self.eval = 1/2 * base * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -112,7 +111,7 @@ class Geometry_Calculation(commands.Cog) :
   async def area_parallelogram(self,ctx,base : float, height : float) :
     self.exp = f"{base} × {height}"
     self.eval = base * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -123,7 +122,7 @@ class Geometry_Calculation(commands.Cog) :
   async def area_kite(self,ctx,long_diagonal : float, short_diagonal : float) :
     self.exp = f"1/2 × {long_diagonal} × {short_diagonal}"
     self.eval = 1/2 * long_diagonal * short_diagonal   
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -134,7 +133,7 @@ class Geometry_Calculation(commands.Cog) :
   async def a_trampezium(self,ctx,first_parallel : float, second_parallel : float, height : float) :
     self.exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
     self.eval = 1/2 * (first_parallel + second_parallel) * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -145,7 +144,7 @@ class Geometry_Calculation(commands.Cog) :
   async def surface_area_quadrilateral(self,ctx,length : float, width : float, height : float) :
     self.exp = f"2({length} * {width}) + 2({length} × {height}) + 2({width} × {height})"
     self.eval = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -156,7 +155,7 @@ class Geometry_Calculation(commands.Cog) :
   async def surface_area_pyramid(self,ctx,length : float, width : float, face_height : float) :
     self.exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
     self.eval = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -167,7 +166,7 @@ class Geometry_Calculation(commands.Cog) :
   async def surface_area_cylinder(self,ctx,radius : float, height : float) :
     self.exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
     self.eval = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -178,7 +177,7 @@ class Geometry_Calculation(commands.Cog) :
   async def surface_area_cone(self,ctx,radius : float, slant_height : float) :
     self.exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
     self.eval = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -189,7 +188,7 @@ class Geometry_Calculation(commands.Cog) :
   async def surface_area_sphere(self,ctx,radius : float) :
     self.exp = f"4 × 22/7 × {radius}²"
     self.eval = 4 * 22/7 * (radius ** 2)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -200,7 +199,7 @@ class Geometry_Calculation(commands.Cog) :
   async def volume_quadrilateral(self,ctx,length : float, width : float, height : float) :
     self.exp = f"{length} × {width} × {height}"
     self.eval = length * width * height 
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -211,7 +210,7 @@ class Geometry_Calculation(commands.Cog) :
   async def volume_pyramid(self,ctx,length : float,width : float,height : float) :
     self.exp = f"1/3 × {length} × {width} × {height}"
     self.eval = 1/3 * length * width * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -222,7 +221,7 @@ class Geometry_Calculation(commands.Cog) :
   async def volume_cylinder(self,ctx,radius : float, height : float) :
     self.exp = f"22/7 × {radius}² × {height} "
     self.eval = 22/7 * (radius ** 2) * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -233,7 +232,7 @@ class Geometry_Calculation(commands.Cog) :
   async def volume_cone(self,ctx,radius : float, height : float) :
     self.exp = f"1/3 × 22/7 × {radius}² × {height}"
     self.eval = 1/3 * 22/7 * (radius ** 2) * height
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)
@@ -244,7 +243,7 @@ class Geometry_Calculation(commands.Cog) :
   async def volume_sphere(self,ctx,radius : float) :
     self.exp = f"4/3 × 22/7 × {radius}²"
     self.eval = 4/3 * 22/7 * (radius ** 2)
-    self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
     self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
     self.embed.set_thumbnail(url = self.link)

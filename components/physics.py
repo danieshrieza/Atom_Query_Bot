@@ -26,18 +26,17 @@ class Physics_Calculation(commands.Cog) :
     """
 
     # ? <--- Initialize variable for class
-    def __init__(self,ctx, client) :
+    def __init__(self, client) :
         self.client = client
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
         self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
-        self.user = ctx.author
 
     # ? <--- Command to calculate speed of an object
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
     async def speed(self, ctx, distance : float, time : float) :
         self.exp = f"{distance} ÷ {time}"
         self.eval = distance/time
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.eval} m/s`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -48,7 +47,7 @@ class Physics_Calculation(commands.Cog) :
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         self.eval = electric_voltage/electric_resistance
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.eval} A`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -59,7 +58,7 @@ class Physics_Calculation(commands.Cog) :
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
         self.exp = f"{electric_current} A × {electric_resistance} Ω"
         self.eval = electric_current * electric_resistance
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.eval} V`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -70,7 +69,7 @@ class Physics_Calculation(commands.Cog) :
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
         self.exp = f"{electric_voltage} V ÷ {electric_current} A"
         self.eval = electric_voltage/electric_current
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :" , value = f"`{self.eval} Ω`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -81,7 +80,7 @@ class Physics_Calculation(commands.Cog) :
     async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
         self.exp = f"{force} N × {perpendicular_distance} m "
         self.eval = force * perpendicular_distance
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval} N m`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -92,7 +91,7 @@ class Physics_Calculation(commands.Cog) :
     async def pressure(self, ctx, force : float, surface_area : float) :
         self.exp = f"{force} N ÷ {surface_area} m²"
         self.eval = force/surface_area
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval} N/m²`", inline = True)
         self.embed.set_thumbnail(url = self.link)
@@ -103,7 +102,7 @@ class Physics_Calculation(commands.Cog) :
     async def density(self, ctx, mass : float, volume : float) :
         self.exp = f'{mass} g ÷ {volume} cm³'
         self.eval = mass/volume
-        self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
+        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = f"Output :", value = f"`{self.eval} g/cm³`", inline = True)
         self.embed.set_thumbnail(url = self.link)
