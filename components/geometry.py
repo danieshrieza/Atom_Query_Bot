@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands.errors import NoPrivateMessage
 from discord_slash import cog_ext
 
 # ! <--- Class for Geometry_Calculation 
@@ -53,8 +54,8 @@ class Geometry_Calculation(commands.Cog) :
 
   # ? <--- Command to calculate circumference of a circle using diameter or radius
   @ cog_ext.cog_slash(description = "Calculate the circumference of a circle using diameter or radius")
-  async def circle_circumference(self,ctx, diameter : float, radius : float) :
-    if (radius == 0) :
+  async def circle_circumference(self,ctx, radius : float = None, diameter : float = None) :
+    if (radius == None and diameter != None) :
       self.exp = f"22/7 × {diameter}"
       self.eval = 22/7 * diameter
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -62,7 +63,7 @@ class Geometry_Calculation(commands.Cog) :
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
-    elif (diameter == 0) :
+    elif (diameter == None and radius != None) :
       self.exp = f"2 × 22/7 × {radius}"
       self.eval = 2 * 22/7 * radius
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -71,18 +72,29 @@ class Geometry_Calculation(commands.Cog) :
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
     else :
-      await ctx.send("Please provide input for only one argument. Please insert 0 on the non-required argument.")
+      await ctx.send("Please provide input for only one optional argument.")
 
   # ? <--- Commmand to calculate area of a circle
   @ cog_ext.cog_slash(description = "Calculate the area of a circle.")
-  async def area_circle(self,ctx,radius : float) :
-    self.exp = f"22/7 × {radius}²"
-    self.eval = 22/7 * radius ** 2
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def area_circle(self,ctx,radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"22/7 × {radius}²"
+      self.eval = 22/7 * radius ** 2
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"22/7 × ({diameter}/2)²"
+      self.eval = 22/7 * (diameter/2) ** 2
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
 
   # ? <--- Command to calculate area of a quadrilateral
   @ cog_ext.cog_slash(description = "Calculate the area of a rectangle, a square or a quadrilateral.")
@@ -130,7 +142,7 @@ class Geometry_Calculation(commands.Cog) :
 
   # ? <--- Command to calculate area of a trampezium
   @ cog_ext.cog_slash(description = "Calculate the area of a trampezium.")
-  async def a_trampezium(self,ctx,first_parallel : float, second_parallel : float, height : float) :
+  async def area_trampezium(self,ctx,first_parallel : float, second_parallel : float, height : float) :
     self.exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
     self.eval = 1/2 * (first_parallel + second_parallel) * height
     self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -163,36 +175,69 @@ class Geometry_Calculation(commands.Cog) :
   
   # ? <--- Command to calculate surface area of a cylinder
   @ cog_ext.cog_slash(description = "Calculate the surface area of a cylinder.")
-  async def surface_area_cylinder(self,ctx,radius : float, height : float) :
-    self.exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
-    self.eval = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def surface_area_cylinder(self,ctx, height : float, radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
+      self.eval = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"(2 × 22/7 × ({diameter}/2)²) + (2 × 22/7 × ({diameter}/2) × {height})"
+      self.eval = (2 * 22/7 * ((diameter/2) ** 2)) + (2 * 22/7 * (diameter/2) * height)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
     
   # ? <--- Command to calculate surface area of a cone
   @ cog_ext.cog_slash(description = "Calculate the surface area of a cone.")
-  async def surface_area_cone(self,ctx,radius : float, slant_height : float) :
-    self.exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
-    self.eval = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def surface_area_cone(self,ctx, slant_height : float, radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
+      self.eval = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"(22/7 × ({diameter}/2)²) + (22/7 × ({diameter}/2) × {slant_height})"
+      self.eval = (22/7 * ((diameter/2) ** 2)) + (22/7 * (diameter/2) * slant_height)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
     
   # ? <--- Command to calculte surface area of a sphere
   @ cog_ext.cog_slash(description = "Calculate the surface area of a sphere.")
-  async def surface_area_sphere(self,ctx,radius : float) :
-    self.exp = f"4 × 22/7 × {radius}²"
-    self.eval = 4 * 22/7 * (radius ** 2)
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def surface_area_sphere(self,ctx,radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"4 × 22/7 × {radius}²"
+      self.eval = 4 * 22/7 * (radius ** 2)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"4 × 22/7 × ({diameter}/2)²"
+      self.eval = 4 * 22/7 * ((diameter/2) ** 2)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
 
   # ? <--- Command to calculate volume of a cube or a cuboid
   @ cog_ext.cog_slash(description = "Calculate the volume of a cube or a cuboid.")
@@ -218,36 +263,69 @@ class Geometry_Calculation(commands.Cog) :
 
   # ? <--- Command to calculate volume of a cylinder
   @ cog_ext.cog_slash(description = "Calculate the volume of a cylinder.")
-  async def volume_cylinder(self,ctx,radius : float, height : float) :
-    self.exp = f"22/7 × {radius}² × {height} "
-    self.eval = 22/7 * (radius ** 2) * height
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def volume_cylinder(self, ctx, height : float, radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"22/7 × {radius}² × {height} "
+      self.eval = 22/7 * (radius ** 2) * height
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"22/7 × ({diameter}/2)² × {height} "
+      self.eval = 22/7 * ((diameter/2) ** 2) * height
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
     
   # ? <--- Command to calculate volume of a cone
   @ cog_ext.cog_slash(description = "Calculate the volume of a cone.")
-  async def volume_cone(self,ctx,radius : float, height : float) :
-    self.exp = f"1/3 × 22/7 × {radius}² × {height}"
-    self.eval = 1/3 * 22/7 * (radius ** 2) * height
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def volume_cone(self, ctx, height : float, radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"1/3 × 22/7 × {radius}² × {height}"
+      self.eval = 1/3 * 22/7 * (radius ** 2) * height
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"1/3 × 22/7 × ({diameter}/2)² × {height}"
+      self.eval = 1/3 * 22/7 * ((diameter/2) ** 2) * height
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
 
   # ? <--- Command to calculate volume of a sphere
   @ cog_ext.cog_slash(description = "Calculate the volume of a sphere.")
-  async def volume_sphere(self,ctx,radius : float) :
-    self.exp = f"4/3 × 22/7 × {radius}²"
-    self.eval = 4/3 * 22/7 * (radius ** 2)
-    self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-    self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-    self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
-    self.embed.set_thumbnail(url = self.link)
-    await ctx.send(embed = self.embed)
+  async def volume_sphere(self, ctx, radius : float = None, diameter : float = None) :
+    if (diameter == None and radius != None) :
+      self.exp = f"4/3 × 22/7 × {radius}²"
+      self.eval = 4/3 * 22/7 * (radius ** 2)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    elif (radius == None and diameter != None) :
+      self.exp = f"4/3 × 22/7 × {diameter}/2²"
+      self.eval = 4/3 * 22/7 * ((diameter/2) ** 2)
+      self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+      self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
+      self.embed.add_field(name = "Output :" , value = f"`{self.eval}`", inline = True)
+      self.embed.set_thumbnail(url = self.link)
+      await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("Please provide input for only one optional argument.")
 
 # ! <--- Add Geometry_Calculation into the bot
 def setup(client):

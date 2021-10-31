@@ -61,8 +61,8 @@ class Trigonometry_Calculation(commands.Cog):
 
   # ? <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
   @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.")
-  async def pythagoras_theorem(self,ctx, height : float, base : float, hypotenuse : float):
-    if hypotenuse == 0 :
+  async def pythagoras_theorem(self,ctx, height : float = None, base : float = None, hypotenuse : float = None):
+    if (hypotenuse == None and height != None and base != None) :
       self.exp = f"√{base}² + {height}²"
       self.eval = math.sqrt((base ** 2) + (height ** 2))
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -70,7 +70,7 @@ class Trigonometry_Calculation(commands.Cog):
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
-    elif height == 0 :
+    elif (height == None and hypotenuse != None and base != None) :
       if hypotenuse > base :
         self.exp = f"√{hypotenuse}² - {base}²"
         self.eval = math.sqrt((hypotenuse ** 2) - (base ** 2))
@@ -87,7 +87,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
-    elif base == 0 :
+    elif (base == None and hypotenuse != None and height != None) :
       if hypotenuse > height :
         self.exp = f"√{hypotenuse}² - {height}²"
         self.eval = math.sqrt((hypotenuse ** 2) - (height ** 2))
@@ -105,7 +105,7 @@ class Trigonometry_Calculation(commands.Cog):
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
     else :
-      await ctx.send("You only need to provide two value for two arguments.")
+      await ctx.send("Please provide input for only one optional argument.")
 
 # ! <--- Add Triginometry_Calculation into the bot
 def setup(client):
