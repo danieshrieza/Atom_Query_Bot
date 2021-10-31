@@ -21,17 +21,17 @@ class Trigonometry_Calculation(commands.Cog):
   """
   
    # ? <--- Initialize variable for class
-  def __init__(self, client):
+  def __init__(self, ctx, client):
     self.client = client
     self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/912c1601116f083c03ecc0a8a7b00697.png?size=128"
+    self.user = ctx.author
+    self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
 
   # ? <--- Command to find sine of a triangle
   @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
   async def sin(self,ctx, number : float):
     self.exp = f"sin {number}°"
     self.eval = math.sin(number)
-    self.user = ctx.author
-    self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -43,8 +43,6 @@ class Trigonometry_Calculation(commands.Cog):
   async def cos(self,ctx, number : float):
     self.exp = f"cos {number}°"
     self.eval = math.cos(number)
-    self.user = ctx.author
-    self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -56,8 +54,6 @@ class Trigonometry_Calculation(commands.Cog):
   async def tan(self,ctx, number : float):
     self.exp = f"tan {number}°"
     self.eval = math.tan(number)
-    self.user = ctx.author
-    self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
     self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
     self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
     self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -70,8 +66,6 @@ class Trigonometry_Calculation(commands.Cog):
     if hypotenuse == 0 :
       self.exp = f"√{base}² + {height}²"
       self.eval = math.sqrt((base ** 2) + (height ** 2))
-      self.user = ctx.author
-      self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
       self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
       self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -81,8 +75,6 @@ class Trigonometry_Calculation(commands.Cog):
       if hypotenuse > base :
         self.exp = f"√{hypotenuse}² - {base}²"
         self.eval = math.sqrt((hypotenuse ** 2) - (base ** 2))
-        self.user = ctx.author
-        self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -91,8 +83,6 @@ class Trigonometry_Calculation(commands.Cog):
       else :
         self.exp = f"√{base}² - {hypotenuse}²"
         self.eval = math.sqrt((base ** 2) - (hypotenuse ** 2))
-        self.user = ctx.author
-        self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -102,8 +92,6 @@ class Trigonometry_Calculation(commands.Cog):
       if hypotenuse > height :
         self.exp = f"√{hypotenuse}² - {height}²"
         self.eval = math.sqrt((hypotenuse ** 2) - (height ** 2))
-        self.user = ctx.author
-        self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
@@ -112,13 +100,13 @@ class Trigonometry_Calculation(commands.Cog):
       else :
         self.exp = f"√{height}² - {hypotenuse}²"
         self.eval = math.sqrt((height ** 2) - (hypotenuse ** 2))
-        self.user = ctx.author
-        self.embed = discord.Embed(title = "Trigonometry Query", colour = discord.Color.from_rgb(147, 202, 237))
         self.embed.set_author(name = f"{self.user.name}'s query.", icon_url = self.user.avatar_url)
         self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
         self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
         self.embed.set_thumbnail(url = self.link)
         await ctx.send(embed = self.embed)
+    else :
+      await ctx.send("You only need to provide two value for two arguments.")
 
 # ! <--- Add Triginometry_Calculation into the bot
 def setup(client):
