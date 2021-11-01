@@ -86,8 +86,8 @@ class Geometry_Calculation(commands.Cog) :
       self.embed.set_thumbnail(url = self.link)
       await ctx.send(embed = self.embed)
     elif (radius == None and diameter != None) :
-      self.exp = f"22/7 × ({diameter}/2)"
-      self.eval = 22/7 * (diameter/2)
+      self.exp = f"22/7 × {diameter}"
+      self.eval = 22/7 * diameter
       self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
       self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
       self.embed.add_field(name = "Output :", value = f"`{self.eval}`", inline = True)
