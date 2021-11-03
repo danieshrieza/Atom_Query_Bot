@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
+from numpy import False_
 
 # ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
@@ -14,19 +15,22 @@ class Help_Command(commands.Cog) :
     async def help(self, ctx) :
         self.embed = discord.Embed(title = "Help!", description = "Listing all commands on Basic Calculator.", color = discord.Color.from_rgb(175, 143, 233))
         self.embed.add_field(name = "Basic Commands :", 
-        value = "`cal` `generator` `square` `cube` `square root` `cube root` `variable power` `variable root` \n `factor` `common factor` `highest common factor` `multiple` `common multiple` `lowest common multiple` \n `terminate`",
+        value = "`cal` `generator` `square` `cube` `square_root` `cube_root` `var_power` `var_root` \n `factor` `common_factor` `highest_common_factor` `multiple` `common_multiple` `lowest_common_multiple` \n `terminate`",
         inline = False)
         self.embed.add_field(name = "Geometry Commands :",
-        value = "`circle circumference` `area of circle` `area of quadrilateral` \n `area of triangle` `area of parallelogram` `area of trampezium` `area of kite` `surface area of cube` `surface area of cuboid` \n `surface area of pyramid` `surface area of cylinder` `surface area of cone` `surface area of sphere` \n `volume of quadrilateral` `volume of pyramid` `volume of cylinder` `volume of cone` `volume of sphere`",
+        value = "`circle_circumference` `area_circle` `area_quadrilateral` \n `area_triangle` `area_parallelogram` `area_trampezium` `area_kite` `surface_area_cube` `surface_area_cuboid` \n `surface_area_pyramid` `surface_area_cylinder` `surface_area_cone` `surface_area_sphere` \n `volume_quadrilateral` `volume_pyramid` `volume_cylinder` `volume_cone` `volume_sphere`",
         inline = False)
         self.embed.add_field(name = "Trigonometry Commands :", 
-        value = "`sine` `cosine` `tangent` `pythagoras theorem`",
+        value = "`sine` `cosine` `tangent` `pythagoras_theorem`",
         inline = False)
         self.embed.add_field(name = "Unit Commands :",
-        value = "`milimeter to centimeter` `centimeter to meter` `meter to kilometer` `kilometer to meter` `meter to centimeter` `centimeter to meter` `gram to kilogram` `kilogram to gram` `mililitre to litre` `litre to mililitre` `decimal to fraction` `fraction to decimal`",
+        value = "`mm_cm` `cm_m` `m_km` `km_m` `m_cm` `cm_mm` `g_kg` `kg_g` `ml_l` `l_ml` `decimal_fraction` `fraction_decimal`",
         inline = False)
         self.embed.add_field(name = "Physics Commands :", 
-        value = "`density` `electric current` `electric resistance` \n `electric voltage` `speed` `moment of force` `pressure`",
+        value = "`density` `electric_current` `electric_resistance` \n `electric_voltage` `speed` `moment_of_force` `pressure`",
+        inline = False)
+        self.embed.add_field(name = "Cartesian Query :", 
+        value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function`", 
         inline = False)
         self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         self.embed.set_thumbnail(url = self.link)
