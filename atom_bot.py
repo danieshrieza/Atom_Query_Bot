@@ -17,58 +17,58 @@ status = cycle([
     " Near-infinite density", 
     " Dark matter ",
     " Schrodinger's cat",
-    " The light side of Discord is a pathway to many abilities some consider unnatural",
-    " Recursion in life"
+    " Recursion in life",
+    " A person stuck in a while loop"
 ])
 
 # ? <--- Looping through status
 @ tasks.loop(minutes = 5)
 async def status_swap():
-  await client.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
+    await client.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
 
 # ? <--- Activating bot once it's ready
 @ client.event
 async def on_ready():
-  print("I have logged in as {0.user}".format(client))
-  status_swap.start()
+    print("I have logged in as {0.user}".format(client))
+    status_swap.start()
 
 # ? <--- Command to reload components file for owner
 @ commands.is_owner()
 @ client.command()
 async def reload(ctx, extension) :
-  try :
-    client.reload_extension(f"components.{extension}")
-    print(f"Reload : {ctx.author.name}")
-    await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(client), delete_after = 3)
-  except :
-    await ctx.send(f"`{extension}` not found.")
+    try :
+        client.reload_extension(f"components.{extension}")
+        print(f"Reload : {ctx.author.name}")
+        await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(client), delete_after = 3)
+    except :
+        await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to load components file for owner
 @ commands.is_owner()
 @ client.command()
 async def load(ctx, extension) :
-  try :
-    client.load_extension(f"components.{extension}")
-    print(f"Load : {ctx.author.name}")
-    await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(client), delete_after = 3)
-  except :
-    await ctx.send(f"`{extension}` not found.")
+    try :
+        client.load_extension(f"components.{extension}")
+        print(f"Load : {ctx.author.name}")
+        await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(client), delete_after = 3)
+    except :
+        await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to unload components file for owner
 @ commands.is_owner()
 @ client.command()
 async def unload(ctx, extension) :
-  try :
-    client.unload_extension(f"components.{extension}")
-    print(f"Unload : {ctx.author.name}")
-    await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(client), delete_after = 3)
-  except :
-    await ctx.send(f"`{extension}` not found.")
+    try :
+        client.unload_extension(f"components.{extension}")
+        print(f"Unload : {ctx.author.name}")
+        await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(client), delete_after = 3)
+    except :
+        await ctx.send(f"`{extension}` not found.")
 
 # ! <--- Load components file once bot is ready
 for filename in os.listdir("./components") :
-  if filename.endswith(".py"):
-    client.load_extension(f"components.{filename[:-3]}")
+    if filename.endswith(".py"):
+        client.load_extension(f"components.{filename[:-3]}")
 
 # ! <--- Key for bot to run
 client.run(os.environ['MATH_VAR'])
