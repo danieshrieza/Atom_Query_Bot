@@ -7,7 +7,7 @@ authors = ["DanieshNoor <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "^2.0.2"
-Fraction = "^1.5.1"
+Fraction = "^2.1.1"
 discord = "^1.7.3"
 discord-py-slash-command = "^3.0.1"
 
