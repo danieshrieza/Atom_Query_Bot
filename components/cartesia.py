@@ -30,10 +30,9 @@ class Cartesian_Query(commands.Cog) :
     # ? <--- Command to plot linear graph
     @ cog_ext.cog_slash(description = "Plot a linear graph using the equation y = mx + c.")
     async def linear_function(self, ctx, gradient : int, y_intercept : int) :
-        self.embed = discord.Embed(title = "Cartesian Query", colour = discord.Color.from_rgb(255,0,255))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         x = np.linspace(-5,5,100)
         y = gradient * x + y_intercept
+        file = discord.File("./image/linear.png", filename = './image/linear.png')
         plt.plot(x, y, '-r', label = f'y = {gradient}x + {y_intercept}')
         plt.title(f'Graph of y = {gradient}x + {y_intercept}') 
         plt.xlabel('x', color='#1C2833')
@@ -42,16 +41,14 @@ class Cartesian_Query(commands.Cog) :
         plt.grid()
         plt.savefig("./image/linear.png")
         plt.close()
-        self.embed.set_image(url = "https://replit.com/@DanieshNoor/testbot#image/linear.png")
-        await ctx.send(embed = self.embed)
+        await ctx.send(file = file)
 
     # ? <--- Command to plot quadratic graph
     @ cog_ext.cog_slash(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
     async def quadratic_function(self, ctx, a : int, b : int, c : int) :
-        self.embed = discord.Embed(title = "Cartesian Query", colour = discord.Color.from_rgb(255,0,255))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         x = np.linspace(-5,5,100)
         y = (a * x) ** 2 + (b * x) + c
+        file = discord.File("./image/quad.png", filename = './image/quad.png')
         plt.plot(x, y, '-r', label = f'y = {a}x² + {b}x + {c}')
         plt.title(f'Graph of y = {a}x² + {b}x + {c}') 
         plt.xlabel('x', color='#1C2833')
@@ -60,16 +57,14 @@ class Cartesian_Query(commands.Cog) :
         plt.grid()
         plt.savefig("./image/quad.png")
         plt.close()
-        self.embed.set_image(url = "https://replit.com/@DanieshNoor/testbot#image/quad.png")
-        await ctx.send(embed = self.embed)
+        await ctx.send(file = file)
 
     # ? <--- Command to plot quadratic graph
     @ cog_ext.cog_slash(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
     async def cubic_function(self, ctx, a : int, b : int, c : int, d : int) :
-        self.embed = discord.Embed(title = "Cartesian Query", colour = discord.Color.from_rgb(255,0,255))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         x = np.linspace(-5,5,100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d
+        file = discord.File("./image/cube.png", filename = './image/cube.png')
         plt.plot(x, y, '-r', label = f'y = {a}x³ + {b}x² + {c}x + {d}')
         plt.title(f'Graph of y = {a}x³ + {b}x² + {c}x + {d}') 
         plt.xlabel('x', color='#1C2833')
@@ -78,16 +73,14 @@ class Cartesian_Query(commands.Cog) :
         plt.grid()
         plt.savefig("./image/cube.png")
         plt.close()
-        self.embed.set_image(url = "https://replit.com/@DanieshNoor/testbot#image/cube.png")
-        await ctx.send(embed = self.embed)
+        await ctx.send(file = file)
 
     # ? <--- Command to plot reciprocal graph
     @ cog_ext.cog_slash(description = "Plot a reciprocal graph using the equation y = 1/x.")
     async def reciprocal_function(self, ctx) :
-        self.embed = discord.Embed(title = "Cartesian Query", colour = discord.Color.from_rgb(255,0,255))
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         x = np.linspace(-5,5,100)
         y = 1/x
+        file = discord.File("./image/reci.png", filename = './image/reci.png')
         plt.plot(x, y, '-r', label = f'y = 1/x')
         plt.title(f'Graph of y = 1/x') 
         plt.xlabel('x', color='#1C2833')
@@ -96,8 +89,7 @@ class Cartesian_Query(commands.Cog) :
         plt.grid()
         plt.savefig("./image/reci.png")
         plt.close()
-        self.embed.set_image(url = "https://replit.com/@DanieshNoor/testbot#image/reci.png")
-        await ctx.send(embed = self.embed)
+        await ctx.send(file = file)
 
 # ! <--- Add Cartesian_Query into the bot
 def setup(client) :
