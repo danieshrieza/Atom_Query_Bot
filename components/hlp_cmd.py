@@ -29,7 +29,7 @@ class Help_Command(commands.Cog) :
         self.embed.add_field(name = "Physics Commands :", 
         value = "`density` `electric_current` `electric_resistance` \n `electric_voltage` `speed` `moment_of_force` `pressure`",
         inline = False)
-        self.embed.add_field(name = "Cartesian Query :", 
+        self.embed.add_field(name = "Cartesian Commands :", 
         value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function`", 
         inline = False)
         self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)

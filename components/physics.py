@@ -33,7 +33,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate speed of an object
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
     async def speed(self, ctx, distance : float, time : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{distance} ÷ {time}"
         self.eval = distance/time
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -45,7 +45,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate electric current of an object
     @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         self.eval = electric_voltage/electric_resistance
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -57,7 +57,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate electric voltage of an object
     @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{electric_current} A × {electric_resistance} Ω"
         self.eval = electric_current * electric_resistance
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -69,7 +69,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate electric resisteance of an object
     @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{electric_voltage} V ÷ {electric_current} A"
         self.eval = electric_voltage/electric_current
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -81,7 +81,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate moment of force of an object
     @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
     async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{force} N × {perpendicular_distance} m "
         self.eval = force * perpendicular_distance
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -93,7 +93,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate the pressure acts on an object
     @ cog_ext.cog_slash(description = "Calculate the pressure acts on an object.")
     async def pressure(self, ctx, force : float, surface_area : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f"{force} N ÷ {surface_area} m²"
         self.eval = force/surface_area
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -105,7 +105,7 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate the density of an object
     @ cog_ext.cog_slash(description = "Calculate the density of an object.")
     async def density(self, ctx, mass : float, volume : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(64,224,208))
+        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
         self.exp = f'{mass} g ÷ {volume} cm³'
         self.eval = mass/volume
         self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
