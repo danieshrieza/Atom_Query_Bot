@@ -33,86 +33,86 @@ class Physics_Calculation(commands.Cog) :
     # ? <--- Command to calculate speed of an object
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
     async def speed(self, ctx, distance : float, time : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{distance} ÷ {time}"
-        self.eval = distance/time
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.eval} m/s`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{distance} ÷ {time}"
+        eval = distance/time
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :" , value = f"`{eval} m/s`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
     # ? <--- Command to calculate electric current of an object
     @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
     async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
-        self.eval = electric_voltage/electric_resistance
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.eval} A`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
+        eval = electric_voltage/electric_resistance
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :" , value = f"`{eval} A`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
     # ? <--- Command to calculate electric voltage of an object
     @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
     async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{electric_current} A × {electric_resistance} Ω"
-        self.eval = electric_current * electric_resistance
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.eval} V`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{electric_current} A × {electric_resistance} Ω"
+        eval = electric_current * electric_resistance
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :" , value = f"`{eval} V`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
     # ? <--- Command to calculate electric resisteance of an object
     @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
     async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{electric_voltage} V ÷ {electric_current} A"
-        self.eval = electric_voltage/electric_current
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :",value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :" , value = f"`{self.eval} Ω`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{electric_voltage} V ÷ {electric_current} A"
+        eval = electric_voltage/electric_current
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :" , value = f"`{eval} Ω`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
     # ? <--- Command to calculate moment of force of an object
     @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
     async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{force} N × {perpendicular_distance} m "
-        self.eval = force * perpendicular_distance
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :", value = f"`{self.eval} N m`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{force} N × {perpendicular_distance} m "
+        eval = force * perpendicular_distance
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :", value = f"`{eval} N m`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
     # ? <--- Command to calculate the pressure acts on an object
     @ cog_ext.cog_slash(description = "Calculate the pressure acts on an object.")
     async def pressure(self, ctx, force : float, surface_area : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f"{force} N ÷ {surface_area} m²"
-        self.eval = force/surface_area
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = "Output :", value = f"`{self.eval} N/m²`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f"{force} N ÷ {surface_area} m²"
+        eval = force/surface_area
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = "Output :", value = f"`{eval} N/m²`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
     
     # ? <--- Command to calculate the density of an object
     @ cog_ext.cog_slash(description = "Calculate the density of an object.")
     async def density(self, ctx, mass : float, volume : float) :
-        self.embed = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
-        self.exp = f'{mass} g ÷ {volume} cm³'
-        self.eval = mass/volume
-        self.embed.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
-        self.embed.add_field(name = "Input :", value = f"`{self.exp}`", inline = False)
-        self.embed.add_field(name = f"Output :", value = f"`{self.eval} g/cm³`", inline = True)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.send(embed = self.embed)
+        emby_ctx = discord.Embed(title = "Physics Query", colour = discord.Color.from_rgb(127, 0, 255))
+        exp = f'{mass} g ÷ {volume} cm³'
+        eval = mass/volume
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        emby_ctx.add_field(name = f"Output :", value = f"`{eval} g/cm³`", inline = True)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.send(embed = emby_ctx)
 
 # ! <--- Add Physics_Calculation into the bot
 def setup(client) :

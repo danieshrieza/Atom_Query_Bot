@@ -13,28 +13,28 @@ class Help_Command(commands.Cog) :
     # ? <--- Command to send help command for user
     @ cog_ext.cog_slash(description = "Find the list of command for Basic Calculator.")
     async def help(self, ctx) :
-        self.embed = discord.Embed(title = "Help!", description = "Listing all commands on Basic Calculator.", color = discord.Color.from_rgb(175, 143, 233))
-        self.embed.add_field(name = "Basic Commands :", 
+        emby_ctx = discord.Embed(title = "Help!", description = "Listing all commands on Basic Calculator.", color = discord.Color.from_rgb(175, 143, 233))
+        emby_ctx.add_field(name = "Basic Commands :", 
         value = "`cal` `generator` `square` `cube` `square_root` `cube_root` `var_power` `var_root` \n `factor` `common_factor` `highest_common_factor` `multiple` `common_multiple` `lowest_common_multiple` \n `terminate`",
         inline = False)
-        self.embed.add_field(name = "Geometry Commands :",
+        emby_ctx.add_field(name = "Geometry Commands :",
         value = "`circle_circumference` `area_circle` `area_quadrilateral` \n `area_triangle` `area_parallelogram` `area_trampezium` `area_kite` `surface_area_cube` `surface_area_cuboid` \n `surface_area_pyramid` `surface_area_cylinder` `surface_area_cone` `surface_area_sphere` \n `volume_quadrilateral` `volume_pyramid` `volume_cylinder` `volume_cone` `volume_sphere`",
         inline = False)
-        self.embed.add_field(name = "Trigonometry Commands :", 
+        emby_ctx.add_field(name = "Trigonometry Commands :", 
         value = "`sine` `cosine` `tangent` `pythagoras_theorem`",
         inline = False)
-        self.embed.add_field(name = "Unit Commands :",
+        emby_ctx.add_field(name = "Unit Commands :",
         value = "`mm_cm` `cm_m` `m_km` `km_m` `m_cm` `cm_mm` `g_kg` `kg_g` `ml_l` `l_ml` `decimal_fraction` `fraction_decimal`",
         inline = False)
-        self.embed.add_field(name = "Physics Commands :", 
+        emby_ctx.add_field(name = "Physics Commands :", 
         value = "`density` `electric_current` `electric_resistance` \n `electric_voltage` `speed` `moment_of_force` `pressure`",
         inline = False)
-        self.embed.add_field(name = "Cartesian Commands :", 
+        emby_ctx.add_field(name = "Cartesian Commands :", 
         value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function`", 
         inline = False)
-        self.embed.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
-        self.embed.set_thumbnail(url = self.link)
-        await ctx.author.send(embed = self.embed)
+        emby_ctx.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
+        emby_ctx.set_thumbnail(url = self.link)
+        await ctx.author.send(embed = emby_ctx)
         await ctx.send("Check your DM ⚡")
 
 # ! <--- Add Help_Command into the bot
