@@ -45,7 +45,7 @@ class Unit_Converter(commands.Cog):
     async def mm_cm(self,ctx,milimeter : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{milimeter}` mm", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{milimeter/10}` cm", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -56,7 +56,7 @@ class Unit_Converter(commands.Cog):
     async def cm_m(self,ctx,centimeter : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{centimeter}` cm", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{centimeter/100}` m", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -67,7 +67,7 @@ class Unit_Converter(commands.Cog):
     async def m_km(self,ctx,meter : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{meter}` m", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{meter/1000}` km", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -78,7 +78,7 @@ class Unit_Converter(commands.Cog):
     async def km_m(self,ctx,kilometer : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{kilometer}` km", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{kilometer * 1000}` m", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -89,7 +89,7 @@ class Unit_Converter(commands.Cog):
     async def m_cm(self,ctx,meter : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{meter}` m", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{meter * 100}` cm", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -100,7 +100,7 @@ class Unit_Converter(commands.Cog):
     async def cm_mm(self,ctx,centimeter : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{centimeter}` cm", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{centimeter * 10}` mm", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -111,7 +111,7 @@ class Unit_Converter(commands.Cog):
     async def g_kg(self,ctx,gram : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{gram}` g", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{gram / 1000}` kg", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -122,7 +122,7 @@ class Unit_Converter(commands.Cog):
     async def kg_g(self,ctx,kilogram : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{kilogram}` kg", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{kilogram * 1000}` g", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -133,7 +133,7 @@ class Unit_Converter(commands.Cog):
     async def ml_l(self,ctx,mililitre : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{mililitre}` ml", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{mililitre/1000}` l", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -144,7 +144,7 @@ class Unit_Converter(commands.Cog):
     async def l_ml(self, ctx, litre : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{litre}` l", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{litre * 1000}` ml", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -155,7 +155,7 @@ class Unit_Converter(commands.Cog):
     async def decimal_fraction(self, ctx, decimal : float) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{decimal}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{Fraction(str(decimal)).limit_denominator()}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -166,7 +166,7 @@ class Unit_Converter(commands.Cog):
     async def fraction_decimal(self,ctx, numerator : int, denominator : int) :
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{numerator}/{denominator}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{numerator/denominator}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)

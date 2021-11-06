@@ -72,7 +72,7 @@ class Basic_Calculation(commands.Cog):
         expliteral = ("").join(query)
         exppoet = expliteral.replace("*","×").replace("/", "÷")
         evalu = eval(expliteral)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exppoet}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -85,7 +85,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"/generator {starting_point} {ending_point} "
         evalu = f"{random.random(starting_point,ending_point)}"
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -98,7 +98,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"{base}²"
         evalu = f"{base ** 2}" 
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -111,7 +111,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"{base}³"
         evalu = f"{base ** 3}"
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -124,7 +124,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"{base} ** {exponent}"
         evalu = f"{base ** exponent}"
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -137,7 +137,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"√{radicand}"
         evalu = f"{math.sqrt(radicand)} " 
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -150,7 +150,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"³√{radicand}"
         evalu = f"{radicand ** 1./3.} "
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -163,7 +163,7 @@ class Basic_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
         exp = f"{radicand} ** 1/{radical}"
         evalu = f"{radicand ** 1./radical}"
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -178,7 +178,7 @@ class Basic_Calculation(commands.Cog):
         for i in range(1, number + 1) :
             if number % i == 0 :
                 eval.append(i)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"Factor of `{number}`.", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -194,7 +194,7 @@ class Basic_Calculation(commands.Cog):
             for i in range(1, min(number_1, number_2) + 1) :
                 if number_1 % i == number_2 % i == 0 :
                     eval.append(i)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"Common Factor of `{number_1}` and `{number_2}`.", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -206,7 +206,7 @@ class Basic_Calculation(commands.Cog):
             for i in range(1, min(number_1, number_2, number_3) + 1) :
                 if number_1 % i == number_2 % i == number_3 % i == 0 :
                     eval.append(i)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -221,7 +221,7 @@ class Basic_Calculation(commands.Cog):
             emby_ctx = discord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
             evalu = math.gcd(number_1, number_2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}` and `{number_2}`.", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             await ctx.send(embed = emby_ctx)
@@ -229,7 +229,7 @@ class Basic_Calculation(commands.Cog):
             emby_ctx = discord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
             evalu = math.gcd(math.gcd(number_1, number_2), number_3)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             await ctx.send(embed = emby_ctx)
@@ -244,7 +244,7 @@ class Basic_Calculation(commands.Cog):
         evalu = []
         for i in range(1, number_range + 1) :
             eval.append(number * i)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"Multiple of `{number}`.", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -260,7 +260,7 @@ class Basic_Calculation(commands.Cog):
             evalu = lcm(number_1, number_2)
             for i in range(1, number_range + 1) :
                 arr.append(eval * i)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{arr}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -272,7 +272,7 @@ class Basic_Calculation(commands.Cog):
             evalu = lcm(lcm(number_1, number_2), number_3)
             for i in range(1, number_range + 1) :
                 arr.append(eval * i)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{arr}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -287,7 +287,7 @@ class Basic_Calculation(commands.Cog):
             emby_ctx = discord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
             evalu = lcm(number_1, number_2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -296,7 +296,7 @@ class Basic_Calculation(commands.Cog):
             emby_ctx = discord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
             evalu = lcm(lcm(number_1, number_2), number_3)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)

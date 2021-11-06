@@ -33,7 +33,7 @@ class Trigonometry_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         exp = f"sin {number}°"
         eval = math.sin(number)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -46,7 +46,7 @@ class Trigonometry_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         exp = f"cos {number}°"
         eval = math.cos(number)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -59,7 +59,7 @@ class Trigonometry_Calculation(commands.Cog):
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         exp = f"tan {number}°"
         eval = math.tan(number)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -73,7 +73,7 @@ class Trigonometry_Calculation(commands.Cog):
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
             exp = f"√{base}² + {height}²"
             eval = math.sqrt((base ** 2) + (height ** 2))
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -84,7 +84,7 @@ class Trigonometry_Calculation(commands.Cog):
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 exp = f"√{hypotenuse}² - {base}²"
                 eval = math.sqrt((hypotenuse ** 2) - (base ** 2))
-                emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+                emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
                 emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
                 emby_ctx.set_thumbnail(url = self.link)
@@ -94,7 +94,7 @@ class Trigonometry_Calculation(commands.Cog):
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 exp = f"√{base}² - {hypotenuse}²"
                 eval = math.sqrt((base ** 2) - (hypotenuse ** 2))
-                emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+                emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
                 emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
                 emby_ctx.set_thumbnail(url = self.link)
@@ -105,7 +105,7 @@ class Trigonometry_Calculation(commands.Cog):
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 exp = f"√{hypotenuse}² - {height}²"
                 eval = math.sqrt((hypotenuse ** 2) - (height ** 2))
-                emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+                emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
                 emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
                 emby_ctx.set_thumbnail(url = self.link)
@@ -115,7 +115,7 @@ class Trigonometry_Calculation(commands.Cog):
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 exp = f"√{height}² - {hypotenuse}²"
                 eval = math.sqrt((height ** 2) - (hypotenuse ** 2))
-                emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+                emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
                 emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
                 emby_ctx.set_thumbnail(url = self.link)

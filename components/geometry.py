@@ -59,7 +59,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"22/7 × {diameter}"
             eval = 22/7 * diameter
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -69,7 +69,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"2 × 22/7 × {radius}"
             eval = 2 * 22/7 * radius
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -85,7 +85,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"22/7 × {radius}²"
             eval = 22/7 * radius ** 2
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -95,7 +95,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"22/7 × ({diameter}/2)²"
             eval = 22/7 * (diameter/2) ** 2
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :", value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -110,7 +110,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"{length} × {width}"
         eval = length * width
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -123,7 +123,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"1/2 × {base} × {height}"
         eval = 1/2 * base * height
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -136,7 +136,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"{base} × {height}"
         eval = base * height
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -149,7 +149,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         eval = 1/2 * long_diagonal * short_diagonal   
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -162,7 +162,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         eval = 1/2 * (first_parallel + second_parallel) * height
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -175,7 +175,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"2({length} * {width}) + 2({length} × {height}) + 2({width} × {height})"
         eval = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -188,7 +188,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         eval = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -202,7 +202,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
             eval = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -212,7 +212,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"(2 × 22/7 × ({diameter}/2)²) + (2 × 22/7 × ({diameter}/2) × {height})"
             eval = (2 * 22/7 * ((diameter/2) ** 2)) + (2 * 22/7 * (diameter/2) * height)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -228,7 +228,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
             eval = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -238,7 +238,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"(22/7 × ({diameter}/2)²) + (22/7 × ({diameter}/2) × {slant_height})"
             eval = (22/7 * ((diameter/2) ** 2)) + (22/7 * (diameter/2) * slant_height)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -254,7 +254,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"4 × 22/7 × {radius}²"
             eval = 4 * 22/7 * (radius ** 2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -264,7 +264,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"4 × 22/7 × ({diameter}/2)²"
             eval = 4 * 22/7 * ((diameter/2) ** 2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -279,7 +279,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"{length} × {width} × {height}"
         eval = length * width * height 
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -292,7 +292,7 @@ class Geometry_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         exp = f"1/3 × {length} × {width} × {height}"
         eval = 1/3 * length * width * height
-        emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -306,7 +306,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"22/7 × {radius}² × {height}"
             eval = 22/7 * (radius ** 2) * height
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -316,7 +316,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"22/7 × ({diameter}/2)² × {height} "
             eval = 22/7 * ((diameter/2) ** 2) * height
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -332,7 +332,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"1/3 × 22/7 × {radius}² × {height}"
             eval = 1/3 * 22/7 * (radius ** 2) * height
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -342,7 +342,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"1/3 × 22/7 × ({diameter}/2)² × {height}"
             eval = 1/3 * 22/7 * ((diameter/2) ** 2) * height
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -358,7 +358,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"4/3 × 22/7 × {radius}²"
             eval = 4/3 * 22/7 * (radius ** 2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
@@ -368,7 +368,7 @@ class Geometry_Calculation(commands.Cog) :
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             exp = f"4/3 × 22/7 × {diameter}/2²"
             eval = 4/3 * 22/7 * ((diameter/2) ** 2)
-            emby_ctx.set_author(name = f"@{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
+            emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
             emby_ctx.add_field(name = "Output :" , value = f"`{eval}`", inline = True)
             emby_ctx.set_thumbnail(url = self.link)
