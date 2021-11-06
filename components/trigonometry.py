@@ -22,8 +22,8 @@ class Trigonometry_Calculation(commands.Cog):
     """
 
     # ? <--- Initialize variable for class
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, bot):
+        self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     # ? <--- Command to find sine of a triangle
@@ -124,5 +124,5 @@ class Trigonometry_Calculation(commands.Cog):
             await ctx.send("Please provide input for only one optional argument.")
 
 # ! <--- Add Triginometry_Calculation into the bot
-def setup(client):
-  client.add_cog(Trigonometry_Calculation(client))
+def setup(bot):
+  bot.add_cog(Trigonometry_Calculation(bot))

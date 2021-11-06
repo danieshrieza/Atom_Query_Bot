@@ -27,8 +27,8 @@ class Physics_Calculation(commands.Cog) :
     """
 
     # ? <--- Initialize variable for class
-    def __init__(self, client) :
-        self.client = client
+    def __init__(self, bot) :
+        self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     # ? <--- Command to calculate speed of an object
@@ -123,7 +123,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.send(embed = emby_ctx)
 
 # ! <--- Add Physics_Calculation into the bot
-def setup(client) :
-    client.add_cog(Physics_Calculation(client))
+def setup(bot) :
+    bot.add_cog(Physics_Calculation(bot))
 
 

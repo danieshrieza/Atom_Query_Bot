@@ -23,8 +23,8 @@ class Cartesian_Query(commands.Cog) :
     """
 
     # ? <--- Initialize variable for class
-    def __init__(self, client) :
-        self.client = client
+    def __init__(self, bot) :
+        self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     # ? <--- Command to plot linear graph
@@ -92,5 +92,5 @@ class Cartesian_Query(commands.Cog) :
         await ctx.send(file = file)
 
 # ! <--- Add Cartesian_Query into the bot
-def setup(client) :
-    client.add_cog(Cartesian_Query(client))
+def setup(bot) :
+    bot.add_cog(Cartesian_Query(bot))

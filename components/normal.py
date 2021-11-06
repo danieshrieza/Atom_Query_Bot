@@ -46,8 +46,8 @@ class Basic_Calculation(commands.Cog):
     """
 
     # ? <--- Initialize variable and function for class
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, bot):
+        self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
         global lcm
         def lcm(x, y) :
@@ -83,7 +83,7 @@ class Basic_Calculation(commands.Cog):
     async def generator(self,ctx,starting_point: float, ending_point : float) :
         emby_ctx = discord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(179, 27, 27))
-        exp = f"/generator {starting_point} {ending_point} "
+        exp = f"Generate number between {starting_point} and {ending_point}."
         evalu = f"{random.random(starting_point,ending_point)}"
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -317,5 +317,5 @@ class Basic_Calculation(commands.Cog):
             await ctx.send("*sigh of relief*")
 
 # ! <--- Add Basic_Calculation into the bot
-def setup(client): 
-  client.add_cog(Basic_Calculation(client))
+def setup(bot): 
+  bot.add_cog(Basic_Calculation(bot))

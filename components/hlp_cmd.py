@@ -7,8 +7,8 @@ from numpy import False_
 # ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
     # ? <--- Initialize variable for class
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, bot):
+        self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     # ? <--- Command to send help command for user
@@ -40,5 +40,5 @@ class Help_Command(commands.Cog) :
         await ctx.send("Check your DM ⚡")
 
 # ! <--- Add Help_Command into the bot
-def setup(client):
-  client.add_cog(Help_Command(client))
+def setup(bot):
+  bot.add_cog(Help_Command(bot))

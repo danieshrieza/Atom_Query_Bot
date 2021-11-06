@@ -4,11 +4,11 @@ from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
 
-# ! <--- Declaring client or bot
-client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
+# ! <--- Declaring bot or bot
+bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
 # ! <--- Declaring slash command for bot
-slash = SlashCommand(client, sync_commands = True, sync_on_cog_reload = True, debug_guild = 883147972337090610)
+slash = SlashCommand(bot, sync_commands = True, sync_on_cog_reload = True, debug_guild = 883147972337090610)
 
 # ? <--- Status cycle for bot
 status = cycle([
@@ -24,53 +24,53 @@ status = cycle([
 # ? <--- Looping through status
 @ tasks.loop(minutes = 5)
 async def status_swap():
-    await client.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
+    await bot.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
 
 # ? <--- Activating bot once it's ready
-@ client.event
+@ bot.event
 async def on_ready():
-    print("I have logged in as {0.user}".format(client))
+    print("I have logged in as {0.user}".format(bot))
     status_swap.start()
 
 # ? <--- Command to reload components file for owner
 @ commands.is_owner()
-@ client.command()
+@ bot.command()
 async def reload(ctx, extension) :
     try :
-        client.reload_extension(f"components.{extension}")
+        bot.reload_extension(f"components.{extension}")
         print(f"Reload : {ctx.author.name}")
-        await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(client), delete_after = 3)
+        await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
     except :
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to load components file for owner
 @ commands.is_owner()
-@ client.command()
+@ bot.command()
 async def load(ctx, extension) :
     try :
-        client.load_extension(f"components.{extension}")
+        bot.load_extension(f"components.{extension}")
         print(f"Load : {ctx.author.name}")
-        await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(client), delete_after = 3)
+        await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
     except :
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to unload components file for owner
 @ commands.is_owner()
-@ client.command()
+@ bot.command()
 async def unload(ctx, extension) :
     try :
-        client.unload_extension(f"components.{extension}")
+        bot.unload_extension(f"components.{extension}")
         print(f"Unload : {ctx.author.name}")
-        await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(client), delete_after = 3)
+        await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
     except :
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to send announcement to all server that host this Discord Bot
-@ client.command()
+@ bot.command()
 @ commands.is_owner()
 async def anno(ctx, *, permission : bool):
     if permission == True :
-        for server in client.guilds:
+        for server in bot.guilds:
             for channel in server.text_channels:
                 try:
                     emby_ctx = discord.Embed(title = "Announcement", colour = discord.Color.from_rgb(212,175,55))
@@ -88,7 +88,7 @@ async def anno(ctx, *, permission : bool):
 # ! <--- Load components file once bot is ready
 for filename in os.listdir("./components") :
     if filename.endswith(".py"):
-        client.load_extension(f"components.{filename[:-3]}")
+        bot.load_extension(f"components.{filename[:-3]}")
 
 # ! <--- Key for bot to run
-client.run(os.environ['MATH_VAR'])
+bot.run(os.environ['MATH_VAR'])
