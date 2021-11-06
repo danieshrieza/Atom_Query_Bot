@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
+from numpy import False_
 
 # ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
@@ -33,7 +34,7 @@ class Help_Command(commands.Cog) :
         emby_ctx.add_field(name = "Cartesian Commands :", 
         value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function`", 
         inline = False)
-        emby_ctx.set_author(name = f'@{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         emby_ctx.set_thumbnail(url = self.link)
         await ctx.author.send(embed = emby_ctx)
         await ctx.send("Check your DM ⚡")

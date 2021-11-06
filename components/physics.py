@@ -38,7 +38,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{distance} ÷ {time}"
         eval = distance/time
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval} m/s`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -51,7 +51,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         eval = electric_voltage/electric_resistance
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval} A`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -64,7 +64,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{electric_current} A × {electric_resistance} Ω"
         eval = electric_current * electric_resistance
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval} V`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -77,7 +77,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{electric_voltage} V ÷ {electric_current} A"
         eval = electric_voltage/electric_current
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :" , value = f"`{eval} Ω`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -90,7 +90,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{force} N × {perpendicular_distance} m "
         eval = force * perpendicular_distance
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{eval} N m`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -103,7 +103,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f"{force} N ÷ {surface_area} m²"
         eval = force/surface_area
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = "Output :", value = f"`{eval} N/m²`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
@@ -116,7 +116,7 @@ class Physics_Calculation(commands.Cog) :
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         exp = f'{mass} g ÷ {volume} cm³'
         eval = mass/volume
-        emby_ctx.set_author(name = f"@{ctx.author.name} query.", icon_url = ctx.author.avatar_url)
+        emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         emby_ctx.add_field(name = f"Output :", value = f"`{eval} g/cm³`", inline = True)
         emby_ctx.set_thumbnail(url = self.link)
