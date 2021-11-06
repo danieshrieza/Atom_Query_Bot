@@ -8,7 +8,7 @@ from itertools import cycle
 client = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
 # ! <--- Declaring slash command for bot
-slash = SlashCommand(client, sync_commands = True, sync_on_cog_reload = True)
+slash = SlashCommand(client, sync_commands = True, sync_on_cog_reload = True, debug_guild = 883147972337090610)
 
 # ? <--- Status cycle for bot
 status = cycle([
@@ -68,14 +68,14 @@ async def unload(ctx, extension) :
 # ? <--- Command to send announcement to all server that host this Discord Bot
 @ client.command()
 @ commands.is_owner()
-async def msg(ctx, *, permission : bool):
+async def anno(ctx, *, permission : bool):
     if permission == True :
         for server in client.guilds:
             for channel in server.text_channels:
                 try:
                     emby_ctx = discord.Embed(title = "Announcement", colour = discord.Color.from_rgb(212,175,55))
-                    emby_ctx.add_field(name = "**Attention**", value = "`Basic Calculator` has been rebranded to `Atom Query` and its better than **ever** !!!. \n\n Now, there are 6 categories for commands : \n\n >>> 1. `Cartesian Query` \n 2. `Geometry Query` \n 3. `Trigonometry Query` \n 4. `Unit Converter` \n 5. `Math Query` \n 6. `Physics Query`", inline = False)
-                    emby_ctx.add_field(name = "Lastly .....", value = "Use `\help` to see all the new commands for the bot !!! \n\n Thank you for **all** the server that have been using Atom Query.", inline = True)
+                    emby_ctx.add_field(name = "**Attention**", value = "", inline = False)
+                    emby_ctx.add_field(name = "", value = "", inline = True)
                     emby_ctx.set_thumbnail(url = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128")
                     await channel.send(embed = emby_ctx)
                 except Exception:
