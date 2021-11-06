@@ -2,7 +2,6 @@ from datetime import datetime, timezone
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
-from numpy import False_
 
 # ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
