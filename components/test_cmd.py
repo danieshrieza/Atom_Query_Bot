@@ -11,13 +11,9 @@ class test_cmd(commands.Cog):
     async def hello(self, ctx):
         
         if (ctx.guild.id == 883147972337090610) :
-            print(ctx.guild.id)
-            print(type(ctx.guild.id))
             await ctx.send("hello")
 
         else :
-            print(ctx.guild.id)
-            print(type(ctx.guild.id))
             await ctx.send("This command is not allowed on this server.", delete_after = 1)
             await ctx.channel.purge(limit = 2)
 
