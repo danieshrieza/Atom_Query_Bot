@@ -32,34 +32,34 @@ async def on_ready():
     print("I have logged in as {0.user}".format(bot))
     status_swap.start()
 
-# ? <--- Command to reload components file for owner
+# ? <--- Command to reload extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def reload(ctx, extension) :
     try :
-        bot.reload_extension(f"components.{extension}")
+        bot.reload_extension(f"extension.{extension}")
         print(f"Reload : {ctx.author.name}")
         await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
     except :
         await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to load components file for owner
+# ? <--- Command to load extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def load(ctx, extension) :
     try :
-        bot.load_extension(f"components.{extension}")
+        bot.load_extension(f"extension.{extension}")
         print(f"Load : {ctx.author.name}")
         await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
     except :
         await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to unload components file for owner
+# ? <--- Command to unload extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def unload(ctx, extension) :
     try :
-        bot.unload_extension(f"components.{extension}")
+        bot.unload_extension(f"extension.{extension}")
         print(f"Unload : {ctx.author.name}")
         await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
     except :
@@ -85,10 +85,10 @@ async def anno(ctx, *, permission : bool):
     else :
         await ctx.send("No announcement as of now.")
 
-# ! <--- Load components file once bot is ready
-for filename in os.listdir("./components") :
+# ! <--- Load extension file once bot is ready
+for filename in os.listdir("./extension") :
     if filename.endswith(".py"):
-        bot.load_extension(f"components.{filename[:-3]}")
+        bot.load_extension(f"extension.{filename[:-3]}")
 
 # ! <--- Key for bot to run
 bot.run(os.environ['MATH_VAR'])
