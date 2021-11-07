@@ -3,7 +3,6 @@ import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
-from datetime import datetime, timezone
 
 # ! <--- Declaring bot or bot
 bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
@@ -25,11 +24,13 @@ status = cycle([
 # ? <--- Looping through status
 @ tasks.loop(minutes = 5)
 async def status_swap():
+
     await bot.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
 
 # ? <--- Activating bot once it's ready
 @ bot.event
 async def on_ready():
+
     print("I have logged in as {0.user}".format(bot))
     status_swap.start()
 
