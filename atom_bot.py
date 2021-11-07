@@ -39,11 +39,7 @@ async def on_ready():
 async def reload(ctx, extension) :
     try :
 
-        with open("log.txt", "a") as file :
-            file.write(f"Reload ({datetime.now(timezone.utc)}) : {ctx.author.name}")
-
         bot.reload_extension(f"extension.{extension}")
-
         await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
@@ -56,11 +52,7 @@ async def reload(ctx, extension) :
 async def load(ctx, extension) :
     try :
 
-        with open("log.txt", "a") as file :
-            file.write(f"Load ({datetime.now(timezone.utc)}) : {ctx.author.name}")
-
         bot.load_extension(f"extension.{extension}")
-
         await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
@@ -72,12 +64,8 @@ async def load(ctx, extension) :
 @ bot.command()
 async def unload(ctx, extension) :
     try :
-
-        with open("log.txt", "a") as file :
-            file.write(f"Unload ({datetime.now(timezone.utc)}) : {ctx.author.name}")
             
         bot.unload_extension(f"extension.{extension}")
-
         await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
@@ -108,6 +96,7 @@ async def anno(ctx, *, permission : bool):
                     break
 
     else :
+        
         await ctx.send("No announcement as of now.")
 
 # ! <--- Load extension file once bot is ready
