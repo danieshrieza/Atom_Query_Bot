@@ -3,6 +3,7 @@ import os
 from discord.ext import commands, tasks
 from discord_slash import SlashCommand
 from itertools import cycle
+from datetime import datetime, timezone
 
 # ! <--- Declaring bot or bot
 bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
@@ -37,10 +38,16 @@ async def on_ready():
 @ bot.command()
 async def reload(ctx, extension) :
     try :
+
+        with open("log.txt", "a") as file :
+            file.write(f"Reload ({datetime.now(timezone.utc)}) : {ctx.author.name}")
+
         bot.reload_extension(f"extension.{extension}")
-        print(f"Reload : {ctx.author.name}")
+
         await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
+
     except :
+
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to load extension file for owner
@@ -48,10 +55,15 @@ async def reload(ctx, extension) :
 @ bot.command()
 async def load(ctx, extension) :
     try :
+
+        with open("log.txt", "a") as file :
+            file.write(f"Load ({datetime.now(timezone.utc)}) : {ctx.author.name}")
         bot.load_extension(f"extension.{extension}")
         print(f"Load : {ctx.author.name}")
         await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
+
     except :
+
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to unload extension file for owner
@@ -59,10 +71,15 @@ async def load(ctx, extension) :
 @ bot.command()
 async def unload(ctx, extension) :
     try :
+
+        with open("log.txt", "a") as file :
+            file.write(f"Unload ({datetime.now(timezone.utc)}) : {ctx.author.name}")
         bot.unload_extension(f"extension.{extension}")
         print(f"Unload : {ctx.author.name}")
         await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
+
     except :
+
         await ctx.send(f"`{extension}` not found.")
 
 # ? <--- Command to send announcement to all server that host this Discord Bot
@@ -73,15 +90,21 @@ async def anno(ctx, *, permission : bool):
         for server in bot.guilds:
             for channel in server.text_channels:
                 try:
+
                     emby_ctx = discord.Embed(title = "Announcement", colour = discord.Color.from_rgb(212,175,55))
                     emby_ctx.add_field(name = "**Attention**", value = "", inline = False)
                     emby_ctx.add_field(name = "", value = "", inline = True)
                     emby_ctx.set_thumbnail(url = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128")
                     await channel.send(embed = emby_ctx)
+
                 except Exception:
+
                     continue
+
                 else:
+
                     break
+                
     else :
         await ctx.send("No announcement as of now.")
 
