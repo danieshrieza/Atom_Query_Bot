@@ -58,8 +58,9 @@ async def load(ctx, extension) :
 
         with open("log.txt", "a") as file :
             file.write(f"Load ({datetime.now(timezone.utc)}) : {ctx.author.name}")
+
         bot.load_extension(f"extension.{extension}")
-        print(f"Load : {ctx.author.name}")
+
         await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
@@ -74,8 +75,9 @@ async def unload(ctx, extension) :
 
         with open("log.txt", "a") as file :
             file.write(f"Unload ({datetime.now(timezone.utc)}) : {ctx.author.name}")
+            
         bot.unload_extension(f"extension.{extension}")
-        print(f"Unload : {ctx.author.name}")
+
         await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
@@ -104,7 +106,7 @@ async def anno(ctx, *, permission : bool):
                 else:
 
                     break
-                
+
     else :
         await ctx.send("No announcement as of now.")
 
