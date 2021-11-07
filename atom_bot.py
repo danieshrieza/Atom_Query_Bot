@@ -38,6 +38,7 @@ async def on_ready():
 @ commands.is_owner()
 @ bot.command()
 async def reload(ctx, extension) :
+
     try :
 
         bot.reload_extension(f"extension.{extension}")
@@ -51,6 +52,7 @@ async def reload(ctx, extension) :
 @ commands.is_owner()
 @ bot.command()
 async def load(ctx, extension) :
+
     try :
 
         bot.load_extension(f"extension.{extension}")
@@ -64,6 +66,7 @@ async def load(ctx, extension) :
 @ commands.is_owner()
 @ bot.command()
 async def unload(ctx, extension) :
+
     try :
             
         bot.unload_extension(f"extension.{extension}")
@@ -77,9 +80,13 @@ async def unload(ctx, extension) :
 @ bot.command()
 @ commands.is_owner()
 async def anno(ctx, *, permission : bool):
+
     if permission == True :
+
         for server in bot.guilds:
+
             for channel in server.text_channels:
+
                 try:
 
                     emby_ctx = discord.Embed(title = "Announcement", colour = discord.Color.from_rgb(212,175,55))
@@ -97,12 +104,14 @@ async def anno(ctx, *, permission : bool):
                     break
 
     else :
-        
+
         await ctx.send("No announcement as of now.")
 
 # ! <--- Load extension file once bot is ready
 for filename in os.listdir("./extension") :
+
     if filename.endswith(".py"):
+        
         bot.load_extension(f"extension.{filename[:-3]}")
 
 # ! <--- Key for bot to run
