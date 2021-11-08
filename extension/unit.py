@@ -44,7 +44,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command to convert mm to cm
     @ cog_ext.cog_slash(description = "Convert milimeter to centimeter.")
-    async def mm_cm(self,ctx : Context,milimeter : float) :
+    async def mm_cm(self, ctx : Context, milimeter : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -57,7 +57,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command to convert cm to m
     @ cog_ext.cog_slash(description = "Convert centimeter to meter.")
-    async def cm_m(self,ctx : Context,centimeter : float) :
+    async def cm_m(self, ctx : Context, centimeter : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -70,7 +70,7 @@ class Unit_Converter(commands.Cog):
         
     # ? <--- Command to m to km
     @ cog_ext.cog_slash(description = "Convert meter to kilometer.")
-    async def m_km(self,ctx : Context,meter : float) :
+    async def m_km(self, ctx : Context, meter : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -83,7 +83,7 @@ class Unit_Converter(commands.Cog):
         
     # ? <--- Command to km to m
     @ cog_ext.cog_slash(description = "Convert kilometer to meter.")
-    async def km_m(self,ctx : Context,kilometer : float) :
+    async def km_m(self, ctx : Context, kilometer : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -96,7 +96,7 @@ class Unit_Converter(commands.Cog):
         
     # ? <--- Command to convert m to cm
     @ cog_ext.cog_slash(description = "Convert meter to centimeter.")
-    async def m_cm(self,ctx : Context,meter : float) :
+    async def m_cm(self, ctx : Context, meter : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -109,7 +109,7 @@ class Unit_Converter(commands.Cog):
         
     # ? <--- Command to convert cm to mm
     @ cog_ext.cog_slash(description = "Convert centimeter to milimeter.")
-    async def cm_mm(self,ctx : Context,centimeter : float) :
+    async def cm_mm(self, ctx : Context, centimeter : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -122,7 +122,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command convert g to kg
     @ cog_ext.cog_slash(description = "Convert gram to kilogram.")
-    async def g_kg(self,ctx : Context,gram : float) :
+    async def g_kg(self, ctx : Context, gram : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -135,7 +135,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command to convert kg to g
     @ cog_ext.cog_slash(description = "Convert kilogram to gram.")
-    async def kg_g(self,ctx : Context,kilogram : float) :
+    async def kg_g(self, ctx : Context, kilogram : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -148,7 +148,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command to convert ml to l
     @ cog_ext.cog_slash(description = "Convert mililitre to litre.")
-    async def ml_l(self,ctx : Context,mililitre : float) :
+    async def ml_l(self, ctx : Context, mililitre : float) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))
@@ -187,7 +187,7 @@ class Unit_Converter(commands.Cog):
 
     # ? <--- Command to convert fraction to decimal
     @ cog_ext.cog_slash(description = "Convert a fraction value to a decimal number.")
-    async def fraction_decimal(self,ctx : Context, numerator : int, denominator : int) :
+    async def fraction_decimal(self, ctx : Context, numerator : int, denominator : int) :
 
         emby_ctx = discord.Embed(title = "Unit Converter", description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc),colour = discord.Color.from_rgb(178,34,34))

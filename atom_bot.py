@@ -84,9 +84,9 @@ async def anno(ctx : Context, *, permission : bool):
 
     if permission == True :
 
-        for server in bot.guilds:
+        for server in bot.guilds :
 
-            for channel in server.text_channels:
+            for channel in server.text_channels :
 
                 try:
 
