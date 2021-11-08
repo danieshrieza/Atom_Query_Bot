@@ -1,6 +1,7 @@
 import discord
 import os
 from discord.ext import commands, tasks
+from discord.ext.commands.context import Context
 from discord_slash import SlashCommand
 from itertools import cycle
 
@@ -37,7 +38,7 @@ async def on_ready():
 # ? <--- Command to reload extension file for owner
 @ commands.is_owner()
 @ bot.command()
-async def reload(ctx, extension) :
+async def reload(ctx : Context, extension) :
 
     try :
 
@@ -51,7 +52,7 @@ async def reload(ctx, extension) :
 # ? <--- Command to load extension file for owner
 @ commands.is_owner()
 @ bot.command()
-async def load(ctx, extension) :
+async def load(ctx : Context, extension) :
 
     try :
 
@@ -65,7 +66,7 @@ async def load(ctx, extension) :
 # ? <--- Command to unload extension file for owner
 @ commands.is_owner()
 @ bot.command()
-async def unload(ctx, extension) :
+async def unload(ctx : Context, extension) :
 
     try :
             
@@ -79,7 +80,7 @@ async def unload(ctx, extension) :
 # ? <--- Command to send announcement to all server that host this Discord Bot
 @ bot.command()
 @ commands.is_owner()
-async def anno(ctx, *, permission : bool):
+async def anno(ctx : Context, *, permission : bool):
 
     if permission == True :
 

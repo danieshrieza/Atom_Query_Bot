@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
-from numpy import False_
+from discord.ext.commands.context import Context
 
 # ! <--- Class for Help_Command
 class Help_Command(commands.Cog) :
@@ -14,7 +14,7 @@ class Help_Command(commands.Cog) :
 
     # ? <--- Command to send help command for user
     @ cog_ext.cog_slash(description = "Find the list of command for Basic Calculator.")
-    async def help(self, ctx) :
+    async def help(self, ctx : Context) :
         
         emby_ctx = discord.Embed(title = "Help!", description = "Listing all commands on **Atom Query**.", 
         timestamp = datetime.now(timezone.utc), color = discord.Color.from_rgb(175, 143, 233))

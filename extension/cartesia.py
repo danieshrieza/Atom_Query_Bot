@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord_slash import cog_ext
 import matplotlib.pyplot as plt
+from discord.ext.commands.context import Context
 import numpy as np
 
 # ! <--- Class for Cartesian_Query
@@ -30,7 +31,7 @@ class Cartesian_Query(commands.Cog) :
 
     # ? <--- Command to plot linear graph
     @ cog_ext.cog_slash(description = "Plot a linear graph using the equation y = mx + c.")
-    async def linear_function(self, ctx, gradient : int, y_intercept : int) :
+    async def linear_function(self, ctx : Context, gradient : int, y_intercept : int) :
 
         x = np.linspace(-5,5,100)
         y = gradient * x + y_intercept
@@ -49,7 +50,7 @@ class Cartesian_Query(commands.Cog) :
 
     # ? <--- Command to plot quadratic graph
     @ cog_ext.cog_slash(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
-    async def quadratic_function(self, ctx, a : int, b : int, c : int) :
+    async def quadratic_function(self, ctx : Context, a : int, b : int, c : int) :
 
         x = np.linspace(-5,5,100)
         y = (a * x) ** 2 + (b * x) + c
@@ -68,7 +69,7 @@ class Cartesian_Query(commands.Cog) :
 
     # ? <--- Command to plot quadratic graph
     @ cog_ext.cog_slash(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
-    async def cubic_function(self, ctx, a : int, b : int, c : int, d : int) :
+    async def cubic_function(self, ctx : Context, a : int, b : int, c : int, d : int) :
 
         x = np.linspace(-5,5,100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d

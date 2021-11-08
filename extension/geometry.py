@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
+from discord.ext.commands.context import Context
 
 # ! <--- Class for Geometry_Calculation 
 class Geometry_Calculation(commands.Cog) :
@@ -54,7 +55,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate circumference of a circle using diameter or radius
     @ cog_ext.cog_slash(description = "Calculate the circumference of a circle using diameter or radius")
-    async def circle_circumference(self,ctx, radius : float = None, diameter : float = None) :
+    async def circle_circumference(self,ctx : Context, radius : float = None, diameter : float = None) :
 
         if (radius == None and diameter != None) :
 
@@ -90,7 +91,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Commmand to calculate area of a circle
     @ cog_ext.cog_slash(description = "Calculate the area of a circle.")
-    async def area_circle(self,ctx,radius : float = None, diameter : float = None) :
+    async def area_circle(self,ctx : Context,radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -126,7 +127,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate area of a quadrilateral
     @ cog_ext.cog_slash(description = "Calculate the area of a rectangle, a square or a quadrilateral.")
-    async def area_quadrilateral(self,ctx,length : float, width : float) :
+    async def area_quadrilateral(self,ctx : Context,length : float, width : float) :
 
         exp = f"{length} × {width}"
         evalu = length * width
@@ -142,7 +143,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate area of a triangle
     @ cog_ext.cog_slash(description = "Calculate the area of a triangle.")
-    async def area_triangle(self,ctx,base : float, height : float) :
+    async def area_triangle(self,ctx : Context,base : float, height : float) :
 
         exp = f"1/2 × {base} × {height}"
         evalu = 1/2 * base * height
@@ -158,7 +159,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate area of a parallelogram
     @ cog_ext.cog_slash(description = "Calculate the area of a parallelogram.")
-    async def area_parallelogram(self,ctx,base : float, height : float) :
+    async def area_parallelogram(self,ctx : Context,base : float, height : float) :
 
         exp = f"{base} × {height}"
         evalu = base * height
@@ -174,7 +175,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate area of a kite
     @ cog_ext.cog_slash(description = "Calculate the area of a kite.")
-    async def area_kite(self,ctx,long_diagonal : float, short_diagonal : float) :
+    async def area_kite(self,ctx : Context,long_diagonal : float, short_diagonal : float) :
 
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         evalu = 1/2 * long_diagonal * short_diagonal   
@@ -190,7 +191,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate area of a trampezium
     @ cog_ext.cog_slash(description = "Calculate the area of a trampezium.")
-    async def area_trampezium(self,ctx,first_parallel : float, second_parallel : float, height : float) :
+    async def area_trampezium(self,ctx : Context,first_parallel : float, second_parallel : float, height : float) :
 
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         evalu = 1/2 * (first_parallel + second_parallel) * height
@@ -206,7 +207,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate surface area of a quadrilateral
     @ cog_ext.cog_slash(description = "Calculate the surface area of a cuboid.")
-    async def surface_area_quadrilateral(self,ctx,length : float, width : float, height : float) :
+    async def surface_area_quadrilateral(self,ctx : Context,length : float, width : float, height : float) :
 
         exp = f"2({length} * {width}) + 2({length} × {height}) + 2({width} × {height})"
         evalu = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
@@ -222,7 +223,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate surface area of pyramid 
     @ cog_ext.cog_slash(description = "Calculate the surface area of a pyramid.")
-    async def surface_area_pyramid(self,ctx,length : float, width : float, face_height : float) :
+    async def surface_area_pyramid(self,ctx : Context,length : float, width : float, face_height : float) :
 
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         evalu = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
@@ -238,7 +239,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate surface area of a cylinder
     @ cog_ext.cog_slash(description = "Calculate the surface area of a cylinder.")
-    async def surface_area_cylinder(self,ctx, height : float, radius : float = None, diameter : float = None) :
+    async def surface_area_cylinder(self,ctx : Context, height : float, radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -274,7 +275,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate surface area of a cone
     @ cog_ext.cog_slash(description = "Calculate the surface area of a cone.")
-    async def surface_area_cone(self,ctx, slant_height : float, radius : float = None, diameter : float = None) :
+    async def surface_area_cone(self,ctx : Context, slant_height : float, radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -310,7 +311,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculte surface area of a sphere
     @ cog_ext.cog_slash(description = "Calculate the surface area of a sphere.")
-    async def surface_area_sphere(self,ctx,radius : float = None, diameter : float = None) :
+    async def surface_area_sphere(self,ctx : Context,radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -346,7 +347,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate volume of a cube or a cuboid
     @ cog_ext.cog_slash(description = "Calculate the volume of a cube or a cuboid.")
-    async def volume_quadrilateral(self,ctx,length : float, width : float, height : float) :
+    async def volume_quadrilateral(self,ctx : Context,length : float, width : float, height : float) :
 
         exp = f"{length} × {width} × {height}"
         evalu = length * width * height 
@@ -362,7 +363,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate volume of a pyramid
     @ cog_ext.cog_slash(description = "Calculate the volume of a pyramid.")
-    async def volume_pyramid(self,ctx,length : float,width : float,height : float) :
+    async def volume_pyramid(self,ctx : Context,length : float,width : float,height : float) :
 
         exp = f"1/3 × {length} × {width} × {height}"
         evalu = 1/3 * length * width * height
@@ -378,7 +379,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate volume of a cylinder
     @ cog_ext.cog_slash(description = "Calculate the volume of a cylinder.")
-    async def volume_cylinder(self, ctx, height : float, radius : float = None, diameter : float = None) :
+    async def volume_cylinder(self, ctx : Context, height : float, radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -414,7 +415,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate volume of a cone
     @ cog_ext.cog_slash(description = "Calculate the volume of a cone.")
-    async def volume_cone(self, ctx, height : float, radius : float = None, diameter : float = None) :
+    async def volume_cone(self, ctx : Context, height : float, radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 
@@ -450,7 +451,7 @@ class Geometry_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate volume of a sphere
     @ cog_ext.cog_slash(description = "Calculate the volume of a sphere.")
-    async def volume_sphere(self, ctx, radius : float = None, diameter : float = None) :
+    async def volume_sphere(self, ctx : Context, radius : float = None, diameter : float = None) :
 
         if (diameter == None and radius != None) :
 

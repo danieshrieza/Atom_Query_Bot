@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import math
 from discord_slash import cog_ext
+from discord.ext.commands.context import Context
 
 # ! <--- Class for Trigonometry_Calculation
 class Trigonometry_Calculation(commands.Cog):
@@ -29,7 +30,7 @@ class Trigonometry_Calculation(commands.Cog):
 
     # ? <--- Command to find sine of a triangle
     @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
-    async def sin(self,ctx, number : float) :
+    async def sin(self,ctx : Context, number : float) :
 
         exp = f"sin {number}°"
         evalu = math.sin(number)
@@ -45,7 +46,7 @@ class Trigonometry_Calculation(commands.Cog):
 
     # ? <--- Command to find cosine of a triangle
     @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
-    async def cos(self,ctx, number : float) :
+    async def cos(self,ctx : Context, number : float) :
 
         emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
@@ -61,7 +62,7 @@ class Trigonometry_Calculation(commands.Cog):
 
     # ? <--- Command to find tangent of a triangle
     @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.")
-    async def tan(self,ctx, number : float) :
+    async def tan(self,ctx : Context, number : float) :
 
         exp = f"tan {number}°"
         evalu = math.tan(number)
@@ -77,7 +78,7 @@ class Trigonometry_Calculation(commands.Cog):
 
     # ? <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
     @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.")
-    async def pythagoras_theorem(self,ctx, height : float = None, base : float = None, hypotenuse : float = None) :
+    async def pythagoras_theorem(self,ctx : Context, height : float = None, base : float = None, hypotenuse : float = None) :
 
         if (hypotenuse == None and height != None and base != None) :
 

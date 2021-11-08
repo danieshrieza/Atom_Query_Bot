@@ -4,6 +4,7 @@ import math
 import random
 from discord_slash import cog_ext
 from datetime import datetime, timezone
+from discord.ext.commands.context import Context
 
 # ! <--- Class for Basic_Calculation
 class Basic_Calculation(commands.Cog):
@@ -68,7 +69,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to calculate queries from user
     @ cog_ext.cog_slash(description = "Calculate your math's query.")
-    async def cal(self,ctx,query : str) :
+    async def cal(self,ctx : Context,query : str) :
 
         expliteral = ("").join(query)
         exppoet = expliteral.replace("*","×").replace("/", "÷")
@@ -85,7 +86,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to generate random number
     @ cog_ext.cog_slash(description = "Generate randomly selected numbers from input range.")
-    async def generator(self,ctx,starting_point: float, ending_point : float) :
+    async def generator(self,ctx : Context,starting_point: float, ending_point : float) :
 
         exp = f"Generate number between {starting_point} and {ending_point}."
         evalu = f"{random.random(starting_point,ending_point)}"
@@ -101,7 +102,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to square a number
     @ cog_ext.cog_slash(description = "Squared number from user.")
-    async def square(self,ctx,base : float) :
+    async def square(self,ctx : Context,base : float) :
 
         exp = f"{base}²"
         evalu = f"{base ** 2}" 
@@ -117,7 +118,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to cube a number
     @ cog_ext.cog_slash(description = "Cubed number from user.")
-    async def cube(self,ctx,base : float) :
+    async def cube(self,ctx : Context,base : float) :
 
         exp = f"{base}³"
         evalu = f"{base ** 3}"
@@ -133,7 +134,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to power a base using user's exponent
     @ cog_ext.cog_slash(description = "Power the user's base to the exponent.")
-    async def variable_power(self,ctx,base : float,exponent : float) :
+    async def variable_power(self,ctx : Context,base : float,exponent : float) :
 
         exp = f"{base} ** {exponent}"
         evalu = f"{base ** exponent}"
@@ -149,7 +150,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to square root a number
     @ cog_ext.cog_slash(description = "Square root user's number.")
-    async def square_root(self,ctx,radicand : float) :
+    async def square_root(self,ctx : Context,radicand : float) :
 
         exp = f"√{radicand}"
         evalu = f"{math.sqrt(radicand)}" 
@@ -165,7 +166,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to cube root a number
     @ cog_ext.cog_slash(description = "Cube root user's number.")
-    async def cube_root(self,ctx,radicand : float) :
+    async def cube_root(self,ctx : Context,radicand : float) :
 
         exp = f"³√{radicand}"
         evalu = f"{radicand ** 1./3.}"
@@ -181,7 +182,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to root a radicand using a radical
     @ cog_ext.cog_slash(description = "Radical(root) user's radicand(number).")
-    async def variable_root(self,ctx,radicand : float,radical: float) :
+    async def variable_root(self,ctx : Context,radicand : float,radical: float) :
 
         exp = f"{radicand} ** 1/{radical}"
         evalu = f"{radicand ** 1./radical}"
@@ -197,7 +198,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find factor a number
     @ cog_ext.cog_slash(description = "Find the factor of a number.")
-    async def factor(self,ctx, number : int) :
+    async def factor(self,ctx : Context, number : int) :
 
         evalu = []
         for i in range(1, number + 1) :
@@ -215,7 +216,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find common factor of multiple number
     @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
-    async def common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int = None) :
+    async def common_factor(self,ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -255,7 +256,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find highest common factor of multiple number
     @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.")
-    async def highest_common_factor(self,ctx, number_1 : int, number_2 : int, number_3 : int = None) :
+    async def highest_common_factor(self,ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -287,7 +288,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find multiple of a number
     @ cog_ext.cog_slash(description = "Find the multiple of a number.")
-    async def multiple(self, ctx, number : int, number_range : int) :
+    async def multiple(self, ctx : Context, number : int, number_range : int) :
 
         evalu = []
         for i in range(1, number_range + 1) :
@@ -304,7 +305,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find common multiple of multiple number
     @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.")
-    async def common_multiple(self, ctx, number_1 : int, number_2 : int, number_range : int, number_3 : int = None) :
+    async def common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_range : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0 and number_range > 0) :
 
@@ -344,7 +345,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Command to find the lowest common multiple of multiple number
     @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.")
-    async def lowest_common_multiple(self, ctx, number_1 : int, number_2 : int, number_3 : int) :
+    async def lowest_common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -378,7 +379,7 @@ class Basic_Calculation(commands.Cog):
 
     # ? <--- Who knows what this do ?
     @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
-    async def terminate(self, ctx, true_or_false : str) :
+    async def terminate(self, ctx : Context, true_or_false : str) :
 
         boolt = ["true", "t", "TRUE", "T"]
         boolf = ["false", "f", "FALSE", "F"]

@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands.context import Context
 
 class test_cmd(commands.Cog):
 
@@ -8,7 +9,7 @@ class test_cmd(commands.Cog):
 
     @ commands.command(hidden = True)
     @ commands.is_owner()
-    async def showguilds(self, ctx):
+    async def showguilds(self, ctx : Context):
 
         if (ctx.guild.id == 883147972337090610) :
 

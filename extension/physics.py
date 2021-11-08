@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext
+from discord.ext.commands.context import Context
 
 # ! <--- Class for Physics_Calculation
 class Physics_Calculation(commands.Cog) :
@@ -34,7 +35,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate speed of an object
     @ cog_ext.cog_slash(description = "Calculate the speed of an object using any distance and time unit.")
-    async def speed(self, ctx, distance : float, time : float) :
+    async def speed(self, ctx : Context, distance : float, time : float) :
 
         exp = f"{distance} ÷ {time}"
         evalu = distance/time
@@ -50,7 +51,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate electric current of an object
     @ cog_ext.cog_slash(description = "Calculate the electric current of an object.")
-    async def electric_current(self, ctx, electric_voltage : float, electric_resistance : float ) :
+    async def electric_current(self, ctx : Context, electric_voltage : float, electric_resistance : float ) :
 
         exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         evalu = electric_voltage/electric_resistance
@@ -66,7 +67,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate electric voltage of an object
     @ cog_ext.cog_slash(description = "Calculate the electric voltage of an object.")
-    async def electric_voltage(self, ctx, electric_current : float, electric_resistance : float ) :
+    async def electric_voltage(self, ctx : Context, electric_current : float, electric_resistance : float ) :
 
         exp = f"{electric_current} A × {electric_resistance} Ω"
         evalu = electric_current * electric_resistance
@@ -82,7 +83,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate electric resisteance of an object
     @ cog_ext.cog_slash(description = "Calculate the electric resistance of an object.")
-    async def electric_resistance(self, ctx, electric_voltage : float, electric_current : float ) :
+    async def electric_resistance(self, ctx : Context, electric_voltage : float, electric_current : float ) :
 
         exp = f"{electric_voltage} V ÷ {electric_current} A"
         evalu = electric_voltage/electric_current
@@ -98,7 +99,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate moment of force of an object
     @ cog_ext.cog_slash(description = "Calculate the moment of force of an object.")
-    async def moment_of_force(self, ctx, force : float, perpendicular_distance : float) :
+    async def moment_of_force(self, ctx : Context, force : float, perpendicular_distance : float) :
 
         exp = f"{force} N × {perpendicular_distance} m "
         evalu = force * perpendicular_distance
@@ -114,7 +115,7 @@ class Physics_Calculation(commands.Cog) :
 
     # ? <--- Command to calculate the pressure acts on an object
     @ cog_ext.cog_slash(description = "Calculate the pressure acts on an object.")
-    async def pressure(self, ctx, force : float, surface_area : float) :
+    async def pressure(self, ctx : Context, force : float, surface_area : float) :
 
         exp = f"{force} N ÷ {surface_area} m²"
         evalu = force/surface_area
@@ -130,7 +131,7 @@ class Physics_Calculation(commands.Cog) :
     
     # ? <--- Command to calculate the density of an object
     @ cog_ext.cog_slash(description = "Calculate the density of an object.")
-    async def density(self, ctx, mass : float, volume : float) :
+    async def density(self, ctx : Context, mass : float, volume : float) :
 
         exp = f'{mass} g ÷ {volume} cm³'
         evalu = mass/volume
