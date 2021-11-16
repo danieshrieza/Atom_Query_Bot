@@ -33,7 +33,7 @@ class Cartesian_Query(commands.Cog) :
     @ cog_ext.cog_slash(description = "Plot a linear graph using the equation y = mx + c.")
     async def linear_function(self, ctx : Context, gradient : int, y_intercept : int) :
 
-        x = np.linspace(-5,5,100)
+        x = np.linspace(-20, 20, 100)
         y = gradient * x + y_intercept
         file = discord.File("./image/linear.png", filename = './image/linear.png')
 
@@ -52,7 +52,7 @@ class Cartesian_Query(commands.Cog) :
     @ cog_ext.cog_slash(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
     async def quadratic_function(self, ctx : Context, a : int, b : int, c : int) :
 
-        x = np.linspace(-5,5,100)
+        x = np.linspace(-20, 20, 100)
         y = (a * x) ** 2 + (b * x) + c
         file = discord.File("./image/quad.png", filename = './image/quad.png')
 
@@ -71,7 +71,7 @@ class Cartesian_Query(commands.Cog) :
     @ cog_ext.cog_slash(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
     async def cubic_function(self, ctx : Context, a : int, b : int, c : int, d : int) :
 
-        x = np.linspace(-5,5,100)
+        x = np.linspace(-20, 20, 100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d
         file = discord.File("./image/cube.png", filename = './image/cube.png')
 
@@ -90,7 +90,7 @@ class Cartesian_Query(commands.Cog) :
     @ cog_ext.cog_slash(description = "Plot a reciprocal graph using the equation y = 1/x.")
     async def reciprocal_function(self, ctx) :
 
-        x = np.linspace(-5,5,100)
+        x = np.linspace(-20, 20, 100)
         y = 1/x
         file = discord.File("./image/reci.png", filename = './image/reci.png')
 
