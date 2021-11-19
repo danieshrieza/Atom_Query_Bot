@@ -67,7 +67,7 @@ class Cartesian_Query(commands.Cog) :
 
         await ctx.send(file = file)
 
-    # ? <--- Command to plot quadratic graph
+    # ? <--- Command to plot cubic graph
     @ cog_ext.cog_slash(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
     async def cubic_function(self, ctx : Context, a : int, b : int, c : int, d : int) :
 

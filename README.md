@@ -1,6 +1,6 @@
 # Atom Query ⚛️
 
-<span style = "color : red">**Atom Query**</span> is a <span style = "color : purple">**Discord Bot**</span> that able to calculate common queries. Gamers or not, die hard Discord User will found this Bot to be useful when they are doing their Math homework.
+**Atom Query** is a **Discord Bot** that able to calculate common queries. Gamers or not, die hard Discord User will found this Bot to be useful when they are doing their Math homework.
 
 ![Atom Query Logo](./image/Atom_Query_Icon.png)
 
@@ -38,7 +38,7 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 6. numpy
     - `pip install numpy`
 
-I've also used two built-in library in this project which is `math` and `datetime`.
+I've also used two built-in Python library in this project which is `math`, `datetime` and `os`.
 
 # LICENSE
 
