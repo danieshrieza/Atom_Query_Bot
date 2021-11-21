@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_pr
 # ! <--- Declaring slash command for bot
 slash = SlashCommand(bot, sync_commands = True, sync_on_cog_reload = True, debug_guild = 883147972337090610)
 
-# ? <--- Status cycle for bot
+# ! <--- Status cycle for bot
 status = cycle([
     " Unanswered Question of Life", 
     " Self - Referential Paradox",
@@ -22,20 +22,20 @@ status = cycle([
     " A person stuck in a while loop"
 ])
 
-# ? <--- Looping through status
+# ! <--- Looping through status
 @ tasks.loop(minutes = 5)
 async def status_swap():
 
     await bot.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
 
-# ? <--- Activating bot once it's ready
+# ! <--- Activating bot once it's ready
 @ bot.event
 async def on_ready():
 
     print("I have logged in as {0.user}".format(bot))
     status_swap.start()
 
-# ? <--- Command to reload extension file for owner
+# ! <--- Command to reload extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def reload(ctx : Context, extension) :
@@ -49,7 +49,7 @@ async def reload(ctx : Context, extension) :
 
         await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to load extension file for owner
+# ! <--- Command to load extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def load(ctx : Context, extension) :
@@ -63,7 +63,7 @@ async def load(ctx : Context, extension) :
 
         await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to unload extension file for owner
+# ! <--- Command to unload extension file for owner
 @ commands.is_owner()
 @ bot.command()
 async def unload(ctx : Context, extension) :
@@ -77,7 +77,7 @@ async def unload(ctx : Context, extension) :
 
         await ctx.send(f"`{extension}` not found.")
 
-# ? <--- Command to send announcement to all server that host this Discord Bot
+# ! <--- Command to send announcement to all server that host this Discord Bot
 @ bot.command()
 @ commands.is_owner()
 async def anno(ctx : Context, *, permission : bool):

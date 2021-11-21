@@ -23,13 +23,13 @@ class Cartesian_Query(commands.Cog) :
     reciprocal_function : return `image` embed
     """
 
-    # ? <--- Initialize variable for class
+    # ! <--- Initialize variable for class
     def __init__(self, bot) :
         
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    # ? <--- Command to plot linear graph
+    # ! <--- Command to plot linear graph
     @ cog_ext.cog_slash(description = "Plot a linear graph using the equation y = mx + c.")
     async def linear_function(self, ctx : Context, gradient : int, y_intercept : int) :
 
@@ -48,7 +48,7 @@ class Cartesian_Query(commands.Cog) :
 
         await ctx.send(file = file)
 
-    # ? <--- Command to plot quadratic graph
+    # ! <--- Command to plot quadratic graph
     @ cog_ext.cog_slash(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
     async def quadratic_function(self, ctx : Context, a : int, b : int, c : int) :
 
@@ -67,7 +67,7 @@ class Cartesian_Query(commands.Cog) :
 
         await ctx.send(file = file)
 
-    # ? <--- Command to plot cubic graph
+    # ! <--- Command to plot cubic graph
     @ cog_ext.cog_slash(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
     async def cubic_function(self, ctx : Context, a : int, b : int, c : int, d : int) :
 
@@ -86,7 +86,7 @@ class Cartesian_Query(commands.Cog) :
 
         await ctx.send(file = file)
 
-    # ? <--- Command to plot reciprocal graph
+    # ! <--- Command to plot reciprocal graph
     @ cog_ext.cog_slash(description = "Plot a reciprocal graph using the equation y = 1/x.")
     async def reciprocal_function(self, ctx) :
 

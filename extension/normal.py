@@ -46,7 +46,7 @@ class Basic_Calculation(commands.Cog):
 
     """
 
-    # ? <--- Initialize variable and function for class
+    # ! <--- Initialize variable and function for class
     def __init__(self, bot):
 
         self.bot = bot
@@ -67,7 +67,7 @@ class Basic_Calculation(commands.Cog):
             
             return lcm
 
-    # ? <--- Command to calculate queries from user
+    # ! <--- Command to calculate queries from user
     @ cog_ext.cog_slash(description = "Calculate your math's query.")
     async def cal(self, ctx : Context, query : str) :
 
@@ -84,7 +84,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to generate random number
+    # ! <--- Command to generate random number
     @ cog_ext.cog_slash(description = "Generate randomly selected numbers from input range.")
     async def generator(self, ctx : Context, starting_point: float, ending_point : float) :
 
@@ -100,7 +100,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to square a number
+    # ! <--- Command to square a number
     @ cog_ext.cog_slash(description = "Squared number from user.")
     async def square(self, ctx : Context, base : float) :
 
@@ -116,7 +116,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to cube a number
+    # ! <--- Command to cube a number
     @ cog_ext.cog_slash(description = "Cubed number from user.")
     async def cube(self, ctx : Context, base : float) :
 
@@ -132,7 +132,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to power a base using user's exponent
+    # ! <--- Command to power a base using user's exponent
     @ cog_ext.cog_slash(description = "Power the user's base to the exponent.")
     async def variable_power(self, ctx : Context, base : float, exponent : float) :
 
@@ -148,7 +148,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to square root a number
+    # ! <--- Command to square root a number
     @ cog_ext.cog_slash(description = "Square root user's number.")
     async def square_root(self, ctx : Context, radicand : float) :
 
@@ -164,7 +164,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to cube root a number
+    # ! <--- Command to cube root a number
     @ cog_ext.cog_slash(description = "Cube root user's number.")
     async def cube_root(self, ctx : Context, radicand : float) :
 
@@ -180,7 +180,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to root a radicand using a radical
+    # ! <--- Command to root a radicand using a radical
     @ cog_ext.cog_slash(description = "Radical(root) user's radicand(number).")
     async def variable_root(self, ctx : Context, radicand : float, radical: float) :
 
@@ -196,7 +196,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to find factor a number
+    # ! <--- Command to find factor a number
     @ cog_ext.cog_slash(description = "Find the factor of a number.")
     async def factor(self, ctx : Context, number : int) :
 
@@ -214,7 +214,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to find common factor of multiple number
+    # ! <--- Command to find common factor of multiple number
     @ cog_ext.cog_slash(description = "Find the common factor of multiple number.")
     async def common_factor(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
 
@@ -254,7 +254,7 @@ class Basic_Calculation(commands.Cog):
 
             await ctx.send("Please provide valid input.")
 
-    # ? <--- Command to find highest common factor of multiple number
+    # ! <--- Command to find highest common factor of multiple number
     @ cog_ext.cog_slash(description = "Find the highest common factor of multiple number.")
     async def highest_common_factor(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
 
@@ -286,7 +286,7 @@ class Basic_Calculation(commands.Cog):
 
             await ctx.send("Please provide valid input.")
 
-    # ? <--- Command to find multiple of a number
+    # ! <--- Command to find multiple of a number
     @ cog_ext.cog_slash(description = "Find the multiple of a number.")
     async def multiple(self, ctx : Context, number : int, number_range : int) :
 
@@ -303,7 +303,7 @@ class Basic_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to find common multiple of multiple number
+    # ! <--- Command to find common multiple of multiple number
     @ cog_ext.cog_slash(description = "Find the common multiple of 2 or 3 numbers.")
     async def common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_range : int, number_3 : int = None) :
 
@@ -343,7 +343,7 @@ class Basic_Calculation(commands.Cog):
 
             await ctx.send("Please provide valid input.")
 
-    # ? <--- Command to find the lowest common multiple of multiple number
+    # ! <--- Command to find the lowest common multiple of multiple number
     @ cog_ext.cog_slash(description = "Find the lowest common multiple of 2 or 3 numbers.")
     async def lowest_common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int) :
 
@@ -377,7 +377,7 @@ class Basic_Calculation(commands.Cog):
 
             await ctx.send("Please provide valid input.")
 
-    # ? <--- Who knows what this do ?
+    # ! <--- Who knows what this do ?
     @ cog_ext.cog_slash(description = "Alright, who want to kill this bot ?")
     async def terminate(self, ctx : Context, true_or_false : str) :
 

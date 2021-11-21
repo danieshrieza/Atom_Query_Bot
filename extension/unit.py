@@ -36,13 +36,13 @@ class Unit_Converter(commands.Cog):
     decimal_frac : return `str` embed
     """
 
-    # ? <---  Initialize variable for class
+    # ! <---  Initialize variable for class
     def __init__(self, bot):
 
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    # ? <--- Command to convert mm to cm
+    # ! <--- Command to convert mm to cm
     @ cog_ext.cog_slash(description = "Convert milimeter to centimeter.")
     async def mm_cm(self, ctx : Context, milimeter : float) :
 
@@ -55,7 +55,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert cm to m
+    # ! <--- Command to convert cm to m
     @ cog_ext.cog_slash(description = "Convert centimeter to meter.")
     async def cm_m(self, ctx : Context, centimeter : float) :
 
@@ -68,7 +68,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
         
-    # ? <--- Command to m to km
+    # ! <--- Command to m to km
     @ cog_ext.cog_slash(description = "Convert meter to kilometer.")
     async def m_km(self, ctx : Context, meter : float) :
 
@@ -81,7 +81,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
         
-    # ? <--- Command to km to m
+    # ! <--- Command to km to m
     @ cog_ext.cog_slash(description = "Convert kilometer to meter.")
     async def km_m(self, ctx : Context, kilometer : float) :
 
@@ -94,7 +94,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
         
-    # ? <--- Command to convert m to cm
+    # ! <--- Command to convert m to cm
     @ cog_ext.cog_slash(description = "Convert meter to centimeter.")
     async def m_cm(self, ctx : Context, meter : float) :
 
@@ -107,7 +107,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
         
-    # ? <--- Command to convert cm to mm
+    # ! <--- Command to convert cm to mm
     @ cog_ext.cog_slash(description = "Convert centimeter to milimeter.")
     async def cm_mm(self, ctx : Context, centimeter : float) :
 
@@ -120,7 +120,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command convert g to kg
+    # ! <--- Command convert g to kg
     @ cog_ext.cog_slash(description = "Convert gram to kilogram.")
     async def g_kg(self, ctx : Context, gram : float) :
 
@@ -133,7 +133,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert kg to g
+    # ! <--- Command to convert kg to g
     @ cog_ext.cog_slash(description = "Convert kilogram to gram.")
     async def kg_g(self, ctx : Context, kilogram : float) :
 
@@ -146,7 +146,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert ml to l
+    # ! <--- Command to convert ml to l
     @ cog_ext.cog_slash(description = "Convert mililitre to litre.")
     async def ml_l(self, ctx : Context, mililitre : float) :
 
@@ -159,7 +159,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert l to ml
+    # ! <--- Command to convert l to ml
     @ cog_ext.cog_slash(description = "Convert litre to mililitre.")
     async def l_ml(self, ctx : Context, litre : float) :
 
@@ -172,7 +172,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert decimal to fraction
+    # ! <--- Command to convert decimal to fraction
     @ cog_ext.cog_slash(description = "Convert a decimal number to fraction.")
     async def decimal_fraction(self, ctx : Context, decimal : float) :
 
@@ -185,7 +185,7 @@ class Unit_Converter(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ? <--- Command to convert fraction to decimal
+    # ! <--- Command to convert fraction to decimal
     @ cog_ext.cog_slash(description = "Convert a fraction value to a decimal number.")
     async def fraction_decimal(self, ctx : Context, numerator : int, denominator : int) :
 
