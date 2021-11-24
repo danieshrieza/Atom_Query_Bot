@@ -65,4 +65,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 # And finally, thanks to everyone who have fork the repository.
-This been a long project for me but this not the end of the project. More and more changes are coming on **Atom Query** in the days, weeks, months or even years. Thanks to everyone who's reading this notes. 🎉
+This been a long project for me but this not the end of the project. More and more changes are coming on **Atom Query** in days, weeks, months or even years. Thanks to everyone who's reading this notes. 🎉
