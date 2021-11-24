@@ -38,7 +38,7 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 6. numpy
     - `pip install numpy`
 
-I've also used two built-in Python library in this project which is `math`, `datetime` and `os`.
+I've also used three built-in Python library in this project which is `math`, `datetime` and `os`.
 
 # LICENSE
 
