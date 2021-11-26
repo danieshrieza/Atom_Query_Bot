@@ -112,7 +112,7 @@ async def anno(ctx : Context, *, permission : bool):
 # ! <--- Command to find all server that houses this bot
 @ bot.command()
 @ commands.is_owner()
-async def server(ctx : Context, bot):
+async def server(ctx : Context):
 
     for guild in bot.guilds:
         await ctx.send(f"{guild.name}")
