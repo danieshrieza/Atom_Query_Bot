@@ -40,7 +40,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{distance} ÷ {time}"
         evalu = distance/time
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -56,7 +56,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{electric_voltage} V ÷ {electric_resistance} Ω"
         evalu = electric_voltage/electric_resistance
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -72,7 +72,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{electric_current} A × {electric_resistance} Ω"
         evalu = electric_current * electric_resistance
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -88,7 +88,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{electric_voltage} V ÷ {electric_current} A"
         evalu = electric_voltage/electric_current
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -104,7 +104,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{force} N × {perpendicular_distance} m "
         evalu = force * perpendicular_distance
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -120,7 +120,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f"{force} N ÷ {surface_area} m²"
         evalu = force/surface_area
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -136,7 +136,7 @@ class Physics_Calculation(commands.Cog) :
         exp = f'{mass} g ÷ {volume} cm³'
         evalu = mass/volume
 
-        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Physics Query", description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(127, 0, 255))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)

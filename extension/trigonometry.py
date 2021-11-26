@@ -35,7 +35,7 @@ class Trigonometry_Calculation(commands.Cog):
         exp = f"sin {number}°"
         evalu = math.sin(number)
 
-        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -48,7 +48,7 @@ class Trigonometry_Calculation(commands.Cog):
     @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
     async def cos(self, ctx : Context, number : float) :
 
-        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         exp = f"cos {number}°"
         evalu = math.cos(number)
@@ -67,7 +67,7 @@ class Trigonometry_Calculation(commands.Cog):
         exp = f"tan {number}°"
         evalu = math.tan(number)
 
-        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -85,7 +85,7 @@ class Trigonometry_Calculation(commands.Cog):
             exp = f"√{base}² + {height}²"
             evalu = math.sqrt((base ** 2) + (height ** 2))
 
-            emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -101,7 +101,7 @@ class Trigonometry_Calculation(commands.Cog):
                 exp = f"√{hypotenuse}² - {base}²"
                 evalu = math.sqrt((hypotenuse ** 2) - (base ** 2))
 
-                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -115,7 +115,7 @@ class Trigonometry_Calculation(commands.Cog):
                 exp = f"√{base}² - {hypotenuse}²"
                 evalu = math.sqrt((base ** 2) - (hypotenuse ** 2))
 
-                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -131,7 +131,7 @@ class Trigonometry_Calculation(commands.Cog):
                 exp = f"√{hypotenuse}² - {height}²"
                 evalu = math.sqrt((hypotenuse ** 2) - (height ** 2))
 
-                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -145,7 +145,7 @@ class Trigonometry_Calculation(commands.Cog):
                 exp = f"√{height}² - {hypotenuse}²"
                 evalu = math.sqrt((height ** 2) - (hypotenuse ** 2))
 
-                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluuated by **Atom Query**", 
+                emby_ctx = discord.Embed(title = "Trigonometry Query", description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(139,0,0))
                 emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
                 emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)

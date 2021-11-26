@@ -62,7 +62,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"22/7 × {diameter}"
             evalu = 22/7 * diameter
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -76,7 +76,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"2 × 22/7 × {radius}"
             evalu = 2 * 22/7 * radius
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -98,7 +98,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"22/7 × {radius}²"
             evalu = 22/7 * radius ** 2
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -112,7 +112,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"22/7 × ({diameter}/2)²"
             evalu = 22/7 * (diameter/2) ** 2
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :", value = f"`{exp}`", inline = False)
@@ -132,7 +132,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"{length} × {width}"
         evalu = length * width
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -148,7 +148,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"1/2 × {base} × {height}"
         evalu = 1/2 * base * height
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -164,7 +164,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"{base} × {height}"
         evalu = base * height
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -180,7 +180,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         evalu = 1/2 * long_diagonal * short_diagonal   
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -196,7 +196,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         evalu = 1/2 * (first_parallel + second_parallel) * height
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -212,7 +212,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"2({length} * {width}) + 2({length} × {height}) + 2({width} × {height})"
         evalu = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -228,7 +228,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         evalu = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -246,7 +246,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
             evalu = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -260,7 +260,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"(2 × 22/7 × ({diameter}/2)²) + (2 × 22/7 × ({diameter}/2) × {height})"
             evalu = (2 * 22/7 * ((diameter/2) ** 2)) + (2 * 22/7 * (diameter/2) * height)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -282,7 +282,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
             evalu = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -296,7 +296,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"(22/7 × ({diameter}/2)²) + (22/7 × ({diameter}/2) × {slant_height})"
             evalu = (22/7 * ((diameter/2) ** 2)) + (22/7 * (diameter/2) * slant_height)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -318,7 +318,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"4 × 22/7 × {radius}²"
             evalu = 4 * 22/7 * (radius ** 2)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -332,7 +332,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"4 × 22/7 × ({diameter}/2)²"
             evalu = 4 * 22/7 * ((diameter/2) ** 2)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -352,7 +352,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"{length} × {width} × {height}"
         evalu = length * width * height 
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -368,7 +368,7 @@ class Geometry_Calculation(commands.Cog) :
         exp = f"1/3 × {length} × {width} × {height}"
         evalu = 1/3 * length * width * height
 
-        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+        emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
         emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -386,7 +386,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"22/7 × {radius}² × {height}"
             evalu = 22/7 * (radius ** 2) * height
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -400,7 +400,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"22/7 × ({diameter}/2)² × {height} "
             evalu = 22/7 * ((diameter/2) ** 2) * height
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -422,7 +422,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"1/3 × 22/7 × {radius}² × {height}"
             evalu = 1/3 * 22/7 * (radius ** 2) * height
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -436,7 +436,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"1/3 × 22/7 × ({diameter}/2)² × {height}"
             evalu = 1/3 * 22/7 * ((diameter/2) ** 2) * height
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -458,7 +458,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"4/3 × 22/7 × {radius}²"
             evalu = 4/3 * 22/7 * (radius ** 2)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
@@ -472,7 +472,7 @@ class Geometry_Calculation(commands.Cog) :
             exp = f"4/3 × 22/7 × {diameter}/2²"
             evalu = 4/3 * 22/7 * ((diameter/2) ** 2)
 
-            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluuated by **Atom Query**", 
+            emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             emby_ctx.add_field(name = "Input :",value = f"`{exp}`", inline = False)
