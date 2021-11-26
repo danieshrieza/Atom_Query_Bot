@@ -108,6 +108,15 @@ async def anno(ctx : Context, *, permission : bool):
 
         await ctx.send("No announcement as of now.")
 
+
+# ! <--- Command to find all server that houses this bot
+@ bot.command()
+@ commands.is_owner()
+async def server(ctx : Context, client):
+
+    for guild in client.guilds:
+        await ctx.send(f"{guild.name}")
+
 # ! <--- Load extension file once bot is ready
 for filename in os.listdir("./extension") :
 
