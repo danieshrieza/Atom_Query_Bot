@@ -64,5 +64,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# And finally, thanks to everyone who have fork the repository.
+# And finally, thanks to everyone who have clone the repository.
 This been a long project for me but this not the end of the project. More and more changes are coming on **Atom Query** in days, weeks, months or even years. Thanks to everyone who's reading this notes. 🎉
