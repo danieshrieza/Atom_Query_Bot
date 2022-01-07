@@ -4,15 +4,15 @@ from discord.ext import commands
 from discord_slash import cog_ext
 from discord.ext.commands.context import Context
 
-# ! <--- Class for Help_Command
+# ! <--- Class for Help_Command --->
 class Help_Command(commands.Cog) :
-    # ! <--- Initialize variable for class
+    # ! <--- Initialize variable for class --->
     def __init__(self, bot):
         
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    # ! <--- Command to send help command for user
+    # ! <--- Command to send help command for user --->
     @ cog_ext.cog_slash(description = "Find the list of command for Basic Calculator.")
     async def help(self, ctx : Context) :
         
@@ -49,6 +49,6 @@ class Help_Command(commands.Cog) :
         await ctx.author.send(embed = emby_ctx)
         await ctx.send("Check your DM ⚡")
 
-# ! <--- Add Help_Command into the bot
+# ! <--- Add Help_Command into the bot --->
 def setup(bot):
   bot.add_cog(Help_Command(bot))

@@ -5,7 +5,7 @@ import math
 from discord_slash import cog_ext
 from discord.ext.commands.context import Context
 
-# ! <--- Class for Trigonometry_Calculation
+# ! <--- Class for Trigonometry_Calculation --->
 class Trigonometry_Calculation(commands.Cog):
 
     """
@@ -22,13 +22,13 @@ class Trigonometry_Calculation(commands.Cog):
     pythagoras_theorem : return `str` embed
     """
 
-    # ! <--- Initialize variable for class
+    # ! <--- Initialize variable for class --->
     def __init__(self, bot):
 
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    # ! <--- Command to find sine of a triangle
+    # ! <--- Command to find sine of a triangle --->
     @ cog_ext.cog_slash(description = "Calculate the sine of a triangle.")
     async def sin(self,ctx : Context, number : float) :
 
@@ -44,7 +44,7 @@ class Trigonometry_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ! <--- Command to find cosine of a triangle
+    # ! <--- Command to find cosine of a triangle --->
     @ cog_ext.cog_slash(description = "Calculate the cosine of a triangle.")
     async def cos(self, ctx : Context, number : float) :
 
@@ -60,7 +60,7 @@ class Trigonometry_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ! <--- Command to find tangent of a triangle
+    # ! <--- Command to find tangent of a triangle --->
     @ cog_ext.cog_slash(description = "Calculate the tangent of a triangle.")
     async def tan(self, ctx : Context, number : float) :
 
@@ -76,7 +76,7 @@ class Trigonometry_Calculation(commands.Cog):
 
         await ctx.send(embed = emby_ctx)
 
-    # ! <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
+    # ! <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem --->
     @ cog_ext.cog_slash(description = "Calculate the Pythagoras Theorem.")
     async def pythagoras_theorem(self, ctx : Context, height : float = None, base : float = None, hypotenuse : float = None) :
 
@@ -157,6 +157,6 @@ class Trigonometry_Calculation(commands.Cog):
             
             await ctx.send("Please provide input for only one optional argument.")
 
-# ! <--- Add Triginometry_Calculation into the bot
+# ! <--- Add Triginometry_Calculation into the bot --->
 def setup(bot):
   bot.add_cog(Trigonometry_Calculation(bot))
