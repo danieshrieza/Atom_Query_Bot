@@ -119,4 +119,4 @@ for filename in os.listdir("./extension") :
         bot.load_extension(f"extension.{filename[:-3]}")
 
 # ! <--- Key for bot to run --->
-bot.run(os.environ['MATH_VAR'])
+bot.run(os.getenv("MATH_VAR"))
