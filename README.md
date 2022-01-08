@@ -26,19 +26,16 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 3. Fraction
     - `pip install Fraction`
 
-4. itertools
-    - `pip install itertools`
-
-5. matplotlib
+4. matplotlib
     - `pip install matplotlib`
 
     ### ⚠️WARNING⚠️
     1. As of now, Python `v3.10.0` does not support `matplotlib` and error will occur when you try to import `matplotlib.pyplot`. If you're currently using Python `v3.10.0`, I would recommend you to downgrade your Python to version `3.9.8` to make sure no error occured when setting up this repository.
 
-6. numpy
+5. numpy
     - `pip install numpy`
 
-I've also used 4 built-in Python library in this project which is `math`, `datetime`, `os` and `random`. 
+I've also used 5 built-in Python library in this project which is `math`, `datetime`, `os`, `random` and `itertools`. 
 
 # LICENSE
 
