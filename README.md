@@ -29,9 +29,6 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 4. matplotlib
     - `pip install matplotlib`
 
-    ### ⚠️WARNING⚠️
-    1. As of now, Python `v3.10.0` does not support `matplotlib` and error will occur when you try to import `matplotlib.pyplot`. If you're currently using Python `v3.10.0`, I would recommend you to downgrade your Python to version `3.9.8` to make sure no error occured when setting up this repository.
-
 5. numpy
     - `pip install numpy`
 
