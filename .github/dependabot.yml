@@ -6,8 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/package"
     schedule:
-      interval: "weekly"
-      day: "thursday"
-      time: "14:00"
+      interval: "daily"
+      time: "15:00"

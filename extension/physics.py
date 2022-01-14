@@ -7,29 +7,8 @@ from discord.ext.commands.context import Context
 # ! <--- Class for Physics_Calculation --->
 class Physics_Calculation(commands.Cog) :
 
-    """
-    Physics_Calculation is a class that contains physics related math command.
-
-    Commands :
-    --------
-    speed : return `str` embed  
-
-    electric_current : return `str` embed
-
-    electric_voltage : `str` embed
-
-    electric_resistance : `str` embed
-
-    moment_of_force : `str` embed
-
-    pressure : `str` embed
-
-    density : `str` embed
-    """
-
     # ! <--- Initialize variable for class --->
     def __init__(self, bot) :
-        
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 

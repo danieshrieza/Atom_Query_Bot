@@ -8,37 +8,8 @@ from discord.ext.commands.context import Context
 # ! <--- Class for Unit_Converter --->
 class Unit_Converter(commands.Cog):
 
-    """
-    Unit_Converter is a class that contains unit conversion commands.
-
-    Commands :
-    ----------
-    mm_cm : return `str` embed
-
-    cm_m : return `str` embed
-
-    m_km : return `str` embed
-
-    km_m : return `str` embed
-
-    m_cm : return `str` embed
-
-    g_kg : return `str` embed
-
-    kg_g : return `str` embed
-
-    ml_l : return `str` embed
-
-    l_ml : return `str` embed
-
-    frac_decimal : return `str` embed
-
-    decimal_frac : return `str` embed
-    """
-
     # ! <---  Initialize variable for class --->
     def __init__(self, bot):
-
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 

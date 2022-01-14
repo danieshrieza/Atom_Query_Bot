@@ -39,12 +39,10 @@ async def on_ready():
 async def reload(ctx : Context, extension) :
 
     try :
-
         bot.reload_extension(f"extension.{extension}")
         await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
-
         await ctx.send(f"`{extension}` not found.")
 
 # ! <--- Command to load extension file for owner --->
@@ -53,12 +51,10 @@ async def reload(ctx : Context, extension) :
 async def load(ctx : Context, extension) :
 
     try :
-
         bot.load_extension(f"extension.{extension}")
         await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
-
         await ctx.send(f"`{extension}` not found.")
 
 # ! <--- Command to unload extension file for owner --->
@@ -67,54 +63,21 @@ async def load(ctx : Context, extension) :
 async def unload(ctx : Context, extension) :
 
     try :
-            
         bot.unload_extension(f"extension.{extension}")
         await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
 
     except :
-
         await ctx.send(f"`{extension}` not found.")
-
-# ! <--- Command to send announcement to all server that host this Discord Bot --->
-@ bot.command()
-@ commands.is_owner()
-async def anno(ctx : Context, *, permission : bool):
-
-    if permission == True :
-
-        for server in bot.guilds :
-
-            for channel in server.text_channels :
-
-                try:
-
-                    emby_ctx = discord.Embed(title = "Announcement", colour = discord.Color.from_rgb(212,175,55))
-                    emby_ctx.add_field(name = "**Attention**", value = "", inline = False)
-                    emby_ctx.add_field(name = "", value = "", inline = True)
-                    emby_ctx.set_thumbnail(url = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128")
-                    await channel.send(embed = emby_ctx)
-
-                except Exception:
-                    continue
-
-                else:
-                    break
-
-    else :
-        await ctx.send("No announcement as of now.")
-
 
 # ! <--- Command to find all server that houses this bot --->
 @ bot.command()
 @ commands.is_owner()
 async def server(ctx : Context):
-
     for guild in bot.guilds:
         await ctx.send(f"{guild.name}")
 
 # ! <--- Load extension file once bot is ready --->
 for filename in os.listdir("./extension") :
-
     if filename.endswith(".py"):
         bot.load_extension(f"extension.{filename[:-3]}")
 

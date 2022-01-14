@@ -154,7 +154,6 @@ class Trigonometry_Calculation(commands.Cog):
 
                 await ctx.send(embed = emby_ctx)
         else :
-            
             await ctx.send("Please provide input for only one optional argument.")
 
 # ! <--- Add Triginometry_Calculation into the bot --->

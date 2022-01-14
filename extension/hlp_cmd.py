@@ -6,9 +6,9 @@ from discord.ext.commands.context import Context
 
 # ! <--- Class for Help_Command --->
 class Help_Command(commands.Cog) :
+    
     # ! <--- Initialize variable for class --->
     def __init__(self, bot):
-        
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 

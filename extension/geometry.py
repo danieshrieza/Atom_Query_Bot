@@ -7,49 +7,8 @@ from discord.ext.commands.context import Context
 # ! <--- Class for Geometry_Calculation --->
 class Geometry_Calculation(commands.Cog) :
 
-    """
-    Geometry_Calculation is a class that contains geometry related commands.
-
-    Commands :
-    ----------
-
-    circle_circumference : return `str` embed
-
-    area_circle : return `str` embed
-
-    area_quadrilateral : return `str` embed
-
-    area_triangle : return `str` embed
-
-    area_parallelogram : return `str` embed
-
-    area_kite : return `str` embed
-
-    area_trampezium : return `str` embed
-
-    surface_area_quadrilateral : return `str` embed
-
-    surface_area_triangle : return `str` embed
-
-    surface_area_cylinder : return `str` embed
-
-    surface_area_cone : return `str` embed
-
-    volume_quadrilateral : return `str` embed
-
-    volume_triangle : return `str` embed
-
-    volume_parallelogram : return `str` embed
-
-    volume_kite : return `str` embed
-
-    volume_trampezium : return `str` embed
-
-    """
-
     # ! <--- Initialize variable for class --->
     def __init__(self, bot) :
-        
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
@@ -61,7 +20,6 @@ class Geometry_Calculation(commands.Cog) :
 
             exp = f"22/7 × {diameter}"
             evalu = 22/7 * diameter
-
             emby_ctx = discord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = discord.Color.from_rgb(157,34,53))
             emby_ctx.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
@@ -72,7 +30,7 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         elif (diameter == None and radius != None) :
-
+            
             exp = f"2 × 22/7 × {radius}"
             evalu = 2 * 22/7 * radius
 
@@ -86,7 +44,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Commmand to calculate area of a circle --->
@@ -122,7 +79,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate area of a quadrilateral --->
@@ -270,7 +226,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate surface area of a cone --->
@@ -306,7 +261,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculte surface area of a sphere --->
@@ -342,7 +296,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a cube or a cuboid --->
@@ -410,7 +363,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a cone --->
@@ -446,7 +398,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a sphere --->
@@ -482,7 +433,6 @@ class Geometry_Calculation(commands.Cog) :
             await ctx.send(embed = emby_ctx)
 
         else :
-            
             await ctx.send("Please provide input for only one optional argument.")
 
 # ! <--- Add Geometry_Calculation into the bot --->

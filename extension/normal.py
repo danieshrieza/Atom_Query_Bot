@@ -9,46 +9,8 @@ from discord.ext.commands.context import Context
 # ! <--- Class for Basic_Calculation --->
 class Basic_Calculation(commands.Cog):
 
-    """
-    Basic_Calculation is a class that contains basic calculation command.
-
-    Commands :
-    ----------
-    cal : return `str` embed
-
-    gene : return `str` embed
-
-    square : return `str` embed
-
-    cube : return `str` embed
-
-    varpower : return `str` embed
-
-    sqrt : return `str` embed
-
-    cbrt : return `str` embed
-
-    varroot : return `str` embed
-
-    factor : return `str` embed
-
-    common_factor : return `str` embed
-
-    highest_common_factor : return `str` embed
-
-    multiple : return `str` embed
-
-    common_multiple : return `str` embed
-
-    lowest_common_multiple : return `str` embed
-
-    terminate : return `str` embed
-
-    """
-
     # ! <--- Initialize variable and function for class --->
     def __init__(self, bot):
-
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
@@ -257,7 +219,6 @@ class Basic_Calculation(commands.Cog):
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide valid input.")
 
     # ! <--- Command to find highest common factor of multiple number --->
@@ -289,7 +250,6 @@ class Basic_Calculation(commands.Cog):
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide valid input.")
 
     # ! <--- Command to find multiple of a number --->
@@ -346,7 +306,6 @@ class Basic_Calculation(commands.Cog):
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide valid input.")
 
     # ! <--- Command to find the lowest common multiple of multiple number --->
@@ -380,7 +339,6 @@ class Basic_Calculation(commands.Cog):
             await ctx.send(embed = emby_ctx)
 
         else :
-
             await ctx.send("Please provide valid input.")
 
 # ! <--- Add Basic_Calculation into the bot --->
