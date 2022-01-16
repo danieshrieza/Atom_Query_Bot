@@ -31,7 +31,7 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/linear.png")
         plt.close()
 
-        await ctx.response.send_message(file = file)
+        await ctx.response.send_message(file)
 
     # ! <--- Command to plot quadratic graph --->
     @ nextcord.slash_command(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
@@ -50,7 +50,7 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/quad.png")
         plt.close()
 
-        await ctx.response.send_message(file = file)
+        await ctx.response.send_message(file)
 
     # ! <--- Command to plot cubic graph --->
     @ nextcord.slash_command(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
@@ -69,7 +69,7 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/cube.png")
         plt.close()
 
-        await ctx.response.send_message(file = file)
+        await ctx.response.send_message(file)
 
     # ! <--- Command to plot reciprocal graph --->
     @ nextcord.slash_command(description = "Plot a reciprocal graph using the equation y = 1/x.")
@@ -88,7 +88,7 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/reci.png")
         plt.close()
         
-        await ctx.response.send_message(file = file)
+        await ctx.response.send_message(file)
 
 
     # ! <--- Command to calculate distance between two points on a Cartesian Plane --->
