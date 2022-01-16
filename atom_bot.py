@@ -3,7 +3,6 @@ import os
 from nextcord.ext import commands, tasks
 from nextcord.ext.commands.context import Context
 from itertools import cycle
-import os
 from dotenv.main import load_dotenv
 
 # ! <--- Declaring bot or bot --->
