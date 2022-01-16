@@ -1,25 +1,25 @@
 from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
-from nextcord.ext.commands.context import Context
+from nextcord import Interaction
 
 # ! <--- Class for Help_Command --->
 class Help_Command(commands.Cog) :
     
     # ! <--- Initialize variable for class --->
-    def __init__(self, bot):
+    def __init__(self, bot : commands.Bot):
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     # ! <--- Command to send help command for user --->
     @ nextcord.slash_command(description = "Find the list of command for Basic Calculator.")
-    async def help(self, ctx : Context) :
+    async def help(self, ctx : Interaction) :
         
         embed_msg = nextcord.Embed(title = "Help!", description = "Listing all commands on **Atom Query**.", 
         timestamp = datetime.now(timezone.utc), color = nextcord.Color.from_rgb(175, 143, 233))
 
         embed_msg.add_field(name = "Basic Commands :", 
-        value = "`cal` `generator` `square` `cube` `square_root` `cube_root` `var_power` `var_root` `factor` `common_factor` `highest_common_factor` `multiple` `common_multiple` `lowest_common_multiple` `terminate`",
+        value = "`cal` `generator` `square` `cube` `square_root` `cube_root` `var_power` `var_root` `factor` `common_factor` `highest_common_factor` `multiple` `common_multiple` `lowest_common_multiple`",
         inline = False)
 
         embed_msg.add_field(name = "Geometry Commands :",
@@ -39,14 +39,13 @@ class Help_Command(commands.Cog) :
         inline = False)
 
         embed_msg.add_field(name = "Cartesian Commands :", 
-        value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function`", 
+        value = "`linear_function` `quadratic_function` `cubic_function` `reciprocal_function` `distance` `gradient` `midpoint`", 
         inline = False)
 
-        embed_msg.set_author(name = f'{ctx.author.name}\'s request. ',  icon_url = ctx.author.avatar_url)
         embed_msg.set_thumbnail(url = self.link)
 
-        
+        await ctx.response.send_message(embed = embed_msg)
 
 # ! <--- Add Help_Command into the bot --->
-def setup(bot):
+def setup(bot : commands.Bot):
   bot.add_cog(Help_Command(bot))

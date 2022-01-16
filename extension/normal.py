@@ -3,7 +3,7 @@ from nextcord.ext import commands
 import math
 import random
 from datetime import datetime, timezone
-from nextcord.ext.commands.context import Context
+from nextcord import Interaction
 
 # ! <--- Class for Basic_Calculation --->
 class Basic_Calculation(commands.Cog):
@@ -36,7 +36,7 @@ class Basic_Calculation(commands.Cog):
 
     # ! <--- Command to calculate queries from user --->
     @ nextcord.slash_command(description = "Calculate your math's query.")
-    async def cal(self, ctx : Context, query : str) :
+    async def cal(self, ctx : Interaction, query : str) :
 
         expliteral = ("").join(query)
         exppoet = expliteral.replace("*","×").replace("/", "÷")
@@ -44,128 +44,120 @@ class Basic_Calculation(commands.Cog):
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :",value = f"`{exppoet}`", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to generate random number --->
     @ nextcord.slash_command(description = "Generate randomly selected numbers from input range.")
-    async def generator(self, ctx : Context, starting_point: float, ending_point : float) :
+    async def generator(self, ctx : Interaction, starting_point: float, ending_point : float) :
 
         exp = f"Generate number between {starting_point} and {ending_point}."
         evalu = f"{random.random(starting_point,ending_point)}"
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to square a number --->
     @ nextcord.slash_command(description = "Squared number from user.")
-    async def square(self, ctx : Context, base : float) :
+    async def square(self, ctx : Interaction, base : float) :
 
         exp = f"{base}²"
         evalu = f"{base ** 2}" 
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to cube a number --->
     @ nextcord.slash_command(description = "Cubed number from user.")
-    async def cube(self, ctx : Context, base : float) :
+    async def cube(self, ctx : Interaction, base : float) :
 
         exp = f"{base}³"
         evalu = f"{base ** 3}"
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to power a base using user's exponent --->
     @ nextcord.slash_command(description = "Power the user's base to the exponent.")
-    async def variable_power(self, ctx : Context, base : float, exponent : float) :
+    async def variable_power(self, ctx : Interaction, base : float, exponent : float) :
 
         exp = f"{base} ** {exponent}"
         evalu = f"{base ** exponent}"
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to square root a number --->
     @ nextcord.slash_command(description = "Square root user's number.")
-    async def square_root(self, ctx : Context, radicand : float) :
+    async def square_root(self, ctx : Interaction, radicand : float) :
 
         exp = f"√{radicand}"
         evalu = f"{math.sqrt(radicand)}" 
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to cube root a number --->
     @ nextcord.slash_command(description = "Cube root user's number.")
-    async def cube_root(self, ctx : Context, radicand : float) :
+    async def cube_root(self, ctx : Interaction, radicand : float) :
 
         exp = f"³√{radicand}"
         evalu = f"{radicand ** 1./3.}"
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to root a radicand using a radical --->
     @ nextcord.slash_command(description = "Radical(root) user's radicand(number).")
-    async def variable_root(self, ctx : Context, radicand : float, radical: float) :
+    async def variable_root(self, ctx : Interaction, radicand : float, radical: float) :
 
         exp = f"{radicand} ** 1/{radical}"
         evalu = f"{radicand ** 1./radical}"
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to find factor a number --->
     @ nextcord.slash_command(description = "Find the factor of a number.")
-    async def factor(self, ctx : Context, number : int) :
+    async def factor(self, ctx : Interaction, number : int) :
 
         evalu = []
         for i in range(1, number + 1) :
@@ -174,16 +166,15 @@ class Basic_Calculation(commands.Cog):
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :",value = f"Factor of `{number}`.", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to find common factor of multiple number --->
     @ nextcord.slash_command(description = "Find the common factor of multiple number.")
-    async def common_factor(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
+    async def common_factor(self, ctx : Interaction, number_1 : int, number_2 : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -194,12 +185,11 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :",value = f"Common Factor of `{number_1}` and `{number_2}`.", inline = False)
             embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         elif (number_3 != None and number_1 > 0 and number_2 > 0) :
 
@@ -210,19 +200,18 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :",value = f"Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         else :
-            await ctx.send("Please provide valid input.")
+            await ctx.response.send_message("Please provide valid input.")
 
     # ! <--- Command to find highest common factor of multiple number --->
     @ nextcord.slash_command(description = "Find the highest common factor of multiple number.")
-    async def highest_common_factor(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int = None) :
+    async def highest_common_factor(self, ctx : Interaction, number_1 : int, number_2 : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -230,11 +219,10 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}` and `{number_2}`.", inline = False)
             embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         elif (number_3 != None and number_1 > 0 and number_2 > 0) :
 
@@ -242,18 +230,17 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :",value = f"Highest Common Factor of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         else :
-            await ctx.send("Please provide valid input.")
+            await ctx.response.send_message("Please provide valid input.")
 
     # ! <--- Command to find multiple of a number --->
     @ nextcord.slash_command(description = "Find the multiple of a number.")
-    async def multiple(self, ctx : Context, number : int, number_range : int) :
+    async def multiple(self, ctx : Interaction, number : int, number_range : int) :
 
         evalu = []
         for i in range(1, number_range + 1) :
@@ -261,16 +248,15 @@ class Basic_Calculation(commands.Cog):
 
         embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
         timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-        embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
         embed_msg.add_field(name = "Input :",value = f"Multiple of `{number}`.", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
     # ! <--- Command to find common multiple of multiple number --->
     @ nextcord.slash_command(description = "Find the common multiple of 2 or 3 numbers.")
-    async def common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_range : int, number_3 : int = None) :
+    async def common_multiple(self, ctx : Interaction, number_1 : int, number_2 : int, number_range : int, number_3 : int = None) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0 and number_range > 0) :
 
@@ -281,12 +267,11 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :", value = f"Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
             embed_msg.add_field(name = "Output :", value = f"`{arr}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         elif (number_3 != None and number_1 > 0 and number_2 > 0 and number_range > 0) :
 
@@ -297,19 +282,18 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :", value = f"Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             embed_msg.add_field(name = "Output :", value = f"`{arr}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         else :
-            await ctx.send("Please provide valid input.")
+            await ctx.response.send_message("Please provide valid input.")
 
     # ! <--- Command to find the lowest common multiple of multiple number --->
     @ nextcord.slash_command(description = "Find the lowest common multiple of 2 or 3 numbers.")
-    async def lowest_common_multiple(self, ctx : Context, number_1 : int, number_2 : int, number_3 : int) :
+    async def lowest_common_multiple(self, ctx : Interaction, number_1 : int, number_2 : int, number_3 : int) :
 
         if (number_3 == None and number_1 > 0 and number_2 > 0) :
 
@@ -317,12 +301,11 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}` and `{number_2}`.", inline = False)
             embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         elif (number_3 != None and number_1 > 0 and number_2 > 0) :
 
@@ -330,16 +313,15 @@ class Basic_Calculation(commands.Cog):
 
             embed_msg = nextcord.Embed(title = "Math Query", description = "The requested `Math Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(179, 27, 27))
-            embed_msg.set_author(name = f"{ctx.author.name}'s query.", icon_url = ctx.author.avatar_url)
             embed_msg.add_field(name = "Input :", value = f"Lowest Common Multiple of `{number_1}`, `{number_2}` and `{number_3}`.", inline = False)
             embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.send(embed = embed_msg)
+            await ctx.response.send_message(embed = embed_msg)
 
         else :
-            await ctx.send("Please provide valid input.")
+            await ctx.response.send_message("Please provide valid input.")
 
 # ! <--- Add Basic_Calculation into the bot --->
-def setup(bot): 
+def setup(bot : commands.Bot): 
   bot.add_cog(Basic_Calculation(bot))
