@@ -32,7 +32,7 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 5. python-dotenv
     - `pip install python-dotenv`
 
-I've also used 5 built-in Python library in this project which is `math`, `datetime`, `os`, `random` and `itertools`. 
+I've also used 4 built-in Python library in this project which is `math`, `datetime`, `os`, and `random`. 
 
 # LICENSE
 

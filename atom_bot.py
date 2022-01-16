@@ -1,8 +1,7 @@
 import nextcord
 import os
-from nextcord.ext import commands, tasks
+from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
-from itertools import cycle
 from dotenv.main import load_dotenv
 
 # ! <--- Declaring bot or bot --->
@@ -12,27 +11,11 @@ bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_pr
 load_dotenv() 
 MATH_VAR = os.getenv("MATH_VAR", "")
 
-# ! <--- Status cycle for bot --->
-status = cycle([
-    " Unanswered Question of Life", 
-    " Self - Referential Paradox",
-    " Near-infinite density", 
-    " Dark matter ",
-    " Schrodinger's cat",
-    " Recursion in life",
-    " A person stuck in a while loop"
-])
-
-# ! <--- Looping through status --->
-@ tasks.loop(minutes = 5)
-async def status_swap():
-    await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = next(status)))
-
 # ! <--- Activating bot once it's ready --->
 @ bot.event
 async def on_ready():
     print("I have logged in as {0.user}".format(bot))
-    status_swap.start()
+    await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "Dark matter"))
 
 # ! <--- Command to reload extension file for owner --->
 @ commands.is_owner()
