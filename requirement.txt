@@ -2,3 +2,4 @@ nextcord
 Fraction
 matplotlib
 numpy
+python-dotenv

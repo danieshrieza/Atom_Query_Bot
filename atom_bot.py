@@ -3,9 +3,19 @@ import os
 from nextcord.ext import commands, tasks
 from nextcord.ext.commands.context import Context
 from itertools import cycle
+import os
+from dotenv.main import load_dotenv
+
+
+
+
 
 # ! <--- Declaring bot or bot --->
 bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
+
+# ! <--- Load .env file into python and get the value of the MATH_VAR environment variable --->
+load_dotenv() 
+MATH_VAR = os.getenv("MATH_VAR", "")
 
 # ! <--- Status cycle for bot --->
 status = cycle([
@@ -78,4 +88,4 @@ for filename in os.listdir("./extension") :
         bot.load_extension(f"extension.{filename[:-3]}")
 
 # ! <--- Key for bot to run --->
-bot.run(os.getenv("MATH_VAR"))
+bot.run(MATH_VAR)
