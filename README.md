@@ -1,12 +1,5 @@
 # Atom Query ⚛️
 
----------------------------------------------------------------------------------------------------------------------------
-#### NOTICE :
-
-The project are curently being migrated to `nextcord` due to the discontinuation of `discord.py`. Some dependencies that were used in this project won't longer be needed. This README will be updated after the migration is done.
-
----------------------------------------------------------------------------------------------------------------------------
-
 **Atom Query** is a **Discord Bot** that able to calculate common queries. Gamers or not, die hard Discord User will found this Bot to be useful when they are doing their Math homework.
 
 ![Atom Query Logo](./image/Atom_Query_Icon.png)
@@ -24,19 +17,16 @@ As of now, it able to calculate queries from 6 different areas of Mathematics wh
 
 In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the following dependencies :
 
-1. discord.py
-    - `pip install discord`
+1. nextcord
+    - `pip install nextcord`
 
-2. discord-slash
-    - `pip install discord-py-slash-commands`
-
-3. Fraction
+2. Fraction
     - `pip install Fraction`
 
-4. matplotlib
+3. matplotlib
     - `pip install matplotlib`
 
-5. numpy
+4. numpy
     - `pip install numpy`
 
 I've also used 5 built-in Python library in this project which is `math`, `datetime`, `os`, `random` and `itertools`. 
