@@ -1,5 +1,4 @@
 from nextcord import Interaction
-from nextcord.ext.commands import Context
 import nextcord
 from nextcord.ext import commands
 import matplotlib.pyplot as plt
@@ -17,7 +16,7 @@ class Cartesian_Query(commands.Cog) :
 
     # ! <--- Command to plot linear graph --->
     @ nextcord.slash_command(description = "Plot a linear graph using the equation y = mx + c.")
-    async def linear_function(self, ctx : Context, gradient : float, y_intercept : float) :
+    async def linear_function(self, ctx : Interaction, gradient : float, y_intercept : float) :
 
         x = np.linspace(-20, 20, 100)
         y = gradient * x + y_intercept
@@ -32,11 +31,11 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/linear.png")
         plt.close()
 
-        await ctx.send(file = file)
+        await ctx.response.send_message(file = file)
 
     # ! <--- Command to plot quadratic graph --->
     @ nextcord.slash_command(description = "Plot a quadratic graph using the equation y = ax² + bx + c.")
-    async def quadratic_function(self, ctx : Context, a : float, b : float, c : float) :
+    async def quadratic_function(self, ctx : Interaction, a : float, b : float, c : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 2 + (b * x) + c
@@ -51,11 +50,11 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/quad.png")
         plt.close()
 
-        await ctx.send(file = file)
+        await ctx.response.send_message(file = file)
 
     # ! <--- Command to plot cubic graph --->
     @ nextcord.slash_command(description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.")
-    async def cubic_function(self, ctx : Context, a : float, b : float, c : float, d : float) :
+    async def cubic_function(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d
@@ -70,11 +69,11 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/cube.png")
         plt.close()
 
-        await ctx.send(file = file)
+        await ctx.response.send_message(file = file)
 
     # ! <--- Command to plot reciprocal graph --->
     @ nextcord.slash_command(description = "Plot a reciprocal graph using the equation y = 1/x.")
-    async def reciprocal_function(self, ctx : Context, numerator : float, denominator : float) :
+    async def reciprocal_function(self, ctx : Interaction, numerator : float, denominator : float) :
 
         x = np.linspace(-20, 20, 100)
         y = numerator / (denominator * x)
@@ -89,7 +88,7 @@ class Cartesian_Query(commands.Cog) :
         plt.savefig("./image/reci.png")
         plt.close()
         
-        await ctx.send(file = file)
+        await ctx.response.send_message(file = file)
 
 
     # ! <--- Command to calculate distance between two points on a Cartesian Plane --->
