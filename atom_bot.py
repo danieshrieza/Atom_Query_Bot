@@ -6,10 +6,6 @@ from itertools import cycle
 import os
 from dotenv.main import load_dotenv
 
-
-
-
-
 # ! <--- Declaring bot or bot --->
 bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
 
