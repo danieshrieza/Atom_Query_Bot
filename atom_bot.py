@@ -1,15 +1,11 @@
-import discord
+import nextcord
 import os
-from discord.ext import commands, tasks
-from discord.ext.commands.context import Context
-from discord_slash import SlashCommand
+from nextcord.ext import commands, tasks
+from nextcord.ext.commands.context import Context
 from itertools import cycle
 
 # ! <--- Declaring bot or bot --->
 bot = commands.Bot(command_prefix = "!", case_insensitive = True, strip_after_prefix = True, help_command = None)
-
-# ! <--- Declaring slash command for bot --->
-slash = SlashCommand(bot, sync_commands = True, sync_on_cog_reload = True, debug_guild = 883147972337090610)
 
 # ! <--- Status cycle for bot --->
 status = cycle([
@@ -25,7 +21,7 @@ status = cycle([
 # ! <--- Looping through status --->
 @ tasks.loop(minutes = 5)
 async def status_swap():
-    await bot.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = next(status)))
+    await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = next(status)))
 
 # ! <--- Activating bot once it's ready --->
 @ bot.event

@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "repl_python3_MathBot"
+name = "package"
 version = "0.1.0"
 description = ""
-authors = ["DanieshNoor <<>>"]
+authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask = "^2.0.2"
+nextcord = "^2.0.0-alpha.6"
 Fraction = "^2.1.1"
-discord = "^1.7.3"
-discord-py-slash-command = "^3.0.3"
+matplotlib = "^3.5.1"
+numpy = "^1.22.1"
 
 [tool.poetry.dev-dependencies]
 

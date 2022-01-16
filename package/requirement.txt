@@ -1,5 +1,4 @@
-discord.py==1.7.3
-discord-py-slash-command==3.0.3
-Fraction==2.1.1
-matplotlib==3.5.1
-numpy==1.22.0
+nextcord
+Fraction
+matplotlib
+numpy
