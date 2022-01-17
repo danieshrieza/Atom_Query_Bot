@@ -1,414 +1,468 @@
 from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
-from nextcord.ext.commands.context import Context
 from nextcord import Interaction
+
 
 # ! <--- Class for Geometry_Calculation --->
 class Geometry_Calculation(commands.Cog) :
+
 
     # ! <--- Initialize variable for class --->
     def __init__(self, bot : commands.Bot) :
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    # ! <--- Command to calculate circumference of a circle using diameter or radius --->
-    @ nextcord.slash_command(description = "Calculate the circumference of a circle using diameter or radius")
-    async def circle_circumference(self, ctx : Interaction, radius : float = None, diameter : float = None) :
 
-        if (radius == None and diameter != None) :
+    # ! <--- Command to calculate circumference of a circle using radius --->
+    @ nextcord.slash_command(
+        name = "circumference of circle (radius)", 
+        description = "Calculate the circumference of a circle using radius."
+    )
 
-            exp = f"22/7 × {diameter}"
-            evalu = 22/7 * diameter
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        elif (diameter == None and radius != None) :
+    async def circle_circumference(self, ctx : Interaction, radius : float) :
             
-            exp = f"2 × 22/7 × {radius}"
-            evalu = 2 * 22/7 * radius
+        exp = f"2 × 22/7 × {radius}"
+        evalu = 2 * 22/7 * radius
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
+        await ctx.response.send_message(embed = embed_msg)
+
+
+    # ! <--- Command to calculate circumference of a circle using diameter --->
+    @ nextcord.slash_command(
+        name = "circumference of circle (diameter)", 
+        description = "Calculate the circumference of a circle using diameter."
+    )
+
+    async def circle_circumference(self, ctx : Interaction, diameter : float) :
+            
+        exp = f"22/7 × {diameter}"
+        evalu = 22/7 * diameter
+
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
+
+        await ctx.response.send_message(embed = embed_msg)
+
 
     # ! <--- Commmand to calculate area of a circle --->
-    @ nextcord.slash_command(description = "Calculate the area of a circle.")
-    async def area_circle(self, ctx : Interaction, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "area of circle", 
+        description = "Calculate the area of a circle."
+    )
+    
+    async def area_circle(self, ctx : Interaction, radius : float) :
 
-        if (diameter == None and radius != None) :
+        exp = f"22/7 × {radius}²"
+        evalu = 22/7 * radius ** 2
 
-            exp = f"22/7 × {radius}²"
-            evalu = 22/7 * radius ** 2
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.response.send_message(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
-        elif (radius == None and diameter != None) :
-
-            exp = f"22/7 × ({diameter}/2)²"
-            evalu = 22/7 * (diameter/2) ** 2
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate area of a quadrilateral --->
-    @ nextcord.slash_command(description = "Calculate the area of a rectangle, a square or a quadrilateral.")
+    @ nextcord.slash_command(
+        name = "area of quadrlateral", 
+        description = "Calculate the area of a rectangle, a square or a quadrilateral."
+    )
+
     async def area_quadrilateral(self, ctx : Interaction, length : float, width : float) :
 
         exp = f"{length} × {width}"
         evalu = length * width
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate area of a triangle --->
-    @ nextcord.slash_command(description = "Calculate the area of a triangle.")
+    @ nextcord.slash_command(
+        name = "area of triangle", 
+        description = "Calculate the area of a triangle."
+    )
+
     async def area_triangle(self, ctx : Interaction, base : float, height : float) :
 
         exp = f"1/2 × {base} × {height}"
         evalu = 1/2 * base * height
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate area of a parallelogram --->
-    @ nextcord.slash_command(description = "Calculate the area of a parallelogram.")
+    @ nextcord.slash_command(
+        name = "area of parallelogram", 
+        description = "Calculate the area of a parallelogram."
+    )
+
     async def area_parallelogram(self, ctx : Interaction, base : float, height : float) :
 
         exp = f"{base} × {height}"
         evalu = base * height
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate area of a kite --->
-    @ nextcord.slash_command(description = "Calculate the area of a kite.")
+    @ nextcord.slash_command(
+        name = "area of kite", 
+        description = "Calculate the area of a kite."
+    )
+
     async def area_kite(self, ctx : Interaction, long_diagonal : float, short_diagonal : float) :
 
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         evalu = 1/2 * long_diagonal * short_diagonal   
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate area of a trampezium --->
-    @ nextcord.slash_command(description = "Calculate the area of a trampezium.")
+    @ nextcord.slash_command(
+        name = "area of trampezium", 
+        description = "Calculate the area of a trampezium."
+    )
+
     async def area_trampezium(self, ctx : Interaction, first_parallel : float, second_parallel : float, height : float) :
 
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         evalu = 1/2 * (first_parallel + second_parallel) * height
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate surface area of a quadrilateral --->
-    @ nextcord.slash_command(description = "Calculate the surface area of a cuboid.")
+    @ nextcord.slash_command(
+        name = "surface area of quadrilateral", 
+        description = "Calculate the surface area of a cuboid."
+    )
+
     async def surface_area_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"2({length} * {width}) + 2({length} × {height}) + 2({width} × {height})"
         evalu = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate surface area of pyramid --->
-    @ nextcord.slash_command(description = "Calculate the surface area of a pyramid.")
+    @ nextcord.slash_command(
+        name = "surface area of pyramid", 
+        description = "Calculate the surface area of a pyramid."
+    )
+
     async def surface_area_pyramid(self, ctx : Interaction, length : float, width : float, face_height : float) :
 
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         evalu = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
         embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate surface area of a cylinder --->
-    @ nextcord.slash_command(description = "Calculate the surface area of a cylinder.")
-    async def surface_area_cylinder(self, ctx : Interaction, height : float, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "surface area of cylinder", 
+        description = "Calculate the surface area of a cylinder."
+    )
 
-        if (diameter == None and radius != None) :
+    async def surface_area_cylinder(self, ctx : Interaction, height : float, radius : float) :
 
-            exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
-            evalu = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
+        exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
+        evalu = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"(2 × 22/7 × ({diameter}/2)²) + (2 × 22/7 × ({diameter}/2) × {height})"
-            evalu = (2 * 22/7 * ((diameter/2) ** 2)) + (2 * 22/7 * (diameter/2) * height)
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate surface area of a cone --->
-    @ nextcord.slash_command(description = "Calculate the surface area of a cone.")
-    async def surface_area_cone(self, ctx : Interaction, slant_height : float, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "surface area of cone", 
+        description = "Calculate the surface area of a cone."
+    )
 
-        if (diameter == None and radius != None) :
+    async def surface_area_cone(self, ctx : Interaction, slant_height : float, radius : float) :
 
-            exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
-            evalu = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
+        exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
+        evalu = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"(22/7 × ({diameter}/2)²) + (22/7 × ({diameter}/2) × {slant_height})"
-            evalu = (22/7 * ((diameter/2) ** 2)) + (22/7 * (diameter/2) * slant_height)
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculte surface area of a sphere --->
-    @ nextcord.slash_command(description = "Calculate the surface area of a sphere.")
-    async def surface_area_sphere(self, ctx : Interaction, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "surface area of sphere", 
+        description = "Calculate the surface area of a sphere."
+    )
 
-        if (diameter == None and radius != None) :
+    async def surface_area_sphere(self, ctx : Interaction, radius : float) :
 
-            exp = f"4 × 22/7 × {radius}²"
-            evalu = 4 * 22/7 * (radius ** 2)
+        exp = f"4 × 22/7 × {radius}²"
+        evalu = 4 * 22/7 * (radius ** 2)
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"4 × 22/7 × ({diameter}/2)²"
-            evalu = 4 * 22/7 * ((diameter/2) ** 2)
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a cube or a cuboid --->
-    @ nextcord.slash_command(description = "Calculate the volume of a cube or a cuboid.")
+    @ nextcord.slash_command(
+        name = "volume of quadrilateral", 
+        description = "Calculate the volume of a cube or a cuboid."
+    )
+
     async def volume_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"{length} × {width} × {height}"
         evalu = length * width * height 
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate volume of a pyramid --->
-    @ nextcord.slash_command(description = "Calculate the volume of a pyramid.")
+    @ nextcord.slash_command(
+        name = "volume of pyramid", 
+        description = "Calculate the volume of a pyramid."
+    )
+
     async def volume_pyramid(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"1/3 × {length} × {width} × {height}"
         evalu = 1/3 * length * width * height
 
-        embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-        timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-        embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
+
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
 
+
     # ! <--- Command to calculate volume of a cylinder --->
-    @ nextcord.slash_command(description = "Calculate the volume of a cylinder.")
-    async def volume_cylinder(self, ctx : Interaction, height : float, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "volume of cylinder",
+        description = "Calculate the volume of a cylinder."
+    )
 
-        if (diameter == None and radius != None) :
+    async def volume_cylinder(self, ctx : Interaction, height : float, radius : float) :
 
-            exp = f"22/7 × {radius}² × {height}"
-            evalu = 22/7 * (radius ** 2) * height
+        exp = f"22/7 × {radius}² × {height}"
+        evalu = 22/7 * (radius ** 2) * height
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"22/7 × ({diameter}/2)² × {height} "
-            evalu = 22/7 * ((diameter/2) ** 2) * height
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a cone --->
-    @ nextcord.slash_command(description = "Calculate the volume of a cone.")
-    async def volume_cone(self, ctx : Interaction, height : float, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "volume of cone", 
+        description = "Calculate the volume of a cone."
+    )
 
-        if (diameter == None and radius != None) :
+    async def volume_cone(self, ctx : Interaction, height : float, radius : float) :
 
-            exp = f"1/3 × 22/7 × {radius}² × {height}"
-            evalu = 1/3 * 22/7 * (radius ** 2) * height
+        exp = f"1/3 × 22/7 × {radius}² × {height}"
+        evalu = 1/3 * 22/7 * (radius ** 2) * height
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"1/3 × 22/7 × ({diameter}/2)² × {height}"
-            evalu = 1/3 * 22/7 * ((diameter/2) ** 2) * height
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
     # ! <--- Command to calculate volume of a sphere --->
-    @ nextcord.slash_command(description = "Calculate the volume of a sphere.")
-    async def volume_sphere(self, ctx : Interaction, radius : float = None, diameter : float = None) :
+    @ nextcord.slash_command(
+        name = "volume of sphere", 
+        description = "Calculate the volume of a sphere."
+    )
 
-        if (diameter == None and radius != None) :
+    async def volume_sphere(self, ctx : Interaction, radius : float) :
 
-            exp = f"4/3 × 22/7 × {radius}²"
-            evalu = 4/3 * 22/7 * (radius ** 2)
+        exp = f"4/3 × 22/7 × {radius}²"
+        evalu = 4/3 * 22/7 * (radius ** 2)
 
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
+        embed_msg = nextcord.Embed(
+            title = "Geometry Query", 
+            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(157,34,53)
+        )
 
-            await ctx.response.send_message(embed = embed_msg)
+        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
+        embed_msg.add_field(name = "Output :", value = f"`{evalu}`", inline = True)
+        embed_msg.set_thumbnail(url = self.link)
 
-        elif (radius == None and diameter != None) :
+        await ctx.response.send_message(embed = embed_msg)
 
-            exp = f"4/3 × 22/7 × {diameter}/2²"
-            evalu = 4/3 * 22/7 * ((diameter/2) ** 2)
-
-            embed_msg = nextcord.Embed(title = "Geometry Query", description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), colour = nextcord.Color.from_rgb(157,34,53))
-            embed_msg.add_field(name = "Input :",value = f"`{exp}`", inline = False)
-            embed_msg.add_field(name = "Output :" , value = f"`{evalu}`", inline = True)
-            embed_msg.set_thumbnail(url = self.link)
-
-            await ctx.response.send_message(embed = embed_msg)
-
-        else :
-            await ctx.response.send_message("Please provide input for only one optional argument.")
 
 # ! <--- Add Geometry_Calculation into the bot --->
 def setup(bot : commands.Bot):
