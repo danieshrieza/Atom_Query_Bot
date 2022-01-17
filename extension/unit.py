@@ -39,7 +39,7 @@ class Unit_Converter(commands.Cog):
 
     # ! <--- Command to convert cm to m --->
     @ nextcord.slash_command(
-        name = "centimeter to millimeter", 
+        name = "centimeter to meter", 
         description = "Convert centimeter to meter."
     )
 
