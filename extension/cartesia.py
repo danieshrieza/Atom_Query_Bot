@@ -25,7 +25,7 @@ class Cartesian_Query(commands.Cog) :
         guild_ids = [guild_id]
     )
 
-    async def linear_function(self, ctx : Interaction, gradient : float, y_intercept : float) :
+    async def linear_equation(self, ctx : Interaction, gradient : float, y_intercept : float) :
 
         x = np.linspace(-20, 20, 100)
         y = gradient * x + y_intercept
@@ -54,7 +54,7 @@ class Cartesian_Query(commands.Cog) :
         guild_ids = [guild_id]
     )
 
-    async def quadratic_function(self, ctx : Interaction, a : float, b : float, c : float) :
+    async def quadratic_equation(self, ctx : Interaction, a : float, b : float, c : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 2 + (b * x) + c
@@ -82,7 +82,7 @@ class Cartesian_Query(commands.Cog) :
         guild_ids = [guild_id]
     )
 
-    async def cubic_function(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
+    async def cubic_equation(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d
@@ -111,7 +111,7 @@ class Cartesian_Query(commands.Cog) :
         guild_ids = [guild_id]
     )
 
-    async def reciprocal_function(self, ctx : Interaction, numerator : float, denominator : float) :
+    async def reciprocal_equation(self, ctx : Interaction, numerator : float, denominator : float) :
 
         x = np.linspace(-20, 20, 100)
         y = numerator / (denominator * x)
@@ -135,11 +135,11 @@ class Cartesian_Query(commands.Cog) :
 
     # ! <--- Command to calculate distance between two points on a Cartesian Plane --->
     @ nextcord.slash_command(
-        name = "distance between two points", 
+        name = "distance_between_two_points", 
         description = "Calculate the distance between two points."
     )
 
-    async def distance(self, ctx : Interaction, x_2 : float, x_1 : float, y_2 : float, y_1 : float) :
+    async def distance_between_two_points(self, ctx : Interaction, x_2 : float, x_1 : float, y_2 : float, y_1 : float) :
 
         exp = f"√({x_2} - {x_1})² + ({y_2} - {y_1})²"
         evalu = math.sqrt((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2)
@@ -151,8 +151,18 @@ class Cartesian_Query(commands.Cog) :
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
 
-        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :", value = f"`{evalu} A`", inline = True)
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{exp}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu} A`", 
+            inline = True
+        )
+
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
@@ -160,11 +170,11 @@ class Cartesian_Query(commands.Cog) :
 
     # ! <--- Command to calculate gradient of a line --->
     @ nextcord.slash_command(
-        name = "gradient of a line",
+        name = "gradient_of_a_line",
         description = "Calculate the gradient of a line."
     )
 
-    async def gradient(self, ctx : Interaction, y_2 : float, y_1 : float, x_2 : float, x_1 : float) :
+    async def gradient_of_a_line(self, ctx : Interaction, y_2 : float, y_1 : float, x_2 : float, x_1 : float) :
 
         exp = f"{y_2} - {y_1} ÷ {x_2} - {x_1}"
         evalu = (y_2 - y_1) / (x_2 - x_1)
@@ -176,8 +186,18 @@ class Cartesian_Query(commands.Cog) :
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
 
-        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :", value = f"`{evalu} A`", inline = True)
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{exp}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu} A`", 
+            inline = True
+        )
+
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
@@ -185,11 +205,11 @@ class Cartesian_Query(commands.Cog) :
 
     # ! <--- Command to calculate the midpoint of a line --->
     @ nextcord.slash_command(
-        name = "midpoint of a line", 
+        name = "midpoint_of_a_line", 
         description = "Calculate the midpoint of a line."
     )
 
-    async def midpoint(self, ctx : Interaction, x_1 : float, x_2 : float, y_1 : float, y_2 : float) :
+    async def midpoint_of_a_line(self, ctx : Interaction, x_1 : float, x_2 : float, y_1 : float, y_2 : float) :
 
         exp = f"(({x_1} + {x_2}) ÷ 2, ({y_1} + {y_2}) ÷ 2)"
         evalu = ((x_1 + x_2) / 2, (y_1 + y_2) / 2)
@@ -201,8 +221,18 @@ class Cartesian_Query(commands.Cog) :
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
 
-        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :", value = f"`{evalu} A`", inline = True)
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{exp}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu} A`", 
+            inline = True
+        )
+
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)      
