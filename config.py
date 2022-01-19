@@ -11,4 +11,4 @@ guild_id = int(os.getenv("GUILD_VAR", ""))
 token = os.getenv("MATH_VAR", "")
 
 # <--- Get the owner id from .env file --->
-owner_id = int(os.getenv("", ""))
+owner_id = int(os.getenv("OWNER_VAR", ""))
