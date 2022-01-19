@@ -4,17 +4,17 @@ from nextcord.ext import commands
 from nextcord import Interaction
 
 
-# ! <--- Class for Geometry_Calculation --->
+# <--- Class for Geometry_Calculation --->
 class Geometry_Calculation(commands.Cog) :
 
 
-    # ! <--- Initialize variable for class --->
+    # <--- Initialize variable for class --->
     def __init__(self, bot : commands.Bot) :
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # ! <--- Command to calculate circumference of a circle using radius --->
+    # <--- Command to calculate circumference of a circle using radius --->
     @ nextcord.slash_command(
         name = "circumference_of_a_circle_radius", 
         description = "Calculate the circumference of a circle using radius."
@@ -49,7 +49,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate circumference of a circle using diameter --->
+    # <--- Command to calculate circumference of a circle using diameter --->
     @ nextcord.slash_command(
         name = "circumference_of_a_circle_diameter", 
         description = "Calculate the circumference of a circle using diameter."
@@ -84,7 +84,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Commmand to calculate area of a circle --->
+    # <--- Commmand to calculate area of a circle --->
     @ nextcord.slash_command(
         name = "area_of_a_circle", 
         description = "Calculate the area of a circle."
@@ -119,7 +119,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate area of a quadrilateral --->
+    # <--- Command to calculate area of a quadrilateral --->
     @ nextcord.slash_command(
         name = "area_of_a_quadrilateral", 
         description = "Calculate the area of a rectangle, a square or a quadrilateral."
@@ -154,7 +154,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate area of a triangle --->
+    # <--- Command to calculate area of a triangle --->
     @ nextcord.slash_command(
         name = "area_of_a_triangle", 
         description = "Calculate the area of a triangle."
@@ -189,7 +189,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate area of a parallelogram --->
+    # <--- Command to calculate area of a parallelogram --->
     @ nextcord.slash_command(
         name = "area_of_a_parallelogram", 
         description = "Calculate the area of a parallelogram."
@@ -224,7 +224,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate area of a kite --->
+    # <--- Command to calculate area of a kite --->
     @ nextcord.slash_command(
         name = "area_of_a_kite", 
         description = "Calculate the area of a kite."
@@ -259,7 +259,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate area of a trampezium --->
+    # <--- Command to calculate area of a trampezium --->
     @ nextcord.slash_command(
         name = "area_of_a_trampezium", 
         description = "Calculate the area of a trampezium."
@@ -294,7 +294,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate surface area of a quadrilateral --->
+    # <--- Command to calculate surface area of a quadrilateral --->
     @ nextcord.slash_command(
         name = "surface_area_of_a_quadrilateral", 
         description = "Calculate the surface area of a cuboid."
@@ -329,7 +329,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate surface area of pyramid --->
+    # <--- Command to calculate surface area of pyramid --->
     @ nextcord.slash_command(
         name = "surface_area_of_a_pyramid", 
         description = "Calculate the surface area of a pyramid."
@@ -364,7 +364,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate surface area of a cylinder --->
+    # <--- Command to calculate surface area of a cylinder --->
     @ nextcord.slash_command(
         name = "surface_area_of_a_cylinder", 
         description = "Calculate the surface area of a cylinder."
@@ -399,7 +399,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate surface area of a cone --->
+    # <--- Command to calculate surface area of a cone --->
     @ nextcord.slash_command(
         name = "surface_area_of_a_cone", 
         description = "Calculate the surface area of a cone."
@@ -434,7 +434,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculte surface area of a sphere --->
+    # <--- Command to calculte surface area of a sphere --->
     @ nextcord.slash_command(
         name = "surface_area_of_a_sphere", 
         description = "Calculate the surface area of a sphere."
@@ -469,7 +469,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate volume of a cube or a cuboid --->
+    # <--- Command to calculate volume of a cube or a cuboid --->
     @ nextcord.slash_command(
         name = "volume_of_a_quadrilateral", 
         description = "Calculate the volume of a cube or a cuboid."
@@ -504,7 +504,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate volume of a pyramid --->
+    # <--- Command to calculate volume of a pyramid --->
     @ nextcord.slash_command(
         name = "volume_of_a_pyramid", 
         description = "Calculate the volume of a pyramid."
@@ -539,7 +539,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate volume of a cylinder --->
+    # <--- Command to calculate volume of a cylinder --->
     @ nextcord.slash_command(
         name = "volume_of_a_cylinder",
         description = "Calculate the volume of a cylinder."
@@ -574,7 +574,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate volume of a cone --->
+    # <--- Command to calculate volume of a cone --->
     @ nextcord.slash_command(
         name = "volume_of_a_cone", 
         description = "Calculate the volume of a cone."
@@ -609,7 +609,7 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate volume of a sphere --->
+    # <--- Command to calculate volume of a sphere --->
     @ nextcord.slash_command(
         name = "volume_of_a_sphere", 
         description = "Calculate the volume of a sphere."
@@ -644,6 +644,6 @@ class Geometry_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-# ! <--- Add Geometry_Calculation into the bot --->
+# <--- Add Geometry_Calculation into the bot --->
 def setup(bot : commands.Bot):
   bot.add_cog(Geometry_Calculation(bot))

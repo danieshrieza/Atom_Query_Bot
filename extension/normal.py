@@ -6,17 +6,17 @@ from datetime import datetime, timezone
 from nextcord import Interaction
 
 
-# ! <--- Class for Basic_Calculation --->
+# <--- Class for Basic_Calculation --->
 class Basic_Calculation(commands.Cog):
 
 
-    # ! <--- Initialize variable and function for class --->
+    # <--- Initialize variable and function for class --->
     def __init__(self, bot):
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # ! <--- Command to calculate queries from user --->
+    # <--- Command to calculate queries from user --->
     @ nextcord.slash_command(
         name = "calculate",
         description = "Calculate your math's query."
@@ -52,7 +52,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to generate random number --->
+    # <--- Command to generate random number --->
     @ nextcord.slash_command(
         name = "random_number_generator",
         description = "Generate randomly selected numbers from input range."
@@ -87,7 +87,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to square a number --->
+    # <--- Command to square a number --->
     @ nextcord.slash_command(
         name = "square",
         description = "Squared number from user."
@@ -122,7 +122,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to cube a number --->
+    # <--- Command to cube a number --->
     @ nextcord.slash_command(
         name = "cube",
         description = "Cubed number from user."
@@ -157,7 +157,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to power a base using user's exponent --->
+    # <--- Command to power a base using user's exponent --->
     @ nextcord.slash_command(
         name = "variable_power",
         description = "Power the user's base to the exponent."
@@ -192,7 +192,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to square root a number --->
+    # <--- Command to square root a number --->
     @ nextcord.slash_command(
         name = "square_root", 
         description = "Square root user's number."
@@ -227,7 +227,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to cube root a number --->
+    # <--- Command to cube root a number --->
     @ nextcord.slash_command(
         name = "cube_root", 
         description = "Cube root user's number."
@@ -262,7 +262,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to root a radicand using a radical --->
+    # <--- Command to root a radicand using a radical --->
     @ nextcord.slash_command(
         name = "variable_root", 
         description = "Radical(root) user's radicand(number)."
@@ -297,7 +297,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to find factor a number --->
+    # <--- Command to find factor a number --->
     @ nextcord.slash_command(
         name = "factor", 
         description = "Find the factor of a number."
@@ -334,7 +334,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to find common factor of 2 number --->
+    # <--- Command to find common factor of 2 number --->
     @ nextcord.slash_command(
         name = "common_factor", 
         description = "Find the common factor of 2 number."
@@ -376,7 +376,7 @@ class Basic_Calculation(commands.Cog):
             await ctx.response.send_message("Please provide input that has values more than 0.")
 
 
-    # ! <--- Command to find highest common factor of 2 number --->
+    # <--- Command to find highest common factor of 2 number --->
     @ nextcord.slash_command(
         name = "highest_common_factor", 
         description = "Find the highest common factor of 2 number."
@@ -415,7 +415,7 @@ class Basic_Calculation(commands.Cog):
             await ctx.response.send_message("Please provide input that values are more than 0.")
 
 
-    # ! <--- Command to find multiple of a number --->
+    # <--- Command to find multiple of a number --->
     @ nextcord.slash_command(
         name = "multiple",
         description = "Find the multiple of a number."
@@ -452,7 +452,7 @@ class Basic_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to find common multiple of 2 number --->
+    # <--- Command to find common multiple of 2 number --->
     @ nextcord.slash_command(
         name = "common_multiple", 
         description = "Find the common multiple of 2 numbers."
@@ -495,7 +495,7 @@ class Basic_Calculation(commands.Cog):
             await ctx.response.send_message("Please provide input that values are more than 0.")
 
 
-    # ! <--- Command to find the lowest common multiple of 2 number --->
+    # <--- Command to find the lowest common multiple of 2 number --->
     @ nextcord.slash_command(
         name = "lowest_common_multiple", 
         description = "Find the lowest common multiple of 2 numbers."
@@ -534,7 +534,7 @@ class Basic_Calculation(commands.Cog):
             await ctx.response.send_message("Please provide valid input.")
 
 
-# ! <--- Add Basic_Calculation into the bot --->
+# <--- Add Basic_Calculation into the bot --->
 def setup(bot : commands.Bot): 
   bot.add_cog(Basic_Calculation(bot))
 

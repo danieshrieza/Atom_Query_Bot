@@ -5,11 +5,11 @@ from nextcord.ext.commands.context import Context
 from config import token
 
 
-# ! <--- Declaring intents for bot --->
+# <--- Declaring intents for bot --->
 intents = nextcord.Intents.all()
 
 
-# ! <--- Declaring bot --->
+# <--- Declaring bot --->
 bot = commands.Bot(
     command_prefix = "!", 
     case_insensitive = True, 
@@ -19,7 +19,7 @@ bot = commands.Bot(
 )
 
 
-# ! <--- Activating bot once it's ready --->
+# <--- Activating bot once it's ready --->
 @ bot.event
 
 async def on_ready():
@@ -27,7 +27,7 @@ async def on_ready():
     await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "Dark matter"))
 
 
-# ! <--- Command to reload extension file for owner --->
+# <--- Command to reload extension file for owner --->
 @ commands.is_owner()
 @ bot.command()
 
@@ -41,7 +41,7 @@ async def reload(ctx : Context, extension) :
         await ctx.send(f"`{extension}` not found.")
 
 
-# ! <--- Command to load extension file for owner --->
+# <--- Command to load extension file for owner --->
 @ commands.is_owner()
 @ bot.command()
 
@@ -55,7 +55,7 @@ async def load(ctx : Context, extension) :
         await ctx.send(f"`{extension}` not found.")
 
 
-# ! <--- Command to unload extension file for owner --->
+# <--- Command to unload extension file for owner --->
 @ commands.is_owner()
 @ bot.command()
 
@@ -69,7 +69,7 @@ async def unload(ctx : Context, extension) :
         await ctx.send(f"`{extension}` not found.")
 
 
-# ! <--- Command to find all server that houses this bot --->
+# <--- Command to find all server that houses this bot --->
 @ commands.is_owner()
 @ bot.command()
 
@@ -78,11 +78,11 @@ async def server(ctx : Context):
         await ctx.send(f"{guild.name}")
 
 
-# ! <--- Load extension file once bot is ready --->
+# <--- Load extension file once bot is ready --->
 for filename in os.listdir("./extension") :
     if filename.endswith(".py"):
         bot.load_extension(f"extension.{filename[:-3]}")
 
 
-# ! <--- Key for bot to run --->
+# <--- Key for bot to run --->
 bot.run(token)

@@ -5,17 +5,17 @@ from fraction import Fraction
 from nextcord import Interaction
 
 
-# ! <--- Class for Unit_Converter --->
+# <--- Class for Unit_Converter --->
 class Unit_Converter(commands.Cog):
 
 
-    # ! <---  Initialize variable for class --->
+    # <---  Initialize variable for class --->
     def __init__(self, bot : commands.Bot):
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # ! <--- Command to convert mm to cm --->
+    # <--- Command to convert mm to cm --->
     @ nextcord.slash_command(
         name = "millimeter_to_centimeter", 
         description = "Convert milimeter to centimeter."
@@ -47,7 +47,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert cm to m --->
+    # <--- Command to convert cm to m --->
     @ nextcord.slash_command(
         name = "centimeter_to_meter", 
         description = "Convert centimeter to meter."
@@ -79,7 +79,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # ! <--- Command to m to km --->
+    # <--- Command to m to km --->
     @ nextcord.slash_command(
         name = "meter_to_kilometer", 
         description = "Convert meter to kilometer."
@@ -111,7 +111,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # ! <--- Command to km to m --->
+    # <--- Command to km to m --->
     @ nextcord.slash_command(
         name = "kilometer_to_meter", 
         description = "Convert kilometer to meter."
@@ -143,7 +143,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # ! <--- Command to convert m to cm --->
+    # <--- Command to convert m to cm --->
     @ nextcord.slash_command(
         name = "meter_to_centimeter", 
         description = "Convert meter to centimeter."
@@ -175,7 +175,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # ! <--- Command to convert cm to mm --->
+    # <--- Command to convert cm to mm --->
     @ nextcord.slash_command(
         name = "centimeter_to_millimeter", 
         description = "Convert centimeter to milimeter."
@@ -207,7 +207,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command convert g to kg --->
+    # <--- Command convert g to kg --->
     @ nextcord.slash_command(
         name = "gram_to_kilogram", 
         description = "Convert gram to kilogram."
@@ -239,7 +239,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert kg to g --->
+    # <--- Command to convert kg to g --->
     @ nextcord.slash_command(
         name = "kilogram_to_gram", 
         description = "Convert kilogram to gram."
@@ -271,7 +271,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert ml to l --->
+    # <--- Command to convert ml to l --->
     @ nextcord.slash_command(
         name = "millilitre_to_litre", 
         description = "Convert mililitre to litre."
@@ -303,7 +303,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert l to ml --->
+    # <--- Command to convert l to ml --->
     @ nextcord.slash_command(
         name = "litre_to_millilitre", 
         description = "Convert litre to mililitre."
@@ -335,7 +335,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert decimal to fraction --->
+    # <--- Command to convert decimal to fraction --->
     @ nextcord.slash_command(
         name = "decimal_to_fraction", 
         description = "Convert a decimal number to fraction."
@@ -367,7 +367,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to convert fraction to decimal --->
+    # <--- Command to convert fraction to decimal --->
     @ nextcord.slash_command(
         name = "fraction_to_decimal", 
         description = "Convert a fraction value to a decimal number."
@@ -399,6 +399,6 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-# ! <--- Add Unit_Converter into the bot --->
+# <--- Add Unit_Converter into the bot --->
 def setup(bot : commands.Bot):
   bot.add_cog(Unit_Converter(bot))

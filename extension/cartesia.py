@@ -8,17 +8,17 @@ from datetime import datetime, timezone
 from config import guild_id
 
 
-# ! <--- Class for Cartesian_Query --->
+# <--- Class for Cartesian_Query --->
 class Cartesian_Query(commands.Cog) :
 
 
-    # ! <--- Initialize variable for class --->
+    # <--- Initialize variable for class --->
     def __init__(self, bot : commands.Bot) :
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # ! <--- Command to plot linear graph --->
+    # <--- Command to plot linear graph --->
     @ nextcord.slash_command(
         name = "linear equation", 
         description = "Plot a linear graph using the equation y = mx + c.",
@@ -47,7 +47,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(file)
 
 
-    # ! <--- Command to plot quadratic graph --->
+    # <--- Command to plot quadratic graph --->
     @ nextcord.slash_command(
         name = "quadratic equation", 
         description = "Plot a quadratic graph using the equation y = ax² + bx + c.",
@@ -75,7 +75,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(file)
 
 
-    # ! <--- Command to plot cubic graph --->
+    # <--- Command to plot cubic graph --->
     @ nextcord.slash_command(
         name = "cubic equation", 
         description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.",
@@ -104,7 +104,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(file)
 
 
-    # ! <--- Command to plot reciprocal graph --->
+    # <--- Command to plot reciprocal graph --->
     @ nextcord.slash_command(
         name = "reciprocal equation", 
         description = "Plot a reciprocal graph using the equation y = 1/x.",
@@ -133,7 +133,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(file)
 
 
-    # ! <--- Command to calculate distance between two points on a Cartesian Plane --->
+    # <--- Command to calculate distance between two points on a Cartesian Plane --->
     @ nextcord.slash_command(
         name = "distance_between_two_points", 
         description = "Calculate the distance between two points."
@@ -168,7 +168,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate gradient of a line --->
+    # <--- Command to calculate gradient of a line --->
     @ nextcord.slash_command(
         name = "gradient_of_a_line",
         description = "Calculate the gradient of a line."
@@ -203,7 +203,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # ! <--- Command to calculate the midpoint of a line --->
+    # <--- Command to calculate the midpoint of a line --->
     @ nextcord.slash_command(
         name = "midpoint_of_a_line", 
         description = "Calculate the midpoint of a line."
@@ -238,6 +238,6 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)      
 
 
-# ! <--- Add Cartesian_Query into the bot
+# <--- Add Cartesian_Query into the bot
 def setup(bot : commands.Bot) :
     bot.add_cog(Cartesian_Query(bot))
