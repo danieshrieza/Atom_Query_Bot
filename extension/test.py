@@ -22,7 +22,7 @@ class Test_Command(commands.Cog) :
         guild_ids = guild_id
     )
 
-    async def test(self, ctx : Interaction, age : int, name : str = None) :
+    async def test(self, ctx : Interaction, age : int, *, name : str = None) :
 
         embed_msg = nextcord.Embed(
             title = "Test", 
