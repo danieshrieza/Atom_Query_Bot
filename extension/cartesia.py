@@ -154,7 +154,7 @@ class Cartesian_Query(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} A`", 
+            value = f"`{evalu}`", 
             inline = True
         )
 
@@ -188,7 +188,7 @@ class Cartesian_Query(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} A`", 
+            value = f"`{evalu}`", 
             inline = True
         )
 
@@ -222,7 +222,7 @@ class Cartesian_Query(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} A`", 
+            value = f"`{evalu}`", 
             inline = True
         )
 

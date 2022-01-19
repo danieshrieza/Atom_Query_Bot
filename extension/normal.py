@@ -53,10 +53,10 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to generate random number --->
     @ nextcord.slash_command(
-        description = "Generate randomly selected numbers from input range."
+        description = "Generate random number from input range."
     )
 
-    async def random_number_generator(self, ctx : Interaction, starting_point: float, ending_point : float) :
+    async def number_generator(self, ctx : Interaction, starting_point: float, ending_point : float) :
 
         exp = f"Generate number between {starting_point} and {ending_point}."
         evalu = f"{random.random(starting_point,ending_point)}"

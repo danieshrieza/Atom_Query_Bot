@@ -20,7 +20,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert milimeter to centimeter."
     )
 
-    async def millimeter_to_centimeter(self, ctx : Interaction, milimeter : float) :
+    async def mm_to_cm(self, ctx : Interaction, milimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -51,7 +51,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert centimeter to meter."
     )
 
-    async def centimeter_to_meter(self, ctx : Interaction, centimeter : float) :
+    async def cm_to_m(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -82,7 +82,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert meter to kilometer."
     )
 
-    async def meter_to_kilometer(self, ctx : Interaction, meter : float) :
+    async def m_to_km(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -113,7 +113,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert kilometer to meter."
     )
 
-    async def kilometer_to_meter(self, ctx : Interaction, kilometer : float) :
+    async def km_to_m(self, ctx : Interaction, kilometer : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -144,7 +144,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert meter to centimeter."
     )
 
-    async def meter_to_centimeter(self, ctx : Interaction, meter : float) :
+    async def m_to_cm(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -175,7 +175,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert centimeter to milimeter."
     )
 
-    async def centimeter_to_millimeter(self, ctx : Interaction, centimeter : float) :
+    async def cm_to_mm(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -206,7 +206,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert gram to kilogram."
     )
 
-    async def gram_to_kilogram(self, ctx : Interaction, gram : float) :
+    async def g_to_kg(self, ctx : Interaction, gram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -237,7 +237,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert kilogram to gram."
     )
 
-    async def kilogram_to_gram(self, ctx : Interaction, kilogram : float) :
+    async def kg_to_g(self, ctx : Interaction, kilogram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -268,7 +268,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert mililitre to litre."
     )
 
-    async def millilitre_to_litre(self, ctx : Interaction, millilitre : float) :
+    async def ml_to_l(self, ctx : Interaction, millilitre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -299,7 +299,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert litre to mililitre."
     )
 
-    async def litre_to_millilitre(self, ctx : Interaction, litre : float) :
+    async def l_to_ml(self, ctx : Interaction, litre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -330,7 +330,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert a decimal number to fraction."
     )
 
-    async def decimal_to_fraction(self, ctx : Interaction, decimal : float) :
+    async def deci_to_frac(self, ctx : Interaction, decimal : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -361,7 +361,7 @@ class Unit_Converter(commands.Cog):
         description = "Convert a fraction value to a decimal number."
     )
 
-    async def fraction_to_decimal(self, ctx : Interaction, numerator : int, denominator : int) :
+    async def frac_to_deci(self, ctx : Interaction, numerator : int, denominator : int) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 

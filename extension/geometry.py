@@ -19,44 +19,10 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the circumference of a circle using radius."
     )
 
-    async def circumference_of_a_circle_radius(self, ctx : Interaction, radius : float) :
+    async def circumference_circle_radius(self, ctx : Interaction, radius : float) :
             
         exp = f"2 × 22/7 × {radius}"
         evalu = 2 * 22/7 * radius
-
-        embed_msg = nextcord.Embed(
-            title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
-        )
-
-        embed_msg.add_field(
-            name = "Input :", 
-            value = f"`{exp}`", 
-            inline = False
-        )
-
-        embed_msg.add_field(
-            name = "Output :", 
-            value = f"`{evalu}`", 
-            inline = True
-        )
-
-        embed_msg.set_thumbnail(url = self.link)
-
-        await ctx.response.send_message(embed = embed_msg)
-
-
-    # <--- Command to calculate circumference of a circle using diameter --->
-    @ nextcord.slash_command(
-        description = "Calculate the circumference of a circle using diameter."
-    )
-
-    async def circumference_of_a_circle_diameter(self, ctx : Interaction, diameter : float) :
-            
-        exp = f"22/7 × {diameter}"
-        evalu = 22/7 * diameter
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
@@ -87,7 +53,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a circle."
     )
     
-    async def area_of_a_circle(self, ctx : Interaction, radius : float) :
+    async def area_circle(self, ctx : Interaction, radius : float) :
 
         exp = f"22/7 × {radius}²"
         evalu = 22/7 * radius ** 2
@@ -121,7 +87,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a rectangle, a square or a quadrilateral."
     )
 
-    async def area_of_a_quadrilateral(self, ctx : Interaction, length : float, width : float) :
+    async def area_quadrilateral(self, ctx : Interaction, length : float, width : float) :
 
         exp = f"{length} × {width}"
         evalu = length * width
@@ -155,7 +121,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a triangle."
     )
 
-    async def area_of_a_triangle(self, ctx : Interaction, base : float, height : float) :
+    async def area_triangle(self, ctx : Interaction, base : float, height : float) :
 
         exp = f"1/2 × {base} × {height}"
         evalu = 1/2 * base * height
@@ -189,7 +155,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a parallelogram."
     )
 
-    async def area_of_a_parallelogram(self, ctx : Interaction, base : float, height : float) :
+    async def area_parallelogram(self, ctx : Interaction, base : float, height : float) :
 
         exp = f"{base} × {height}"
         evalu = base * height
@@ -223,7 +189,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a kite."
     )
 
-    async def area_of_a_kite(self, ctx : Interaction, long_diagonal : float, short_diagonal : float) :
+    async def area_kite(self, ctx : Interaction, long_diagonal : float, short_diagonal : float) :
 
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         evalu = 1/2 * long_diagonal * short_diagonal   
@@ -257,7 +223,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the area of a trampezium."
     )
 
-    async def area_of_a_trampezium(self, ctx : Interaction, first_parallel : float, second_parallel : float, height : float) :
+    async def area_trampezium(self, ctx : Interaction, first_parallel : float, second_parallel : float, height : float) :
 
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         evalu = 1/2 * (first_parallel + second_parallel) * height
@@ -291,7 +257,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the surface area of a cuboid."
     )
 
-    async def surface_area_of_a_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def surface_area_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"2({length} × {width}) + 2({length} × {height}) + 2({width} × {height})"
         evalu = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
@@ -325,7 +291,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the surface area of a pyramid."
     )
 
-    async def surface_area_of_a_pyramid(self, ctx : Interaction, length : float, width : float, face_height : float) :
+    async def surface_area_pyramid(self, ctx : Interaction, length : float, width : float, face_height : float) :
 
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         evalu = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
@@ -359,7 +325,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the surface area of a cylinder."
     )
 
-    async def surface_area_of_a_cylinder(self, ctx : Interaction, height : float, radius : float) :
+    async def surface_area_cylinder(self, ctx : Interaction, height : float, radius : float) :
 
         exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
         evalu = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
@@ -393,7 +359,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the surface area of a cone."
     )
 
-    async def surface_area_of_a_cone(self, ctx : Interaction, slant_height : float, radius : float) :
+    async def surface_area_cone(self, ctx : Interaction, slant_height : float, radius : float) :
 
         exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
         evalu = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
@@ -427,7 +393,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the surface area of a sphere."
     )
 
-    async def surface_area_of_a_sphere(self, ctx : Interaction, radius : float) :
+    async def surface_area_sphere(self, ctx : Interaction, radius : float) :
 
         exp = f"4 × 22/7 × {radius}²"
         evalu = 4 * 22/7 * (radius ** 2)
@@ -461,7 +427,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the volume of a cube or a cuboid."
     )
 
-    async def volume_of_a_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def volume_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"{length} × {width} × {height}"
         evalu = length * width * height 
@@ -495,7 +461,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the volume of a pyramid."
     )
 
-    async def volume_of_a_pyramid(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def volume_pyramid(self, ctx : Interaction, length : float, width : float, height : float) :
 
         exp = f"1/3 × {length} × {width} × {height}"
         evalu = 1/3 * length * width * height
@@ -529,7 +495,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the volume of a cylinder."
     )
 
-    async def volume_of_a_cylinder(self, ctx : Interaction, height : float, radius : float) :
+    async def volume_cylinder(self, ctx : Interaction, height : float, radius : float) :
 
         exp = f"22/7 × {radius}² × {height}"
         evalu = 22/7 * (radius ** 2) * height
@@ -563,7 +529,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the volume of a cone."
     )
 
-    async def volume_of_a_cone(self, ctx : Interaction, height : float, radius : float) :
+    async def volume_cone(self, ctx : Interaction, height : float, radius : float) :
 
         exp = f"1/3 × 22/7 × {radius}² × {height}"
         evalu = 1/3 * 22/7 * (radius ** 2) * height
@@ -597,7 +563,7 @@ class Geometry_Calculation(commands.Cog) :
         description = "Calculate the volume of a sphere."
     )
 
-    async def volume_of_a_sphere(self, ctx : Interaction, radius : float) :
+    async def volume_sphere(self, ctx : Interaction, radius : float) :
 
         exp = f"4/3 × 22/7 × {radius}²"
         evalu = 4/3 * 22/7 * (radius ** 2)

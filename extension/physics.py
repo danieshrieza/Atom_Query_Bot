@@ -116,7 +116,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate electric resisteance of an object --->
+    # <--- Command to calculate electric resistance of an object --->
     @ nextcord.slash_command(
         description = "Calculate the electric resistance of an object."
     )
