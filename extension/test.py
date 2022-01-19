@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-from typing import Optional
 from nextcord import Interaction
 import nextcord
 from nextcord.ext import commands
@@ -23,7 +22,7 @@ class Test_Command(commands.Cog) :
         guild_ids = guild_id
     )
 
-    async def test(self, ctx : Interaction, age : int, name : Optional[str] = None) :
+    async def test(self, ctx : Interaction, age : int, name : str = None) :
 
         embed_msg = nextcord.Embed(
             title = "Test", 
