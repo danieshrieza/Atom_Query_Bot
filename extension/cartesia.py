@@ -20,7 +20,6 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot linear graph --->
     @ nextcord.slash_command(
-        name = "linear equation", 
         description = "Plot a linear graph using the equation y = mx + c.",
         guild_ids = [guild_id]
     )
@@ -49,7 +48,6 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot quadratic graph --->
     @ nextcord.slash_command(
-        name = "quadratic equation", 
         description = "Plot a quadratic graph using the equation y = ax² + bx + c.",
         guild_ids = [guild_id]
     )
@@ -77,7 +75,6 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot cubic graph --->
     @ nextcord.slash_command(
-        name = "cubic equation", 
         description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.",
         guild_ids = [guild_id]
     )
@@ -105,8 +102,7 @@ class Cartesian_Query(commands.Cog) :
 
 
     # <--- Command to plot reciprocal graph --->
-    @ nextcord.slash_command(
-        name = "reciprocal equation", 
+    @ nextcord.slash_command( 
         description = "Plot a reciprocal graph using the equation y = 1/x.",
         guild_ids = [guild_id]
     )
@@ -135,7 +131,6 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to calculate distance between two points on a Cartesian Plane --->
     @ nextcord.slash_command(
-        name = "distance_between_two_points", 
         description = "Calculate the distance between two points."
     )
 
@@ -170,7 +165,6 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to calculate gradient of a line --->
     @ nextcord.slash_command(
-        name = "gradient_of_a_line",
         description = "Calculate the gradient of a line."
     )
 
@@ -204,8 +198,7 @@ class Cartesian_Query(commands.Cog) :
 
 
     # <--- Command to calculate the midpoint of a line --->
-    @ nextcord.slash_command(
-        name = "midpoint_of_a_line", 
+    @ nextcord.slash_command( 
         description = "Calculate the midpoint of a line."
     )
 

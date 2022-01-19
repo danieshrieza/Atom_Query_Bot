@@ -16,7 +16,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate speed of an object --->
     @ nextcord.slash_command(
-        name = "speed", 
         description = "Calculate the speed of an object using any distance and time unit."
     )
 
@@ -32,8 +31,18 @@ class Physics_Calculation(commands.Cog) :
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
 
-        embed_msg.add_field(name = "Input :", value = f"`{exp}`", inline = False)
-        embed_msg.add_field(name = "Output :", value = f"`{evalu} m/s`", inline = True)
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{exp}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu} m/s`", 
+            inline = True
+        )
+
         embed_msg.set_thumbnail(url = self.link)
 
         await ctx.response.send_message(embed = embed_msg)
@@ -41,7 +50,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate electric current of an object --->
     @ nextcord.slash_command(
-        name = "electric_current", 
         description = "Calculate the electric current of an object."
     )
 
@@ -76,7 +84,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate electric voltage of an object --->
     @ nextcord.slash_command(
-        name = "electric_voltage", 
         description = "Calculate the electric voltage of an object."
     )
 
@@ -111,7 +118,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate electric resisteance of an object --->
     @ nextcord.slash_command(
-        name = "electric_resistance", 
         description = "Calculate the electric resistance of an object."
     )
 
@@ -146,7 +152,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate moment of force of an object --->
     @ nextcord.slash_command(
-        name = "moment_of_force", 
         description = "Calculate the moment of force of an object."
     )
 
@@ -181,7 +186,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate the pressure acts on an object --->
     @ nextcord.slash_command(
-        name = "pressure", 
         description = "Calculate the pressure acts on an object."
     )
 
@@ -215,7 +219,6 @@ class Physics_Calculation(commands.Cog) :
 
     # <--- Command to calculate the density of an object --->
     @ nextcord.slash_command(
-        name = "density", 
         description = "Calculate the density of an object."
     )
 
@@ -238,7 +241,7 @@ class Physics_Calculation(commands.Cog) :
         )
 
         embed_msg.add_field(
-            name = f"Output :", 
+            name = "Output :", 
             value = f"`{evalu} g/cm³`", 
             inline = True
         )

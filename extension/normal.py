@@ -18,7 +18,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to calculate queries from user --->
     @ nextcord.slash_command(
-        name = "calculate",
         description = "Calculate your math's query."
     )
 
@@ -54,7 +53,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to generate random number --->
     @ nextcord.slash_command(
-        name = "random_number_generator",
         description = "Generate randomly selected numbers from input range."
     )
 
@@ -89,7 +87,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to square a number --->
     @ nextcord.slash_command(
-        name = "square",
         description = "Squared number from user."
     )
 
@@ -124,7 +121,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to cube a number --->
     @ nextcord.slash_command(
-        name = "cube",
         description = "Cubed number from user."
     )
 
@@ -159,7 +155,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to power a base using user's exponent --->
     @ nextcord.slash_command(
-        name = "variable_power",
         description = "Power the user's base to the exponent."
     )
 
@@ -194,7 +189,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to square root a number --->
     @ nextcord.slash_command(
-        name = "square_root", 
         description = "Square root user's number."
     )
 
@@ -229,7 +223,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to cube root a number --->
     @ nextcord.slash_command(
-        name = "cube_root", 
         description = "Cube root user's number."
     )
 
@@ -264,7 +257,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to root a radicand using a radical --->
     @ nextcord.slash_command(
-        name = "variable_root", 
         description = "Radical(root) user's radicand(number)."
     )
 
@@ -299,7 +291,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find factor a number --->
     @ nextcord.slash_command(
-        name = "factor", 
         description = "Find the factor of a number."
     )
 
@@ -336,7 +327,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find common factor of 2 number --->
     @ nextcord.slash_command(
-        name = "common_factor", 
         description = "Find the common factor of 2 number."
     )
 
@@ -378,7 +368,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find highest common factor of 2 number --->
     @ nextcord.slash_command(
-        name = "highest_common_factor", 
         description = "Find the highest common factor of 2 number."
     )
 
@@ -417,7 +406,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find multiple of a number --->
     @ nextcord.slash_command(
-        name = "multiple",
         description = "Find the multiple of a number."
     )
 
@@ -454,7 +442,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find common multiple of 2 number --->
     @ nextcord.slash_command(
-        name = "common_multiple", 
         description = "Find the common multiple of 2 numbers."
     )
 
@@ -497,7 +484,6 @@ class Basic_Calculation(commands.Cog):
 
     # <--- Command to find the lowest common multiple of 2 number --->
     @ nextcord.slash_command(
-        name = "lowest_common_multiple", 
         description = "Find the lowest common multiple of 2 numbers."
     )
 

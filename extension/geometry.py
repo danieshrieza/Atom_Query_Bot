@@ -16,7 +16,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate circumference of a circle using radius --->
     @ nextcord.slash_command(
-        name = "circumference_of_a_circle_radius", 
         description = "Calculate the circumference of a circle using radius."
     )
 
@@ -51,7 +50,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate circumference of a circle using diameter --->
     @ nextcord.slash_command(
-        name = "circumference_of_a_circle_diameter", 
         description = "Calculate the circumference of a circle using diameter."
     )
 
@@ -85,8 +83,7 @@ class Geometry_Calculation(commands.Cog) :
 
 
     # <--- Commmand to calculate area of a circle --->
-    @ nextcord.slash_command(
-        name = "area_of_a_circle", 
+    @ nextcord.slash_command( 
         description = "Calculate the area of a circle."
     )
     
@@ -120,8 +117,7 @@ class Geometry_Calculation(commands.Cog) :
 
 
     # <--- Command to calculate area of a quadrilateral --->
-    @ nextcord.slash_command(
-        name = "area_of_a_quadrilateral", 
+    @ nextcord.slash_command( 
         description = "Calculate the area of a rectangle, a square or a quadrilateral."
     )
 
@@ -156,7 +152,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate area of a triangle --->
     @ nextcord.slash_command(
-        name = "area_of_a_triangle", 
         description = "Calculate the area of a triangle."
     )
 
@@ -190,8 +185,7 @@ class Geometry_Calculation(commands.Cog) :
 
 
     # <--- Command to calculate area of a parallelogram --->
-    @ nextcord.slash_command(
-        name = "area_of_a_parallelogram", 
+    @ nextcord.slash_command( 
         description = "Calculate the area of a parallelogram."
     )
 
@@ -226,7 +220,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate area of a kite --->
     @ nextcord.slash_command(
-        name = "area_of_a_kite", 
         description = "Calculate the area of a kite."
     )
 
@@ -261,7 +254,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate area of a trampezium --->
     @ nextcord.slash_command(
-        name = "area_of_a_trampezium", 
         description = "Calculate the area of a trampezium."
     )
 
@@ -296,7 +288,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate surface area of a quadrilateral --->
     @ nextcord.slash_command(
-        name = "surface_area_of_a_quadrilateral", 
         description = "Calculate the surface area of a cuboid."
     )
 
@@ -331,7 +322,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate surface area of pyramid --->
     @ nextcord.slash_command(
-        name = "surface_area_of_a_pyramid", 
         description = "Calculate the surface area of a pyramid."
     )
 
@@ -365,8 +355,7 @@ class Geometry_Calculation(commands.Cog) :
 
 
     # <--- Command to calculate surface area of a cylinder --->
-    @ nextcord.slash_command(
-        name = "surface_area_of_a_cylinder", 
+    @ nextcord.slash_command( 
         description = "Calculate the surface area of a cylinder."
     )
 
@@ -401,7 +390,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate surface area of a cone --->
     @ nextcord.slash_command(
-        name = "surface_area_of_a_cone", 
         description = "Calculate the surface area of a cone."
     )
 
@@ -436,7 +424,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculte surface area of a sphere --->
     @ nextcord.slash_command(
-        name = "surface_area_of_a_sphere", 
         description = "Calculate the surface area of a sphere."
     )
 
@@ -471,7 +458,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate volume of a cube or a cuboid --->
     @ nextcord.slash_command(
-        name = "volume_of_a_quadrilateral", 
         description = "Calculate the volume of a cube or a cuboid."
     )
 
@@ -506,7 +492,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate volume of a pyramid --->
     @ nextcord.slash_command(
-        name = "volume_of_a_pyramid", 
         description = "Calculate the volume of a pyramid."
     )
 
@@ -541,7 +526,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate volume of a cylinder --->
     @ nextcord.slash_command(
-        name = "volume_of_a_cylinder",
         description = "Calculate the volume of a cylinder."
     )
 
@@ -576,7 +560,6 @@ class Geometry_Calculation(commands.Cog) :
 
     # <--- Command to calculate volume of a cone --->
     @ nextcord.slash_command(
-        name = "volume_of_a_cone", 
         description = "Calculate the volume of a cone."
     )
 
@@ -610,8 +593,7 @@ class Geometry_Calculation(commands.Cog) :
 
 
     # <--- Command to calculate volume of a sphere --->
-    @ nextcord.slash_command(
-        name = "volume_of_a_sphere", 
+    @ nextcord.slash_command( 
         description = "Calculate the volume of a sphere."
     )
 

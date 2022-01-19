@@ -17,7 +17,6 @@ class Trigonometry_Calculation(commands.Cog):
 
     # <--- Command to find sine of a triangle --->
     @ nextcord.slash_command(
-        name = "sine", 
         description = "Calculate the sine of a triangle."
     )
 
@@ -52,7 +51,6 @@ class Trigonometry_Calculation(commands.Cog):
 
     # <--- Command to find cosine of a triangle --->
     @ nextcord.slash_command(
-        name = "cosine", 
         description = "Calculate the cosine of a triangle."
     )
 
@@ -87,7 +85,6 @@ class Trigonometry_Calculation(commands.Cog):
 
     # <--- Command to find tangent of a triangle --->
     @ nextcord.slash_command(
-        name = "tangent", 
         description = "Calculate the tangent of a triangle."
     )
 
@@ -122,7 +119,6 @@ class Trigonometry_Calculation(commands.Cog):
 
     # <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem --->
     @ nextcord.slash_command(
-        name = "pythagoras_theorem", 
         description = "Calculate the Pythagoras Theorem."
     )
 

@@ -17,7 +17,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert mm to cm --->
     @ nextcord.slash_command(
-        name = "millimeter_to_centimeter", 
         description = "Convert milimeter to centimeter."
     )
 
@@ -48,8 +47,7 @@ class Unit_Converter(commands.Cog):
 
 
     # <--- Command to convert cm to m --->
-    @ nextcord.slash_command(
-        name = "centimeter_to_meter", 
+    @ nextcord.slash_command( 
         description = "Convert centimeter to meter."
     )
 
@@ -81,7 +79,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to m to km --->
     @ nextcord.slash_command(
-        name = "meter_to_kilometer", 
         description = "Convert meter to kilometer."
     )
 
@@ -113,7 +110,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to km to m --->
     @ nextcord.slash_command(
-        name = "kilometer_to_meter", 
         description = "Convert kilometer to meter."
     )
 
@@ -144,8 +140,7 @@ class Unit_Converter(commands.Cog):
         
 
     # <--- Command to convert m to cm --->
-    @ nextcord.slash_command(
-        name = "meter_to_centimeter", 
+    @ nextcord.slash_command( 
         description = "Convert meter to centimeter."
     )
 
@@ -177,7 +172,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert cm to mm --->
     @ nextcord.slash_command(
-        name = "centimeter_to_millimeter", 
         description = "Convert centimeter to milimeter."
     )
 
@@ -209,7 +203,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command convert g to kg --->
     @ nextcord.slash_command(
-        name = "gram_to_kilogram", 
         description = "Convert gram to kilogram."
     )
 
@@ -241,7 +234,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert kg to g --->
     @ nextcord.slash_command(
-        name = "kilogram_to_gram", 
         description = "Convert kilogram to gram."
     )
 
@@ -272,8 +264,7 @@ class Unit_Converter(commands.Cog):
 
 
     # <--- Command to convert ml to l --->
-    @ nextcord.slash_command(
-        name = "millilitre_to_litre", 
+    @ nextcord.slash_command( 
         description = "Convert mililitre to litre."
     )
 
@@ -305,7 +296,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert l to ml --->
     @ nextcord.slash_command(
-        name = "litre_to_millilitre", 
         description = "Convert litre to mililitre."
     )
 
@@ -337,7 +327,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert decimal to fraction --->
     @ nextcord.slash_command(
-        name = "decimal_to_fraction", 
         description = "Convert a decimal number to fraction."
     )
 
@@ -369,7 +358,6 @@ class Unit_Converter(commands.Cog):
 
     # <--- Command to convert fraction to decimal --->
     @ nextcord.slash_command(
-        name = "fraction_to_decimal", 
         description = "Convert a fraction value to a decimal number."
     )
 

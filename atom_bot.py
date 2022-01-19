@@ -2,7 +2,7 @@ import nextcord
 import os
 from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
-from config import token
+from config import token, owner_id
 
 
 # <--- Declaring intents for bot --->
@@ -15,6 +15,7 @@ bot = commands.Bot(
     case_insensitive = True, 
     strip_after_prefix = True, 
     help_command = None,
+    owner_id = owner_id,
     intent = intents
 )
 
