@@ -29,7 +29,7 @@ class Trigonometry_Calculation(commands.Cog):
             title = "Trigonometry Query", 
             description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(139,0,0)
+            colour = nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed_msg.add_field(
@@ -63,7 +63,7 @@ class Trigonometry_Calculation(commands.Cog):
             title = "Trigonometry Query", 
             description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(139,0,0)
+            colour = nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed_msg.add_field(
@@ -97,7 +97,7 @@ class Trigonometry_Calculation(commands.Cog):
             title = "Trigonometry Query", 
             description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(139,0,0)
+            colour = nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed_msg.add_field(
@@ -133,7 +133,7 @@ class Trigonometry_Calculation(commands.Cog):
                 title = "Trigonometry Query", 
                 description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), 
-                colour = nextcord.Color.from_rgb(139,0,0)
+                colour = nextcord.Color.from_rgb(139, 0, 0)
             )
 
             embed_msg.add_field(

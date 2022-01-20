@@ -28,7 +28,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -62,7 +62,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -96,7 +96,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -130,7 +130,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -164,7 +164,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -198,7 +198,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -232,7 +232,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -266,7 +266,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -300,7 +300,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -334,7 +334,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -368,7 +368,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -402,7 +402,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -436,7 +436,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -470,7 +470,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -504,7 +504,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -538,7 +538,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(
@@ -572,7 +572,7 @@ class Geometry_Calculation(commands.Cog) :
             title = "Geometry Query", 
             description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
-            colour = nextcord.Color.from_rgb(157,34,53)
+            colour = nextcord.Color.from_rgb(157, 34, 53)
         )
 
         embed_msg.add_field(

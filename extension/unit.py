@@ -26,7 +26,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -57,7 +57,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -88,7 +88,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -119,7 +119,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -150,7 +150,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -181,7 +181,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -212,7 +212,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -243,7 +243,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -274,7 +274,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -305,7 +305,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -336,7 +336,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
@@ -367,7 +367,7 @@ class Unit_Converter(commands.Cog):
             title = "Unit Converter", 
             description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178,34,34)
+            colour = nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed_msg.add_field(
