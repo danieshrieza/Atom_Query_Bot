@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 from datetime import datetime, timezone
-from config import guild_id
 
 
 # <--- Class for Cartesian_Query --->
@@ -20,8 +19,7 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot linear graph --->
     @ nextcord.slash_command(
-        description = "Plot a linear graph using the equation y = mx + c.",
-        guild_ids = [guild_id]
+        description = "Plot a linear graph using the equation y = mx + c."
     )
 
     async def linear_equation(self, ctx : Interaction, gradient : float, y_intercept : float) :
@@ -48,8 +46,7 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot quadratic graph --->
     @ nextcord.slash_command(
-        description = "Plot a quadratic graph using the equation y = ax² + bx + c.",
-        guild_ids = [guild_id]
+        description = "Plot a quadratic graph using the equation y = ax² + bx + c."
     )
 
     async def quadratic_equation(self, ctx : Interaction, a : float, b : float, c : float) :
@@ -75,8 +72,7 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot cubic graph --->
     @ nextcord.slash_command(
-        description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d.",
-        guild_ids = [guild_id]
+        description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d."
     )
 
     async def cubic_equation(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
@@ -103,8 +99,7 @@ class Cartesian_Query(commands.Cog) :
 
     # <--- Command to plot reciprocal graph --->
     @ nextcord.slash_command( 
-        description = "Plot a reciprocal graph using the equation y = 1/x.",
-        guild_ids = [guild_id]
+        description = "Plot a reciprocal graph using the equation y = 1/x."
     )
 
     async def reciprocal_equation(self, ctx : Interaction, numerator : float, denominator : float) :
