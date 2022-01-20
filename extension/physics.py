@@ -4,17 +4,17 @@ from nextcord.ext import commands
 from nextcord import Interaction
 
 
-# <--- Class for Physics_Calculation --->
+# NOTE : Class for Physics_Calculation 
 class Physics_Calculation(commands.Cog) :
 
 
-    # <--- Initialize variable for class --->
+    # NOTE : Initialize variable for class 
     def __init__(self, bot : commands.Bot) :
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # <--- Command to calculate speed of an object --->
+    # NOTE : Command to calculate speed of an object 
     @ nextcord.slash_command(
         description = "Calculate the speed of an object using any distance and time unit."
     )
@@ -48,7 +48,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate electric current of an object --->
+    # NOTE : Command to calculate electric current of an object 
     @ nextcord.slash_command(
         description = "Calculate the electric current of an object."
     )
@@ -82,7 +82,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate electric voltage of an object --->
+    # NOTE : Command to calculate electric voltage of an object 
     @ nextcord.slash_command(
         description = "Calculate the electric voltage of an object."
     )
@@ -116,7 +116,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate electric resistance of an object --->
+    # NOTE : Command to calculate electric resistance of an object 
     @ nextcord.slash_command(
         description = "Calculate the electric resistance of an object."
     )
@@ -150,7 +150,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate moment of force of an object --->
+    # NOTE : Command to calculate moment of force of an object 
     @ nextcord.slash_command(
         description = "Calculate the moment of force of an object."
     )
@@ -184,7 +184,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate the pressure acts on an object --->
+    # NOTE : Command to calculate the pressure acts on an object 
     @ nextcord.slash_command(
         description = "Calculate the pressure acts on an object."
     )
@@ -217,7 +217,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
     
 
-    # <--- Command to calculate the density of an object --->
+    # NOTE : Command to calculate the density of an object 
     @ nextcord.slash_command(
         description = "Calculate the density of an object."
     )
@@ -251,7 +251,7 @@ class Physics_Calculation(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-# <--- Add Physics_Calculation into the bot
+# NOTE : Add Physics_Calculation into the bot
 def setup(bot : commands.Bot) :
     bot.add_cog(Physics_Calculation(bot))
 

@@ -5,11 +5,11 @@ from nextcord.ext.commands.context import Context
 from config import token, owner_id
 
 
-# <--- Declaring intents for bot --->
+# NOTE : Declaring intents for bot
 intents = nextcord.Intents.all()
 
 
-# <--- Declaring bot --->
+# NOTE : Declaring bot 
 bot = commands.Bot(
     command_prefix = "!", 
     case_insensitive = True, 
@@ -20,7 +20,7 @@ bot = commands.Bot(
 )
 
 
-# <--- Activating bot once it's ready --->
+# NOTE : Activating bot once it's ready
 @ bot.event
 
 async def on_ready():
@@ -28,7 +28,7 @@ async def on_ready():
     await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "Dark matter"))
 
 
-# <--- Command to reload extension file for owner --->
+# NOTE : Command to reload extension file for owner 
 @ commands.is_owner()
 @ bot.command()
 
@@ -36,13 +36,13 @@ async def reload(ctx : Context, extension) :
 
     try :
         bot.reload_extension(f"extension.{extension}")
-        await ctx.send(f"`{{0.user}}` has reloaded `{extension}`.".format(bot), delete_after = 3)
+        await ctx.send(f"`{bot.user}` has reloaded `{extension}`.", delete_after = 3)
 
     except :
         await ctx.send(f"`{extension}` not found.")
 
 
-# <--- Command to load extension file for owner --->
+# NOTE : Command to load extension file for owner 
 @ commands.is_owner()
 @ bot.command()
 
@@ -50,13 +50,13 @@ async def load(ctx : Context, extension) :
 
     try :
         bot.load_extension(f"extension.{extension}")
-        await ctx.send(f"`{{0.user}}` has loaded `{extension}`.".format(bot), delete_after = 3)
+        await ctx.send(f"`{bot.user}` has loaded `{extension}`.", delete_after = 3)
 
     except :
         await ctx.send(f"`{extension}` not found.")
 
 
-# <--- Command to unload extension file for owner --->
+# NOTE : Command to unload extension file for owner 
 @ commands.is_owner()
 @ bot.command()
 
@@ -64,26 +64,28 @@ async def unload(ctx : Context, extension) :
 
     try :
         bot.unload_extension(f"extension.{extension}")
-        await ctx.send(f"`{{0.user}}` has unloaded `{extension}`.".format(bot), delete_after = 3)
+        await ctx.send(f"`{bot.user}` has unloaded `{extension}`.", delete_after = 3)
 
     except :
         await ctx.send(f"`{extension}` not found.")
 
 
-# <--- Command to find all server that houses this bot --->
+# NOTE : Command to find all server that houses this bot 
 @ commands.is_owner()
 @ bot.command()
 
-async def server(ctx : Context):
-    for guild in bot.guilds:
+async def server(ctx : Context) :
+
+    for guild in bot.guilds :
         await ctx.send(f"{guild.name}")
 
 
-# <--- Load extension file once bot is ready --->
+# NOTE : Load extension file once bot is ready 
 for filename in os.listdir("./extension") :
-    if filename.endswith(".py"):
+
+    if filename.endswith(".py") :
         bot.load_extension(f"extension.{filename[:-3]}")
 
 
-# <--- Key for bot to run --->
+# NOTE : Key for bot to run 
 bot.run(token)

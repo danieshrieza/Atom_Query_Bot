@@ -7,17 +7,17 @@ import math
 from datetime import datetime, timezone
 
 
-# <--- Class for Cartesian_Query --->
+# NOTE : Class for Cartesian_Query 
 class Cartesian_Query(commands.Cog) :
 
 
-    # <--- Initialize variable for class --->
+    # NOTE : Initialize variable for class 
     def __init__(self, bot : commands.Bot) :
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # <--- Command to plot linear graph --->
+    # NOTE : Command to plot linear graph 
     @ nextcord.slash_command(
         description = "Plot a linear graph using the equation y = mx + c."
     )
@@ -44,7 +44,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.channel.send(file = file)
 
 
-    # <--- Command to plot quadratic graph --->
+    # NOTE : Command to plot quadratic graph 
     @ nextcord.slash_command(
         description = "Plot a quadratic graph using the equation y = ax² + bx + c."
     )
@@ -70,7 +70,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.channel.send(file = file)
 
 
-    # <--- Command to plot cubic graph --->
+    # NOTE : Command to plot cubic graph 
     @ nextcord.slash_command(
         description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d."
     )
@@ -97,7 +97,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.channel.send(file = file)
 
 
-    # <--- Command to plot reciprocal graph --->
+    # NOTE : Command to plot reciprocal graph 
     @ nextcord.slash_command( 
         description = "Plot a reciprocal graph using the equation y = 1/x."
     )
@@ -123,7 +123,7 @@ class Cartesian_Query(commands.Cog) :
         
         await ctx.channel.send(file = file)
 
-    # <--- Command to calculate distance between two points on a Cartesian Plane --->
+    # NOTE : Command to calculate distance between two points on a Cartesian Plane 
     @ nextcord.slash_command(
         description = "Calculate the distance between two points."
     )
@@ -157,7 +157,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate gradient of a line --->
+    # NOTE : Command to calculate gradient of a line 
     @ nextcord.slash_command(
         description = "Calculate the gradient of a line."
     )
@@ -191,7 +191,7 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to calculate the midpoint of a line --->
+    # NOTE : Command to calculate the midpoint of a line 
     @ nextcord.slash_command( 
         description = "Calculate the midpoint of a line."
     )
@@ -225,6 +225,6 @@ class Cartesian_Query(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)      
 
 
-# <--- Add Cartesian_Query into the bot
+# NOTE : Add Cartesian_Query into the bot
 def setup(bot : commands.Bot) :
     bot.add_cog(Cartesian_Query(bot))

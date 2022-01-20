@@ -5,17 +5,17 @@ import math
 from nextcord import Interaction
 
 
-# <--- Class for Trigonometry_Calculation --->
+# NOTE : Class for Trigonometry_Calculation 
 class Trigonometry_Calculation(commands.Cog):
 
 
-    # <--- Initialize variable for class --->
+    # NOTE : Initialize variable for class 
     def __init__(self, bot : commands.Bot):
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # <--- Command to find sine of a triangle --->
+    # NOTE : Command to find sine of a triangle 
     @ nextcord.slash_command(
         description = "Calculate the sine of a triangle."
     )
@@ -49,7 +49,7 @@ class Trigonometry_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to find cosine of a triangle --->
+    # NOTE : Command to find cosine of a triangle 
     @ nextcord.slash_command(
         description = "Calculate the cosine of a triangle."
     )
@@ -83,7 +83,7 @@ class Trigonometry_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to find tangent of a triangle --->
+    # NOTE : Command to find tangent of a triangle 
     @ nextcord.slash_command(
         description = "Calculate the tangent of a triangle."
     )
@@ -117,7 +117,7 @@ class Trigonometry_Calculation(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem --->
+    # NOTE : Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem 
     @ nextcord.slash_command(
         description = "Calculate the Pythagoras Theorem."
     )
@@ -155,6 +155,6 @@ class Trigonometry_Calculation(commands.Cog):
         else :
             await ctx.response.send_message("Please provide input that has values more than 0.")
 
-# <--- Add Triginometry_Calculation into the bot --->
+# NOTE : Add Triginometry_Calculation into the bot 
 def setup(bot : commands.Bot):
   bot.add_cog(Trigonometry_Calculation(bot))

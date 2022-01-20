@@ -5,17 +5,17 @@ from fraction import Fraction
 from nextcord import Interaction
 
 
-# <--- Class for Unit_Converter --->
+# NOTE : Class for Unit_Converter 
 class Unit_Converter(commands.Cog):
 
 
-    # <---  Initialize variable for class --->
+    # NOTE :  Initialize variable for class 
     def __init__(self, bot : commands.Bot):
         self.bot = bot
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
-    # <--- Command to convert mm to cm --->
+    # NOTE : Command to convert mm to cm 
     @ nextcord.slash_command(
         description = "Convert milimeter to centimeter."
     )
@@ -46,7 +46,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert cm to m --->
+    # NOTE : Command to convert cm to m 
     @ nextcord.slash_command( 
         description = "Convert centimeter to meter."
     )
@@ -77,7 +77,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # <--- Command to m to km --->
+    # NOTE : Command to m to km 
     @ nextcord.slash_command(
         description = "Convert meter to kilometer."
     )
@@ -108,7 +108,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # <--- Command to km to m --->
+    # NOTE : Command to km to m 
     @ nextcord.slash_command(
         description = "Convert kilometer to meter."
     )
@@ -139,7 +139,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # <--- Command to convert m to cm --->
+    # NOTE : Command to convert m to cm 
     @ nextcord.slash_command( 
         description = "Convert meter to centimeter."
     )
@@ -170,7 +170,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
         
 
-    # <--- Command to convert cm to mm --->
+    # NOTE : Command to convert cm to mm 
     @ nextcord.slash_command(
         description = "Convert centimeter to milimeter."
     )
@@ -201,7 +201,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command convert g to kg --->
+    # NOTE : Command convert g to kg 
     @ nextcord.slash_command(
         description = "Convert gram to kilogram."
     )
@@ -232,7 +232,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert kg to g --->
+    # NOTE : Command to convert kg to g 
     @ nextcord.slash_command(
         description = "Convert kilogram to gram."
     )
@@ -263,7 +263,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert ml to l --->
+    # NOTE : Command to convert ml to l 
     @ nextcord.slash_command( 
         description = "Convert mililitre to litre."
     )
@@ -294,7 +294,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert l to ml --->
+    # NOTE : Command to convert l to ml 
     @ nextcord.slash_command(
         description = "Convert litre to mililitre."
     )
@@ -325,7 +325,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert decimal to fraction --->
+    # NOTE : Command to convert decimal to fraction 
     @ nextcord.slash_command(
         description = "Convert a decimal number to fraction."
     )
@@ -356,7 +356,7 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # <--- Command to convert fraction to decimal --->
+    # NOTE : Command to convert fraction to decimal 
     @ nextcord.slash_command(
         description = "Convert a fraction value to a decimal number."
     )
@@ -387,6 +387,6 @@ class Unit_Converter(commands.Cog):
         await ctx.response.send_message(embed = embed_msg)
 
 
-# <--- Add Unit_Converter into the bot --->
+# NOTE : Add Unit_Converter into the bot 
 def setup(bot : commands.Bot):
   bot.add_cog(Unit_Converter(bot))
