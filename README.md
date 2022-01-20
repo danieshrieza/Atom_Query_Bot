@@ -18,7 +18,9 @@ As of now, it able to calculate queries from 6 different areas of Mathematics wh
 In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the 
 listed dependencies on [requirements.txt](requirements.txt) using the command below :
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 I've also used 4 built-in Python library in this project which is `math`, `datetime`, `os`, and `random`. 
 
