@@ -15,22 +15,10 @@ As of now, it able to calculate queries from 6 different areas of Mathematics wh
 
 # Requirement 📝
 
-In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the following dependencies :
+In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the 
+listed dependencies on [requirements.txt](requirements.txt) using the command below :
 
-1. nextcord
-    - `pip install nextcord`
-
-2. Fraction
-    - `pip install Fraction`
-
-3. matplotlib
-    - `pip install matplotlib`
-
-4. numpy
-    - `pip install numpy`
-
-5. python-dotenv
-    - `pip install python-dotenv`
+`pip install -r requirements.txt`
 
 I've also used 4 built-in Python library in this project which is `math`, `datetime`, `os`, and `random`. 
 
