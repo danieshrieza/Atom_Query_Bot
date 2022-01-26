@@ -28,48 +28,6 @@ async def on_ready():
     await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "Dark matter"))
 
 
-# NOTE : Command to reload extension file for owner 
-@ commands.is_owner()
-@ bot.command()
-
-async def reload(ctx : Context, extension) :
-
-    try :
-        bot.reload_extension(f"extension.{extension}")
-        await ctx.send(f"`{bot.user}` has reloaded `{extension}`.", delete_after = 3)
-
-    except :
-        await ctx.send(f"`{extension}` not found.")
-
-
-# NOTE : Command to load extension file for owner 
-@ commands.is_owner()
-@ bot.command()
-
-async def load(ctx : Context, extension) :
-
-    try :
-        bot.load_extension(f"extension.{extension}")
-        await ctx.send(f"`{bot.user}` has loaded `{extension}`.", delete_after = 3)
-
-    except :
-        await ctx.send(f"`{extension}` not found.")
-
-
-# NOTE : Command to unload extension file for owner 
-@ commands.is_owner()
-@ bot.command()
-
-async def unload(ctx : Context, extension) :
-
-    try :
-        bot.unload_extension(f"extension.{extension}")
-        await ctx.send(f"`{bot.user}` has unloaded `{extension}`.", delete_after = 3)
-
-    except :
-        await ctx.send(f"`{extension}` not found.")
-
-
 # NOTE : Command to find all server that houses this bot 
 @ commands.is_owner()
 @ bot.command()
@@ -81,10 +39,17 @@ async def server(ctx : Context) :
 
 
 # NOTE : Load extension file once bot is ready 
-for filename in os.listdir("./extension") :
+for folder in os.listdir("./extension") :
 
-    if filename.endswith(".py") :
-        bot.load_extension(f"extension.{filename[:-3]}")
+    if os.path.exists(os.path.join("extension", folder, "cog_1.py")):
+
+        bot.load_extension(f"extension.{folder}.cog_1")
+
+for folder in os.listdir("./extension") :
+
+    if os.path.exists(os.path.join("extension", folder, "cog_2.py")):
+
+        bot.load_extension(f"extension.{folder}.cog_2") 
 
 
 # NOTE : Key for bot to run 
