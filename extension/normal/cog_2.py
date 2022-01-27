@@ -263,6 +263,8 @@ class AdditionalBasic(commands.Cog) :
 
         evalu = int_list[:number_range]
 
+        exp = [int(i) for i in str_list]
+
         embed_msg = nextcord.Embed(
             title = "Math Query", 
             description = "The requested `Math Query` have been evaluated by **Atom Query**", 
@@ -272,7 +274,7 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{str_list}`", 
+            value = f"`{exp}`", 
             inline = False
         )
 
@@ -304,6 +306,8 @@ class AdditionalBasic(commands.Cog) :
 
         evalu = int_list[:number_range]
 
+        exp = [int(i) for i in str_list]
+
         embed_msg = nextcord.Embed(
             title = "Math Query", 
             description = "The requested `Math Query` have been evaluated by **Atom Query**", 
@@ -313,7 +317,7 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{str_list}`", 
+            value = f"`{exp}`", 
             inline = False
         )
 
