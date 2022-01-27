@@ -272,7 +272,7 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{int_list}`", 
+            value = f"`{str_list}`", 
             inline = False
         )
 
@@ -313,7 +313,7 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{int_list}`", 
+            value = f"`{str_list}`", 
             inline = False
         )
 
