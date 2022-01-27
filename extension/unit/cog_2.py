@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 from fraction import Fraction
 from nextcord import Interaction
+from config import guild_id
 
 
 # NOTE : Class for Mass_Volume_Frac

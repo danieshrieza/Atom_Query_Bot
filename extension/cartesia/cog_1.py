@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 import matplotlib.pyplot as plt
 import numpy as np
+from config import guild_id
 
 
 # NOTE : Class for Plot 

@@ -4,6 +4,7 @@ import math
 import random
 from datetime import datetime, timezone
 from nextcord import Interaction
+from config import guild_id
 
 
 # NOTE : Class for Basic 

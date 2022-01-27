@@ -2,7 +2,8 @@ from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
-    
+from config import guild_id
+
 
 # NOTE : Class for PerimeterAndArea
 class PerimeterAndArea(commands.Cog) :

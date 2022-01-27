@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 import math
 from nextcord import Interaction
+from config import guild_id
 
 
 # NOTE : Class for TrigRatios 

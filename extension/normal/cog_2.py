@@ -3,6 +3,8 @@ from nextcord.ext import commands
 import math
 from datetime import datetime, timezone
 from nextcord import Interaction
+from config import guild_id
+
     
 # NOTE : Class for AdditionalBasic
 class AdditionalBasic(commands.Cog) :
@@ -243,6 +245,87 @@ class AdditionalBasic(commands.Cog) :
 
         else :
             await ctx.response.send_message("Please provide valid input.")
+
+
+    # NOTE : Command to find the Fibonacci Sequence
+    @ nextcord.slash_command(
+        description = "Calculate the Fibonacci Sequence using the numbers provided by user."
+    )
+    
+    async def fibonacci_sequence(self, ctx : Interaction, number_list : str, number_range : int) :
+
+        str_list : list = number_list.split()
+
+        int_list = [int(i) for i in str_list]
+
+        while len(int_list) < number_range:
+            int_list.append(sum(int_list[-2:]))
+
+        evalu = int_list[:number_range]
+
+        embed_msg = nextcord.Embed(
+            title = "Math Query", 
+            description = "The requested `Math Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{int_list}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu}`", 
+            inline = True
+        )
+
+        embed_msg.set_thumbnail(url = self.link)
+
+        await ctx.response.send_message(embed = embed_msg)
+
+
+
+    # NOTE : Command to find the Tribonacci Sequence
+    @ nextcord.slash_command(
+        description = "Calculate the Tribonacci Sequence using the numbers provided by user."
+    )
+    
+    async def tribonacci_sequence(self, ctx : Interaction, number_list : str, number_range : int) :
+
+        str_list : list = number_list.split()
+
+        int_list = [int(i) for i in str_list]
+
+        while len(int_list) < number_range:
+            int_list.append(sum(int_list[-3:]))
+
+        evalu = int_list[:number_range]
+
+        embed_msg = nextcord.Embed(
+            title = "Math Query", 
+            description = "The requested `Math Query` have been evaluated by **Atom Query**", 
+            timestamp = datetime.now(timezone.utc), 
+            colour = nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed_msg.add_field(
+            name = "Input :", 
+            value = f"`{int_list}`", 
+            inline = False
+        )
+
+        embed_msg.add_field(
+            name = "Output :", 
+            value = f"`{evalu}`", 
+            inline = True
+        )
+
+        embed_msg.set_thumbnail(url = self.link)
+
+        await ctx.response.send_message(embed = embed_msg)
 
 
 # NOTE : Add AdditionalBasic to the bot
