@@ -23,8 +23,9 @@ bot = commands.Bot(
 # NOTE : Activating bot once it's ready
 @ bot.event
 
-async def on_ready():
-    print("I have logged in as {0.user}".format(bot))
+async def on_ready() :
+
+    print(f"I have logged in as {bot.user}")
     await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "Dark matter"))
 
 
