@@ -41,7 +41,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} Nm ```", 
+            value = f"```Python\n {evalu} Nm \n```", 
             inline = True
         )
 
@@ -74,7 +74,7 @@ class EnergyAndForce(commands.Cog) :
         )
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} N/m² ```", 
+            value = f"```Python\n {evalu} N/m² \n```", 
             inline = True
         )
 
@@ -108,7 +108,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} g/cm³ ```", 
+            value = f"```Python\n {evalu} g/cm³ \n```", 
             inline = True
         )
         
@@ -142,7 +142,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} J ```", 
+            value = f"```Python\n {evalu} J \n```", 
             inline = True
         )
         
@@ -176,7 +176,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} W ```", 
+            value = f"```Python\n {evalu} W \n```", 
             inline = True
         )
         
@@ -210,7 +210,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} J ```", 
+            value = f"```Python\n {evalu} J \n```", 
             inline = True
         )
         
@@ -244,7 +244,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} J ```", 
+            value = f"```Python\n {evalu} J \n```", 
             inline = True
         )
         
@@ -276,7 +276,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} J ```", 
+            value = f"```Python\n {evalu} J \n```", 
             inline = True
         )
         

@@ -41,7 +41,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} m/s ```", 
+            value = f"```Python\n {evalu} m/s \n```", 
             inline = True
         )
 
@@ -75,7 +75,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} A ```", 
+            value = f"```Python\n {evalu} A \n```", 
             inline = True
         )
 
@@ -109,7 +109,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} V ```", 
+            value = f"```Python\n {evalu} V \n```", 
             inline = True
         )
 
@@ -143,7 +143,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} Ω ```", 
+            value = f"```Python\n {evalu} Ω \n```", 
             inline = True
         )
 
