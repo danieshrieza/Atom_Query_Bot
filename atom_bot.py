@@ -3,7 +3,7 @@ import os
 from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
 from config import token, owner_id
-from .extension.help import CustomHelpCommand
+from help import CustomHelpCommand
 
 
 # NOTE : Declaring intents for bot
