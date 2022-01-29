@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for PerimeterAndArea
@@ -20,7 +21,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the circumference of a circle using radius."
     )
 
-    async def circumference_circle_radius(self, ctx : Interaction, radius : float) :
+    async def circumference_circle_radius(self, ctx : Context, radius : float) :
             
         exp = f"2 × 22/7 × {radius}"
         evalu = 2 * 22/7 * radius
@@ -46,7 +47,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Commmand to calculate area of a circle 
@@ -54,7 +55,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a circle."
     )
     
-    async def area_circle(self, ctx : Interaction, radius : float) :
+    async def area_circle(self, ctx : Context, radius : float) :
 
         exp = f"22/7 × {radius}²"
         evalu = 22/7 * radius ** 2
@@ -80,7 +81,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate area of a quadrilateral 
@@ -88,7 +89,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a rectangle, a square or a quadrilateral."
     )
 
-    async def area_quadrilateral(self, ctx : Interaction, length : float, width : float) :
+    async def area_quadrilateral(self, ctx : Context, length : float, width : float) :
 
         exp = f"{length} × {width}"
         evalu = length * width
@@ -114,7 +115,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate area of a triangle 
@@ -122,7 +123,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a triangle."
     )
 
-    async def area_triangle(self, ctx : Interaction, base : float, height : float) :
+    async def area_triangle(self, ctx : Context, base : float, height : float) :
 
         exp = f"1/2 × {base} × {height}"
         evalu = 1/2 * base * height
@@ -148,7 +149,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate area of a parallelogram 
@@ -156,7 +157,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a parallelogram."
     )
 
-    async def area_parallelogram(self, ctx : Interaction, base : float, height : float) :
+    async def area_parallelogram(self, ctx : Context, base : float, height : float) :
 
         exp = f"{base} × {height}"
         evalu = base * height
@@ -182,7 +183,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate area of a kite 
@@ -190,7 +191,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a kite."
     )
 
-    async def area_kite(self, ctx : Interaction, long_diagonal : float, short_diagonal : float) :
+    async def area_kite(self, ctx : Context, long_diagonal : float, short_diagonal : float) :
 
         exp = f"1/2 × {long_diagonal} × {short_diagonal}"
         evalu = 1/2 * long_diagonal * short_diagonal   
@@ -216,7 +217,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate area of a trampezium 
@@ -224,7 +225,7 @@ class PerimeterAndArea(commands.Cog) :
         # description ="Calculate the area of a trampezium."
     )
 
-    async def area_trampezium(self, ctx : Interaction, first_parallel : float, second_parallel : float, height : float) :
+    async def area_trampezium(self, ctx : Context, first_parallel : float, second_parallel : float, height : float) :
 
         exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
         evalu = 1/2 * (first_parallel + second_parallel) * height
@@ -250,7 +251,7 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 # NOTE : Add PerimeterAndArea to the bot
 def setup(bot : commands.Bot) :

@@ -4,6 +4,7 @@ from nextcord.ext import commands
 import math
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for TrigRatios 
@@ -21,7 +22,7 @@ class TrigRatios(commands.Cog):
         # description ="Calculate the sine of a triangle."
     )
 
-    async def sine(self,ctx : Interaction, number : float) :
+    async def sine(self,ctx : Context, number : float) :
 
         exp = f"sin {number}°"
         evalu = math.sin(number)
@@ -47,7 +48,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to find cosine of a triangle 
@@ -55,7 +56,7 @@ class TrigRatios(commands.Cog):
         # description ="Calculate the cosine of a triangle."
     )
 
-    async def cosine(self, ctx : Interaction, number : float) :
+    async def cosine(self, ctx : Context, number : float) :
 
         exp = f"cos {number}°"
         evalu = math.cos(number)
@@ -81,7 +82,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to find tangent of a triangle 
@@ -89,7 +90,7 @@ class TrigRatios(commands.Cog):
         # description ="Calculate the tangent of a triangle."
     )
 
-    async def tangent(self, ctx : Interaction, number : float) :
+    async def tangent(self, ctx : Context, number : float) :
 
         exp = f"tan {number}°"
         evalu = math.tan(number)
@@ -115,7 +116,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add TrigRatios to the bot 

@@ -4,6 +4,7 @@ from nextcord.ext import commands
 import matplotlib.pyplot as plt
 import numpy as np
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for Plot 
@@ -21,7 +22,7 @@ class Plot(commands.Cog) :
         # description ="Plot a linear graph using the equation y = mx + c."
     )
 
-    async def linear_equation(self, ctx : Interaction, gradient : float, y_intercept : float) :
+    async def linear_equation(self, ctx : Context, gradient : float, y_intercept : float) :
 
         x = np.linspace(-20, 20, 100)
         y = gradient * x + y_intercept
@@ -52,7 +53,7 @@ class Plot(commands.Cog) :
         # description ="Plot a quadratic graph using the equation y = ax² + bx + c."
     )
 
-    async def quadratic_equation(self, ctx : Interaction, a : float, b : float, c : float) :
+    async def quadratic_equation(self, ctx : Context, a : float, b : float, c : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 2 + (b * x) + c
@@ -82,7 +83,7 @@ class Plot(commands.Cog) :
         # description ="Plot a cubic graph using the equation y = ax³ + bx² + cx + d."
     )
 
-    async def cubic_equation(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
+    async def cubic_equation(self, ctx : Context, a : float, b : float, c : float, d : float) :
 
         x = np.linspace(-20, 20, 100)
         y = (a * x) ** 3 + (b * x) ** 2 + (c * x) + d
@@ -113,7 +114,7 @@ class Plot(commands.Cog) :
         # description ="Plot a reciprocal graph using the equation y = 1/x."
     )
 
-    async def reciprocal_equation(self, ctx : Interaction, numerator : float, denominator : float) :
+    async def reciprocal_equation(self, ctx : Context, numerator : float, denominator : float) :
 
         x = np.linspace(-20, 20, 100)
         y = numerator / (denominator * x)

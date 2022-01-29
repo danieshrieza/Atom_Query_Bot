@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for SurfaceAndVolume 
@@ -20,7 +21,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the surface area of a cuboid."
     )
 
-    async def surface_area_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def surface_area_quadrilateral(self, ctx : Context, length : float, width : float, height : float) :
 
         exp = f"2({length} × {width}) + 2({length} × {height}) + 2({width} × {height})"
         evalu = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)
@@ -46,7 +47,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate surface area of pyramid 
@@ -54,7 +55,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the surface area of a pyramid."
     )
 
-    async def surface_area_pyramid(self, ctx : Interaction, length : float, width : float, face_height : float) :
+    async def surface_area_pyramid(self, ctx : Context, length : float, width : float, face_height : float) :
 
         exp = f"2(1/2 × {face_height} × {length/2}) + 2(1/2 × {face_height} × {width/2}) + ({length} × {width})"
         evalu = 2 * (1/2 * face_height * (length/2)) + 2 * (1/2 * face_height *(width/2)) + (length * width)
@@ -80,7 +81,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate surface area of a cylinder 
@@ -88,7 +89,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the surface area of a cylinder."
     )
 
-    async def surface_area_cylinder(self, ctx : Interaction, height : float, radius : float) :
+    async def surface_area_cylinder(self, ctx : Context, height : float, radius : float) :
 
         exp = f"(2 × 22/7 × {radius}²) + (2 × 22/7 × {radius} × {height})"
         evalu = (2 * 22/7 * (radius ** 2)) + (2 * 22/7 * radius * height)
@@ -114,7 +115,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate surface area of a cone 
@@ -122,7 +123,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the surface area of a cone."
     )
 
-    async def surface_area_cone(self, ctx : Interaction, slant_height : float, radius : float) :
+    async def surface_area_cone(self, ctx : Context, slant_height : float, radius : float) :
 
         exp = f"(22/7 × {radius}²) + (22/7 × {radius} × {slant_height})"
         evalu = (22/7 * (radius ** 2)) + (22/7 * radius * slant_height)
@@ -148,7 +149,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculte surface area of a sphere 
@@ -156,7 +157,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the surface area of a sphere."
     )
 
-    async def surface_area_sphere(self, ctx : Interaction, radius : float) :
+    async def surface_area_sphere(self, ctx : Context, radius : float) :
 
         exp = f"4 × 22/7 × {radius}²"
         evalu = 4 * 22/7 * (radius ** 2)
@@ -182,7 +183,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate volume of a cube or a cuboid 
@@ -190,7 +191,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the volume of a cube or a cuboid."
     )
 
-    async def volume_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def volume_quadrilateral(self, ctx : Context, length : float, width : float, height : float) :
 
         exp = f"{length} × {width} × {height}"
         evalu = length * width * height 
@@ -216,7 +217,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate volume of a pyramid 
@@ -224,7 +225,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the volume of a pyramid."
     )
 
-    async def volume_pyramid(self, ctx : Interaction, length : float, width : float, height : float) :
+    async def volume_pyramid(self, ctx : Context, length : float, width : float, height : float) :
 
         exp = f"1/3 × {length} × {width} × {height}"
         evalu = 1/3 * length * width * height
@@ -250,7 +251,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate volume of a cylinder 
@@ -258,7 +259,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the volume of a cylinder."
     )
 
-    async def volume_cylinder(self, ctx : Interaction, height : float, radius : float) :
+    async def volume_cylinder(self, ctx : Context, height : float, radius : float) :
 
         exp = f"22/7 × {radius}² × {height}"
         evalu = 22/7 * (radius ** 2) * height
@@ -284,7 +285,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate volume of a cone 
@@ -292,7 +293,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the volume of a cone."
     )
 
-    async def volume_cone(self, ctx : Interaction, height : float, radius : float) :
+    async def volume_cone(self, ctx : Context, height : float, radius : float) :
 
         exp = f"1/3 × 22/7 × {radius}² × {height}"
         evalu = 1/3 * 22/7 * (radius ** 2) * height
@@ -318,7 +319,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate volume of a sphere 
@@ -326,7 +327,7 @@ class SurfaceAndVolume(commands.Cog) :
         # description ="Calculate the volume of a sphere."
     )
 
-    async def volume_sphere(self, ctx : Interaction, radius : float) :
+    async def volume_sphere(self, ctx : Context, radius : float) :
 
         exp = f"4/3 × 22/7 × {radius}²"
         evalu = 4/3 * 22/7 * (radius ** 2)
@@ -352,7 +353,7 @@ class SurfaceAndVolume(commands.Cog) :
         
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add SurfaceAndVolume to the bot 

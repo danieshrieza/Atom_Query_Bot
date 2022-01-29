@@ -4,6 +4,7 @@ from nextcord.ext import commands
 import math
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
     
     
 # NOTE : Class for PythaTheorem
@@ -21,7 +22,7 @@ class PythaTheorem(commands.Cog) :
         # description ="Calculate the Pythagoras Theorem."
     )
 
-    async def pythagoras_theorem(self, ctx : Interaction, height : float, base : float) :
+    async def pythagoras_theorem(self, ctx : Context, height : float, base : float) :
 
         if (height > 0 and base > 0) :
 
@@ -49,10 +50,10 @@ class PythaTheorem(commands.Cog) :
 
             embed_msg.set_thumbnail(url = self.link)
 
-            await ctx.response.send_message(embed = embed_msg)
+            await ctx.send(embed = embed_msg)
 
         else :
-            await ctx.response.send_message("Please provide input that has values more than 0.")
+            await ctx.send("Please provide input that has values more than 0.")
 
 
 # NOTE : Add PythaTheorem to the bot

@@ -4,6 +4,7 @@ from nextcord.ext import commands
 import math
 from datetime import datetime, timezone
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for Line
@@ -21,7 +22,7 @@ class Line(commands.Cog) :
         # description ="Calculate the distance between two points."
     )
 
-    async def distance_between_two_points(self, ctx : Interaction, x_2 : float, x_1 : float, y_2 : float, y_1 : float) :
+    async def distance_between_two_points(self, ctx : Context, x_2 : float, x_1 : float, y_2 : float, y_1 : float) :
 
         exp = f"√({x_2} - {x_1})² + ({y_2} - {y_1})²"
         evalu = math.sqrt((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2)
@@ -47,7 +48,7 @@ class Line(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate gradient of a line 
@@ -55,7 +56,7 @@ class Line(commands.Cog) :
         # description ="Calculate the gradient of a line."
     )
 
-    async def gradient_of_a_line(self, ctx : Interaction, y_2 : float, y_1 : float, x_2 : float, x_1 : float) :
+    async def gradient_of_a_line(self, ctx : Context, y_2 : float, y_1 : float, x_2 : float, x_1 : float) :
 
         exp = f"{y_2} - {y_1} ÷ {x_2} - {x_1}"
         evalu = (y_2 - y_1) / (x_2 - x_1)
@@ -81,7 +82,7 @@ class Line(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to calculate the midpoint of a line 
@@ -89,7 +90,7 @@ class Line(commands.Cog) :
         # description ="Calculate the midpoint of a line."
     )
 
-    async def midpoint_of_a_line(self, ctx : Interaction, x_1 : float, x_2 : float, y_1 : float, y_2 : float) :
+    async def midpoint_of_a_line(self, ctx : Context, x_1 : float, x_2 : float, y_1 : float, y_2 : float) :
 
         exp = f"(({x_1} + {x_2}) ÷ 2, ({y_1} + {y_2}) ÷ 2)"
         evalu = ((x_1 + x_2) / 2, (y_1 + y_2) / 2)
@@ -115,7 +116,7 @@ class Line(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add Line to the bot

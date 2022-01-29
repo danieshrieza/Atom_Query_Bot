@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for Length 
@@ -20,7 +21,7 @@ class Length(commands.Cog):
         # description ="Convert milimeter to centimeter."
     )
 
-    async def mm_to_cm(self, ctx : Interaction, milimeter : float) :
+    async def mm_to_cm(self, ctx : Context, milimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -43,7 +44,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert cm to m 
@@ -51,7 +52,7 @@ class Length(commands.Cog):
         # description ="Convert centimeter to meter."
     )
 
-    async def cm_to_m(self, ctx : Interaction, centimeter : float) :
+    async def cm_to_m(self, ctx : Context, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -74,7 +75,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
         
 
     # NOTE : Command to m to km 
@@ -82,7 +83,7 @@ class Length(commands.Cog):
         # description ="Convert meter to kilometer."
     )
 
-    async def m_to_km(self, ctx : Interaction, meter : float) :
+    async def m_to_km(self, ctx : Context, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -105,7 +106,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
         
 
     # NOTE : Command to km to m 
@@ -113,7 +114,7 @@ class Length(commands.Cog):
         # description ="Convert kilometer to meter."
     )
 
-    async def km_to_m(self, ctx : Interaction, kilometer : float) :
+    async def km_to_m(self, ctx : Context, kilometer : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -136,7 +137,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
         
 
     # NOTE : Command to convert m to cm 
@@ -144,7 +145,7 @@ class Length(commands.Cog):
         # description ="Convert meter to centimeter."
     )
 
-    async def m_to_cm(self, ctx : Interaction, meter : float) :
+    async def m_to_cm(self, ctx : Context, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -167,7 +168,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
         
 
     # NOTE : Command to convert cm to mm 
@@ -175,7 +176,7 @@ class Length(commands.Cog):
         # description ="Convert centimeter to milimeter."
     )
 
-    async def cm_to_mm(self, ctx : Interaction, centimeter : float) :
+    async def cm_to_mm(self, ctx : Context, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -198,7 +199,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add Length to the bot 

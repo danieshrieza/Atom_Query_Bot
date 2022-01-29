@@ -5,6 +5,7 @@ import random
 from datetime import datetime, timezone
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for Basic 
@@ -22,7 +23,7 @@ class Basic(commands.Cog):
         # description ="Calculate your math's query."
     )
 
-    async def calculate(self, ctx : Interaction, query : str) :
+    async def calculate(self, ctx : Context, query : str) :
 
         expliteral = ("").join(query)
         exppoet = expliteral.replace("*","×").replace("/", "÷")
@@ -49,7 +50,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to generate random number 
@@ -57,7 +58,7 @@ class Basic(commands.Cog):
         # description ="Generate random number from input range."
     )
 
-    async def number_generator(self, ctx : Interaction, starting_point: float, ending_point : float) :
+    async def number_generator(self, ctx : Context, starting_point: float, ending_point : float) :
 
         exp = f"Generate number between {starting_point} and {ending_point}."
         evalu = f"{random.random(starting_point,ending_point)}"
@@ -83,7 +84,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to square a number 
@@ -91,7 +92,7 @@ class Basic(commands.Cog):
         # description ="Squared number from user."
     )
 
-    async def square(self, ctx : Interaction, base : float) :
+    async def square(self, ctx : Context, base : float) :
 
         exp = f"{base}²"
         evalu = f"{base ** 2}" 
@@ -117,7 +118,7 @@ class Basic(commands.Cog):
         
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to cube a number 
@@ -125,7 +126,7 @@ class Basic(commands.Cog):
         # description ="Cubed number from user."
     )
 
-    async def cube(self, ctx : Interaction, base : float) :
+    async def cube(self, ctx : Context, base : float) :
 
         exp = f"{base}³"
         evalu = f"{base ** 3}"
@@ -151,7 +152,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to power a base using user's exponent 
@@ -159,7 +160,7 @@ class Basic(commands.Cog):
         # description ="Power the user's base to the exponent."
     )
 
-    async def variable_power(self, ctx : Interaction, base : float, exponent : float) :
+    async def variable_power(self, ctx : Context, base : float, exponent : float) :
 
         exp = f"{base} ** {exponent}"
         evalu = f"{base ** exponent}"
@@ -185,7 +186,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to square root a number 
@@ -193,7 +194,7 @@ class Basic(commands.Cog):
         # description ="Square root user's number."
     )
 
-    async def square_root(self, ctx : Interaction, radicand : float) :
+    async def square_root(self, ctx : Context, radicand : float) :
 
         exp = f"√{radicand}"
         evalu = f"{math.sqrt(radicand)}" 
@@ -219,7 +220,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to cube root a number 
@@ -227,7 +228,7 @@ class Basic(commands.Cog):
         # description ="Cube root user's number."
     )
 
-    async def cube_root(self, ctx : Interaction, radicand : float) :
+    async def cube_root(self, ctx : Context, radicand : float) :
 
         exp = f"³√{radicand}"
         evalu = f"{radicand ** 1./3.}"
@@ -253,7 +254,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to root a radicand using a radical 
@@ -261,7 +262,7 @@ class Basic(commands.Cog):
         # description ="Radical(root) user's radicand(number)."
     )
 
-    async def variable_root(self, ctx : Interaction, radicand : float, radical: float) :
+    async def variable_root(self, ctx : Context, radicand : float, radical: float) :
 
         exp = f"{radicand} ** 1/{radical}"
         evalu = f"{radicand ** 1./radical}"
@@ -287,7 +288,7 @@ class Basic(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add Basic to the bot 

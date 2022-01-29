@@ -4,6 +4,7 @@ from nextcord.ext import commands
 from fraction import Fraction
 from nextcord import Interaction
 from config import guild_id
+from nextcord.ext.commands.context import Context
 
 
 # NOTE : Class for Mass_Volume_Frac
@@ -21,7 +22,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert gram to kilogram."
     )
 
-    async def g_to_kg(self, ctx : Interaction, gram : float) :
+    async def g_to_kg(self, ctx : Context, gram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -44,7 +45,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert kg to g 
@@ -52,7 +53,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert kilogram to gram."
     )
 
-    async def kg_to_g(self, ctx : Interaction, kilogram : float) :
+    async def kg_to_g(self, ctx : Context, kilogram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -75,7 +76,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert ml to l 
@@ -83,7 +84,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert mililitre to litre."
     )
 
-    async def ml_to_l(self, ctx : Interaction, millilitre : float) :
+    async def ml_to_l(self, ctx : Context, millilitre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -106,7 +107,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert l to ml 
@@ -114,7 +115,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert litre to mililitre."
     )
 
-    async def l_to_ml(self, ctx : Interaction, litre : float) :
+    async def l_to_ml(self, ctx : Context, litre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -137,7 +138,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert decimal to fraction 
@@ -145,7 +146,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert a decimal number to fraction."
     )
 
-    async def deci_to_frac(self, ctx : Interaction, decimal : float) :
+    async def deci_to_frac(self, ctx : Context, decimal : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -168,7 +169,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
     # NOTE : Command to convert fraction to decimal 
@@ -176,7 +177,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         # description ="Convert a fraction value to a decimal number."
     )
 
-    async def frac_to_deci(self, ctx : Interaction, numerator : int, denominator : int) :
+    async def frac_to_deci(self, ctx : Context, numerator : int, denominator : int) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -199,7 +200,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.set_thumbnail(url = self.link)
         
-        await ctx.response.send_message(embed = embed_msg)
+        await ctx.send(embed = embed_msg)
 
 
 # NOTE : Add MassAndVolumeAndFrac to the bot
