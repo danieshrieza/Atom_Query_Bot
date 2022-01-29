@@ -38,7 +38,7 @@ class Basic(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exppoet} ```", 
+            value = f"```Python\n {exppoet} \n```", 
             inline = False
         )
 

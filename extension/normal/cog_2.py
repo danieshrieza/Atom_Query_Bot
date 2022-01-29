@@ -198,7 +198,7 @@ class AdditionalBasic(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"``` {arr} ```", 
+                value = f"```Python\n {arr} \n```", 
                 inline = True
             )
 
