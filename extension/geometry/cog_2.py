@@ -35,13 +35,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -69,13 +69,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -103,13 +103,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -137,13 +137,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -171,13 +171,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -205,13 +205,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 
@@ -239,13 +239,13 @@ class PerimeterAndArea(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu}`", 
+            value = f"``` {evalu} ```", 
             inline = True
         )
 

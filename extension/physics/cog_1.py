@@ -35,7 +35,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -69,7 +69,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -103,7 +103,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -137,7 +137,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 

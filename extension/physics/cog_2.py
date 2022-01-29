@@ -35,7 +35,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -69,7 +69,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
         embed_msg.add_field(
@@ -102,7 +102,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -136,7 +136,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -170,7 +170,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -204,7 +204,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -238,7 +238,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
@@ -270,7 +270,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"`{exp}`", 
+            value = f"``` {exp} ```", 
             inline = False
         )
 
