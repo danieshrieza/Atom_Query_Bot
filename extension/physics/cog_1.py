@@ -16,8 +16,8 @@ class BasicPhysics(commands.Cog) :
 
 
     # NOTE : Command to calculate speed of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the speed of an object using any distance and time unit."
+    @ commands.command(
+        # description ="Calculate the speed of an object using any distance and time unit."
     )
 
     async def speed(self, ctx : Interaction, distance : float, time : float) :
@@ -27,7 +27,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -50,8 +50,8 @@ class BasicPhysics(commands.Cog) :
 
 
     # NOTE : Command to calculate electric current of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the electric current of an object."
+    @ commands.command(
+        # description ="Calculate the electric current of an object."
     )
 
     async def electric_current(self, ctx : Interaction, electric_voltage : float, electric_resistance : float ) :
@@ -61,7 +61,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -84,8 +84,8 @@ class BasicPhysics(commands.Cog) :
 
 
     # NOTE : Command to calculate electric voltage of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the electric voltage of an object."
+    @ commands.command(
+        # description ="Calculate the electric voltage of an object."
     )
 
     async def electric_voltage(self, ctx : Interaction, electric_current : float, electric_resistance : float ) :
@@ -95,7 +95,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -118,8 +118,8 @@ class BasicPhysics(commands.Cog) :
 
 
     # NOTE : Command to calculate electric resistance of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the electric resistance of an object."
+    @ commands.command(
+        # description ="Calculate the electric resistance of an object."
     )
 
     async def electric_resistance(self, ctx : Interaction, electric_voltage : float, electric_current : float ) :
@@ -129,7 +129,7 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )

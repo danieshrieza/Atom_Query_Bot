@@ -16,15 +16,15 @@ class Length(commands.Cog):
 
 
     # NOTE : Command to convert mm to cm 
-    @ nextcord.slash_command(
-        description = "Convert milimeter to centimeter."
+    @ commands.command(
+        # description ="Convert milimeter to centimeter."
     )
 
     async def mm_to_cm(self, ctx : Interaction, milimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -47,15 +47,15 @@ class Length(commands.Cog):
 
 
     # NOTE : Command to convert cm to m 
-    @ nextcord.slash_command( 
-        description = "Convert centimeter to meter."
+    @ commands.command( 
+        # description ="Convert centimeter to meter."
     )
 
     async def cm_to_m(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -78,15 +78,15 @@ class Length(commands.Cog):
         
 
     # NOTE : Command to m to km 
-    @ nextcord.slash_command(
-        description = "Convert meter to kilometer."
+    @ commands.command(
+        # description ="Convert meter to kilometer."
     )
 
     async def m_to_km(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -109,15 +109,15 @@ class Length(commands.Cog):
         
 
     # NOTE : Command to km to m 
-    @ nextcord.slash_command(
-        description = "Convert kilometer to meter."
+    @ commands.command(
+        # description ="Convert kilometer to meter."
     )
 
     async def km_to_m(self, ctx : Interaction, kilometer : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -140,15 +140,15 @@ class Length(commands.Cog):
         
 
     # NOTE : Command to convert m to cm 
-    @ nextcord.slash_command( 
-        description = "Convert meter to centimeter."
+    @ commands.command( 
+        # description ="Convert meter to centimeter."
     )
 
     async def m_to_cm(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -171,15 +171,15 @@ class Length(commands.Cog):
         
 
     # NOTE : Command to convert cm to mm 
-    @ nextcord.slash_command(
-        description = "Convert centimeter to milimeter."
+    @ commands.command(
+        # description ="Convert centimeter to milimeter."
     )
 
     async def cm_to_mm(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )

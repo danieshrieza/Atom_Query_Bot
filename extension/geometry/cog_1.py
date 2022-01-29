@@ -16,8 +16,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate surface area of a quadrilateral 
-    @ nextcord.slash_command(
-        description = "Calculate the surface area of a cuboid."
+    @ commands.command(
+        # description ="Calculate the surface area of a cuboid."
     )
 
     async def surface_area_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
@@ -27,7 +27,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -50,8 +50,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate surface area of pyramid 
-    @ nextcord.slash_command(
-        description = "Calculate the surface area of a pyramid."
+    @ commands.command(
+        # description ="Calculate the surface area of a pyramid."
     )
 
     async def surface_area_pyramid(self, ctx : Interaction, length : float, width : float, face_height : float) :
@@ -61,7 +61,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -84,8 +84,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate surface area of a cylinder 
-    @ nextcord.slash_command( 
-        description = "Calculate the surface area of a cylinder."
+    @ commands.command( 
+        # description ="Calculate the surface area of a cylinder."
     )
 
     async def surface_area_cylinder(self, ctx : Interaction, height : float, radius : float) :
@@ -95,7 +95,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -118,8 +118,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate surface area of a cone 
-    @ nextcord.slash_command(
-        description = "Calculate the surface area of a cone."
+    @ commands.command(
+        # description ="Calculate the surface area of a cone."
     )
 
     async def surface_area_cone(self, ctx : Interaction, slant_height : float, radius : float) :
@@ -129,7 +129,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -152,8 +152,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculte surface area of a sphere 
-    @ nextcord.slash_command(
-        description = "Calculate the surface area of a sphere."
+    @ commands.command(
+        # description ="Calculate the surface area of a sphere."
     )
 
     async def surface_area_sphere(self, ctx : Interaction, radius : float) :
@@ -163,7 +163,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -186,8 +186,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate volume of a cube or a cuboid 
-    @ nextcord.slash_command(
-        description = "Calculate the volume of a cube or a cuboid."
+    @ commands.command(
+        # description ="Calculate the volume of a cube or a cuboid."
     )
 
     async def volume_quadrilateral(self, ctx : Interaction, length : float, width : float, height : float) :
@@ -197,7 +197,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -220,8 +220,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate volume of a pyramid 
-    @ nextcord.slash_command(
-        description = "Calculate the volume of a pyramid."
+    @ commands.command(
+        # description ="Calculate the volume of a pyramid."
     )
 
     async def volume_pyramid(self, ctx : Interaction, length : float, width : float, height : float) :
@@ -231,7 +231,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -254,8 +254,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate volume of a cylinder 
-    @ nextcord.slash_command(
-        description = "Calculate the volume of a cylinder."
+    @ commands.command(
+        # description ="Calculate the volume of a cylinder."
     )
 
     async def volume_cylinder(self, ctx : Interaction, height : float, radius : float) :
@@ -265,7 +265,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -288,8 +288,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate volume of a cone 
-    @ nextcord.slash_command(
-        description = "Calculate the volume of a cone."
+    @ commands.command(
+        # description ="Calculate the volume of a cone."
     )
 
     async def volume_cone(self, ctx : Interaction, height : float, radius : float) :
@@ -299,7 +299,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )
@@ -322,8 +322,8 @@ class SurfaceAndVolume(commands.Cog) :
 
 
     # NOTE : Command to calculate volume of a sphere 
-    @ nextcord.slash_command( 
-        description = "Calculate the volume of a sphere."
+    @ commands.command( 
+        # description ="Calculate the volume of a sphere."
     )
 
     async def volume_sphere(self, ctx : Interaction, radius : float) :
@@ -333,7 +333,7 @@ class SurfaceAndVolume(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Geometry Query", 
-            description = "The requested `Geometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Geometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(157, 34, 53)
         )

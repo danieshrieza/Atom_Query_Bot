@@ -17,8 +17,8 @@ class PythaTheorem(commands.Cog) :
 
 
     # NOTE : Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem 
-    @ nextcord.slash_command(
-        description = "Calculate the Pythagoras Theorem."
+    @ commands.command(
+        # description ="Calculate the Pythagoras Theorem."
     )
 
     async def pythagoras_theorem(self, ctx : Interaction, height : float, base : float) :
@@ -30,7 +30,7 @@ class PythaTheorem(commands.Cog) :
 
             embed_msg = nextcord.Embed(
                 title = "Trigonometry Query", 
-                description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
+                # description ="The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
                 timestamp = datetime.now(timezone.utc), 
                 colour = nextcord.Color.from_rgb(139, 0, 0)
             )

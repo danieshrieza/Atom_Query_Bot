@@ -17,8 +17,8 @@ class Plot(commands.Cog) :
 
 
     # NOTE : Command to plot linear graph 
-    @ nextcord.slash_command(
-        description = "Plot a linear graph using the equation y = mx + c."
+    @ commands.command(
+        # description ="Plot a linear graph using the equation y = mx + c."
     )
 
     async def linear_equation(self, ctx : Interaction, gradient : float, y_intercept : float) :
@@ -48,8 +48,8 @@ class Plot(commands.Cog) :
 
 
     # NOTE : Command to plot quadratic graph 
-    @ nextcord.slash_command(
-        description = "Plot a quadratic graph using the equation y = ax² + bx + c."
+    @ commands.command(
+        # description ="Plot a quadratic graph using the equation y = ax² + bx + c."
     )
 
     async def quadratic_equation(self, ctx : Interaction, a : float, b : float, c : float) :
@@ -78,8 +78,8 @@ class Plot(commands.Cog) :
 
 
     # NOTE : Command to plot cubic graph 
-    @ nextcord.slash_command(
-        description = "Plot a cubic graph using the equation y = ax³ + bx² + cx + d."
+    @ commands.command(
+        # description ="Plot a cubic graph using the equation y = ax³ + bx² + cx + d."
     )
 
     async def cubic_equation(self, ctx : Interaction, a : float, b : float, c : float, d : float) :
@@ -109,8 +109,8 @@ class Plot(commands.Cog) :
 
 
     # NOTE : Command to plot reciprocal graph 
-    @ nextcord.slash_command( 
-        description = "Plot a reciprocal graph using the equation y = 1/x."
+    @ commands.command( 
+        # description ="Plot a reciprocal graph using the equation y = 1/x."
     )
 
     async def reciprocal_equation(self, ctx : Interaction, numerator : float, denominator : float) :

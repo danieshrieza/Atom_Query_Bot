@@ -17,8 +17,8 @@ class Line(commands.Cog) :
 
 
     # NOTE : Command to calculate distance between two points on a Cartesian Plane 
-    @ nextcord.slash_command(
-        description = "Calculate the distance between two points."
+    @ commands.command(
+        # description ="Calculate the distance between two points."
     )
 
     async def distance_between_two_points(self, ctx : Interaction, x_2 : float, x_1 : float, y_2 : float, y_1 : float) :
@@ -28,7 +28,7 @@ class Line(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Cartesian Query", 
-            description = "The requested `Cartesian Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Cartesian Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -51,8 +51,8 @@ class Line(commands.Cog) :
 
 
     # NOTE : Command to calculate gradient of a line 
-    @ nextcord.slash_command(
-        description = "Calculate the gradient of a line."
+    @ commands.command(
+        # description ="Calculate the gradient of a line."
     )
 
     async def gradient_of_a_line(self, ctx : Interaction, y_2 : float, y_1 : float, x_2 : float, x_1 : float) :
@@ -62,7 +62,7 @@ class Line(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Cartesian Query", 
-            description = "The requested `Cartesian Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Cartesian Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -85,8 +85,8 @@ class Line(commands.Cog) :
 
 
     # NOTE : Command to calculate the midpoint of a line 
-    @ nextcord.slash_command( 
-        description = "Calculate the midpoint of a line."
+    @ commands.command( 
+        # description ="Calculate the midpoint of a line."
     )
 
     async def midpoint_of_a_line(self, ctx : Interaction, x_1 : float, x_2 : float, y_1 : float, y_2 : float) :
@@ -96,7 +96,7 @@ class Line(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Cartesian Query", 
-            description = "The requested `Cartesian Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Cartesian Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )

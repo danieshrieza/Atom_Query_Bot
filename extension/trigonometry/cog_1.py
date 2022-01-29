@@ -17,8 +17,8 @@ class TrigRatios(commands.Cog):
 
 
     # NOTE : Command to find sine of a triangle 
-    @ nextcord.slash_command(
-        description = "Calculate the sine of a triangle."
+    @ commands.command(
+        # description ="Calculate the sine of a triangle."
     )
 
     async def sine(self,ctx : Interaction, number : float) :
@@ -28,7 +28,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg = nextcord.Embed(
             title = "Trigonometry Query", 
-            description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(139, 0, 0)
         )
@@ -51,8 +51,8 @@ class TrigRatios(commands.Cog):
 
 
     # NOTE : Command to find cosine of a triangle 
-    @ nextcord.slash_command(
-        description = "Calculate the cosine of a triangle."
+    @ commands.command(
+        # description ="Calculate the cosine of a triangle."
     )
 
     async def cosine(self, ctx : Interaction, number : float) :
@@ -62,7 +62,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg = nextcord.Embed(
             title = "Trigonometry Query", 
-            description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(139, 0, 0)
         )
@@ -85,8 +85,8 @@ class TrigRatios(commands.Cog):
 
 
     # NOTE : Command to find tangent of a triangle 
-    @ nextcord.slash_command(
-        description = "Calculate the tangent of a triangle."
+    @ commands.command(
+        # description ="Calculate the tangent of a triangle."
     )
 
     async def tangent(self, ctx : Interaction, number : float) :
@@ -96,7 +96,7 @@ class TrigRatios(commands.Cog):
 
         embed_msg = nextcord.Embed(
             title = "Trigonometry Query", 
-            description = "The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Trigonometry Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(139, 0, 0)
         )

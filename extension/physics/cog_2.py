@@ -16,8 +16,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate moment of force of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the moment of force of an object."
+    @ commands.command(
+        # description ="Calculate the moment of force of an object."
     )
 
     async def moment_of_force(self, ctx : Interaction, force : float, perpendicular_distance : float) :
@@ -27,7 +27,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -50,8 +50,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the pressure acts on an object 
-    @ nextcord.slash_command(
-        description = "Calculate the pressure acts on an object."
+    @ commands.command(
+        # description ="Calculate the pressure acts on an object."
     )
 
     async def pressure(self, ctx : Interaction, force : float, surface_area : float) :
@@ -61,7 +61,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -83,8 +83,8 @@ class EnergyAndForce(commands.Cog) :
     
 
     # NOTE : Command to calculate the density of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the density of an object."
+    @ commands.command(
+        # description ="Calculate the density of an object."
     )
 
     async def density(self, ctx : Interaction, mass : float, volume : float) :
@@ -94,7 +94,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -117,8 +117,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the work done of an object 
-    @ nextcord.slash_command(
-        description = "Calculate the work done of an object."
+    @ commands.command(
+        # description ="Calculate the work done of an object."
     )
 
     async def work_done(self, ctx : Interaction, force : float, distance : float) :
@@ -128,7 +128,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -151,8 +151,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the power possessed by an object 
-    @ nextcord.slash_command(
-        description = "Calculate the power possessed by an object."
+    @ commands.command(
+        # description ="Calculate the power possessed by an object."
     )
 
     async def power(self, ctx : Interaction, force : float, distance : float, time : float) :
@@ -162,7 +162,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -185,8 +185,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the gravitational potential energy possessed by an object 
-    @ nextcord.slash_command(
-        description = "Calculate the gravitational potential energy possessed by an object."
+    @ commands.command(
+        # description ="Calculate the gravitational potential energy possessed by an object."
     )
 
     async def grav_potential_energy(self, ctx : Interaction, mass : float, distance : float) :
@@ -196,7 +196,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -219,8 +219,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the elastic potential energy possessed by an object 
-    @ nextcord.slash_command(
-        description = "Calculate the elastic potential energy possessed by an object."
+    @ commands.command(
+        # description ="Calculate the elastic potential energy possessed by an object."
     )
 
     async def elas_potential_energy(self, ctx : Interaction, force : float, original_length : float, new_length : float) :
@@ -230,7 +230,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )
@@ -251,8 +251,8 @@ class EnergyAndForce(commands.Cog) :
 
 
     # NOTE : Command to calculate the kinetic energy possessed by an object 
-    @ nextcord.slash_command(
-        description = "Calculate the kinetic energy possessed by an object."
+    @ commands.command(
+        # description ="Calculate the kinetic energy possessed by an object."
     )
 
     async def kinetic_energy(self, ctx : Interaction, mass : float, distance : float, time : float) :
@@ -262,7 +262,7 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg = nextcord.Embed(
             title = "Physics Query", 
-            description = "The requested `Physics Query` have been evaluated by **Atom Query**", 
+            # description ="The requested `Physics Query` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc), 
             colour = nextcord.Color.from_rgb(127, 0, 255)
         )

@@ -17,15 +17,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
     
     # NOTE : Command convert g to kg 
-    @ nextcord.slash_command(
-        description = "Convert gram to kilogram."
+    @ commands.command(
+        # description ="Convert gram to kilogram."
     )
 
     async def g_to_kg(self, ctx : Interaction, gram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -48,15 +48,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
 
     # NOTE : Command to convert kg to g 
-    @ nextcord.slash_command(
-        description = "Convert kilogram to gram."
+    @ commands.command(
+        # description ="Convert kilogram to gram."
     )
 
     async def kg_to_g(self, ctx : Interaction, kilogram : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -79,15 +79,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
 
     # NOTE : Command to convert ml to l 
-    @ nextcord.slash_command( 
-        description = "Convert mililitre to litre."
+    @ commands.command( 
+        # description ="Convert mililitre to litre."
     )
 
     async def ml_to_l(self, ctx : Interaction, millilitre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -110,15 +110,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
 
     # NOTE : Command to convert l to ml 
-    @ nextcord.slash_command(
-        description = "Convert litre to mililitre."
+    @ commands.command(
+        # description ="Convert litre to mililitre."
     )
 
     async def l_to_ml(self, ctx : Interaction, litre : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -141,15 +141,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
 
     # NOTE : Command to convert decimal to fraction 
-    @ nextcord.slash_command(
-        description = "Convert a decimal number to fraction."
+    @ commands.command(
+        # description ="Convert a decimal number to fraction."
     )
 
     async def deci_to_frac(self, ctx : Interaction, decimal : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -172,15 +172,15 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
 
     # NOTE : Command to convert fraction to decimal 
-    @ nextcord.slash_command(
-        description = "Convert a fraction value to a decimal number."
+    @ commands.command(
+        # description ="Convert a fraction value to a decimal number."
     )
 
     async def frac_to_deci(self, ctx : Interaction, numerator : int, denominator : int) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
