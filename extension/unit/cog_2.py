@@ -33,13 +33,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {gram} g ```", 
+            value = f"```Python\n {gram} g \n```", 
             inline = False
         )
         
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {gram / 1000} kg ```", 
+            value = f"```Python\n {gram / 1000} kg \n```", 
             inline = True
         )
 
@@ -64,13 +64,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {kilogram} kg ```", 
+            value = f"```Python\n {kilogram} kg \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {kilogram * 1000} g ```", 
+            value = f"```Python\n {kilogram * 1000} g \n```", 
             inline = True
         )
 
@@ -95,13 +95,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {millilitre} ml ```", 
+            value = f"```Python\n {millilitre} ml \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {millilitre/1000} l ```", 
+            value = f"```Python\n {millilitre/1000} l \n```", 
             inline = True
         )
 
@@ -126,13 +126,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {litre} l ```", 
+            value = f"```Python\n {litre} l \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {litre * 1000} ml ```", 
+            value = f"```Python\n {litre * 1000} ml \n```", 
             inline = True
         )
 
@@ -157,13 +157,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {decimal} ```", 
+            value = f"```Python\n {decimal} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {Fraction(str(decimal)).limit_denominator()} ```", 
+            value = f"```Python\n {Fraction(str(decimal))} \n```", 
             inline = True
         )
         
@@ -188,13 +188,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {numerator}/{denominator} ```", 
+            value = f"```Python\n {numerator}/{denominator} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {numerator/denominator} ```", 
+            value = f"```Python\n {numerator/denominator} \n```", 
             inline = True
         )
 

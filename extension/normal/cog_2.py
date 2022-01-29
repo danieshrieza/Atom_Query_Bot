@@ -38,13 +38,13 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"Factor of `{number}`.", 
+            value = f"``` Factor of {number}. ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} ```", 
+            value = f"```Python\n {evalu} \n```", 
             inline = True
         )
 
@@ -76,13 +76,13 @@ class AdditionalBasic(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Input :", 
-                value = f"Common Factor of `{number_1}` and `{number_2}`.", 
+                value = f"``` Common Factor of {number_1} and {number_2}. ```", 
                 inline = False
             )
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"``` {evalu} ```", 
+                value = f"```Python\n {evalu} \n```", 
                 inline = True
             )
 
@@ -114,13 +114,13 @@ class AdditionalBasic(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Input :", 
-                value = f"Highest Common Factor of `{number_1}` and `{number_2}`.", 
+                value = f"``` Highest Common Factor of {number_1} and {number_2}. ```", 
                 inline = False
             )
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"``` {evalu} ```", 
+                value = f"```Python\n {evalu} \n```", 
                 inline = True
             )
 
@@ -153,13 +153,13 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :",
-            value = f"Multiple of `{number}`.", 
+            value = f"``` Multiple of {number}. ```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} ```", 
+            value = f"```Python\n {evalu} \n```", 
             inline = True
         )
 
@@ -192,13 +192,13 @@ class AdditionalBasic(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Input :", 
-                value = f"Common Multiple of `{number_1}` and `{number_2}`.", 
+                value = f"``` Common Multiple of {number_1} and {number_2}. ```", 
                 inline = False
             )
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"`{arr}`", 
+                value = f"``` {arr} ```", 
                 inline = True
             )
 
@@ -230,13 +230,13 @@ class AdditionalBasic(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Input :", 
-                value = f"Lowest Common Multiple of `{number_1}` and `{number_2}`.", 
+                value = f"``` Lowest Common Multiple of {number_1} and {number_2}. ```", 
                 inline = False
             )
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"``` {evalu} ```", 
+                value = f"```Python\n {evalu} \n```", 
                 inline = True
             )
 
@@ -275,13 +275,13 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} ```", 
+            value = f"```Python\n {evalu} \n```", 
             inline = True
         )
 
@@ -318,13 +318,13 @@ class AdditionalBasic(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {evalu} ```", 
+            value = f"```Python\n {evalu} \n```", 
             inline = True
         )
 

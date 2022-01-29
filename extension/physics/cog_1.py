@@ -35,13 +35,13 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} m/s`", 
+            value = f"``` {evalu} m/s ```", 
             inline = True
         )
 
@@ -69,13 +69,13 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} A`", 
+            value = f"``` {evalu} A ```", 
             inline = True
         )
 
@@ -103,13 +103,13 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} V`", 
+            value = f"``` {evalu} V ```", 
             inline = True
         )
 
@@ -137,13 +137,13 @@ class BasicPhysics(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} Ω`", 
+            value = f"``` {evalu} Ω ```", 
             inline = True
         )
 

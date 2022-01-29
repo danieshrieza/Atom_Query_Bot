@@ -35,13 +35,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} N m`", 
+            value = f"``` {evalu} Nm ```", 
             inline = True
         )
 
@@ -69,12 +69,12 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} N/m²`", 
+            value = f"``` {evalu} N/m² ```", 
             inline = True
         )
 
@@ -102,13 +102,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} g/cm³`", 
+            value = f"``` {evalu} g/cm³ ```", 
             inline = True
         )
         
@@ -136,13 +136,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} J`", 
+            value = f"``` {evalu} J ```", 
             inline = True
         )
         
@@ -170,13 +170,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} W`", 
+            value = f"``` {evalu} W ```", 
             inline = True
         )
         
@@ -204,13 +204,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} J`", 
+            value = f"``` {evalu} J ```", 
             inline = True
         )
         
@@ -238,13 +238,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} J`", 
+            value = f"``` {evalu} J ```", 
             inline = True
         )
         
@@ -270,13 +270,13 @@ class EnergyAndForce(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {exp} ```", 
+            value = f"```Python\n {exp} \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"`{evalu} J`", 
+            value = f"``` {evalu} J ```", 
             inline = True
         )
         

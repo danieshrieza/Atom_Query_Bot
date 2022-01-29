@@ -38,13 +38,13 @@ class PythaTheorem(commands.Cog) :
 
             embed_msg.add_field(
                 name = "Input :", 
-                value = f"``` {exp} ```", 
+                value = f"```Python\n {exp} \n```", 
                 inline = False
             )
 
             embed_msg.add_field(
                 name = "Output :", 
-                value = f"``` {evalu} ```", 
+                value = f"```Python\n {evalu} \n```", 
                 inline = True
             )
 

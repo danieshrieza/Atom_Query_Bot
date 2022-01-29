@@ -32,13 +32,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {milimeter} mm ```", 
+            value = f"```Python\n {milimeter} mm \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {milimeter/10} cm ```", 
+            value = f"```Python\n {milimeter/10} cm \n```", 
             inline = True
         )
 
@@ -63,13 +63,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {centimeter} cm ```", 
+            value = f"```Python\n {centimeter} cm \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {centimeter/100} m ```", 
+            value = f"```Python\n {centimeter/100} m \n```", 
             inline = True
         )
 
@@ -94,13 +94,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {meter} m ```", 
+            value = f"```Python\n {meter} m \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {meter/1000} km ```", 
+            value = f"```Python\n {meter/1000} km \n```", 
             inline = True
         )
 
@@ -125,13 +125,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {kilometer} km ```", 
+            value = f"```Python\n {kilometer} km \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {kilometer * 1000} m ```", 
+            value = f"```Python\n {kilometer * 1000} m \n```", 
             inline = True
         )
 
@@ -156,13 +156,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {meter} m ```", 
+            value = f"```Python\n {meter} m \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {meter * 100} cm ```", 
+            value = f"```Python\n {meter * 100} cm \n```", 
             inline = True
         )
 
@@ -187,13 +187,13 @@ class Length(commands.Cog):
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"``` {centimeter} cm ```", 
+            value = f"```Python\n {centimeter} cm \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"``` {centimeter * 10} mm ```", 
+            value = f"```Python\n {centimeter * 10} mm \n```", 
             inline = True
         )
 
