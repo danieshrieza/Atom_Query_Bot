@@ -3,7 +3,6 @@ import os
 from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
 from config import token, owner_id
-from help import CustomHelpCommand
 
 
 # NOTE : Declaring intents for bot
@@ -15,7 +14,7 @@ bot = commands.Bot(
     command_prefix = "!", 
     case_insensitive = True, 
     strip_after_prefix = True, 
-    help_command = CustomHelpCommand(),
+    help_command = None,
     owner_id = owner_id,
     intent = intents
 )

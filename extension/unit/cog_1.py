@@ -17,15 +17,15 @@ class Length(commands.Cog):
 
 
     # NOTE : Command to convert mm to cm 
-    @ commands.command(
-        # description ="Convert milimeter to centimeter."
+    @ nextcord.slash_command(
+        description = "Convert milimeter to centimeter."
     )
 
-    async def mm_to_cm(self, ctx : Context, milimeter : float) :
+    async def mm_to_cm(self, ctx : Interaction, milimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -44,19 +44,19 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
 
     # NOTE : Command to convert cm to m 
-    @ commands.command( 
-        # description ="Convert centimeter to meter."
+    @ nextcord.slash_command( 
+        description = "Convert centimeter to meter."
     )
 
-    async def cm_to_m(self, ctx : Context, centimeter : float) :
+    async def cm_to_m(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -75,19 +75,19 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
         
 
     # NOTE : Command to m to km 
-    @ commands.command(
-        # description ="Convert meter to kilometer."
+    @ nextcord.slash_command(
+        description = "Convert meter to kilometer."
     )
 
-    async def m_to_km(self, ctx : Context, meter : float) :
+    async def m_to_km(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -106,19 +106,19 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
         
 
     # NOTE : Command to km to m 
-    @ commands.command(
-        # description ="Convert kilometer to meter."
+    @ nextcord.slash_command(
+        description = "Convert kilometer to meter."
     )
 
-    async def km_to_m(self, ctx : Context, kilometer : float) :
+    async def km_to_m(self, ctx : Interaction, kilometer : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -137,19 +137,19 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
         
 
     # NOTE : Command to convert m to cm 
-    @ commands.command( 
-        # description ="Convert meter to centimeter."
+    @ nextcord.slash_command( 
+        description = "Convert meter to centimeter."
     )
 
-    async def m_to_cm(self, ctx : Context, meter : float) :
+    async def m_to_cm(self, ctx : Interaction, meter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -168,19 +168,19 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
         
 
     # NOTE : Command to convert cm to mm 
-    @ commands.command(
-        # description ="Convert centimeter to milimeter."
+    @ nextcord.slash_command(
+        description = "Convert centimeter to milimeter."
     )
 
-    async def cm_to_mm(self, ctx : Context, centimeter : float) :
+    async def cm_to_mm(self, ctx : Interaction, centimeter : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
-            # description ="The requested `Unit Conversion` have been evaluated by **Atom Query**", 
+            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
             timestamp = datetime.now(timezone.utc),
             colour = nextcord.Color.from_rgb(178, 34, 34)
         )
@@ -199,7 +199,7 @@ class Length(commands.Cog):
 
         embed_msg.set_thumbnail(url = self.link)
 
-        await ctx.send(embed = embed_msg)
+        await ctx.response.send_message(embed = embed_msg)
 
 
 # NOTE : Add Length to the bot 
