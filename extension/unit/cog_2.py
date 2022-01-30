@@ -203,37 +203,6 @@ class MassAndVolumeAndFrac(commands.Cog) :
         await ctx.response.send_message(embed = embed_msg)
 
 
-    # NOTE : Command to convert kilogram to Newton
-    @ nextcord.slash_command(
-        description = "Convert kilogram to Newton."
-    )
-
-    async def kg_to_N(self, ctx : Interaction, kilogram : float) :
-
-        embed_msg = nextcord.Embed(
-            title = "Unit Converter", 
-            description = "The requested `Unit Conversion` have been evaluated by **Atom Query**", 
-            timestamp = datetime.now(timezone.utc),
-            colour = nextcord.Color.from_rgb(178, 34, 34)
-        )
-
-        embed_msg.add_field(
-            name = "Input :", 
-            value = f"```Python\n {kilogram} kg \n```", 
-            inline = False
-        )
-
-        embed_msg.add_field(
-            name = "Output :", 
-            value = f"```Python\n {kilogram * 9.8} \n```", 
-            inline = True
-        )
-
-        embed_msg.set_thumbnail(url = self.link)
-        
-        await ctx.response.send_message(embed = embed_msg)
-
-
     # NOTE : Command to convert Newton to kilogram
     @ nextcord.slash_command(
         description = "Convert Newton to kilogram."
