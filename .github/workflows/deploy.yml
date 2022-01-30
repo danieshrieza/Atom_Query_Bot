@@ -39,10 +39,3 @@ jobs:
         uses: techknowlogick/action-vultr@v2
         with:
           token: ${{ secrets.VULTR_API_KEY }}
-          run: |
-             apt install python3-pip -y
-             sudo apt-get update && sudo apt-get -y install tmux
-             cd Atom-Query-Discord-Bot
-             python3 -m pip install -r requirements.txt
-             tmux attach-session -t Bot
-             python3 atom_bot.py
