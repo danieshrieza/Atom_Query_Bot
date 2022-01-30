@@ -270,7 +270,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         description = "Convert Astronomical Unit to kilometer."
     )
 
-    async def AU_to_km(self, ctx : Interaction, AU : float) :
+    async def au_to_km(self, ctx : Interaction, au : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
@@ -281,13 +281,13 @@ class MassAndVolumeAndFrac(commands.Cog) :
 
         embed_msg.add_field(
             name = "Input :", 
-            value = f"```Python\n {AU} A.U \n```", 
+            value = f"```Python\n {au} A.U \n```", 
             inline = False
         )
 
         embed_msg.add_field(
             name = "Output :", 
-            value = f"```Python\n {AU * (1.5 * 10 ** 8)} km \n```", 
+            value = f"```Python\n {au * (1.5 * 10 ** 8)} km \n```", 
             inline = True
         )
 
@@ -301,7 +301,7 @@ class MassAndVolumeAndFrac(commands.Cog) :
         description = "Convert kilometer to Astronomical Unit."
     )
 
-    async def km_to_AU(self, ctx : Interaction, km : float) :
+    async def km_to_au(self, ctx : Interaction, km : float) :
 
         embed_msg = nextcord.Embed(
             title = "Unit Converter", 
