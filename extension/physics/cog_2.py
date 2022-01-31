@@ -244,6 +244,8 @@ class EnergyAndForce(commands.Cog):
 
         embed_msg.set_thumbnail(url=self.link)
 
+        await ctx.send(embed=embed_msg)
+
     # NOTE : Command to calculate the kinetic energy possessed by an object
 
     @ nextcord.slash_command(
