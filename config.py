@@ -2,7 +2,7 @@ import os
 from dotenv.main import load_dotenv
 
 # NOTE : Load .env file for token and testing guild id
-load_dotenv(dotenv_path="./private")
+load_dotenv(dotenv_path="/private")
 
 # NOTE : Get the guild id from .env file
 guild_id = int(os.getenv("GUILD_VAR", ""))
