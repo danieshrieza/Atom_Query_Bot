@@ -2,3 +2,4 @@
 __pycache__/
 vps_info.txt
 .prettierrc
+private/
