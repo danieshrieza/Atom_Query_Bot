@@ -185,7 +185,7 @@ class EnergyAndForce(commands.Cog):
     @ nextcord.slash_command(
         description="Calculate the gravitational potential energy possessed by an object."
     )
-    async def grav_potential_energy(self, ctx: Interaction, mass: float, distance: float):
+    async def gravitational_energy(self, ctx: Interaction, mass: float, distance: float):
 
         exp = f'{mass} kg × 9.8 m/s × {distance} m'
         evalu = mass * 9.8 * distance
@@ -218,7 +218,7 @@ class EnergyAndForce(commands.Cog):
     @ nextcord.slash_command(
         description="Calculate the elastic potential energy possessed by an object."
     )
-    async def elas_potential_energy(self, ctx: Interaction, force: float, original_length: float, new_length: float):
+    async def elastic_energy(self, ctx: Interaction, force: float, original_length: float, new_length: float):
 
         exp = f'1/2 × {force} N × ({original_length} - {new_length}) m'
         evalu = 1/2 * (force * (original_length - new_length))
