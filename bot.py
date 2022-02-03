@@ -4,45 +4,47 @@ from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
 from config import token, owner_id
 
-# NOTE : Declaring intents for bot
 
+# NOTE : Declaring intents for bot
 intents = nextcord.Intents.all()
 
-# NOTE : Declaring bot
 
+# NOTE : Declaring bot
 bot = commands.Bot(
-    command_prefix="!",
-    case_insensitive=True,
-    strip_after_prefix=True,
-    help_command=None,
-    owner_id=owner_id,
-    intent=intents
+    command_prefix = "!",
+    case_insensitive = True,
+    strip_after_prefix = True,
+    help_command = None,
+    owner_id = owner_id,
+    intent = intents
 )
 
-# NOTE : Activating bot once it's ready
 
+# NOTE : Activating bot once it's ready
 @ bot.event
 async def on_ready():
 
     print(f"I have logged in as {bot.user}")
-    await bot.change_presence(activity=nextcord.Activity(type=nextcord.ActivityType.watching, name="Dark matter"))
+    await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "The Complex Plane"))
+
 
 # NOTE : Command to find all server that houses this bot
-
 @ commands.is_owner()
 @ bot.command()
-async def server(ctx: Context):
+async def server(ctx : Context):
 
     for guild in bot.guilds:
+
         await ctx.send(f"{guild.name}")
 
-# NOTE : Load extension file once bot is ready
 
+# NOTE : Load extension file once bot is ready
 for folder in os.listdir("./extension"):
 
     if os.path.exists(os.path.join("extension", folder, "cog_1.py")):
 
         bot.load_extension(f"extension.{folder}.cog_1")
+
 
 for folder in os.listdir("./extension"):
 
@@ -50,6 +52,6 @@ for folder in os.listdir("./extension"):
 
         bot.load_extension(f"extension.{folder}.cog_2")
 
-# NOTE : Key for bot to run
 
+# NOTE : Key for bot to run
 bot.run(token)
