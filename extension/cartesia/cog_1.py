@@ -3,7 +3,7 @@ import nextcord
 from nextcord.ext import commands
 import matplotlib.pyplot as plt
 import numpy as np
-from config import guild_id
+from config import GUILD_ID
 from nextcord.ext.commands.context import Context
 
 

@@ -2,7 +2,7 @@ import nextcord
 import os
 from nextcord.ext import commands
 from nextcord.ext.commands.context import Context
-from config import token, owner_id
+from config import TOKEN, OWNER_ID
 
 
 # NOTE : Declaring intents for bot
@@ -15,17 +15,16 @@ bot = commands.Bot(
     case_insensitive = True,
     strip_after_prefix = True,
     help_command = None,
-    owner_id = owner_id,
-    intent = intents
+    owner_id = OWNER_ID,
+    intent = intents,
+    activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "The Complex Plane")
 )
 
 
 # NOTE : Activating bot once it's ready
 @ bot.event
 async def on_ready():
-
     print(f"I have logged in as {bot.user}")
-    await bot.change_presence(activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "The Complex Plane"))
 
 
 # NOTE : Command to find all server that houses this bot
@@ -54,4 +53,4 @@ for folder in os.listdir("./extension"):
 
 
 # NOTE : Key for bot to run
-bot.run(token)
+bot.run(TOKEN)

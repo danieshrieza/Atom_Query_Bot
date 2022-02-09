@@ -4,7 +4,7 @@ import math
 import random
 from datetime import datetime, timezone
 from nextcord import Interaction
-from config import guild_id
+from config import GUILD_ID
 from nextcord.ext.commands.context import Context
 
 
