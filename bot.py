@@ -5,10 +5,6 @@ from nextcord.ext.commands.context import Context
 from config import TOKEN, OWNER_ID
 
 
-# NOTE : Declaring intents for bot
-intents = nextcord.Intents.all()
-
-
 # NOTE : Declaring bot
 bot = commands.Bot(
     command_prefix = "!",
@@ -16,7 +12,7 @@ bot = commands.Bot(
     strip_after_prefix = True,
     help_command = None,
     owner_id = OWNER_ID,
-    intent = intents,
+    intent = nextcord.Intents.all(),
     activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "The Complex Plane")
 )
 
