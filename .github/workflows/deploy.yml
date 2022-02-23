@@ -28,7 +28,5 @@ jobs:
 
                   cd Atom-Query-Discord-Bot
                   git pull origin main
-                  tmux kill-session -t Bot
-                  tmux new -s Bot
-                  python3 bot.py
-                  ^C
+                  pm2 stop bot.py
+                  pm2 start discord_bot.py --interpreter=/usr/bin/python3
