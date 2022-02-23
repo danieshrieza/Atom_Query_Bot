@@ -29,4 +29,4 @@ jobs:
                   cd Atom-Query-Discord-Bot
                   git pull origin main
                   pm2 stop bot.py
-                  pm2 start discord_bot.py --interpreter=/usr/bin/python3
+                  pm2 start bot.py --interpreter=/usr/bin/python3
