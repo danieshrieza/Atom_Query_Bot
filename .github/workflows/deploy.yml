@@ -1,0 +1,32 @@
+name: Deploy update to server
+
+on:
+  
+  push:
+      
+      branches: [ main ]
+
+jobs:
+
+    build:
+
+        name: Deploy
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@master
+              with:
+
+                host: ${{ secrets.HOST }}
+                username: root
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
+                port: 22
+                script: |
+
+                  cd Atom-Query-Discord-Bot
+                  git pull
+                  tmux kill-session -t Bot
+                  tmux new -s Bot
+                  python3 bot.py
