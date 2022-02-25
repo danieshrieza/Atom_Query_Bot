@@ -15,7 +15,7 @@ jobs:
 
         steps:
 
-            - name: executing remote ssh commands using password
+            - name: Executing remote ssh commands using ssh key passphrase
               uses: appleboy/ssh-action@master
               with:
 
