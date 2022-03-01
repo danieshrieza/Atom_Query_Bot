@@ -12,7 +12,7 @@ bot = commands.Bot(
     strip_after_prefix = True,
     help_command = None,
     owner_id = OWNER_ID,
-    intent = nextcord.Intents.all(),
+    intents = nextcord.Intents.all(),
     activity = nextcord.Activity(type = nextcord.ActivityType.watching, name = "The Complex Plane")
 )
 
