@@ -1,7 +1,7 @@
 # Atom Query ⚛️
 
 
-### Note : Danny, the maintainer of discord.py announced yesterday that he and his team are going to continue the development of discord.py. Due to this, I'm reconsidering to use discord.py again for this project. Migration to discord.py might take some time since discord.py now have a native slash command handler that uses a very different syntax than nextcord. Therefore, nextcord might not be needed anymore in the future.
+### Note : Danny, the maintainer of discord.py announced yesterday that he and his team are going to continue the development of discord.py. Due to this, I'm considering to use discord.py again for this project. Migration to discord.py might take some time since discord.py now have a native slash command handler that uses a very different syntax than nextcord. Therefore, nextcord might not be needed anymore in the future.
 
 
 **Atom Query** is a **Discord Bot** that able to calculate common queries. Gamers or not, die hard Discord User will found this Bot to be useful when they are doing their Math homework. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands)
