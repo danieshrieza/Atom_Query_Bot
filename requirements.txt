@@ -1,4 +1,4 @@
-nextcord
+git+https://github.com/Rapptz/discord.py.git@master
 Fraction
 matplotlib
 numpy
