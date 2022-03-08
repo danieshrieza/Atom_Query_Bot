@@ -1,8 +1,8 @@
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 import math
 from datetime import datetime, timezone
-from discord import Interaction, app_commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for AdditionalBasic
@@ -16,21 +16,21 @@ class AdditionalBasic(commands.Cog):
 
 
     # NOTE : Command to find factor a number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the factor of a number."
     )
-    async def factor(self, ctx: Interaction, number: int):
+    async def factor(self, interaction: Interaction, number: int):
 
         evalu=[]
         for i in range(1, number+1):
             if number%i == 0:
                 evalu.append(i)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -47,14 +47,14 @@ class AdditionalBasic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to find common factor of 2 number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the common factor of 2 number."
     )
-    async def common_factor(self, ctx: Interaction, number_1: int, number_2: int):
+    async def common_factor(self, interaction: Interaction, number_1: int, number_2: int):
 
         if (number_1>0 and number_2>0):
 
@@ -63,11 +63,11 @@ class AdditionalBasic(commands.Cog):
                 if number_1%i == number_2%i == 0:
                     evalu.append(i)
 
-            embed=discord.Embed(
+            embed=nextcord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
-                colour=discord.Color.from_rgb(179, 27, 27)
+                colour=nextcord.Color.from_rgb(179, 27, 27)
             )
 
             embed.add_field(
@@ -84,27 +84,27 @@ class AdditionalBasic(commands.Cog):
 
             embed.set_thumbnail(url=self.link)
 
-            await ctx.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed)
 
         else:
-            await ctx.response.send_message("Please provide input that has values more than 0.")
+            await interaction.response.send_message("Please provide input that has values more than 0.")
 
 
     # NOTE : Command to find highest common factor of 2 number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the highest common factor of 2 number."
     )
-    async def highest_common_factor(self, ctx: Interaction, number_1: int, number_2: int):
+    async def highest_common_factor(self, interaction: Interaction, number_1: int, number_2: int):
 
         if (number_1>0 and number_2>0):
 
             evalu=math.gcd(number_1, number_2)
 
-            embed=discord.Embed(
+            embed=nextcord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
-                colour=discord.Color.from_rgb(179, 27, 27)
+                colour=nextcord.Color.from_rgb(179, 27, 27)
             )
 
             embed.add_field(
@@ -121,28 +121,28 @@ class AdditionalBasic(commands.Cog):
 
             embed.set_thumbnail(url=self.link)
 
-            await ctx.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed)
 
         else:
-            await ctx.response.send_message("Please provide input that values are more than 0.")
+            await interaction.response.send_message("Please provide input that values are more than 0.")
 
 
     # NOTE : Command to find multiple of a number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the multiple of a number."
     )
-    async def multiple(self, ctx: Interaction, number: int, number_range: int):
+    async def multiple(self, interaction: Interaction, number: int, number_range: int):
 
         evalu=[]
 
         for i in range(1, number_range+1):
             evalu.append(number*i)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -159,14 +159,14 @@ class AdditionalBasic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to find common multiple of 2 number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the common multiple of 2 numbers."
     )
-    async def common_multiple(self, ctx: Interaction, number_1: int, number_2: int, number_range: int):
+    async def common_multiple(self, interaction: Interaction, number_1: int, number_2: int, number_range: int):
 
         if (number_1>0 and number_2>0 and number_range>0):
 
@@ -176,11 +176,11 @@ class AdditionalBasic(commands.Cog):
             for i in range(1, number_range+1):
                 arr.append(evalu*i)
 
-            embed=discord.Embed(
+            embed=nextcord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
-                colour=discord.Color.from_rgb(179, 27, 27)
+                colour=nextcord.Color.from_rgb(179, 27, 27)
             )
 
             embed.add_field(
@@ -197,27 +197,27 @@ class AdditionalBasic(commands.Cog):
 
             embed.set_thumbnail(url=self.link)
 
-            await ctx.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed)
 
         else:
-            await ctx.response.send_message("Please provide input that values are more than 0.")
+            await interaction.response.send_message("Please provide input that values are more than 0.")
 
 
     # NOTE : Command to find the lowest common multiple of 2 number
-    @ app_commands.command(
+    @ slash_command(
         description="Find the lowest common multiple of 2 numbers."
     )
-    async def lowest_common_multiple(self, ctx: Interaction, number_1: int, number_2: int):
+    async def lowest_common_multiple(self, interaction: Interaction, number_1: int, number_2: int):
 
         if (number_1>0 and number_2>0):
 
             evalu=math.lcm(number_1, number_2)
 
-            embed=discord.Embed(
+            embed=nextcord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
-                colour=discord.Color.from_rgb(179, 27, 27)
+                colour=nextcord.Color.from_rgb(179, 27, 27)
             )
 
             embed.add_field(
@@ -234,17 +234,17 @@ class AdditionalBasic(commands.Cog):
 
             embed.set_thumbnail(url=self.link)
 
-            await ctx.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed)
 
         else:
-            await ctx.response.send_message("Please provide valid input.")
+            await interaction.response.send_message("Please provide valid input.")
 
 
     # NOTE : Command to find the Fibonacci Sequence
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the Fibonacci Sequence using the numbers provided by user."
     )
-    async def fibonacci_sequence(self, ctx: Interaction, number_list: str, number_range: int):
+    async def fibonacci_sequence(self, interaction: Interaction, number_list: str, number_range: int):
 
         str_list: list=number_list.split()
 
@@ -257,11 +257,11 @@ class AdditionalBasic(commands.Cog):
 
         exp=[int(i) for i in str_list]
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -278,14 +278,14 @@ class AdditionalBasic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to find the Tribonacci Sequence
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the Tribonacci Sequence using the numbers provided by user."
     )
-    async def tribonacci_sequence(self, ctx: Interaction, number_list: str, number_range: int):
+    async def tribonacci_sequence(self, interaction: Interaction, number_list: str, number_range: int):
 
         str_list: list=number_list.split()
 
@@ -298,11 +298,11 @@ class AdditionalBasic(commands.Cog):
 
         exp=[int(i) for i in str_list]
 
-        embed = discord.Embed(
+        embed = nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -319,7 +319,7 @@ class AdditionalBasic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add AdditionalBasic to the bot

@@ -1,9 +1,9 @@
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 import math
 import random
 from datetime import datetime, timezone
-from discord import Interaction, app_commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for Basic
@@ -17,20 +17,20 @@ class Basic(commands.Cog):
 
 
     # NOTE : Command to calculate queries from user
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate your math's query."
     )
-    async def calculate(self, ctx: Interaction, query: str):
+    async def calculate(self, interaction: Interaction, query: str):
 
         expliteral=("").join(query)
         exppoet=expliteral.replace("*", "×").replace("/", "÷")
         evalu=eval(expliteral)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -47,23 +47,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to generate random number
-    @ app_commands.command(
+    @ slash_command(
         description="Generate random integer number from input range."
     )
-    async def number_generator(self, ctx: Interaction, starting_point: int, ending_point: int):
+    async def number_generator(self, interaction: Interaction, starting_point: int, ending_point: int):
 
         exp=f"Generate number between {starting_point} and {ending_point}."
         evalu=f"{random.randint(starting_point, ending_point)}"
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -80,23 +80,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to square a number
-    @ app_commands.command(
+    @ slash_command(
         description="Squared number from user."
     )
-    async def square(self, ctx: Interaction, base: float):
+    async def square(self, interaction: Interaction, base: float):
 
         exp=f"{base}²"
         evalu=base**2
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -113,23 +113,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to cube a number
-    @ app_commands.command(
+    @ slash_command(
         description="Cubed number from user."
     )
-    async def cube(self, ctx: Interaction, base: float):
+    async def cube(self, interaction: Interaction, base: float):
 
         exp=f"{base}³"
         evalu=base**3
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -146,23 +146,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to power a base using user's exponent
-    @ app_commands.command(
+    @ slash_command(
         description="Power the user's base to the exponent."
     )
-    async def variable_power(self, ctx: Interaction, base: float, exponent: float):
+    async def variable_power(self, interaction: Interaction, base: float, exponent: float):
 
         exp=f"{base} ** {exponent}"
         evalu=base**exponent
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -179,23 +179,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to square root a number
-    @ app_commands.command(
+    @ slash_command(
         description="Square root user's number."
     )
-    async def square_root(self, ctx: Interaction, radicand: float):
+    async def square_root(self, interaction: Interaction, radicand: float):
 
         exp=f"√{radicand}"
         evalu=math.sqrt(radicand)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -212,23 +212,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to cube root a number
-    @ app_commands.command(
+    @ slash_command(
         description="Cube root user's number."
     )
-    async def cube_root(self, ctx: Interaction, radicand: float):
+    async def cube_root(self, interaction: Interaction, radicand: float):
 
         exp=f"³√{radicand}"
         evalu=radicand**1./3.
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -245,23 +245,23 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to root a radicand using a radical
-    @ app_commands.command(
+    @ slash_command(
         description="Radical(root) user's radicand(number)."
     )
-    async def variable_root(self, ctx: Interaction, radicand: float, radical: float):
+    async def variable_root(self, interaction: Interaction, radicand: float, radical: float):
 
         exp=f"{radicand} ** 1/{radical}"
         evalu=radicand**1./radical
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(179, 27, 27)
+            colour=nextcord.Color.from_rgb(179, 27, 27)
         )
 
         embed.add_field(
@@ -278,7 +278,7 @@ class Basic(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add Basic to the bot

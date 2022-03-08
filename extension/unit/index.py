@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 from fraction import Fraction
-from discord import Interaction, app_commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for Mass_Volume_Frac
@@ -16,16 +16,16 @@ class MassAndVolumeAndFrac(commands.Cog):
 
 
     # NOTE : Command convert g to kg
-    @ app_commands.command(
+    @ slash_command(
         description="Convert gram to kilogram."
     )
-    async def g_to_kg(self, ctx: Interaction, gram: float):
+    async def g_to_kg(self, interaction: Interaction, gram: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -42,20 +42,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert kg to g
-    @ app_commands.command(
+    @ slash_command(
         description="Convert kilogram to gram."
     )
-    async def kg_to_g(self, ctx: Interaction, kilogram: float):
+    async def kg_to_g(self, interaction: Interaction, kilogram: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -72,20 +72,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert ml to l
-    @ app_commands.command(
+    @ slash_command(
         description="Convert mililitre to litre."
     )
-    async def ml_to_l(self, ctx: Interaction, millilitre: float):
+    async def ml_to_l(self, interaction: Interaction, millilitre: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -102,20 +102,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert l to ml
-    @ app_commands.command(
+    @ slash_command(
         description="Convert litre to mililitre."
     )
-    async def l_to_ml(self, ctx: Interaction, litre: float):
+    async def l_to_ml(self, interaction: Interaction, litre: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -132,20 +132,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert decimal to fraction
-    @ app_commands.command(
+    @ slash_command(
         description="Convert a decimal number to fraction."
     )
-    async def deci_to_frac(self, ctx: Interaction, decimal: float):
+    async def deci_to_frac(self, interaction: Interaction, decimal: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -162,20 +162,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert fraction to decimal
-    @ app_commands.command(
+    @ slash_command(
         description="Convert a fraction value to a decimal number."
     )
-    async def frac_to_deci(self, ctx: Interaction, numerator: int, denominator: int):
+    async def frac_to_deci(self, interaction: Interaction, numerator: int, denominator: int):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -192,20 +192,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert Newton to kilogram
-    @ app_commands.command(
+    @ slash_command(
         description="Convert Newton to kilogram."
     )
-    async def N_to_kg(self, ctx: Interaction, newton: float):
+    async def N_to_kg(self, interaction: Interaction, newton: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -222,20 +222,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert kg to Newton
-    @ app_commands.command(
+    @ slash_command(
         description="Convert kilogram to Newton."
     )
-    async def kg_to_N(self, ctx: Interaction, kilogram: float):
+    async def kg_to_N(self, interaction: Interaction, kilogram: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -252,20 +252,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert Astronomical Unit to kilometer
-    @ app_commands.command(
+    @ slash_command(
         description="Convert Astronomical Unit to kilometer."
     )
-    async def au_to_km(self, ctx: Interaction, au: float):
+    async def au_to_km(self, interaction: Interaction, au: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -282,20 +282,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert kilometer to Astronomical Unit
-    @ app_commands.command(
+    @ slash_command(
         description="Convert kilometer to Astronomical Unit."
     )
-    async def km_to_au(self, ctx: Interaction, km: float):
+    async def km_to_au(self, interaction: Interaction, km: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -312,20 +312,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert Light Year to kilometer
-    @ app_commands.command(
+    @ slash_command(
         description="Convert Light Year to kilometer."
     )
-    async def ly_to_km(self, ctx: Interaction, ly: float):
+    async def ly_to_km(self, interaction: Interaction, ly: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -342,20 +342,20 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to convert kilometer to Light Year
-    @ app_commands.command(
+    @ slash_command(
         description="Convert kilometer to Light Year."
     )
-    async def km_to_ly(self, ctx: Interaction, km: float):
+    async def km_to_ly(self, interaction: Interaction, km: float):
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(178, 34, 34)
+            colour=nextcord.Color.from_rgb(178, 34, 34)
         )
 
         embed.add_field(
@@ -372,7 +372,7 @@ class MassAndVolumeAndFrac(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add MassAndVolumeAndFrac to the bot

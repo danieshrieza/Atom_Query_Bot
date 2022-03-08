@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 import math
-from discord import Interaction, app_commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for TrigRatios
@@ -16,19 +16,19 @@ class TrigRatios(commands.Cog):
 
 
     # NOTE : Command to find sine of a triangle
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the sine of a triangle."
     )
-    async def sine(self, ctx: Interaction, number: float):
+    async def sine(self, interaction: Interaction, number: float):
 
         exp=f"sin {number}°"
         evalu=math.sin(number)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(139, 0, 0)
+            colour=nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed.add_field(
@@ -45,23 +45,23 @@ class TrigRatios(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to find cosine of a triangle
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the cosine of a triangle."
     )
-    async def cosine(self, ctx: Interaction, number: float):
+    async def cosine(self, interaction: Interaction, number: float):
 
         exp=f"cos {number}°"
         evalu=math.cos(number)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(139, 0, 0)
+            colour=nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed.add_field(
@@ -78,23 +78,23 @@ class TrigRatios(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to find tangent of a triangle
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the tangent of a triangle."
     )
-    async def tangent(self, ctx: Interaction, number: float):
+    async def tangent(self, interaction: Interaction, number: float):
 
         exp=f"tan {number}°"
         evalu=math.tan(number)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(139, 0, 0)
+            colour=nextcord.Color.from_rgb(139, 0, 0)
         )
 
         embed.add_field(
@@ -111,7 +111,7 @@ class TrigRatios(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add TrigRatios to the bot

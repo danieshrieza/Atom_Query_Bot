@@ -1,9 +1,8 @@
-import discord
+import nextcord
 import os
-from discord.ext import commands
-from discord.ext.commands.context import Context
+from nextcord.ext import commands
+from nextcord.ext.commands.context import Context
 from config import TOKEN, OWNER_ID
-from discord import app_commands
 
 
 # NOTE : Declare bot variable
@@ -13,19 +12,19 @@ bot = commands.Bot(
     strip_after_prefix=True,
     help_command=None,
     owner_id=OWNER_ID,
-    intents=discord.Intents.all(),
-    activity=discord.Activity(type=discord.ActivityType.watching, name="The Complex Plane")
+    intents=nextcord.Intents.all(),
+    activity=nextcord.Activity(type=nextcord.ActivityType.watching, name="The Complex Plane")
 )
 
 
-# NOTE : Declare tree variable for slash command
-tree = app_commands.CommandTree(bot)
+# # NOTE : Declare tree variable for slash command
+# tree = app_commands.CommandTree(bot)
 
 
 # NOTE : Activating bot once it's ready
 @ bot.event
 async def on_ready():
-    await tree.sync()
+    # await tree.sync()
     print(f"I have logged in as {bot.user}")
 
 
@@ -40,11 +39,11 @@ async def server(ctx: Context):
 # NOTE : Load extension file once bot is ready
 for folder in os.listdir("./extension"):
     
-    if os.path.exists(os.path.join("extension", folder, "cog_1.py")):
-        bot.load_extension(f"extension.{folder}.cog_1")
+    if os.path.exists(os.path.join("extension", folder, "index.py")):
+        bot.load_extension(f"extension.{folder}.index")
         
-    elif os.path.exists(os.path.join("extension", folder, "cog_2.py")):
-        bot.load_extension(f"extension.{folder}.cog_2")
+    elif os.path.exists(os.path.join("extension", folder, "main.py")):
+        bot.load_extension(f"extension.{folder}.main")
 
 
 # NOTE : Key for bot to run

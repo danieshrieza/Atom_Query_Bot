@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
-import discord
-from discord.ext import commands
-from discord import Interaction, app_commands
+import nextcord
+from nextcord.ext import commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for BasicPhysics
@@ -15,19 +15,19 @@ class BasicPhysics(commands.Cog):
         
         
     # NOTE : Command to calculate speed of an object
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the speed of an object using any distance and time unit."
     )
-    async def speed(self, ctx: Interaction, distance: float, time: float):
+    async def speed(self, interaction: Interaction, distance: float, time: float):
 
         exp=f"{distance} ÷ {time}"
         evalu=distance/time
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -44,23 +44,23 @@ class BasicPhysics(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to calculate electric current of an object
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the electric current of an object."
     )
-    async def electric_current(self, ctx: Interaction, electric_voltage: float, electric_resistance: float):
+    async def electric_current(self, interaction: Interaction, electric_voltage: float, electric_resistance: float):
 
         exp=f"{electric_voltage} V ÷ {electric_resistance} Ω"
         evalu=electric_voltage/electric_resistance
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -77,23 +77,23 @@ class BasicPhysics(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to calculate electric voltage of an object
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the electric voltage of an object."
     )
-    async def electric_voltage(self, ctx: Interaction, electric_current: float, electric_resistance: float):
+    async def electric_voltage(self, interaction: Interaction, electric_current: float, electric_resistance: float):
 
         exp=f"{electric_current} A × {electric_resistance} Ω"
         evalu=electric_current*electric_resistance
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -110,23 +110,23 @@ class BasicPhysics(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to calculate electric resistance of an object
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the electric resistance of an object."
     )
-    async def electric_resistance(self, ctx: Interaction, electric_voltage: float, electric_current: float):
+    async def electric_resistance(self, interaction: Interaction, electric_voltage: float, electric_current: float):
 
         exp=f"{electric_voltage} V ÷ {electric_current} A"
         evalu=electric_voltage/electric_current
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -143,7 +143,7 @@ class BasicPhysics(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add BasicPhysics to the bot

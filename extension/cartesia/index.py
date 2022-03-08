@@ -1,6 +1,6 @@
-from discord import Interaction, app_commands
-import discord
-from discord.ext import commands
+from nextcord import Interaction, slash_command
+import nextcord
+from nextcord.ext import commands
 import math
 from datetime import datetime, timezone
 
@@ -16,19 +16,19 @@ class Line(commands.Cog):
 
 
     # NOTE : Command to calculate distance between two points on a Cartesian Plane
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the distance between two points."
     )
-    async def distance_between_two_points(self, ctx: Interaction, x_2: float, x_1: float, y_2: float, y_1: float):
+    async def distance_between_two_points(self, interaction: Interaction, x_2: float, x_1: float, y_2: float, y_1: float):
 
         exp=f"√({x_2} - {x_1})² + ({y_2} - {y_1})²"
         evalu=math.sqrt((x_2-x_1)**2+(y_2-y_1)**2)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Cartesian Query",
             description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -45,23 +45,23 @@ class Line(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to calculate gradient of a line
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the gradient of a line."
     )
-    async def gradient_of_a_line(self, ctx: Interaction, y_2: float, y_1: float, x_2: float, x_1: float):
+    async def gradient_of_a_line(self, interaction: Interaction, y_2: float, y_1: float, x_2: float, x_1: float):
 
         exp=f"{y_2} - {y_1} ÷ {x_2} - {x_1}"
         evalu=(y_2-y_1)/(x_2-x_1)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Cartesian Query",
             description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -78,23 +78,23 @@ class Line(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
     # NOTE : Command to calculate the midpoint of a line
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the midpoint of a line."
     )
-    async def midpoint_of_a_line(self, ctx: Interaction, x_1: float, x_2: float, y_1: float, y_2: float):
+    async def midpoint_of_a_line(self, interaction: Interaction, x_1: float, x_2: float, y_1: float, y_2: float):
 
         exp=f"(({x_1} + {x_2}) ÷ 2, ({y_1} + {y_2}) ÷ 2)"
         evalu=((x_1+x_2)/2, (y_1 + y_2)/2)
 
-        embed=discord.Embed(
+        embed=nextcord.Embed(
             title="Cartesian Query",
             description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
-            colour=discord.Color.from_rgb(127, 0, 255)
+            colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
         embed.add_field(
@@ -111,7 +111,7 @@ class Line(commands.Cog):
 
         embed.set_thumbnail(url=self.link)
 
-        await ctx.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
 
 # NOTE : Add Line to the bot

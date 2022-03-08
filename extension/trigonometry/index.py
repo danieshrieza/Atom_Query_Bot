@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 import math
-from discord import Interaction, app_commands
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for PythaTheorem
@@ -16,21 +16,21 @@ class PythaTheorem(commands.Cog):
 
 
     # NOTE : Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
-    @ app_commands.command(
+    @ slash_command(
         description="Calculate the Pythagoras Theorem."
     )
-    async def pythagoras_theorem(self, ctx: Interaction, height: float, base: float):
+    async def pythagoras_theorem(self, interaction: Interaction, height: float, base: float):
 
         if (height>0 and base>0):
 
             exp=f"√{base}² + {height}²"
             evalu=math.sqrt((base**2)+(height**2))
 
-            embed=discord.Embed(
+            embed=nextcord.Embed(
                 title="Trigonometry Query",
                 description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
-                colour=discord.Color.from_rgb(139, 0, 0)
+                colour=nextcord.Color.from_rgb(139, 0, 0)
             )
 
             embed.add_field(
@@ -47,10 +47,10 @@ class PythaTheorem(commands.Cog):
 
             embed.set_thumbnail(url=self.link)
 
-            await ctx.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed)
 
         else:
-            await ctx.response.send_message("Please provide input that has values more than 0.")
+            await interaction.response.send_message("Please provide input that has values more than 0.")
 
 
 # NOTE : Add PythaTheorem to the bot

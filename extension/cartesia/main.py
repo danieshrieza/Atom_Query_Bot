@@ -1,6 +1,6 @@
-from discord import Interaction, app_commands
-import discord
-from discord.ext import commands
+from nextcord import Interaction, slash_command
+import nextcord
+from nextcord.ext import commands
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -16,15 +16,15 @@ class Plot(commands.Cog):
 
 
     # NOTE : Command to plot linear graph
-    @ app_commands.command(
+    @ slash_command(
         description="Plot a linear graph."
     )
-    async def linear_equation(self, ctx: Interaction, gradient: float, y_intercept: float):
+    async def linear_equation(self, interaction: Interaction, gradient: float, y_intercept: float):
 
         x=np.linspace(-20, 20, 100)
         y=gradient*x+y_intercept
 
-        file=discord.File("./image/linear.png")
+        file=nextcord.File("./image/linear.png")
 
         plt.plot(x, y, color="green", label=f"y = {gradient}x + {y_intercept}")
         plt.title(f"Graph of y = {gradient}x + {y_intercept}")
@@ -38,25 +38,25 @@ class Plot(commands.Cog):
         plt.savefig("./image/linear.png")
         plt.close()
 
-        # await ctx.response.defer()
-        # message = await ctx.channel.fetch_message(int(ctx.channel.last_message_id))
+        # await interaction.response.defer()
+        # message = await interaction.channel.fetch_message(int(interaction.channel.last_message_id))
 
-        # await ctx.channel.send(file = file)
+        # await interaction.channel.send(file = file)
         # await message.delete()
 
-        await ctx.response.send_message(file=file)
+        await interaction.response.send_message(file=file)
 
 
     # NOTE : Command to plot quadratic graph
-    @ app_commands.command(
+    @ slash_command(
         description="Plot a quadratic graph."
     )
-    async def quadratic_equation(self, ctx: Interaction, a: float, b: float, c: float):
+    async def quadratic_equation(self, interaction: Interaction, a: float, b: float, c: float):
 
         x=np.linspace(-20, 20, 100)
         y=(a*x)**2+(b*x)+c
 
-        file=discord.File("./image/quad.png")
+        file=nextcord.File("./image/quad.png")
         
         plt.plot(x, y, color="red", label=f"y = {a}x² + {b}x + {c}")
         plt.title(f'Graph of y = {a}x² + {b}x + {c}')
@@ -70,25 +70,25 @@ class Plot(commands.Cog):
         plt.savefig("./image/quad.png")
         plt.close()
 
-        # await ctx.response.defer()
-        # message = await ctx.channel.fetch_message(int(ctx.channel.last_message_id))
+        # await interaction.response.defer()
+        # message = await interaction.channel.fetch_message(int(interaction.channel.last_message_id))
 
-        # await ctx.channel.send(file=file)
+        # await interaction.channel.send(file=file)
         # await message.delete()
 
-        await ctx.response.send_message(file=file)
+        await interaction.response.send_message(file=file)
 
 
     # NOTE : Command to plot cubic graph
-    @ app_commands.command(
+    @ slash_command(
         description="Plot a cubic graph."
     )
-    async def cubic_equation(self, ctx: Interaction, a: float, b: float, c: float, d: float):
+    async def cubic_equation(self, interaction: Interaction, a: float, b: float, c: float, d: float):
 
         x=np.linspace(-20, 20, 100)
         y=(a*x)**3+(b*x)**2+(c*x)+d
 
-        file=discord.File("./image/cube.png")
+        file=nextcord.File("./image/cube.png")
 
         plt.plot(x, y, color="blue", label=f'y = {a}x³ + {b}x² + {c}x + {d}')
         plt.title(f"Graph of y = {a}x³ + {b}x² + {c}x + {d}")
@@ -102,25 +102,25 @@ class Plot(commands.Cog):
         plt.savefig("./image/cube.png")
         plt.close()
 
-        # await ctx.response.defer()
-        # message = await ctx.channel.fetch_message(int(ctx.channel.last_message_id))
+        # await interaction.response.defer()
+        # message = await interaction.channel.fetch_message(int(interaction.channel.last_message_id))
 
-        # await ctx.channel.send(file=file)
+        # await interaction.channel.send(file=file)
         # await message.delete()
         
-        await ctx.response.send_message(file=file)
+        await interaction.response.send_message(file=file)
 
 
     # NOTE : Command to plot reciprocal graph
-    @ app_commands.command(
+    @ slash_command(
         description="Plot a reciprocal graph."
     )
-    async def reciprocal_equation(self, ctx: Interaction, numerator: float, denominator: float):
+    async def reciprocal_equation(self, interaction: Interaction, numerator: float, denominator: float):
 
         x=np.linspace(-20, 20, 100)
         y=numerator/(denominator*x)
 
-        file=discord.File("./image/reci.png")
+        file=nextcord.File("./image/reci.png")
 
         plt.plot(x, y, color="yellow", label=f"y = {numerator}/{denominator}x")
         plt.title(f"y = {numerator}/{denominator}x")
@@ -134,13 +134,13 @@ class Plot(commands.Cog):
         plt.savefig("./image/reci.png")
         plt.close()
 
-        # await ctx.response.defer()
-        # message = await ctx.channel.fetch_message(int(ctx.channel.last_message_id))
+        # await interaction.response.defer()
+        # message = await interaction.channel.fetch_message(int(interaction.channel.last_message_id))
 
-        # await ctx.channel.send(file=file)
+        # await interaction.channel.send(file=file)
         # await message.delete()
         
-        await ctx.response.send_message(file=file)
+        await interaction.response.send_message(file=file)
 
 
 # NOTE : Add Plot to the bot
