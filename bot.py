@@ -48,4 +48,4 @@ for folder in os.listdir("./extension"):
 
 
 # NOTE : Key for bot to run
-bot.run(TOKEN)
+bot.run(os.getenv("MATH_VAR"))
