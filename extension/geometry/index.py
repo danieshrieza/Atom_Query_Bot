@@ -10,8 +10,8 @@ class PerimeterAndArea(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to calculate circumference of a circle using radius
@@ -20,10 +20,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def circumference_circle_radius(self, ctx: Interaction, radius: float):
 
-        exp = f"2 × 22/7 × {radius}"
-        evalu = 2*(22/7)*radius
+        exp=f"2 × 22/7 × {radius}"
+        evalu=2*(22/7)*radius
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -53,8 +53,8 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_circle(self, ctx: Interaction, radius: float):
 
-        exp = f"22/7 × {radius}²"
-        evalu = (22/7)*(radius**2)
+        exp=f"22/7 × {radius}²"
+        evalu=(22/7)*(radius**2)
 
         embed = discord.Embed(
             title="Geometry Query",
@@ -86,10 +86,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_quadrilateral(self, ctx: Interaction, length: float, width: float):
 
-        exp = f"{length} × {width}"
-        evalu = length*width
+        exp=f"{length} × {width}"
+        evalu=length*width
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -119,10 +119,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_triangle(self, ctx: Interaction, base: float, height: float):
 
-        exp = f"1/2 × {base} × {height}"
-        evalu = (1/2)*base*height
+        exp=f"1/2 × {base} × {height}"
+        evalu=(1/2)*base*height
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -152,10 +152,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_parallelogram(self, ctx: Interaction, base: float, height: float):
 
-        exp = f"{base} × {height}"
-        evalu = base*height
+        exp=f"{base} × {height}"
+        evalu=base*height
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -185,10 +185,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_kite(self, ctx: Interaction, long_diagonal: float, short_diagonal: float):
 
-        exp = f"1/2 × {long_diagonal} × {short_diagonal}"
-        evalu = (1/2)*long_diagonal*short_diagonal
+        exp=f"1/2 × {long_diagonal} × {short_diagonal}"
+        evalu=(1/2)*long_diagonal*short_diagonal
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -218,10 +218,10 @@ class PerimeterAndArea(commands.Cog):
     )
     async def area_trampezium(self, ctx: Interaction, first_parallel: float, second_parallel: float, height: float):
 
-        exp = f"1/2 × ({first_parallel + second_parallel}) × {height}"
-        evalu = (1/2)*(first_parallel+second_parallel)*height
+        exp=f"1/2 × ({first_parallel + second_parallel}) × {height}"
+        evalu=(1/2)*(first_parallel+second_parallel)*height
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),

@@ -10,8 +10,8 @@ class Length(commands.Cog):
 
     # NOTE :  Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to convert mm to cm
@@ -20,7 +20,7 @@ class Length(commands.Cog):
     )
     async def mm_to_cm(self, ctx: Interaction, milimeter: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -50,7 +50,7 @@ class Length(commands.Cog):
     )
     async def cm_to_m(self, ctx: Interaction, centimeter: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -80,7 +80,7 @@ class Length(commands.Cog):
     )
     async def m_to_km(self, ctx: Interaction, meter: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -110,7 +110,7 @@ class Length(commands.Cog):
     )
     async def km_to_m(self, ctx: Interaction, kilometer: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -140,7 +140,7 @@ class Length(commands.Cog):
     )
     async def m_to_cm(self, ctx: Interaction, meter: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -170,7 +170,7 @@ class Length(commands.Cog):
     )
     async def cm_to_mm(self, ctx: Interaction, centimeter: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),

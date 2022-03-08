@@ -11,8 +11,8 @@ class Plot(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to plot linear graph
@@ -21,10 +21,10 @@ class Plot(commands.Cog):
     )
     async def linear_equation(self, ctx: Interaction, gradient: float, y_intercept: float):
 
-        x = np.linspace(-20, 20, 100)
-        y = gradient*x+y_intercept
+        x=np.linspace(-20, 20, 100)
+        y=gradient*x+y_intercept
 
-        file = discord.File("./image/linear.png")
+        file=discord.File("./image/linear.png")
 
         plt.plot(x, y, color="green", label=f"y = {gradient}x + {y_intercept}")
         plt.title(f"Graph of y = {gradient}x + {y_intercept}")
@@ -53,10 +53,11 @@ class Plot(commands.Cog):
     )
     async def quadratic_equation(self, ctx: Interaction, a: float, b: float, c: float):
 
-        x = np.linspace(-20, 20, 100)
-        y = (a*x)**2+(b*x)+c
+        x=np.linspace(-20, 20, 100)
+        y=(a*x)**2+(b*x)+c
 
-        file = discord.File("./image/quad.png")
+        file=discord.File("./image/quad.png")
+        
         plt.plot(x, y, color="red", label=f"y = {a}x² + {b}x + {c}")
         plt.title(f'Graph of y = {a}x² + {b}x + {c}')
 
@@ -84,10 +85,10 @@ class Plot(commands.Cog):
     )
     async def cubic_equation(self, ctx: Interaction, a: float, b: float, c: float, d: float):
 
-        x = np.linspace(-20, 20, 100)
-        y = (a*x)**3+(b*x)**2+(c*x)+d
+        x=np.linspace(-20, 20, 100)
+        y=(a*x)**3+(b*x)**2+(c*x)+d
 
-        file = discord.File("./image/cube.png")
+        file=discord.File("./image/cube.png")
 
         plt.plot(x, y, color="blue", label=f'y = {a}x³ + {b}x² + {c}x + {d}')
         plt.title(f"Graph of y = {a}x³ + {b}x² + {c}x + {d}")
@@ -116,10 +117,10 @@ class Plot(commands.Cog):
     )
     async def reciprocal_equation(self, ctx: Interaction, numerator: float, denominator: float):
 
-        x = np.linspace(-20, 20, 100)
-        y = numerator/(denominator*x)
+        x=np.linspace(-20, 20, 100)
+        y=numerator/(denominator*x)
 
-        file = discord.File("./image/reci.png")
+        file=discord.File("./image/reci.png")
 
         plt.plot(x, y, color="yellow", label=f"y = {numerator}/{denominator}x")
         plt.title(f"y = {numerator}/{denominator}x")

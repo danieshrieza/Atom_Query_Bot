@@ -11,8 +11,8 @@ class PythaTheorem(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to find the hypotenuse, height or the base of a triangle using Pythagoras Theorem
@@ -21,12 +21,12 @@ class PythaTheorem(commands.Cog):
     )
     async def pythagoras_theorem(self, ctx: Interaction, height: float, base: float):
 
-        if (height > 0 and base > 0):
+        if (height>0 and base>0):
 
-            exp = f"√{base}² + {height}²"
-            evalu = math.sqrt((base**2)+(height**2))
+            exp=f"√{base}² + {height}²"
+            evalu=math.sqrt((base**2)+(height**2))
 
-            embed = discord.Embed(
+            embed=discord.Embed(
                 title="Trigonometry Query",
                 description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),

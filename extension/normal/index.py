@@ -11,8 +11,8 @@ class AdditionalBasic(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to find factor a number
@@ -21,12 +21,12 @@ class AdditionalBasic(commands.Cog):
     )
     async def factor(self, ctx: Interaction, number: int):
 
-        evalu = []
+        evalu=[]
         for i in range(1, number+1):
-            if number % i == 0:
-                eval.append(i)
+            if number%i == 0:
+                evalu.append(i)
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -56,14 +56,14 @@ class AdditionalBasic(commands.Cog):
     )
     async def common_factor(self, ctx: Interaction, number_1: int, number_2: int):
 
-        if (number_1 > 0 and number_2 > 0):
+        if (number_1>0 and number_2>0):
 
-            evalu = []
+            evalu=[]
             for i in range(1, min(number_1, number_2)+1):
-                if number_1 % i == number_2 % i == 0:
-                    eval.append(i)
+                if number_1%i == number_2%i == 0:
+                    evalu.append(i)
 
-            embed = discord.Embed(
+            embed=discord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
@@ -96,11 +96,11 @@ class AdditionalBasic(commands.Cog):
     )
     async def highest_common_factor(self, ctx: Interaction, number_1: int, number_2: int):
 
-        if (number_1 > 0 and number_2 > 0):
+        if (number_1>0 and number_2>0):
 
-            evalu = math.gcd(number_1, number_2)
+            evalu=math.gcd(number_1, number_2)
 
-            embed = discord.Embed(
+            embed=discord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
@@ -133,12 +133,12 @@ class AdditionalBasic(commands.Cog):
     )
     async def multiple(self, ctx: Interaction, number: int, number_range: int):
 
-        evalu = []
+        evalu=[]
 
-        for i in range(1, number_range + 1):
-            evalu.append(number * i)
+        for i in range(1, number_range+1):
+            evalu.append(number*i)
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -168,15 +168,15 @@ class AdditionalBasic(commands.Cog):
     )
     async def common_multiple(self, ctx: Interaction, number_1: int, number_2: int, number_range: int):
 
-        if (number_1 > 0 and number_2 > 0 and number_range > 0):
+        if (number_1>0 and number_2>0 and number_range>0):
 
-            arr = []
-            evalu = math.lcm(number_1, number_2)
+            arr=[]
+            evalu=math.lcm(number_1, number_2)
 
             for i in range(1, number_range+1):
-                arr.append(evalu * i)
+                arr.append(evalu*i)
 
-            embed = discord.Embed(
+            embed=discord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
@@ -209,11 +209,11 @@ class AdditionalBasic(commands.Cog):
     )
     async def lowest_common_multiple(self, ctx: Interaction, number_1: int, number_2: int):
 
-        if (number_1 > 0 and number_2 > 0):
+        if (number_1>0 and number_2>0):
 
-            evalu = math.lcm(number_1, number_2)
+            evalu=math.lcm(number_1, number_2)
 
-            embed = discord.Embed(
+            embed=discord.Embed(
                 title="Math Query",
                 description="The requested `Math Query` have been evaluated by **Atom Query**",
                 timestamp=datetime.now(timezone.utc),
@@ -246,18 +246,18 @@ class AdditionalBasic(commands.Cog):
     )
     async def fibonacci_sequence(self, ctx: Interaction, number_list: str, number_range: int):
 
-        str_list: list = number_list.split()
+        str_list: list=number_list.split()
 
-        int_list = [int(i) for i in str_list]
+        int_list=[int(i) for i in str_list]
 
-        while len(int_list) < number_range:
+        while len(int_list)<number_range:
             int_list.append(sum(int_list[-2:]))
 
-        evalu = int_list[:number_range]
+        evalu=int_list[:number_range]
 
-        exp = [int(i) for i in str_list]
+        exp=[int(i) for i in str_list]
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Math Query",
             description="The requested `Math Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -287,16 +287,16 @@ class AdditionalBasic(commands.Cog):
     )
     async def tribonacci_sequence(self, ctx: Interaction, number_list: str, number_range: int):
 
-        str_list: list = number_list.split()
+        str_list: list=number_list.split()
 
-        int_list = [int(i) for i in str_list]
+        int_list=[int(i) for i in str_list]
 
-        while len(int_list) < number_range:
+        while len(int_list)<number_range:
             int_list.append(sum(int_list[-3:]))
 
-        evalu = int_list[:number_range]
+        evalu=int_list[:number_range]
 
-        exp = [int(i) for i in str_list]
+        exp=[int(i) for i in str_list]
 
         embed = discord.Embed(
             title="Math Query",

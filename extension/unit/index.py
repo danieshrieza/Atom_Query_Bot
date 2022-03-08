@@ -11,8 +11,8 @@ class MassAndVolumeAndFrac(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command convert g to kg
@@ -21,7 +21,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def g_to_kg(self, ctx: Interaction, gram: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -51,7 +51,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def kg_to_g(self, ctx: Interaction, kilogram: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -81,7 +81,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def ml_to_l(self, ctx: Interaction, millilitre: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -111,7 +111,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def l_to_ml(self, ctx: Interaction, litre: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -141,7 +141,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def deci_to_frac(self, ctx: Interaction, decimal: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -171,7 +171,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def frac_to_deci(self, ctx: Interaction, numerator: int, denominator: int):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -201,7 +201,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def N_to_kg(self, ctx: Interaction, newton: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -231,7 +231,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def kg_to_N(self, ctx: Interaction, kilogram: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -261,7 +261,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def au_to_km(self, ctx: Interaction, au: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -291,7 +291,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def km_to_au(self, ctx: Interaction, km: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -321,7 +321,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def ly_to_km(self, ctx: Interaction, ly: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -351,7 +351,7 @@ class MassAndVolumeAndFrac(commands.Cog):
     )
     async def km_to_ly(self, ctx: Interaction, km: float):
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Unit Converter",
             description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),

@@ -11,8 +11,8 @@ class TrigRatios(commands.Cog):
 
     # NOTE : Initialize parameter for class
     def __init__(self, bot: commands.Bot):
-        self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+        self.bot=bot
+        self.link="https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
 
     # NOTE : Command to find sine of a triangle
@@ -21,10 +21,10 @@ class TrigRatios(commands.Cog):
     )
     async def sine(self, ctx: Interaction, number: float):
 
-        exp = f"sin {number}°"
-        evalu = math.sin(number)
+        exp=f"sin {number}°"
+        evalu=math.sin(number)
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -54,10 +54,10 @@ class TrigRatios(commands.Cog):
     )
     async def cosine(self, ctx: Interaction, number: float):
 
-        exp = f"cos {number}°"
-        evalu = math.cos(number)
+        exp=f"cos {number}°"
+        evalu=math.cos(number)
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
@@ -87,10 +87,10 @@ class TrigRatios(commands.Cog):
     )
     async def tangent(self, ctx: Interaction, number: float):
 
-        exp = f"tan {number}°"
-        evalu = math.tan(number)
+        exp=f"tan {number}°"
+        evalu=math.tan(number)
 
-        embed = discord.Embed(
+        embed=discord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
             timestamp=datetime.now(timezone.utc),
