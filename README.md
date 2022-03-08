@@ -1,8 +1,10 @@
 # Atom Query ⚛️
 
+#### Note: I will be reverting back the bot framework used in this project to nextcord. This is due to the lack of documentation on the new feature implemented in discord.py v2. This project might migrate to discord.py again in the future after the new features documented.
+
 **Atom Query** is a **Discord Bot** that able to calculate common queries. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands)
 
-![Atom Query Logo](./image/Atom_Query_Icon.png)
+<img src="./image/Atom_Query_Icon.png" alt="Atom Query DIscord Bot Logo" style="display: block; margin-left: auto;margin-right: auto; width: 50%;">
 
 As of now, it able to calculate queries from 6 different areas of Mathematics which is :
 
@@ -13,10 +15,9 @@ As of now, it able to calculate queries from 6 different areas of Mathematics wh
 - Trigonometry Query
 - Unit Converter
 
-# Requirement 📝
+# Requirements 📝
 
-In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the 
-listed dependencies on [requirements.txt](requirements.txt) using the command below :
+In order for this Discord Bot to work properly and to avoid error from popping out in the terminal, use `pip` to install the listed dependencies on [requirements.txt](requirements.txt) using the command below :
 
 ```
 pip install -r requirements.txt
