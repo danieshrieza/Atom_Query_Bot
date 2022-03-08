@@ -1,14 +1,16 @@
-import os
-from dotenv.main import load_dotenv
+import json
 
-# NOTE : Load .env file for token and testing guild id
-load_dotenv()
+# NOTE : Open json file
+with open("env.json") as env:
+    
+    # NOTE : Load json file that contains private info about the bot
+    priv=json.load(env)
+    
+    # NOTE : Get the bot token from json file
+    TOKEN=str(priv["MATH_VAR"])
+    
+    # NOTE : Get the guild id from json file
+    GUILD_ID=int(priv["GUILD_VAR"])
 
-# NOTE : Get the guild id from .env file
-GUILD_ID = int(os.getenv("GUILD_VAR", ""))
-
-# NOTE : Get the bot token from .env file
-TOKEN = os.getenv("MATH_VAR", "")
-
-# NOTE : Get the owner id from .env file
-OWNER_ID = int(os.getenv("OWNER_VAR", ""))
+    # NOTE : Get the owner id from json file
+    OWNER_ID=int(priv["OWNER_VAR"])

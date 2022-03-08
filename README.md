@@ -22,7 +22,7 @@ listed dependencies on [requirements.txt](requirements.txt) using the command be
 pip install -r requirements.txt
 ```
 
-I've also used 4 built-in Python library in this project which is `math`, `datetime`, `os`, and `random`. 
+I've also used 4 built-in Python library in this project which is `math`, `datetime`, `json`, `os` and `random`. 
 
 # LICENSE
 
