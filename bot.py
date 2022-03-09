@@ -37,13 +37,8 @@ async def server(ctx: Context):
 
 
 # NOTE : Load extension file once bot is ready
-for folder in os.listdir("./extension"):
-    
-    if os.path.exists(os.path.join("extension", folder, "index.py")):
-        bot.load_extension(f"extension.{folder}.index")
-        
-    elif os.path.exists(os.path.join("extension", folder, "main.py")):
-        bot.load_extension(f"extension.{folder}.main")
+for file in os.listdir("./extension"):
+    bot.load_extension(f"extenion.{file}")
 
 
 # NOTE : Key for bot to run

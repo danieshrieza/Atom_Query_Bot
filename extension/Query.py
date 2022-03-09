@@ -1,12 +1,13 @@
 import nextcord
 from nextcord.ext import commands
 import math
+import random
 from datetime import datetime, timezone
 from nextcord import Interaction, slash_command
 
 
-# NOTE : Class for AdditionalBasic
-class AdditionalBasic(commands.Cog):
+# NOTE : Class for Query
+class Query(commands.Cog):
 
 
     # NOTE : Initialize parameter for class
@@ -162,7 +163,7 @@ class AdditionalBasic(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
 
-    # NOTE : Command to find common multiple of 2 number
+    # NOTE : Command to find common multiple of 2 numbers
     @ slash_command(
         description="Find the common multiple of 2 numbers."
     )
@@ -203,7 +204,7 @@ class AdditionalBasic(commands.Cog):
             await interaction.response.send_message("Please provide input that values are more than 0.")
 
 
-    # NOTE : Command to find the lowest common multiple of 2 number
+    # NOTE : Command to find the lowest common multiple of 2 numbers
     @ slash_command(
         description="Find the lowest common multiple of 2 numbers."
     )
@@ -320,8 +321,273 @@ class AdditionalBasic(commands.Cog):
         embed.set_thumbnail(url=self.link)
 
         await interaction.response.send_message(embed=embed)
+        
+        
+    # NOTE : Command to calculate queries from user
+    @ slash_command(
+        description="Calculate your math's query."
+    )
+    async def calculate(self, interaction: Interaction, query: str):
+
+        expliteral=("").join(query)
+        exppoet=expliteral.replace("*", "×").replace("/", "÷")
+        evalu=eval(expliteral)
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exppoet} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
 
 
-# NOTE : Add AdditionalBasic to the bot
+    # NOTE : Command to generate random number
+    @ slash_command(
+        description="Generate random integer number from input range."
+    )
+    async def number_generator(self, interaction: Interaction, starting_point: int, ending_point: int):
+
+        exp=f"Generate number between {starting_point} and {ending_point}."
+        evalu=f"{random.randint(starting_point, ending_point)}"
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to square a number
+    @ slash_command(
+        description="Squared number from user."
+    )
+    async def square(self, interaction: Interaction, base: float):
+
+        exp=f"{base}²"
+        evalu=base**2
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to cube a number
+    @ slash_command(
+        description="Cubed number from user."
+    )
+    async def cube(self, interaction: Interaction, base: float):
+
+        exp=f"{base}³"
+        evalu=base**3
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to power a base using user's exponent
+    @ slash_command(
+        description="Power the user's base to the exponent."
+    )
+    async def variable_power(self, interaction: Interaction, base: float, exponent: float):
+
+        exp=f"{base} ** {exponent}"
+        evalu=base**exponent
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to square root a number
+    @ slash_command(
+        description="Square root user's number."
+    )
+    async def square_root(self, interaction: Interaction, radicand: float):
+
+        exp=f"√{radicand}"
+        evalu=math.sqrt(radicand)
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to cube root a number
+    @ slash_command(
+        description="Cube root user's number."
+    )
+    async def cube_root(self, interaction: Interaction, radicand: float):
+
+        exp=f"³√{radicand}"
+        evalu=radicand**1./3.
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to root a radicand using a radical
+    @ slash_command(
+        description="Radical(root) user's radicand(number)."
+    )
+    async def variable_root(self, interaction: Interaction, radicand: float, radical: float):
+
+        exp=f"{radicand} ** 1/{radical}"
+        evalu=radicand**1./radical
+
+        embed=nextcord.Embed(
+            title="Math Query",
+            description="The requested `Math Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(179, 27, 27)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+# NOTE : Add Query to the bot
 def setup(bot: commands.Bot):
-    bot.add_cog(AdditionalBasic(bot))
+    bot.add_cog(Query(bot))

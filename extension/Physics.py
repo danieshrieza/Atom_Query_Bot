@@ -4,8 +4,8 @@ from nextcord.ext import commands
 from nextcord import Interaction, slash_command
 
 
-# NOTE : Class for EnergyAndForce
-class EnergyAndForce(commands.Cog):
+# NOTE : Class for Physics
+class Physics(commands.Cog):
 
 
     # NOTE : Initialize parameter for class
@@ -275,8 +275,140 @@ class EnergyAndForce(commands.Cog):
         embed.set_thumbnail(url=self.link)
 
         await interaction.response.send_message(embed=embed)
+        
+        
+    # NOTE : Command to calculate speed of an object
+    @ slash_command(
+        description="Calculate the speed of an object."
+    )
+    async def speed(self, interaction: Interaction, distance: float, time: float):
+
+        exp=f"{distance} ÷ {time}"
+        evalu=distance/time
+
+        embed=nextcord.Embed(
+            title="Physics Query",
+            description="The requested `Physics Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(127, 0, 255)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} m/s \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
 
 
-# NOTE : Add EnergyAndForce to the bot
+    # NOTE : Command to calculate electric current of an object
+    @ slash_command(
+        description="Calculate the electric current of an object."
+    )
+    async def electric_current(self, interaction: Interaction, electric_voltage: float, electric_resistance: float):
+
+        exp=f"{electric_voltage} V ÷ {electric_resistance} Ω"
+        evalu=electric_voltage/electric_resistance
+
+        embed=nextcord.Embed(
+            title="Physics Query",
+            description="The requested `Physics Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(127, 0, 255)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} A \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to calculate electric voltage of an object
+    @ slash_command(
+        description="Calculate the electric voltage of an object."
+    )
+    async def electric_voltage(self, interaction: Interaction, electric_current: float, electric_resistance: float):
+
+        exp=f"{electric_current} A × {electric_resistance} Ω"
+        evalu=electric_current*electric_resistance
+
+        embed=nextcord.Embed(
+            title="Physics Query",
+            description="The requested `Physics Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(127, 0, 255)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} V \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+    # NOTE : Command to calculate electric resistance of an object
+    @ slash_command(
+        description="Calculate the electric resistance of an object."
+    )
+    async def electric_resistance(self, interaction: Interaction, electric_voltage: float, electric_current: float):
+
+        exp=f"{electric_voltage} V ÷ {electric_current} A"
+        evalu=electric_voltage/electric_current
+
+        embed=nextcord.Embed(
+            title="Physics Query",
+            description="The requested `Physics Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(127, 0, 255)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} Ω \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)
+
+
+# NOTE : Add Physics to the bot
 def setup(bot: commands.Bot):
-    bot.add_cog(EnergyAndForce(bot))
+    bot.add_cog(Physics(bot))
