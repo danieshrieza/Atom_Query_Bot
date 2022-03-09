@@ -243,6 +243,8 @@ class Geometry(commands.Cog):
         embed.set_thumbnail(url=self.link)
 
         await interaction.response.send_message(embed=embed)
+        
+        
     # NOTE : Command to calculate surface area of a quadrilateral
     @ slash_command(
         description="Calculate the surface area of a cuboid."
