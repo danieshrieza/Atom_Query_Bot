@@ -9,16 +9,16 @@ class Test(commands.Cog):
         self.bot=bot
      
         
-    @ slash_command(guild_ids=[GUILD_ID])
-    async def test(interaction: Interaction, option: SlashOption(choices={"name": str})):
+    # @ slash_command(guild_ids=[GUILD_ID])
+    # async def test(interaction: Interaction, option: SlashOption(choices={"name": str})):
         
-        if option == "name":
+    #     if option == "name":
             
-            await interaction.response.send_message(f"Hello, {option}")
+    #         await interaction.response.send_message(f"Hello, {option}")
         
-        else:
+    #     else:
             
-            await interaction.response.send_message("Hello")
+    #         await interaction.response.send_message("Hello")
             
     
 def setup(bot: commands.Bot):
