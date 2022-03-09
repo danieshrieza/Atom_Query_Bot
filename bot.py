@@ -38,7 +38,7 @@ async def server(ctx: Context):
 
 # NOTE : Load extension file once bot is ready
 for file in os.listdir("./extension"):
-    bot.load_extension(f"extension.{file}")
+    bot.load_extension(f"extension.{file[:-3]}")
 
 
 # NOTE : Key for bot to run
