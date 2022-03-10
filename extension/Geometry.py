@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
-from nextcord import Interaction, slash_command
+from nextcord import Interaction, SlashOption, slash_command
 
 
 # NOTE : Class for Geometry
@@ -45,6 +45,38 @@ class Geometry(commands.Cog):
         embed.set_thumbnail(url=self.link)
 
         await interaction.response.send_message(embed=embed)
+        
+            
+    @ slash_command(
+        description="Calculate the circumference of a circle using diameter."
+    )
+    async def circumference_circle_diameter(self, interaction: Interaction, diameter: float):
+
+        exp=f"22/7 × {diameter}"
+        evalu=(22/7)*diameter
+
+        embed=nextcord.Embed(
+            title="Geometry Query",
+            description="The requested `Geometry Query` have been evaluated by **Atom Query**",
+            timestamp=datetime.now(timezone.utc),
+            colour=nextcord.Color.from_rgb(157, 34, 53)
+        )
+
+        embed.add_field(
+            name="Input :",
+            value=f"```Python\n {exp} \n```",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Output :",
+            value=f"```Python\n {evalu} \n```",
+            inline=True
+        )
+
+        embed.set_thumbnail(url=self.link)
+
+        await interaction.response.send_message(embed=embed)         
 
 
     # NOTE : Commmand to calculate area of a circle
