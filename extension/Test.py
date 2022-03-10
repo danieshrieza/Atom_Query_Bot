@@ -10,7 +10,7 @@ class Test(commands.Cog):
 
 
     @ slash_command(guild_ids=[GUILD_ID])
-    async def test(interaction: Interaction, name: str=SlashOption(default=None)):
+    async def test(interaction: Interaction, name: str=SlashOption(choices={"name": str})):
 
         if name != None:
 
