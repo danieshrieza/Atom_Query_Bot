@@ -250,7 +250,7 @@ class Geometry(commands.Cog):
     )
     async def area_trampezium(self, interaction: Interaction, first_parallel: float, second_parallel: float, height: float):
 
-        exp=f"1/2 × ({first_parallel + second_parallel}) × {height}"
+        exp=f"1/2 × ({first_parallel} + {second_parallel}) × {height}"
         evalu=(1/2)*(first_parallel+second_parallel)*height
 
         embed=nextcord.Embed(
