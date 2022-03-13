@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
-from nextcord import Interaction, SlashOption, slash_command
+from nextcord import Interaction, slash_command
 
 
 # NOTE : Class for Geometry
@@ -18,7 +18,7 @@ class Geometry(commands.Cog):
     @ slash_command(
         description="Calculate the circumference of a circle using radius."
     )
-    async def circumference_circle_radius(self, interaction: Interaction, radius: float):
+    async def circumference_radius(self, interaction: Interaction, radius: float):
 
         exp=f"2 × 22/7 × {radius}"
         evalu=2*(22/7)*radius
@@ -50,7 +50,7 @@ class Geometry(commands.Cog):
     @ slash_command(
         description="Calculate the circumference of a circle using diameter."
     )
-    async def circumference_circle_diameter(self, interaction: Interaction, diameter: float):
+    async def circumference_diameter(self, interaction: Interaction, diameter: float):
 
         exp=f"22/7 × {diameter}"
         evalu=(22/7)*diameter
