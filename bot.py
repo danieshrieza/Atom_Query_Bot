@@ -21,7 +21,7 @@ def main():
     )
 
 
-    # # NOTE : Declare tree variable for slash command
+    # NOTE : Declare tree variable for slash command
     # tree = app_commands.CommandTree(bot)
 
 
