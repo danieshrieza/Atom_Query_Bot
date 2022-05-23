@@ -1,4 +1,4 @@
 nextcord==2.0.0a10
 Fraction==2.1.1
 matplotlib==3.5.2
-numpy==1.22.3
+numpy==1.22.4
