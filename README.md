@@ -1,10 +1,9 @@
 # Atom Query ⚛️
 
-#### Note: I will be reverting back the bot framework used in this project to nextcord. This is due to the lack of documentation on the new feature implemented in discord.py v2. This project might migrate to discord.py again in the future after the new features documented.
-
+#### Note: 4 months have passed and there is currently no release date for Discord.py v2. Therefore, I will make more changes on the bot using nextcord in the coming weeks. Stay tune! 
 **Atom Query** is a **Discord Bot** that able to calculate common queries. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands)
 
-<img src="./image/Atom_Query_Icon.png" alt="Atom Query DIscord Bot Logo" style="display: block; margin-left: auto;margin-right: auto; width: 50%;">
+<img src="./image/Atom_Query_Icon.png" alt="Atom Query Discord Bot Logo" style="display: block; margin-left: auto;margin-right: auto; width: 50%;">
 
 As of now, it able to calculate queries from 6 different areas of Mathematics which is :
 
