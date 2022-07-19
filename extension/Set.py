@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from nextcord import Interaction, SlashOption, slash_command
 import nextcord
 from nextcord.ext import commands
@@ -416,9 +416,9 @@ class Set(commands.Cog):
         description="Check if a value is subset or an element of a set",
         guild_ids=[GUILD_ID]
     )
-    async def setOperation(self, interaction: Interaction, a: str | List[str | int | float], b: List[str | int | float], type: str = SlashOption(name="Type of operation", required=True, choices=_setOperation)):
+    async def setOperation(self, interaction: Interaction, a: Union[str, List[Union[str, int, float]]], b: List[Union[str, int, float]], type: str = SlashOption(name="Type of operation", required=True, choices=_setOperation)):
 
-        if type == 1 and a is List[str | int | float]:
+        if type == 1 and a is List[Union[str, int, float]]:
 
             _truth = [True for i in a if i in b]
 
@@ -472,7 +472,7 @@ class Set(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-        elif type == 3 and a is List[str | float | int]:
+        elif type == 3 and a is List[Union[str, int, float]]:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
@@ -498,7 +498,7 @@ class Set(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-        elif type == 4 and a is List[str | float | int]:
+        elif type == 4 and a is List[Union[str, int, float]]:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
