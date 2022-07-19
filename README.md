@@ -1,18 +1,9 @@
 # Atom Query ⚛️
 
-#### Note: 4 months have passed and there is currently no release date for Discord.py v2. Therefore, I will make more changes on the bot using nextcord in the coming weeks. Stay tune! 
-**Atom Query** is a **Discord Bot** that able to calculate common queries. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands)
+**Atom Query** is a **Discord Bot** that able to calculate common queries. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands).
+This bot are able to calculate **area of a trampezium**, find the **intersection of two set**, find the **momentum of an object** and much more!
 
 <img src="./image/Atom_Query_Icon.png" alt="Atom Query Discord Bot Logo" style="display: block; margin-left: auto;margin-right: auto; width: 50%;">
-
-As of now, it able to calculate queries from 6 different areas of Mathematics which is :
-
-- Cartesian Query
-- Geometry Query
-- Math Query
-- Physics Query
-- Trigonometry Query
-- Unit Converter
 
 # Requirements 📝
 
@@ -22,7 +13,7 @@ In order for this Discord Bot to work properly and to avoid error from popping o
 pip install -r requirements.txt
 ```
 
-I've also used 4 built-in Python library in this project which is `math`, `datetime`, `json`, `os` and `random`. 
+I've also used 5 built-in Python library in this project which is `math`, `datetime`, `json`, `os`, and `cmath`.
 
 # LICENSE
 
@@ -49,4 +40,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 # And finally, thanks to everyone who have cloned the repository.
+
 This been a long project for me but this not the end of the project. More and more changes are coming on **Atom Query** in days, weeks, months or even years. Thanks to everyone who's reading this notes. 🎉

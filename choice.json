@@ -1,0 +1,87 @@
+{
+    "_prefix": {
+        "pico": 1e-12,
+        "nano": 1e-9,
+        "micro": 1e6,
+        "milli": 1e-3,
+        "centi": 1e-2,
+        "deci": 1e-1,
+        "kilo": 1e+3,
+        "mega": 1e+6,
+        "giga": 1e+9,
+        "tera": 1e+12
+    },
+
+    "_si_unit": {
+        "gram": "g",
+        "meter": "m",
+        "second": "s",
+        "kelvin": "K",
+        "ampere": "A",
+        "candela": "cd",
+        "mole": "mol"
+    },
+
+    "_curve": {
+        "Circumference of circle": 1,
+        "Area of a circle": 2,
+        "Surface area of a sphere": 3,
+        "Volume of a sphere": 4
+    },
+
+    "_cube": {
+        "Area of a square": 1,
+        "Surface area of a cube": 2,
+        "Volume of a cube": 3
+    },
+
+    "_tri": {
+        "Area of a triangle": 1,
+        "Surface area of a pyramid": 2,
+        "Volume of a pyramid": 3
+    },
+
+    "_cylinder": {
+        "Surface area of a cylinder": 1,
+        "Volume of a cylinder": 2
+    },
+
+    "_cone": {
+        "Surface area of a cone": 1,
+        "Volume of a cone": 2
+    },
+
+    "_linearOperation": {
+        "Plot a linear graph": 1,
+        "Distance between two points": 2,
+        "Midpoint of a straight line": 3,
+        "Gradient of a straight line": 4
+    },
+
+    "_setOperation": {
+        "Subset of a set": 1,
+        "Element of a set": 2,
+        "Intersection of two set": 3,
+        "Union of two set": 4
+    },
+
+    "_quadOperation": {
+        "Plot a quadratic graph": 1,
+        "Value and nature of roots of a quadratic equation": 2,
+        "Product and sum of roots of a quadratic equation": 3,
+        "Vertex form of a quadratic equation": 4,
+        "Intercept form of a quadratic equation": 5
+    },
+
+    "_factor": {
+        "Factor of a number": 1,
+        "Common factor of two number": 2,
+        "Highest common factor of two number": 3
+    },
+
+    "_multiple": {
+        "Multiple of a number": 1,
+        "Common multiple of two number": 2,
+        "Lowest common multiple of two number": 3
+    }
+}
