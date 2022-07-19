@@ -22,7 +22,7 @@ with open("./choice.json") as choices:
 
     _curve = dict(choice["_curve"])
 
-    _four_side = dict(choice["_quad"])
+    _four_side = dict(choice["_cube"])
 
     _tri = dict(choice["_tri"])
 
@@ -30,7 +30,7 @@ with open("./choice.json") as choices:
 
     _cone = dict(choice["_cone"])
 
-    _linearOperation = dict(choice["_straLine"])
+    _linearOperation = dict(choice["_linearOperation"])
     
     _setOperation = dict(choice["_setOperation"])
     
