@@ -12,7 +12,7 @@ with open("env.json") as env:
 
     OWNER_ID = int(priv["OWNER_VAR"])
 
-with open("./extension/choice.json") as choices:
+with open("./choice.json") as choices:
 
     choice = json.load(choices)
 
