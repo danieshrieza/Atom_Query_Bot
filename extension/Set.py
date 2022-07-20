@@ -416,9 +416,12 @@ class Set(commands.Cog):
         description="Check if a value is subset or an element of a set",
         guild_ids=[GUILD_ID]
     )
-    async def setOperation(self, interaction: Interaction, a: Union[str, List[Union[str, int, float]]], b: List[Union[str, int, float]], type: str = SlashOption(name="Type of operation", required=True, choices=_setOperation)):
+    async def setOperation(self, interaction: Interaction, a: str, b: str, type: str = SlashOption(name="Type of operation", required=True, choices=_setOperation)):
 
-        if type == 1 and a is List[Union[str, int, float]]:
+        A = "".join(a).split(" ")
+        B = "".join(b).split(" ")
+        
+        if type == 1 and A is List[Union[str, int, float]]:
 
             _truth = [True for i in a if i in b]
 

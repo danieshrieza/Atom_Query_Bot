@@ -14,7 +14,7 @@ class Trigonometry(commands.Cog):
 
     @ slash_command(
         description="Calculate the hypotenuse of a triangle.",
-        guild_ids=GUILD_ID
+        guild_ids=[GUILD_ID]
     )
     async def pythagorasTheorem(self, interaction: Interaction, height: float, base: float):
 
