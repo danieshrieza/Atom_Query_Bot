@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption, slash_command
-from config import _curve, _four_side, _tri, _cylinder, _cone, GUILD_ID
+from config import (_curve, _four_side, _tri, _cylinder, _cone, GUILD_ID)
 from math import pi
 
 
@@ -138,7 +138,7 @@ class Geometry(commands.Cog):
         description="Calculate the area of a quadrilateral or the surface area, and volume of a 3D quadrilateral.",
         guild_ids=[GUILD_ID]
     )
-    async def squareAndCube(self, interaction: Interaction, l: float, type: str = SlashOption(name="Type of calculation", required=True, choices=+_four_side)):
+    async def squareAndCube(self, interaction: Interaction, l: float, type: str = SlashOption(name="Type of calculation", required=True, choices=_four_side)):
 
         if type == 1:
 
