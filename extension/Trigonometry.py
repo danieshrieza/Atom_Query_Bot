@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 import nextcord
 from nextcord.ext import commands
 import math
-from nextcord import Interaction, slash_command
+from nextcord import Interaction, SlashOption, slash_command
 from config import GUILD_ID
 
 
@@ -16,7 +16,7 @@ class Trigonometry(commands.Cog):
         description="Calculate the hypotenuse of a triangle.",
         guild_ids=[GUILD_ID]
     )
-    async def pythagorasTheorem(self, interaction: Interaction, height: float, base: float):
+    async def pythagorastheorem(self, interaction: Interaction, height: float = SlashOption(description="The height of the triangle."), base: float = SlashOption(description="The base length of the triangle.")):
 
         formula = "c = √a² + b²"
         c = math.sqrt((base ** 2) + (height ** 2))
@@ -49,7 +49,7 @@ class Trigonometry(commands.Cog):
         description="Calculate the sine of a value.",
         guild_ids=[GUILD_ID]
     )
-    async def trigonometryRatio(self, interaction: Interaction, number: float):
+    async def trigonometryratio(self, interaction: Interaction, number: float = SlashOption(description="The number to find the sine of.")):
 
         formula = f"sin {number}°"
         evalu = math.sin(number)
@@ -82,7 +82,7 @@ class Trigonometry(commands.Cog):
         description="Calculate the cosine of a value.",
         guild_ids=[GUILD_ID]
     )
-    async def cosine(self, interaction: Interaction, number: float):
+    async def cosine(self, interaction: Interaction, number: float = SlashOption(description="The number to find the cosine of.")):
 
         formula = f"cos {number}°"
         evalu = math.cos(number)
@@ -115,7 +115,7 @@ class Trigonometry(commands.Cog):
         description="Calculate the tangent of a value.",
         guild_ids=[GUILD_ID]
     )
-    async def tangent(self, interaction: Interaction, number: float):
+    async def tangent(self, interaction: Interaction, number: float = SlashOption(description="The number to find the tangent of.")):
 
         formula = f"tan {number}°"
         evalu = math.tan(number)

@@ -16,7 +16,7 @@ class Geometry(commands.Cog):
         description="Calculate the circumference, and area of a circle or the surface area, and volume of a sphere.",
         guild_ids=[GUILD_ID]
     )
-    async def circleAndSphere(self, interaction: Interaction, r: float, type: str = SlashOption(name="Type of calculation", required=True, choices=_curve)):
+    async def circleandsphere(self, interaction: Interaction, r: float = SlashOption(description="The radius of the circle or the sphere."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_curve)):
 
         if type == 1:
 
@@ -135,10 +135,10 @@ class Geometry(commands.Cog):
             await interaction.response.send_message(embed=embed)
 
     @ slash_command(
-        description="Calculate the area of a quadrilateral or the surface area, and volume of a 3D quadrilateral.",
+        description="Calculate the area of a square or the surface area, and volume of a cube.",
         guild_ids=[GUILD_ID]
     )
-    async def squareAndCube(self, interaction: Interaction, l: float, type: str = SlashOption(name="Type of calculation", required=True, choices=_four_side)):
+    async def squareandcube(self, interaction: Interaction, l: float = SlashOption(description="The length of the square or the cube."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_four_side)):
 
         if type == 1:
 
@@ -231,7 +231,7 @@ class Geometry(commands.Cog):
         description="Calculate the area of a parallelogram.",
         guild_ids=[GUILD_ID]
     )
-    async def areaOfParallelogram(self, interaction: Interaction, b: float, h: float):
+    async def areaofparallelogram(self, interaction: Interaction, b: float = SlashOption(description="The base length of the parallogram."), h: float = SlashOption(description="The height of the parallogram.")):
 
         formula = "A = bh"
         A = b * h
@@ -264,7 +264,7 @@ class Geometry(commands.Cog):
         description="Calculate the area of a kite.",
         guild_ids=[GUILD_ID]
     )
-    async def areaOfKite(self, interaction: Interaction, p: float, q: float):
+    async def areaofkite(self, interaction: Interaction, p: float = SlashOption(description="The length of the horizontal side."), q: float = SlashOption(description="The length of the vertical length.")):
 
         formula = "A = pq / 2"
         A = (p * q) / 2
@@ -297,7 +297,7 @@ class Geometry(commands.Cog):
         description="Calculate the area of a trampezium.",
         guild_ids=[GUILD_ID]
     )
-    async def areaOfTrampezium(self, interaction: Interaction, a: float, b: float, h: float):
+    async def areaoftrampezium(self, interaction: Interaction, a: float = SlashOption(description="The length of the first parallel side."), b: float = SlashOption(description="The length of the second parallel side."), h: float = SlashOption(description="The height of the trampezium.")):
 
         formula = "A = (a + b)h / 2"
         A = (a + b) * h / 2
@@ -330,7 +330,7 @@ class Geometry(commands.Cog):
         description="Calculate the area of triangle or the surface area, and the volume of a pyramid.",
         guild_ids=[GUILD_ID]
     )
-    async def triangleAndPyramid(self, interaction: Interaction, l: float, w: float, s: float = SlashOption(default=None, required=False), h: float = SlashOption(default=None, required=False), type: str = SlashOption(name="Type of calculation", required=True, choices=_tri)):
+    async def triangleandpyramid(self, interaction: Interaction, l: float = SlashOption(description="The length of the triangle or the pyramid."), w: float = SlashOption(description="The width of the triangle or the pyramid."), s: float = SlashOption(description="The slant height of the triangle face on the pyramid.", default=None, required=False), h: float = SlashOption(description="The height of the pyramid.", default=None, required=False), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_tri)):
 
         if type == 1:
 
@@ -423,7 +423,7 @@ class Geometry(commands.Cog):
         description="Calculate the surface area, and the volume of a cylinder.",
         guild_ids=[GUILD_ID]
     )
-    async def cylinder(self, interaction: Interaction, h: float, r: float, type: str = SlashOption(name="Type of calculation", required=True, choices=_cylinder)):
+    async def cylinder(self, interaction: Interaction, h: float = SlashOption(description="The height of the cylinder."), r: float = SlashOption(description="The radius of the cylinder."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_cylinder)):
 
         if type == 1:
 
@@ -487,7 +487,7 @@ class Geometry(commands.Cog):
         description="Calculate the surface area, and volume of a cone.",
         guild_ids=[GUILD_ID]
     )
-    async def cone(self, interaction: Interaction, r: float, s: float = SlashOption(default=None, required=False), h: float = SlashOption(default=None, required=False), type: str = SlashOption(name="Type of calculation", required=True, choices=_cone)):
+    async def cone(self, interaction: Interaction, r: float = SlashOption(description="The radius of the cone."), s: float = SlashOption(description="The slant height of the cone.", default=None, required=False), h: float = SlashOption(description="The height of the cone.", default=None, required=False), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_cone)):
 
         if type == 1 and s != None:
 

@@ -20,9 +20,9 @@ class Set(commands.Cog):
         description="Calculate the distance between two points, midpoint of a straight line and gradient of a straight line or plot a linear graph.",
         guild_ids=[GUILD_ID]
     )
-    async def linearEquation(self, interaction: Interaction, m: float, c: float, y_2: float = SlashOption(required=False, default=None), y_1: float = SlashOption(required=False, default=None), x_2: float = SlashOption(required=False, default=None), x_1: float = SlashOption(required=False, default=None), type: str = SlashOption(name="Type of calculation", required=True, choices=_linearOperation)):
+    async def linearequation(self, interaction: Interaction, m: float = SlashOption(description="The gradient of the line.", required=False, default=None), c: float = SlashOption(description="The y-intercept of the line.", required=False, default=None), y_2: float = SlashOption(description="The y-coordinate of the second point.", required=False, default=None), y_1: float = SlashOption(description="The y-coordinate of the first point.", required=False, default=None), x_2: float = SlashOption(description="The x-coordinate of the second point.", required=False, default=None), x_1: float = SlashOption(description="The x-coordinate of the first point.", required=False, default=None), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_linearOperation)):
 
-        if type == 1:
+        if type == 1 and (m and c) is not None:
 
             x = np.linspace(-20, 20, 100)
             y = m * x + c
@@ -134,7 +134,7 @@ class Set(commands.Cog):
         description="Plot a quadratic graph.",
         guild_ids=[GUILD_ID]
     )
-    async def quadraticEquation(self, interaction: Interaction, a: float, b: float, c: float, type: str = SlashOption(name="Type of calculation", required=True, choices=_quadOperation)):
+    async def quadraticequation(self, interaction: Interaction, a: float = SlashOption(description="The width of the parabola."), b: float = SlashOption(description="The position of axis of symmetry of the parabola."), c: float = SlashOption(description="The y-intercept of the parabola."), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_quadOperation)):
 
         if type == 1:
 
@@ -362,65 +362,14 @@ class Set(commands.Cog):
                 await interaction.response.send_message(embed=embed)
 
     @ slash_command(
-        description="Plot a cubic graph.",
-        guild_ids=[GUILD_ID]
-    )
-    async def cubicEquation(self, interaction: Interaction, a: float, b: float, c: float, d: float):
-
-        x = np.linspace(-20, 20, 100)
-        y = (a * x ** 3) + (b * x ** 2) + (c * x) + d
-
-        file = nextcord.File("./image/cube.png")
-
-        plt.plot(x, y, color="blue", label=f'y = {a}x³ + {b}x² + {c}x + {d}')
-        plt.title(f"Graph of y = {a}x³ + {b}x² + {c}x + {d}")
-
-        plt.xlabel("x", color="#1C2833")
-        plt.ylabel("y", color="#1C2833")
-
-        plt.legend(loc="upper left")
-        plt.grid()
-
-        plt.savefig("./image/cube.png")
-        plt.close()
-
-        await interaction.response.send_message(file=file)
-
-    @ slash_command(
-        description="Plot a reciprocal graph.",
-        guild_ids=[GUILD_ID]
-    )
-    async def reciprocalEquation(self, interaction: Interaction, numerator: float, denominator: float):
-
-        x = np.linspace(-20, 20, 100)
-        y = numerator / (denominator * x)
-
-        file = nextcord.File("./image/reci.png")
-
-        plt.plot(x, y, color="yellow",
-                 label=f"y = {numerator} / {denominator}x")
-        plt.title(f"y = {numerator} / {denominator}x")
-
-        plt.xlabel("x", color="#1C2833")
-        plt.ylabel("y", color="#1C2833")
-
-        plt.legend(loc="upper left")
-        plt.grid()
-
-        plt.savefig("./image/reci.png")
-        plt.close()
-
-        await interaction.response.send_message(file=file)
-
-    @ slash_command(
         description="Check if a value is subset or an element of a set",
         guild_ids=[GUILD_ID]
     )
-    async def setOperation(self, interaction: Interaction, a: str, b: str, type: str = SlashOption(name="Type of operation", required=True, choices=_setOperation)):
+    async def setoperation(self, interaction: Interaction, a: str = SlashOption(description="The first set."), b: str = SlashOption(description="The second set."), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_setOperation)):
 
         A = "".join(a).split(" ")
         B = "".join(b).split(" ")
-        
+
         if type == 1 and A is List[Union[str, int, float]]:
 
             _truth = [True for i in a if i in b]

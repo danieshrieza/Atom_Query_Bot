@@ -21,7 +21,7 @@ class Converter(commands.Cog):
         description="Convert S.I unit from one prefix to another.",
         guild_ids=[GUILD_ID]
     )
-    async def SI_prefix_converter(self, interaction: Interaction, init_value: float, init_prefix: int = SlashOption(name="Initial value", required=True, choices=_prefix), final_prefix: int = SlashOption(name="Final value", required=True, choices=_prefix), si_unit: str = SlashOption(name="Physical Quantity", required=True, choices=_si_unit)):
+    async def si_prefix_converter(self, interaction: Interaction, init_value: float = SlashOption(description="The initial value before conversion."), init_prefix: int = SlashOption(description="The intial prefix before conversion e.g. nano.", required=True, choices=_prefix), final_prefix: int = SlashOption(description="The final prefix to convert to from initial prefix.", required=True, choices=_prefix), si_unit: str = SlashOption(description="The physical quantity of the value e.g. meter." ,required=True, choices=_si_unit)):
 
         if init_prefix == final_prefix:
             await interaction.response.send_message("You've chose the same unit before and after conversion")

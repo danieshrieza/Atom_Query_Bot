@@ -16,7 +16,7 @@ class Query(commands.Cog):
         description="Find the factor of a number and common multiple or highest common multiple of two numbers.",
         guild_ids=[GUILD_ID]
     )
-    async def factor(self, interaction: Interaction, number_1: int, number_2: int = SlashOption(required=False, default=None), type: str = SlashOption(name="Type of calculation", required=True, choices=_factor)):
+    async def factor(self, interaction: Interaction, number_1: int = SlashOption(description="The first number to find the factor."), number_2: int = SlashOption(description="The second number to find the factor. (Only fill this if you want to find the common factor or the highest common factor of two numbers)", required=False, default=None), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_factor)):
 
         if type == 1:
 
@@ -107,7 +107,7 @@ class Query(commands.Cog):
         description="Find the multiple of a number and common multiple or lowest common multiple of two numbers.",
         guild_ids=[GUILD_ID]
     )
-    async def multiple(self, interaction: Interaction, number_1: int, number_range: int, number_2: int = SlashOption(required=False, default=None), type: str = SlashOption(name="Type of calculation", required=True, choices=_multiple)):
+    async def multiple(self, interaction: Interaction, number_1: int = SlashOption(description="The first number to find the multiple."), number_range: int = SlashOption(description="The range of multiple to find."), number_2: int = SlashOption(description="The second number to find the multiple. (Only fill this if you want to find the common multiple or the lowest common multiple of two numbers)", required=False, default=None), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_multiple)):
 
         if type == 1:
 
@@ -232,7 +232,7 @@ class Query(commands.Cog):
         description="Raise the base to the index.",
         guild_ids=[GUILD_ID]
     )
-    async def index(self, interaction: Interaction, base: float, exponent: float):
+    async def index(self, interaction: Interaction, base: float = SlashOption(description="The base of the indices."), exponent: float = SlashOption(description="The number of times to multiply the base.")):
 
         exp = f"{base} ** {exponent}"
         evalu = base ** exponent
@@ -265,7 +265,7 @@ class Query(commands.Cog):
         description="Factorise the radicand to the exponent.",
         guild_ids=[GUILD_ID]
     )
-    async def radical(self, interaction: Interaction, radicand: float, index: float):
+    async def radical(self, interaction: Interaction, radicand: float = SlashOption(description="The number to factor into the same base."), index: float = SlashOption(description="The index to factor the number.")):
 
         exp = f"{radicand} ** 1 / {index}"
         evalu = radicand ** (1. / index)
@@ -298,7 +298,7 @@ class Query(commands.Cog):
         description="Find the number of time a number multiplied itself.",
         guild_ids=[GUILD_ID]
     )
-    async def logarithm(self, interaction: Interaction, base: float, radicand: float):
+    async def logarithm(self, interaction: Interaction, base: float = SlashOption(description="The base of the logarithm."), radicand: float = SlashOption(description="The number to find the index.")):
 
         exp = f"log{base} {radicand}"
         evalu = math.log(x=radicand, base=base)
