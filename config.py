@@ -3,7 +3,7 @@ import json
 with open("env.json") as env:
 
     priv = json.load(env)
-    
+
     link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     TOKEN = str(priv["MATH_VAR"])
@@ -31,13 +31,13 @@ with open("./choice.json") as choices:
     _cone = dict(choice["_cone"])
 
     _linearOperation = dict(choice["_linearOperation"])
-    
+
     _setOperation = dict(choice["_setOperation"])
-    
+
     _quadOperation = dict(choice["_quadOperation"])
-    
+
     _factor = dict(choice["_factor"])
-    
+
     _multiple = dict(choice["_multiple"])
-    
+
     _trigRatio = dict(choice["_trigRatio"])

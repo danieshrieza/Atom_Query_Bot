@@ -294,7 +294,7 @@ class Set(commands.Cog):
             )
 
             await interaction.response.send_message(embed=embed)
-            
+
         elif type == 4:
 
             h = -b / (2 * a)
@@ -318,7 +318,7 @@ class Set(commands.Cog):
                 value=f"```Python\n y = {a}(x - {h})² + {k} \n```",
                 inline=True
             )
-            
+
             await interaction.response.send_message(embed=embed)
 
         elif type == 5:
