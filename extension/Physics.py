@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption, slash_command
@@ -15,16 +15,22 @@ class Physics(commands.Cog):
         description="Calculate the pressure acts on an object.",
         guild_ids=[GUILD_ID]
     )
-    async def pressure(self, interaction: Interaction, F: float = SlashOption(description="The force exerted on the surface."), A: float = SlashOption(description="The surface area of the surface.")):
+    async def pressure(
+        self,
+        interaction: Interaction,
+        f: float = SlashOption(
+            description="The force exerted on the surface.", required=True),
+        a: float = SlashOption(
+            description="The surface area of the object.", required=True)
+    ):
 
         formula = "P = F / A"
-        P = F / A
+        P = f / a
 
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -48,16 +54,22 @@ class Physics(commands.Cog):
         description="Calculate the density of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def density(self, interaction: Interaction, m: float = SlashOption(description="The mass of the object."), V: float = SlashOption(description="The volume of the object.")):
+    async def density(
+        self,
+        interaction: Interaction,
+        m: float = SlashOption(
+            description="The mass of the object.", required=True),
+        v: float = SlashOption(
+            description="The volume of the object.", required=True)
+    ):
 
         formula = 'p = m / V'
-        p = m / V
+        p = m / v
 
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -81,16 +93,22 @@ class Physics(commands.Cog):
         description="Calculate the work done of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def workdone(self, interaction: Interaction, F: float = SlashOption(description="The force exerted to push/pull the object."), d: float = SlashOption(description="The distance that the object travelled from the push/pull.")):
+    async def workdone(
+        self,
+        interaction: Interaction,
+        f: float = SlashOption(
+            description="The force exerted to push/pull the object.", required=True),
+        d: float = SlashOption(
+            description="The distance that the object travelled from the push/pull.", required=True)
+    ):
 
         formula = 'W = Fd'
-        W = F * d
+        W = f * d
 
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -114,16 +132,22 @@ class Physics(commands.Cog):
         description="Calculate the power possessed by an object.",
         guild_ids=[GUILD_ID]
     )
-    async def power(self, interaction: Interaction, W: float = SlashOption(description="The work done of the object."), t: float = SlashOption(description="The time taken to carry out the action.")):
+    async def power(
+        self,
+        interaction: Interaction,
+        w: float = SlashOption(
+            description="The work done of the object.", required=True),
+        t: float = SlashOption(
+            description="The time taken to carry out the action.", required=True)
+    ):
 
         formula = 'P = W / t'
-        P = W / t
+        P = w / t
 
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -147,7 +171,14 @@ class Physics(commands.Cog):
         description="Calculate the gravitational potential energy possessed by an object.",
         guild_ids=[GUILD_ID]
     )
-    async def gravitationalenergy(self, interaction: Interaction, m: float = "The mass of the object.", h: float = SlashOption(description="The height the object lifted to from the ground/")):
+    async def gravitationalenergy(
+        self,
+        interaction: Interaction,
+        m: float = SlashOption(
+            description="The mass of the object.", required=True),
+        h: float = SlashOption(
+            description="The height the object is lifted to from the ground.", required=True)
+    ):
 
         formula = 'U = mgh'
         U = m * 9.81 * h
@@ -155,8 +186,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -180,16 +210,22 @@ class Physics(commands.Cog):
         description="Calculate the elastic potential energy possessed by an object.",
         guild_ids=[GUILD_ID]
     )
-    async def elasticenergy(self, interaction: Interaction, F: float = SlashOption(description="The force exerted to push/pull the object."), x: float = SlashOption(description="The difference in length before and after compression or expansion.")):
+    async def elasticenergy(
+        self,
+        interaction: Interaction,
+        f: float = SlashOption(
+            description="The force exerted to push/pull the object.", required=True),
+        x: float = SlashOption(
+            description="The changes in length before/after compression/expansion.", required=True)
+    ):
 
         formula = "U = 1/2 Fx"
-        U = (1 / 2) * (F * x)
+        U = (1 / 2) * (f * x)
 
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -213,7 +249,14 @@ class Physics(commands.Cog):
         description="Calculate the kinetic energy possessed by an object.",
         guild_ids=[GUILD_ID]
     )
-    async def kineticenergy(self, interaction: Interaction, m: float = SlashOption(description="The mass of the object."), v: float = SlashOption(description="The velocity of the object.")):
+    async def kineticenergy(
+        self,
+        interaction: Interaction,
+        m: float = SlashOption(
+            description="The mass of the object.", required=True),
+        v: float = SlashOption(
+            description="The velocity of the object.", required=True)
+    ):
 
         formula = "K = 1/2 mv²"
         K = (1 / 2) * (m * v ** 2)
@@ -221,8 +264,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -246,7 +288,14 @@ class Physics(commands.Cog):
         description="Calculate the velocity of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def velocity(self, interaction: Interaction, s: float = SlashOption(description="The displacement from the starting point."), t: float = SlashOption(description="The time taken to travel from starting point.")):
+    async def velocity(
+        self,
+        interaction: Interaction,
+        s: float = SlashOption(
+            description="The displacement from the starting point.", required=True),
+        t: float = SlashOption(
+            description="The time taken to travel from starting point.", required=True)
+    ):
 
         formula = "v = s / t"
         v = s / t
@@ -254,8 +303,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -279,7 +327,16 @@ class Physics(commands.Cog):
         description="Calculate the accelaration of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def accelaration(self, interaction: Interaction, v: float = SlashOption(description="The final velocity after accelaration."), u: float = SlashOption(description="The initial velocity before accelaration."), t: float = SlashOption(description="The time taken for the inital velocity to accelarate to the final velocity.")):
+    async def accelaration(
+        self,
+        interaction: Interaction,
+        v: float = SlashOption(
+            description="The final velocity after accelaration.", required=True),
+        u: float = SlashOption(
+            description="The initial velocity before accelaration.", required=True),
+        t: float = SlashOption(
+            description="The time taken to accelarate to the final velocity.", required=True)
+    ):
 
         formula = "a = (v - u) / t"
         a = (v - u) / t
@@ -287,8 +344,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -312,7 +368,14 @@ class Physics(commands.Cog):
         description="Calculate the momentum of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def momentum(self, interaction: Interaction, m: float = SlashOption(description="The mass of the object."), v: float = SlashOption(description="The velocity of the object.")):
+    async def momentum(
+        self,
+        interaction: Interaction,
+        m: float = SlashOption(
+            description="The mass of the object.", required=True),
+        v: float = SlashOption(
+            description="The velocity of the object.", required=True)
+    ):
 
         formula = "p = mv"
         p = m * v
@@ -320,8 +383,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -345,7 +407,14 @@ class Physics(commands.Cog):
         description="Calculate the impulse possesed by an object.",
         guild_ids=[GUILD_ID]
     )
-    async def impulse(self, interaction: Interaction, mv: float = SlashOption(description="The final momentum after change in momentum."), mu: float = SlashOption(description="The initial change before change in momentum.")):
+    async def impulse(
+        self,
+        interaction: Interaction,
+        mv: float = SlashOption(
+            description="The final momentum after change in momentum.", required=True),
+        mu: float = SlashOption(
+            description="The initial change before change in momentum.", required=True)
+    ):
 
         formula = "I = mv - mu"
         I = mv - mu
@@ -353,8 +422,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 
@@ -378,7 +446,12 @@ class Physics(commands.Cog):
         description="Calculate the weight of an object.",
         guild_ids=[GUILD_ID]
     )
-    async def weight(self, interaction: Interaction, m: float = SlashOption(description="The mass of the object.")):
+    async def weight(
+        self,
+        interaction: Interaction,
+        m: float = SlashOption(
+            description="The mass of the object.", required=True)
+    ):
 
         formula = "W = mg"
         W = m * 9.81
@@ -386,8 +459,7 @@ class Physics(commands.Cog):
         embed = nextcord.Embed(
             title="Physics Query",
             description="The requested `Physics Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(127, 0, 255)
         )
 

@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption, slash_command
@@ -13,10 +13,17 @@ class Geometry(commands.Cog):
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     @ slash_command(
-        description="Calculate the circumference, and area of a circle or the surface area, and volume of a sphere.",
+        description="Calculate the perimeter of a circle or the surface area, volume of a sphere.",
         guild_ids=[GUILD_ID]
     )
-    async def circleandsphere(self, interaction: Interaction, r: float = SlashOption(description="The radius of the circle or the sphere."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_curve)):
+    async def circleandsphere(
+        self,
+        interaction: Interaction,
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_curve),
+        r: float = SlashOption(
+            description="The radius of the circle or the sphere.", required=True)
+    ):
 
         if type == 1:
 
@@ -26,8 +33,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -55,8 +61,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -84,8 +89,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -113,8 +117,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -135,10 +138,17 @@ class Geometry(commands.Cog):
             await interaction.response.send_message(embed=embed)
 
     @ slash_command(
-        description="Calculate the area of a square or the surface area, and volume of a cube.",
+        description="Calculate the area of a square or the surface area, volume of a cube.",
         guild_ids=[GUILD_ID]
     )
-    async def squareandcube(self, interaction: Interaction, l: float = SlashOption(description="The length of the square or the cube."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_four_side)):
+    async def squareandcube(
+        self,
+        interaction: Interaction,
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_four_side),
+        l: float = SlashOption(
+            description="The length of the square or the cube.", required=True)
+    ):
 
         if type == 1:
 
@@ -148,8 +158,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -177,8 +186,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -206,8 +214,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -231,7 +238,14 @@ class Geometry(commands.Cog):
         description="Calculate the area of a parallelogram.",
         guild_ids=[GUILD_ID]
     )
-    async def areaofparallelogram(self, interaction: Interaction, b: float = SlashOption(description="The base length of the parallogram."), h: float = SlashOption(description="The height of the parallogram.")):
+    async def areaofparallelogram(
+        self,
+        interaction: Interaction,
+        b: float = SlashOption(
+            description="The base length of the parallogram.", required=True),
+        h: float = SlashOption(
+            description="The height of the parallogram.", required=True)
+    ):
 
         formula = "A = bh"
         A = b * h
@@ -239,8 +253,7 @@ class Geometry(commands.Cog):
         embed = nextcord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated ",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(157, 34, 53)
         )
 
@@ -264,7 +277,14 @@ class Geometry(commands.Cog):
         description="Calculate the area of a kite.",
         guild_ids=[GUILD_ID]
     )
-    async def areaofkite(self, interaction: Interaction, p: float = SlashOption(description="The length of the horizontal side."), q: float = SlashOption(description="The length of the vertical length.")):
+    async def areaofkite(
+        self,
+        interaction: Interaction,
+        p: float = SlashOption(
+            description="The length of the horizontal side.", required=True),
+        q: float = SlashOption(
+            description="The length of the vertical length.", required=True)
+    ):
 
         formula = "A = pq / 2"
         A = (p * q) / 2
@@ -272,8 +292,7 @@ class Geometry(commands.Cog):
         embed = nextcord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated ",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(157, 34, 53)
         )
 
@@ -297,7 +316,16 @@ class Geometry(commands.Cog):
         description="Calculate the area of a trampezium.",
         guild_ids=[GUILD_ID]
     )
-    async def areaoftrampezium(self, interaction: Interaction, a: float = SlashOption(description="The length of the first parallel side."), b: float = SlashOption(description="The length of the second parallel side."), h: float = SlashOption(description="The height of the trampezium.")):
+    async def areaoftrampezium(
+        self,
+        interaction: Interaction,
+        a: float = SlashOption(
+            description="The length of the first parallel side.", required=True),
+        b: float = SlashOption(
+            description="The length of the second parallel side.", required=True),
+        h: float = SlashOption(
+            description="The height of the trampezium.", required=True)
+    ):
 
         formula = "A = (a + b)h / 2"
         A = (a + b) * h / 2
@@ -305,8 +333,7 @@ class Geometry(commands.Cog):
         embed = nextcord.Embed(
             title="Geometry Query",
             description="The requested `Geometry Query` have been evaluated ",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(157, 34, 53)
         )
 
@@ -327,10 +354,23 @@ class Geometry(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @ slash_command(
-        description="Calculate the area of triangle or the surface area, and the volume of a pyramid.",
+        description="Calculate the area of triangle or the surface area, volume of a pyramid.",
         guild_ids=[GUILD_ID]
     )
-    async def triangleandpyramid(self, interaction: Interaction, l: float = SlashOption(description="The length of the triangle or the pyramid."), w: float = SlashOption(description="The width of the triangle or the pyramid."), s: float = SlashOption(description="The slant height of the triangle face on the pyramid.", default=None, required=False), h: float = SlashOption(description="The height of the pyramid.", default=None, required=False), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_tri)):
+    async def triangleandpyramid(
+        self,
+        interaction: Interaction,
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_tri),
+        l: float = SlashOption(
+            description="The length of the triangle or the pyramid.", required=True),
+        w: float = SlashOption(
+            description="The width of the triangle or the pyramid.", required=True),
+        s: float = SlashOption(
+            description="The slant height of the triangle face on the pyramid.", default=None, required=False),
+        h: float = SlashOption(
+            description="The height of the pyramid.", default=None, required=False),
+    ):
 
         if type == 1:
 
@@ -340,8 +380,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -369,8 +408,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -398,8 +436,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -423,7 +460,16 @@ class Geometry(commands.Cog):
         description="Calculate the surface area, and the volume of a cylinder.",
         guild_ids=[GUILD_ID]
     )
-    async def cylinder(self, interaction: Interaction, h: float = SlashOption(description="The height of the cylinder."), r: float = SlashOption(description="The radius of the cylinder."), type: str = SlashOption(description="The type of calculation to be evaluated.", required=True, choices=_cylinder)):
+    async def cylinder(
+        self,
+        interaction: Interaction,
+        h: float = SlashOption(
+            description="The height of the cylinder.", required=True),
+        r: float = SlashOption(
+            description="The radius of the cylinder.", required=True),
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_cylinder)
+    ):
 
         if type == 1:
 
@@ -433,8 +479,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -462,8 +507,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -487,7 +531,18 @@ class Geometry(commands.Cog):
         description="Calculate the surface area, and volume of a cone.",
         guild_ids=[GUILD_ID]
     )
-    async def cone(self, interaction: Interaction, r: float = SlashOption(description="The radius of the cone."), s: float = SlashOption(description="The slant height of the cone.", default=None, required=False), h: float = SlashOption(description="The height of the cone.", default=None, required=False), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_cone)):
+    async def cone(
+        self,
+        interaction: Interaction,
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_cone),
+        r: float = SlashOption(
+            description="The radius of the cone.", required=True),
+        s: float = SlashOption(
+            description="The slant height of the cone.", default=None, required=False),
+        h: float = SlashOption(
+            description="The height of the cone.", default=None, required=False),
+    ):
 
         if type == 1 and s != None:
 
@@ -497,8 +552,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 
@@ -526,8 +580,7 @@ class Geometry(commands.Cog):
             embed = nextcord.Embed(
                 title="Geometry Query",
                 description="The requested `Geometry Query` have been evaluated ",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(157, 34, 53)
             )
 

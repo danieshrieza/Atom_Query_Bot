@@ -1,9 +1,9 @@
-from datetime import datetime, timezone
+
 import nextcord
 from nextcord.ext import commands
 import math
 from nextcord import Interaction, SlashOption, slash_command
-from config import GUILD_ID
+from config import GUILD_ID, _trigRatio
 
 
 class Trigonometry(commands.Cog):
@@ -16,16 +16,22 @@ class Trigonometry(commands.Cog):
         description="Calculate the hypotenuse of a triangle.",
         guild_ids=[GUILD_ID]
     )
-    async def pythagorastheorem(self, interaction: Interaction, height: float = SlashOption(description="The height of the triangle."), base: float = SlashOption(description="The base length of the triangle.")):
+    async def pythagorastheorem(
+        self,
+        interaction: Interaction,
+        a: float = SlashOption(
+            description="The height of the triangle.", required=True),
+        b: float = SlashOption(
+            description="The base length of the triangle.", required=True)
+    ):
 
         formula = "c = √a² + b²"
-        c = math.sqrt((base ** 2) + (height ** 2))
+        c = math.sqrt((a ** 2) + (b ** 2))
 
         embed = nextcord.Embed(
             title="Trigonometry Query",
             description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
+            timestamp=nextcord.utils.utcnow(),
             colour=nextcord.Color.from_rgb(139, 0, 0)
         )
 
@@ -46,103 +52,101 @@ class Trigonometry(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @ slash_command(
-        description="Calculate the sine of a value.",
+        description="Calculate the sine, cosine, or tangent of a value.",
         guild_ids=[GUILD_ID]
     )
-    async def trigonometryratio(self, interaction: Interaction, number: float = SlashOption(description="The number to find the sine of.")):
+    async def trigonometryratio(
+        self,
+        interaction: Interaction,
+        number: float = SlashOption(
+            description="The number to find the sine of.", required=True),
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_trigRatio)
+    ):
 
-        formula = f"sin {number}°"
-        evalu = math.sin(number)
+        if type == 1:
 
-        embed = nextcord.Embed(
-            title="Trigonometry Query",
-            description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
-            colour=nextcord.Color.from_rgb(139, 0, 0)
-        )
+            formula = f"sin {number}°"
+            evalu = math.sin(number)
 
-        embed.add_field(
-            name="Input :",
-            value=f"```Python\n {formula} \n```",
-            inline=False
-        )
+            embed = nextcord.Embed(
+                title="Trigonometry Query",
+                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
+                timestamp=nextcord.utils.utcnow(),
+                colour=nextcord.Color.from_rgb(139, 0, 0)
+            )
 
-        embed.add_field(
-            name="Output :",
-            value=f"```Python\n {evalu} \n```",
-            inline=True
-        )
+            embed.add_field(
+                name="Input :",
+                value=f"```Python\n {formula} \n```",
+                inline=False
+            )
 
-        embed.set_thumbnail(url=self.link)
+            embed.add_field(
+                name="Output :",
+                value=f"```Python\n {evalu} \n```",
+                inline=True
+            )
 
-        await interaction.response.send_message(embed=embed)
+            embed.set_thumbnail(url=self.link)
 
-    @ slash_command(
-        description="Calculate the cosine of a value.",
-        guild_ids=[GUILD_ID]
-    )
-    async def cosine(self, interaction: Interaction, number: float = SlashOption(description="The number to find the cosine of.")):
+            await interaction.response.send_message(embed=embed)
 
-        formula = f"cos {number}°"
-        evalu = math.cos(number)
+        elif type == 2:
 
-        embed = nextcord.Embed(
-            title="Trigonometry Query",
-            description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
-            colour=nextcord.Color.from_rgb(139, 0, 0)
-        )
+            formula = f"cos {number}°"
+            evalu = math.cos(number)
 
-        embed.add_field(
-            name="Input :",
-            value=f"```Python\n {formula} \n```",
-            inline=False
-        )
+            embed = nextcord.Embed(
+                title="Trigonometry Query",
+                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
+                timestamp=nextcord.utils.utcnow(),
+                colour=nextcord.Color.from_rgb(139, 0, 0)
+            )
 
-        embed.add_field(
-            name="Output :",
-            value=f"```Python\n {evalu} \n```",
-            inline=True
-        )
+            embed.add_field(
+                name="Input :",
+                value=f"```Python\n {formula} \n```",
+                inline=False
+            )
 
-        embed.set_thumbnail(url=self.link)
+            embed.add_field(
+                name="Output :",
+                value=f"```Python\n {evalu} \n```",
+                inline=True
+            )
 
-        await interaction.response.send_message(embed=embed)
+            embed.set_thumbnail(url=self.link)
 
-    @ slash_command(
-        description="Calculate the tangent of a value.",
-        guild_ids=[GUILD_ID]
-    )
-    async def tangent(self, interaction: Interaction, number: float = SlashOption(description="The number to find the tangent of.")):
+            await interaction.response.send_message(embed=embed)
 
-        formula = f"tan {number}°"
-        evalu = math.tan(number)
+        elif type == 3:
 
-        embed = nextcord.Embed(
-            title="Trigonometry Query",
-            description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.format_dt(
-                dt=datetime.now(timezone.utc), style="f"),
-            colour=nextcord.Color.from_rgb(139, 0, 0)
-        )
+            formula = f"tan {number}°"
+            evalu = math.tan(number)
 
-        embed.add_field(
-            name="Input :",
-            value=f"```Python\n {formula} \n```",
-            inline=False
-        )
+            embed = nextcord.Embed(
+                title="Trigonometry Query",
+                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
+                timestamp=nextcord.utils.utcnow(),
+                colour=nextcord.Color.from_rgb(139, 0, 0)
+            )
 
-        embed.add_field(
-            name="Output :",
-            value=f"```Python\n {evalu} \n```",
-            inline=True
-        )
+            embed.add_field(
+                name="Input :",
+                value=f"```Python\n {formula} \n```",
+                inline=False
+            )
 
-        embed.set_thumbnail(url=self.link)
+            embed.add_field(
+                name="Output :",
+                value=f"```Python\n {evalu} \n```",
+                inline=True
+            )
 
-        await interaction.response.send_message(embed=embed)
+            embed.set_thumbnail(url=self.link)
+
+            await interaction.response.send_message(embed=embed)
 
 
 def setup(bot: commands.Bot):

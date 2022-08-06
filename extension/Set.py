@@ -1,4 +1,3 @@
-from typing import List, Union
 from nextcord import Interaction, SlashOption, slash_command
 import nextcord
 from nextcord.ext import commands
@@ -6,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 import cmath
-from datetime import datetime, timezone
+
 from config import _linearOperation, _setOperation, _quadOperation, GUILD_ID
 
 
@@ -17,10 +16,27 @@ class Set(commands.Cog):
         self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
     @ slash_command(
-        description="Calculate the distance between two points, midpoint of a straight line and gradient of a straight line or plot a linear graph.",
+        description="Calculate the distance, midpoint and gradient or plot a linear graph.",
         guild_ids=[GUILD_ID]
     )
-    async def linearequation(self, interaction: Interaction, m: float = SlashOption(description="The gradient of the line.", required=False, default=None), c: float = SlashOption(description="The y-intercept of the line.", required=False, default=None), y_2: float = SlashOption(description="The y-coordinate of the second point.", required=False, default=None), y_1: float = SlashOption(description="The y-coordinate of the first point.", required=False, default=None), x_2: float = SlashOption(description="The x-coordinate of the second point.", required=False, default=None), x_1: float = SlashOption(description="The x-coordinate of the first point.", required=False, default=None), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_linearOperation)):
+    async def linearequation(
+        self,
+        interaction: Interaction,
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_linearOperation),
+        m: float = SlashOption(
+            description="The gradient of the line.", required=False, default=None),
+        c: float = SlashOption(
+            description="The y-intercept of the line.", required=False, default=None),
+        y_2: float = SlashOption(
+            description="The y-coordinate of the second point.", required=False, default=None),
+        y_1: float = SlashOption(
+            description="The y-coordinate of the first point.", required=False, default=None),
+        x_2: float = SlashOption(
+            description="The x-coordinate of the second point.", required=False, default=None),
+        x_1: float = SlashOption(
+            description="The x-coordinate of the first point.", required=False, default=None),
+    ):
 
         if type == 1 and (m and c) is not None:
 
@@ -51,8 +67,7 @@ class Set(commands.Cog):
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -80,8 +95,7 @@ class Set(commands.Cog):
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -109,8 +123,7 @@ class Set(commands.Cog):
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -134,7 +147,18 @@ class Set(commands.Cog):
         description="Plot a quadratic graph.",
         guild_ids=[GUILD_ID]
     )
-    async def quadraticequation(self, interaction: Interaction, a: float = SlashOption(description="The width of the parabola."), b: float = SlashOption(description="The position of axis of symmetry of the parabola."), c: float = SlashOption(description="The y-intercept of the parabola."), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_quadOperation)):
+    async def quadraticequation(
+        self,
+        interaction: Interaction,
+        a: float = SlashOption(
+            description="The width of the parabola.", required=True),
+        b: float = SlashOption(
+            description="The position of axis of symmetry of the parabola.", required=True),
+        c: float = SlashOption(
+            description="The y-intercept of the parabola.", required=True),
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_quadOperation)
+    ):
 
         if type == 1:
 
@@ -162,8 +186,7 @@ class Set(commands.Cog):
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -270,6 +293,8 @@ class Set(commands.Cog):
                 inline=True
             )
 
+            await interaction.response.send_message(embed=embed)
+            
         elif type == 4:
 
             h = -b / (2 * a)
@@ -278,8 +303,7 @@ class Set(commands.Cog):
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -294,14 +318,15 @@ class Set(commands.Cog):
                 value=f"```Python\n y = {a}(x - {h})² + {k} \n```",
                 inline=True
             )
+            
+            await interaction.response.send_message(embed=embed)
 
         elif type == 5:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -365,20 +390,27 @@ class Set(commands.Cog):
         description="Check if a value is subset or an element of a set",
         guild_ids=[GUILD_ID]
     )
-    async def setoperation(self, interaction: Interaction, a: str = SlashOption(description="The first set."), b: str = SlashOption(description="The second set."), type: str = SlashOption(name="The type of calculation to be evaluated.", required=True, choices=_setOperation)):
+    async def setoperation(
+        self, interaction: Interaction,
+        a: str = SlashOption(
+            description="The first set. (Smaller than B)", required=True),
+        b: str = SlashOption(
+            description="The second set.", required=True),
+        type: int = SlashOption(
+            description="The type of calculation to be evaluated.", required=True, choices=_setOperation)
+    ):
 
         A = "".join(a).split(" ")
         B = "".join(b).split(" ")
 
-        if type == 1 and A is List[Union[str, int, float]]:
+        if type == 1:
 
-            _truth = [True for i in a if i in b]
+            _truth = [True for i in A if i in B]
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -390,7 +422,7 @@ class Set(commands.Cog):
 
             embed.add_field(
                 name="Output :",
-                value=f"```Python\n {True if len(_truth) == len(a) else False} \n```",
+                value=f"```Python\n {True if len(_truth) == len(A) else False} \n```",
                 inline=True
             )
 
@@ -398,13 +430,12 @@ class Set(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-        elif type == 2 and a is str:
+        elif type == 2:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -416,7 +447,7 @@ class Set(commands.Cog):
 
             embed.add_field(
                 name="Output :",
-                value=f"```Python\n {True if a in b else False} \n```",
+                value=f"```Python\n {True if a in B else False} \n```",
                 inline=True
             )
 
@@ -424,13 +455,12 @@ class Set(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-        elif type == 3 and a is List[Union[str, int, float]]:
+        elif type == 3:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -442,7 +472,7 @@ class Set(commands.Cog):
 
             embed.add_field(
                 name="Output :",
-                value=f"```Python\n {np.intersect1d(ar1=a, ar2=b)} \n```",
+                value=f"```Python\n {np.intersect1d(ar1=A, ar2=B)} \n```",
                 inline=True
             )
 
@@ -450,13 +480,12 @@ class Set(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-        elif type == 4 and a is List[Union[str, int, float]]:
+        elif type == 4:
 
             embed = nextcord.Embed(
                 title="Cartesian Query",
                 description="The requested `Cartesian Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(127, 0, 255)
             )
 
@@ -468,7 +497,7 @@ class Set(commands.Cog):
 
             embed.add_field(
                 name="Output :",
-                value=f"```Python\n {np.union1d(ar1=a, ar2=b)} \n```",
+                value=f"```Python\n {np.union1d(ar1=A, ar2=B)} \n```",
                 inline=True
             )
 

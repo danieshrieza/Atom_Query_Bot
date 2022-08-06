@@ -35,6 +35,5 @@ def main():
     bot.run(TOKEN)
 
 
-# NOTE : Call main
 if __name__ == "__main__":
     main()

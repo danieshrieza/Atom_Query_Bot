@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption, slash_command
@@ -21,7 +21,18 @@ class Converter(commands.Cog):
         description="Convert S.I unit from one prefix to another.",
         guild_ids=[GUILD_ID]
     )
-    async def si_prefix_converter(self, interaction: Interaction, init_value: float = SlashOption(description="The initial value before conversion."), init_prefix: int = SlashOption(description="The intial prefix before conversion e.g. nano.", required=True, choices=_prefix), final_prefix: int = SlashOption(description="The final prefix to convert to from initial prefix.", required=True, choices=_prefix), si_unit: str = SlashOption(description="The physical quantity of the value e.g. meter." ,required=True, choices=_si_unit)):
+    async def prefixconverter(
+        self,
+        interaction: Interaction,
+        init_value: float = SlashOption(
+            description="The initial value before conversion.", required=True),
+        init_prefix: float = SlashOption(
+            description="The intial prefix before conversion.", required=True, choices=_prefix),
+        final_prefix: float = SlashOption(
+            description="The final prefix to convert to from initial prefix.", required=True, choices=_prefix),
+        si_unit: str = SlashOption(
+            description="The physical quantity of the value.", required=True, choices=_si_unit)
+    ):
 
         if init_prefix == final_prefix:
             await interaction.response.send_message("You've chose the same unit before and after conversion")
@@ -33,8 +44,7 @@ class Converter(commands.Cog):
             embed = nextcord.Embed(
                 title="Unit Converter",
                 description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(178, 34, 34)
             )
 
@@ -61,8 +71,7 @@ class Converter(commands.Cog):
             embed = nextcord.Embed(
                 title="Unit Converter",
                 description="The requested `Unit Conversion` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.format_dt(
-                    dt=datetime.now(timezone.utc), style="f"),
+                timestamp=nextcord.utils.utcnow(),
                 colour=nextcord.Color.from_rgb(178, 34, 34)
             )
 

@@ -39,3 +39,5 @@ with open("./choice.json") as choices:
     _factor = dict(choice["_factor"])
     
     _multiple = dict(choice["_multiple"])
+    
+    _trigRatio = dict(choice["_trigRatio"])
