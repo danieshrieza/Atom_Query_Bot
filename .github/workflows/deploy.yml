@@ -1,8 +1,8 @@
 name: Deploy update to server
 
 on:
-  push:
-      branches: [ main ]
+    push:
+        branches: [main]
 
 jobs:
     build:
@@ -12,12 +12,12 @@ jobs:
             - name: Executing remote ssh commands using ssh key passphrase
               uses: appleboy/ssh-action@master
               with:
-                host: ${{ secrets.HOST }}
-                username: root
-                key: ${{ secrets.SSH_PRIVATE_KEY }}
-                passphrase: ${{ secrets.PASSPHRASE }}
-                port: 22
-                script: |
-                  cd Atom-Query-Discord-Bot
-                  git pull origin main
-                  pm2 restart bot.py --update-env --interpreter=/usr/bin/python3
+                  host: ${{ secrets.HOST }}
+                  username: root
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  passphrase: ${{ secrets.PASSPHRASE }}
+                  port: 22
+                  script: |
+                      cd Atom-Query-Discord-Bot
+                      git pull origin main
+                      pm2 restart bot.py --update-env --interpreter=/usr/bin/python3
