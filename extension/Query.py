@@ -334,7 +334,7 @@ class Query(commands.Cog):
     ):
 
         exp = f"log{base} {radicand}"
-        evalu = math.log(x=radicand, base=base)
+        evalu = math.log(radicand, base)
 
         embed = nextcord.Embed(
             title="Math Query",
