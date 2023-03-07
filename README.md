@@ -1,7 +1,7 @@
 # Atom Query ⚛️
 
 **Atom Query** is a **Discord Bot** that able to calculate common queries. [Invite here](https://discord.com/oauth2/authorize?client_id=881526346411556865&permissions=534723947584&scope=bot%20applications.commands).
-This bot are able to calculate **area of a trampezium**, find the **intersection of two set**, and much more!
+This bot are able to calculate **area of a trapezium**, find the **intersection of two set**, and much more!
 
 <img src="./image/Atom_Query_Icon.png" alt="Atom Query Discord Bot Logo" style="display: block; margin-left: auto;margin-right: auto; width: 50%;">
 
