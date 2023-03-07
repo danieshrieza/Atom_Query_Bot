@@ -1,43 +1,48 @@
 import json
+import discord
 
 with open("env.json") as env:
 
-    priv = json.load(env)
+    private = json.load(env)
 
-    link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
+    LINK = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    TOKEN = str(priv["MATH_VAR"])
+    TOKEN = str(private["MATH_VAR"])
 
-    GUILD_ID = int(priv["GUILD_VAR"])
+    GUILD_ID = discord.Object(int(private["GUILD_VAR"]))
 
-    OWNER_ID = int(priv["OWNER_VAR"])
+    OWNER_ID = int(private["OWNER_VAR"])
 
-with open("./choice.json") as choices:
+    IMAGE_LINK = str(private["IMAGE_LINK"])
 
-    choice = json.load(choices)
+with open("./option.json") as options:
 
-    _prefix = dict(choice["_prefix"])
+    choice = json.load(options)
 
-    _si_unit = dict(choice["_si_unit"])
+    _prefix = dict(choice["_prefix"]).items()
 
-    _curve = dict(choice["_curve"])
+    _si_unit = dict(choice["_si_unit"]).items()
 
-    _four_side = dict(choice["_cube"])
+    _circle = dict(choice["_circle"]).items()
 
-    _tri = dict(choice["_tri"])
+    _sphere = dict(choice["_sphere"]).items()
 
-    _cylinder = dict(choice["_cylinder"])
+    _square = dict(choice["_square"]).items()
 
-    _cone = dict(choice["_cone"])
+    _cube = dict(choice["_cube"]).items()
 
-    _linearOperation = dict(choice["_linearOperation"])
+    _triangle = dict(choice["_triangle"]).items()
 
-    _setOperation = dict(choice["_setOperation"])
+    _pyramid = dict(choice["_pyramid"]).items()
 
-    _quadOperation = dict(choice["_quadOperation"])
+    _cylinder = dict(choice["_cylinder"]).items()
 
-    _factor = dict(choice["_factor"])
+    _cone = dict(choice["_cone"]).items()
 
-    _multiple = dict(choice["_multiple"])
+    _linear = dict(choice["_linear"]).items()
 
-    _trigRatio = dict(choice["_trigRatio"])
+    _set_operation = dict(choice["_set_operation"]).items()
+
+    _quadratic = dict(choice["_quadratic"]).items()
+
+    _trigonometric_ratio = dict(choice["_trigonometric_ratio"]).items()

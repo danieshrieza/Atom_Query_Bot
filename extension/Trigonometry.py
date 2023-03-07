@@ -1,38 +1,38 @@
-
-import nextcord
-from nextcord.ext import commands
+import discord
+from discord.ext import commands
 import math
-from nextcord import Interaction, SlashOption, slash_command
-from config import GUILD_ID, _trigRatio
+from discord import Interaction, app_commands
+from config import GUILD_ID, _trigonometric_ratio, IMAGE_LINK
 
 
 class Trigonometry(commands.Cog):
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-        self.link = "https://cdn.discordapp.com/app-icons/881526346411556865/8d9f1ba8cc150ebe85cf9e9f1a7fc345.png?size=128"
 
-    @ slash_command(
-        description="Calculate the hypotenuse of a triangle.",
-        guild_ids=[GUILD_ID]
-    )
-    async def pythagorastheorem(
+    @ commands.Cog.listener()
+    async def on_ready(self):
+        await self.bot.tree.sync()
+        print(f"{__name__} is succesfully loaded into bot.")
+
+    @ app_commands.command(description="Calculate the hypotenuse of a triangle.")
+    @ app_commands.describe(a="The height of the triangle.")
+    @ app_commands.describe(b="The base length of the triangle.")
+    async def pythagoras_theorem(
         self,
         interaction: Interaction,
-        a: float = SlashOption(
-            description="The height of the triangle.", required=True),
-        b: float = SlashOption(
-            description="The base length of the triangle.", required=True)
+        a: float,
+        b: float
     ):
 
         formula = "c = √a² + b²"
         c = math.sqrt((a ** 2) + (b ** 2))
 
-        embed = nextcord.Embed(
+        embed = discord.Embed(
             title="Trigonometry Query",
-            description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-            timestamp=nextcord.utils.utcnow(),
-            colour=nextcord.Color.from_rgb(139, 0, 0)
+            description="Query has been **successfully** evaluated.",
+            timestamp=discord.utils.utcnow(),
+            colour=discord.Color.from_rgb(139, 0, 0)
         )
 
         embed.add_field(
@@ -47,21 +47,21 @@ class Trigonometry(commands.Cog):
             inline=True
         )
 
-        embed.set_thumbnail(url=self.link)
+        embed.set_thumbnail(url=IMAGE_LINK)
 
         await interaction.response.send_message(embed=embed)
 
-    @ slash_command(
-        description="Calculate the sine, cosine, or tangent of a value.",
-        guild_ids=[GUILD_ID]
-    )
-    async def trigonometryratio(
+    @ app_commands.command(description="Calculate the sine, cosine, or tangent of a value.")
+    @ app_commands.describe(number="The number to find the value of its sine, cosine or tangent.")
+    @ app_commands.describe(type="The type of calculation to be evaluated.")
+    @ app_commands.choices(type=[
+        app_commands.Choice(name=operation, value=choice) for operation, choice in _trigonometric_ratio
+    ])
+    async def trigonometry_ratio(
         self,
         interaction: Interaction,
-        number: float = SlashOption(
-            description="The number to find the sine of.", required=True),
-        type: int = SlashOption(
-            description="The type of calculation to be evaluated.", required=True, choices=_trigRatio)
+        number: float,
+        type: app_commands.Choice[int]
     ):
 
         if type == 1:
@@ -69,11 +69,11 @@ class Trigonometry(commands.Cog):
             formula = f"sin {number}°"
             evalu = math.sin(number)
 
-            embed = nextcord.Embed(
+            embed = discord.Embed(
                 title="Trigonometry Query",
-                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.utcnow(),
-                colour=nextcord.Color.from_rgb(139, 0, 0)
+                description="Query has been **successfully** evaluated.",
+                timestamp=discord.utils.utcnow(),
+                colour=discord.Color.from_rgb(139, 0, 0)
             )
 
             embed.add_field(
@@ -88,7 +88,7 @@ class Trigonometry(commands.Cog):
                 inline=True
             )
 
-            embed.set_thumbnail(url=self.link)
+            embed.set_thumbnail(url=IMAGE_LINK)
 
             await interaction.response.send_message(embed=embed)
 
@@ -97,11 +97,11 @@ class Trigonometry(commands.Cog):
             formula = f"cos {number}°"
             evalu = math.cos(number)
 
-            embed = nextcord.Embed(
+            embed = discord.Embed(
                 title="Trigonometry Query",
-                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.utcnow(),
-                colour=nextcord.Color.from_rgb(139, 0, 0)
+                description="Query has been **successfully** evaluated.",
+                timestamp=discord.utils.utcnow(),
+                colour=discord.Color.from_rgb(139, 0, 0)
             )
 
             embed.add_field(
@@ -116,7 +116,7 @@ class Trigonometry(commands.Cog):
                 inline=True
             )
 
-            embed.set_thumbnail(url=self.link)
+            embed.set_thumbnail(url=IMAGE_LINK)
 
             await interaction.response.send_message(embed=embed)
 
@@ -125,11 +125,11 @@ class Trigonometry(commands.Cog):
             formula = f"tan {number}°"
             evalu = math.tan(number)
 
-            embed = nextcord.Embed(
+            embed = discord.Embed(
                 title="Trigonometry Query",
-                description="The requested `Trigonometry Query` have been evaluated by **Atom Query**",
-                timestamp=nextcord.utils.utcnow(),
-                colour=nextcord.Color.from_rgb(139, 0, 0)
+                description="Query has been **successfully** evaluated.",
+                timestamp=discord.utils.utcnow(),
+                colour=discord.Color.from_rgb(139, 0, 0)
             )
 
             embed.add_field(
@@ -144,10 +144,10 @@ class Trigonometry(commands.Cog):
                 inline=True
             )
 
-            embed.set_thumbnail(url=self.link)
+            embed.set_thumbnail(url=IMAGE_LINK)
 
             await interaction.response.send_message(embed=embed)
 
 
-def setup(bot: commands.Bot):
-    bot.add_cog(Trigonometry(bot))
+async def setup(bot: commands.Bot):
+    await bot.add_cog(Trigonometry(bot))

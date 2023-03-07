@@ -1,39 +1,37 @@
-import nextcord
+import discord
 import os
-from nextcord.ext import commands
-from nextcord.ext.commands.context import Context
+from discord.ext import commands
 from config import TOKEN, OWNER_ID
+import asyncio
 
 
-def main():
+bot = commands.Bot(
+    command_prefix="!",
+    case_insensitive=True,
+    strip_after_prefix=True,
+    help_command=None,
+    owner_id=OWNER_ID,
+    intents=discord.Intents.all(),
+    activity=discord.Activity(type=discord.ActivityType.watching, name="The Complex Plane")
+)
 
-    bot = commands.Bot(
-        command_prefix="!",
-        case_insensitive=True,
-        strip_after_prefix=True,
-        help_command=None,
-        owner_id=OWNER_ID,
-        intents=nextcord.Intents.all(),
-        activity=nextcord.Activity(
-            type=nextcord.ActivityType.watching, name="The Complex Plane")
-    )
 
-    @ bot.event
-    async def on_ready():
-        print(f"I have logged in as {bot.user}")
+@ bot.event
+async def on_ready():
+    await bot.tree.sync()
+    print(f"I have logged in as {bot.user}")
 
-    @ commands.is_owner()
-    @ bot.command()
-    async def server(ctx: Context):
-        for guild in bot.guilds:
-            await ctx.send(f"{guild.name}")
 
+async def load():
     for file in os.listdir("./extension"):
         if file.endswith(".py"):
-            bot.load_extension(f"extension.{file[:-3]}")
-
-    bot.run(TOKEN)
+            await bot.load_extension(f"extension.{file[:-3]}")
 
 
-if __name__ == "__main__":
-    main()
+async def main():
+    async with bot:
+        await load()
+        await bot.start(TOKEN)
+
+
+asyncio.run(main())
